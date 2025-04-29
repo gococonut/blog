@@ -1,30 +1,25 @@
 /** @type {import("pliny/config").PlinyConfig } */
 const siteMetadata = {
-  title: 'Next.js Starter Blog',
-  author: 'Tails Azimuth',
-  headerTitle: 'TailwindBlog',
-  description: 'A blog created with Next.js and Tailwind.css',
-  language: 'en-us',
+  title: 'Byte Bonfire',
+  author: '椰子',
+  headerTitle: '字节篝火',
+  description:
+    'Hoho, you found me! 我是椰子，沪漂回石家庄，目前在国企臭写代码的。曾是魂游戏珍惜爱好者，因最后生还者二电子阳痿，现 Dota2 云玩家。喜欢听点摇滚，喜欢万青、海鹏森、声音玩具。对了还喜欢读点王小波~',
+  language: 'zh-cn',
   theme: 'system', // system, dark or light
-  siteUrl: 'https://tailwind-nextjs-starter-blog.vercel.app',
-  siteRepo: 'https://github.com/timlrx/tailwind-nextjs-starter-blog',
+  siteUrl: 'https://bonfire.moreve.net',
+  siteRepo: 'https://github.com/gococonut/blog',
   siteLogo: `${process.env.BASE_PATH || ''}/static/images/logo.png`,
   socialBanner: `${process.env.BASE_PATH || ''}/static/images/twitter-card.png`,
   mastodon: 'https://mastodon.social/@mastodonuser',
-  email: 'address@yoursite.com',
-  github: 'https://github.com',
-  x: 'https://twitter.com/x',
+  email: 'gococonu7@outlook.com',
+  github: 'https://github.com/gococonut',
+  x: 'https://twitter.com/gococonu7',
   // twitter: 'https://twitter.com/Twitter',
-  facebook: 'https://facebook.com',
-  youtube: 'https://youtube.com',
-  linkedin: 'https://www.linkedin.com',
-  threads: 'https://www.threads.net',
-  instagram: 'https://www.instagram.com',
-  medium: 'https://medium.com',
-  bluesky: 'https://bsky.app/',
-  locale: 'en-US',
+  youtube: 'https://www.youtube.com/@hohoyoufoundme',
+  locale: 'en-us',
   // set to true if you want a navbar fixed to the top
-  stickyNav: false,
+  stickyNav: true,
   analytics: {
     // If you want to use an analytics provider you have to add it to the
     // content security policy in the `next.config.js` file.
@@ -54,36 +49,36 @@ const siteMetadata = {
     // Please add your .env file and modify it according to your selection
     provider: 'buttondown',
   },
-  comments: {
-    // If you want to use an analytics provider you have to add it to the
-    // content security policy in the `next.config.js` file.
-    // Select a provider and use the environment variables associated to it
-    // https://vercel.com/docs/environment-variables
-    provider: 'giscus', // supported providers: giscus, utterances, disqus
-    giscusConfig: {
-      // Visit the link below, and follow the steps in the 'configuration' section
-      // https://giscus.app/
-      repo: process.env.NEXT_PUBLIC_GISCUS_REPO,
-      repositoryId: process.env.NEXT_PUBLIC_GISCUS_REPOSITORY_ID,
-      category: process.env.NEXT_PUBLIC_GISCUS_CATEGORY,
-      categoryId: process.env.NEXT_PUBLIC_GISCUS_CATEGORY_ID,
-      mapping: 'pathname', // supported options: pathname, url, title
-      reactions: '1', // Emoji reactions: 1 = enable / 0 = disable
-      // Send discussion metadata periodically to the parent window: 1 = enable / 0 = disable
-      metadata: '0',
-      // theme example: light, dark, dark_dimmed, dark_high_contrast
-      // transparent_dark, preferred_color_scheme, custom
-      theme: 'light',
-      // theme when dark mode
-      darkTheme: 'transparent_dark',
-      // If the theme option above is set to 'custom`
-      // please provide a link below to your custom theme css file.
-      // example: https://giscus.app/themes/custom_example.css
-      themeURL: '',
-      // This corresponds to the `data-lang="en"` in giscus's configurations
-      lang: 'en',
-    },
-  },
+  // comments: {
+  //   // If you want to use an analytics provider you have to add it to the
+  //   // content security policy in the `next.config.js` file.
+  //   // Select a provider and use the environment variables associated to it
+  //   // https://vercel.com/docs/environment-variables
+  //   provider: 'giscus', // supported providers: giscus, utterances, disqus
+  //   giscusConfig: {
+  //     // Visit the link below, and follow the steps in the 'configuration' section
+  //     // https://giscus.app/
+  //     repo: process.env.NEXT_PUBLIC_GISCUS_REPO,
+  //     repositoryId: process.env.NEXT_PUBLIC_GISCUS_REPOSITORY_ID,
+  //     category: process.env.NEXT_PUBLIC_GISCUS_CATEGORY,
+  //     categoryId: process.env.NEXT_PUBLIC_GISCUS_CATEGORY_ID,
+  //     mapping: 'pathname', // supported options: pathname, url, title
+  //     reactions: '1', // Emoji reactions: 1 = enable / 0 = disable
+  //     // Send discussion metadata periodically to the parent window: 1 = enable / 0 = disable
+  //     metadata: '0',
+  //     // theme example: light, dark, dark_dimmed, dark_high_contrast
+  //     // transparent_dark, preferred_color_scheme, custom
+  //     theme: 'light',
+  //     // theme when dark mode
+  //     darkTheme: 'transparent_dark',
+  //     // If the theme option above is set to 'custom`
+  //     // please provide a link below to your custom theme css file.
+  //     // example: https://giscus.app/themes/custom_example.css
+  //     themeURL: '',
+  //     // This corresponds to the `data-lang="en"` in giscus's configurations
+  //     lang: 'en',
+  //   },
+  // },
   search: {
     provider: 'kbar', // kbar or algolia
     kbarConfig: {
