@@ -1,0 +1,146 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# 布局设计指南
+
+## 布局系统基础
+
+1. 网格系统
+   ```tsx
+   // 推荐的网格布局方式
+   <div className="grid grid-cols-12 gap-4">
+     <div className="col-span-3">侧边栏</div>
+     <div className="col-span-9">主内容</div>
+   </div>
+   ```
+
+2. Flex 布局
+   ```tsx
+   // 常用的 Flex 布局模式
+   <div className="flex items-center justify-between">
+     <div className="flex-shrink-0">Logo</div>
+     <nav className="flex space-x-4">导航项</nav>
+   </div>
+   ```
+
+## 间距系统
+
+1. 外边距（Margin）规范
+   - 组件间距：`space-y-{size}` 或 `space-x-{size}`
+   - 区块边距：`m{t|r|b|l}-{size}` 或 `mx-{size} my-{size}`
+   - 标准间距值：4, 8, 12, 16, 20, 24, 32, 40, 48, 64
+
+2. 内边距（Padding）规范
+   - 容器内边距：`p-{size}`
+   - 方向性内边距：`p{t|r|b|l}-{size}`
+   - 响应式内边距：`md:p-{size}`
+
+## 响应式布局
+
+1. 断点设置
+   ```css
+   sm: 640px   // 手机横屏
+   md: 768px   // 平板竖屏
+   lg: 1024px  // 平板横屏/小屏电脑
+   xl: 1280px  // 桌面显示器
+   2xl: 1536px // 大屏显示器
+   ```
+
+2. 响应式策略
+   - 移动优先设计
+   - 使用 Container 组件控制最大宽度
+   ```tsx
+   <div className="container mx-auto px-4 md:px-6 lg:px-8">
+     {/* 内容区域 */}
+   </div>
+   ```
+
+## 布局组件
+
+1. Container 组件
+   - 用于内容区域的最大宽度控制
+   - 自动响应式边距
+   - 位于 [components/ui/container.tsx](mdc:components/ui/container.tsx)
+
+2. Section 组件
+   - 用于区分不同的内容区块
+   - 统一的垂直间距
+   - 位于 [components/ui/section.tsx](mdc:components/ui/section.tsx)
+
+## 布局最佳实践
+
+1. 容器使用
+   ```tsx
+   // ✅ 推荐
+   <Container>
+     <Section className="space-y-8">
+       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+         {/* 内容卡片 */}
+       </div>
+     </Section>
+   </Container>
+
+   // ❌ 避免
+   <div className="w-full px-4">
+     <div className="my-8">
+       <div className="flex flex-wrap">
+         {/* 内容卡片 */}
+       </div>
+     </div>
+   </div>
+   ```
+
+2. 嵌套布局
+   - 避免过深的布局嵌套
+   - 使用语义化的组件名称
+   - 保持布局结构清晰
+
+3. 自适应布局技巧
+   ```tsx
+   // 弹性卡片网格
+   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+     {items.map(item => (
+       <Card key={item.id} className="h-full" />
+     ))}
+   </div>
+
+   // 自适应导航栏
+   <nav className="flex flex-col md:flex-row md:space-x-6 space-y-4 md:space-y-0">
+     {navItems.map(item => (
+       <NavLink key={item.href} href={item.href} />
+     ))}
+   </nav>
+   ```
+
+## 特殊布局考虑
+
+1. 固定定位元素
+   - 使用 `fixed` 类时注意内容遮挡
+   - 考虑添加适当的 z-index
+   ```tsx
+   <header className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-sm">
+     {/* 导航内容 */}
+   </header>
+   ```
+
+2. 粘性定位
+   - 用于侧边栏和导航菜单
+   ```tsx
+   <aside className="sticky top-20 h-[calc(100vh-5rem)]">
+     {/* 侧边栏内容 */}
+   </aside>
+   ```
+
+3. 溢出处理
+   - 文本溢出
+   ```tsx
+   <p className="truncate">长文本内容</p>
+   ```
+   - 滚动容器
+   ```tsx
+   <div className="overflow-y-auto max-h-[500px]">
+     {/* 可滚动内容 */}
+   </div>
+   ```

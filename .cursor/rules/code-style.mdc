@@ -1,0 +1,41 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# 代码风格指南
+
+## 代码格式化
+
+项目使用以下工具确保代码风格统一：
+- [eslint.config.mjs](mdc:eslint.config.mjs) - ESLint 配置
+- [prettier.config.js](mdc:prettier.config.js) - Prettier 配置
+
+## 命名约定
+
+1. 文件命名
+   - 组件文件：使用 PascalCase（如 `Header.tsx`）
+   - 工具函数：使用 camelCase（如 `formatDate.ts`）
+   - 样式文件：使用 kebab-case（如 `main-layout.css`）
+
+2. 变量命名
+   - React 组件：使用 PascalCase
+   - 变量和函数：使用 camelCase
+   - 常量：使用 UPPER_SNAKE_CASE
+
+## TypeScript 使用
+
+- 始终为 props 定义接口
+- 避免使用 `any` 类型
+- 优先使用类型推断
+- 导出类型定义时使用 `type` 而不是 `interface`
+
+## 组件结构
+
+- 使用函数式组件
+- Props 类型放在组件上方
+- 按照以下顺序组织代码：
+  1. 导入语句
+  2. 类型定义
+  3. 组件定义
+  4. 辅助函数

@@ -17,7 +17,7 @@ const siteMetadata = {
   x: 'https://twitter.com/gococonu7',
   // twitter: 'https://twitter.com/Twitter',
   youtube: 'https://www.youtube.com/@hohoyoufoundme',
-  locale: 'en-us',
+  locale: 'zh-cn',
   // set to true if you want a navbar fixed to the top
   stickyNav: true,
   analytics: {

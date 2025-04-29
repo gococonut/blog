@@ -1,0 +1,22 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+# 项目结构指南
+
+这是一个使用 Next.js 构建的博客项目。以下是主要目录结构：
+
+- [app/](mdc:app) - Next.js 应用程序的主要目录，包含页面和路由
+- [components/](mdc:components) - 可重用的 React 组件
+- [data/](mdc:data) - 博客内容和数据文件
+- [layouts/](mdc:layouts) - 页面布局组件
+- [public/](mdc:public) - 静态资源文件
+- [utils/](mdc:utils) - 工具函数和辅助方法
+
+## 主要配置文件
+
+- [next.config.js](mdc:next.config.js) - Next.js 配置
+- [contentlayer.config.ts](mdc:contentlayer.config.ts) - ContentLayer 内容管理配置
+- [package.json](mdc:package.json) - 项目依赖和脚本
+- [tsconfig.json](mdc:tsconfig.json) - TypeScript 配置

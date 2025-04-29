@@ -1,6 +1,6 @@
-const { withContentlayer } = require('next-contentlayer2')
+const { withContentlayer } = import('next-contentlayer2')
 
-const withBundleAnalyzer = require('@next/bundle-analyzer')({
+const withBundleAnalyzer = import('@next/bundle-analyzer')({
   enabled: process.env.ANALYZE === 'true',
 })
 
@@ -77,6 +77,10 @@ module.exports = () => {
         {
           protocol: 'https',
           hostname: 'picsum.photos',
+        },
+        {
+          protocol: 'https',
+          hostname: 'hub-image.moreve.net',
         },
       ],
       unoptimized,

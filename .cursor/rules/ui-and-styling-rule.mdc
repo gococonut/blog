@@ -1,0 +1,70 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+---
+description: Guidelines for UI and styling, focusing on Tailwind CSS and Shaden UI best practices.
+globs: **/*.{ts,tsx,js,jsx}
+---
+# UI 和样式指南
+
+## 基础设计原则
+
+- 遵循响应式设计原则
+- 确保所有组件都符合 WCAG 2.1 可访问性标准
+- 保持视觉层次和一致性
+- 使用系统预设的间距和颜色值
+
+## 布局系统
+- 详细的布局指南请参考 [layout-guidelines.mdc](mdc:layout-guidelines.mdc)
+- 使用预定义的布局组件
+- 遵循响应式设计原则
+- 保持一致的间距系统
+
+## Tailwind CSS 使用规范
+
+1. 样式组织
+   - 使用 @layer 组织样式
+   - 保持类名的语义化
+   - 避免过长的类名组合
+
+2. 颜色使用
+   - 使用主题颜色变量而不是原始颜色
+   - 遵循 `primary`、`secondary`、`accent` 命名约定
+   - 使用语义化的颜色命名（如 `text-primary`）
+
+3. 组件样式
+   - 使用 @apply 抽取重复的样式组合
+   - 避免内联样式，优先使用 Tailwind 类
+   - 组件状态样式使用 group 和 peer 功能
+
+## Shadcn UI 组件使用
+
+1. 组件定制
+   - 在 [components/ui/](mdc:components/ui) 下管理组件
+   - 使用 cva 定义组件变体
+   - 保持默认主题一致性
+
+2. 主题配置
+   - 颜色方案配置在 [app/globals.css](mdc:app/globals.css)
+   - 使用 CSS 变量进行主题定制
+   - 支持亮色/暗色模式切换
+
+## 最佳实践
+
+1. 性能优化
+   - 使用 Tailwind JIT 编译
+   - 避免不必要的动画和过渡
+   - 优化大型组件的重渲染
+
+2. 可维护性
+   - 组件样式保持独立
+   - 使用有意义的类名前缀
+   - 文档化特殊的样式决策
+
+3. 可访问性
+   - 合适的颜色对比度
+   - 键盘导航支持
+   - ARIA 属性正确使用
+   - 支持屏幕阅读器
