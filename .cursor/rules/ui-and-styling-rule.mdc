@@ -1,7 +1,7 @@
 ---
 description: 
 globs: 
-alwaysApply: false
+alwaysApply: true
 ---
 ---
 description: Guidelines for UI and styling, focusing on Tailwind CSS and Shaden UI best practices.
