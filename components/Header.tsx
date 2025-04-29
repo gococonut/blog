@@ -23,14 +23,14 @@ const Header = () => {
           </Link>
         </div>
         <div className="flex items-center space-x-4">
-          <nav className="hidden items-center space-x-6 text-sm font-medium md:flex">
+          <nav className="hidden items-center space-x-6 text-sm font-light md:flex">
             {headerNavLinks
               .filter((link) => link.href !== '/')
               .map((link) => (
                 <Link
                   key={link.title}
                   href={link.href}
-                  className="text-foreground/60 hover:text-primary-500 dark:hover:text-primary-400 transition-colors"
+                  className="text-foreground/60 hover:text-primary-600 dark:hover:text-primary-400 font-medium transition-colors"
                 >
                   {link.title}
                 </Link>

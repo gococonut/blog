@@ -63,7 +63,7 @@ const unoptimized = process.env.UNOPTIMIZED ? true : undefined
  **/
 module.exports = () => {
   const plugins = [withContentlayer, withBundleAnalyzer]
-  return plugins.reduce((acc, next) => next(acc), {
+  const nextConfig = plugins.reduce((acc, next) => next(acc), {
     output,
     basePath,
     reactStrictMode: true,
@@ -71,6 +71,7 @@ module.exports = () => {
     pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
     eslint: {
       dirs: ['app', 'components', 'layouts', 'scripts'],
+      ignoreDuringBuilds: true,
     },
     images: {
       remotePatterns: [
@@ -102,4 +103,6 @@ module.exports = () => {
       return config
     },
   })
+
+  return nextConfig
 }

@@ -12,8 +12,8 @@ export default function Home({ posts }) {
   return (
     <div className="space-y-8 pt-8">
       <div className="space-y-4">
-        <h1 className="text-2xl font-bold tracking-tight sm:text-3xl md:text-4xl">最新动态</h1>
-        <p className="text-muted-foreground text-base sm:text-lg">{siteMetadata.description}</p>
+        <h1 className="text-xl font-medium tracking-tight sm:text-xl md:text-2xl">最新动态</h1>
+        <p className="text-muted-foreground text-sm sm:text-base">{siteMetadata.description}</p>
       </div>
       <div className="space-y-8">
         {!posts.length && (
@@ -24,7 +24,7 @@ export default function Home({ posts }) {
           return (
             <article
               key={slug}
-              className="group bg-card hover:bg-muted/50 relative flex flex-col space-y-4 rounded-lg border p-6 transition-colors"
+              className="group bg-card hover:bg-muted/50 relative flex flex-col space-y-4 rounded-lg border p-6 transition-all duration-300 ease-in-out hover:scale-[1.02]"
             >
               <div className="flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-6">
                 {cover && (
@@ -43,7 +43,7 @@ export default function Home({ posts }) {
                 <div className={cn('space-y-4', cover ? 'md:w-2/3' : 'w-full')}>
                   <div className="space-y-3">
                     <div>
-                      <h2 className="text-xl font-bold tracking-tight sm:text-2xl md:text-3xl">
+                      <h2 className="text-xl font-medium tracking-tight sm:text-2xl md:text-2xl">
                         <Link
                           href={`/blog/${slug}`}
                           className="text-foreground hover:text-primary transition-colors"
@@ -53,7 +53,7 @@ export default function Home({ posts }) {
                       </h2>
                       <dl>
                         <dt className="sr-only">Published on</dt>
-                        <dd className="text-muted-foreground mt-1 mb-2 text-sm font-medium sm:text-base">
+                        <dd className="prose text-muted-foreground mt-1 mb-2 text-sm font-light sm:text-base">
                           <time dateTime={date}>{formatDate(date, siteMetadata.locale)}</time>
                         </dd>
                       </dl>
@@ -63,11 +63,11 @@ export default function Home({ posts }) {
                         ))}
                       </div>
                     </div>
-                    <div className="prose text-muted-foreground max-w-none text-sm sm:text-base">
+                    <div className="prose text-muted-foreground max-w-none text-sm font-normal sm:text-base">
                       {summary}
                     </div>
                   </div>
-                  <div className="text-sm font-medium sm:text-base">
+                  {/* <div className="text-sm font-medium sm:text-base">
                     <Link
                       href={`/blog/${slug}`}
                       className="text-primary hover:text-primary/80 transition-colors"
@@ -75,7 +75,7 @@ export default function Home({ posts }) {
                     >
                       更多 &rarr;
                     </Link>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </article>
