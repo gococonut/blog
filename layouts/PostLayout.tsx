@@ -52,20 +52,20 @@ export default function PostLayout({
       <ScrollTopAndComment />
       {/* Mobile TOC Panel (fixed, bottom) */}
       {headings && headings.length > 0 && (
-        <div className="fixed bottom-0 left-0 right-0 z-50 lg:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700">
+        <div className="fixed bottom-0 left-0 right-0 z-50 lg:hidden bg-background/95 supports-[backdrop-filter]:bg-background/60 backdrop-blur border-t">
           <div
-            className="flex items-center justify-between p-4 cursor-pointer"
+            className="container flex items-center justify-between p-4 cursor-pointer"
             onClick={() => setIsTocOpen(!isTocOpen)}
           >
             <h3 className="text-lg font-medium">目录</h3>
             {isTocOpen ? (
               <ChevronDown className="h-5 w-5" />
             ) : (
-              <ChevronUp className="h-5 w-5" />
+              <ChevronUp className="h-5 w-5 text-primary-500" />
             )}
           </div>
           {isTocOpen && (
-            <div className="max-h-[50vh] overflow-y-auto p-4">
+            <div className="container max-h-[50vh] overflow-y-auto p-4">
               <TableOfContents
                 headings={headings}
                 isMobile={true}
