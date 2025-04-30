@@ -10,12 +10,11 @@ const MAX_DISPLAY = 5
 
 export default function Home({ posts }) {
   return (
-    <div className="space-y-8 pt-8">
-      <div className="space-y-4">
-        <h1 className="text-xl font-medium tracking-tight sm:text-xl md:text-2xl">最新动态</h1>
-        <p className="text-muted-foreground text-sm sm:text-base">{siteMetadata.description}</p>
-      </div>
-      <div className="space-y-8">
+    <div className="pt-6 pb-8">
+      <h1 className="text-lg leading-9 font-bold text-gray-900 sm:text-xl sm:leading-10 md:text-xl md:leading-14 dark:text-gray-100">
+        最新动态
+      </h1>
+      <div className="space-y-8 pt-6 pb-8">
         {!posts.length && (
           <p className="text-muted-foreground text-center text-sm sm:text-base">没有找到文章。</p>
         )}
@@ -43,7 +42,7 @@ export default function Home({ posts }) {
                 <div className={cn('space-y-4', cover ? 'md:w-2/3' : 'w-full')}>
                   <div className="space-y-3">
                     <div>
-                      <h2 className="text-xl font-medium tracking-tight sm:text-2xl md:text-2xl">
+                      <h2 className="text-lg font-medium sm:text-xl md:text-xl">
                         <Link
                           href={`/blog/${slug}`}
                           className="text-foreground hover:text-primary transition-colors"
@@ -89,7 +88,7 @@ export default function Home({ posts }) {
             className="text-primary hover:text-primary/80 text-sm transition-colors sm:text-base"
             aria-label="All posts"
           >
-            所有文章 &rarr;
+            ALL &rarr;
           </Link>
         </div>
       )}
