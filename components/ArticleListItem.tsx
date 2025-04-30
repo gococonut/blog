@@ -54,7 +54,7 @@ export default function ArticleListItem({ post }: ArticleListItemProps) {
               className={cn(
                 'prose dark:prose-invert max-w-none text-sm font-normal',
                 'leading-relaxed md:leading-normal',
-                'line-clamp-5 md:line-clamp-2'
+                'line-clamp-5 md:line-clamp-4'
               )}
             >
               {summary}

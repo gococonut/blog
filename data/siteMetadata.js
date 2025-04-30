@@ -4,7 +4,7 @@ const siteMetadata = {
   author: '椰子',
   headerTitle: '字节篝火',
   description:
-    'Hoho, you found me! 我是椰子，沪漂回石家庄，目前是国企臭写代码的。曾是魂游戏重度爱好者，因最后生还者二电子阳痿，现 Dota2 云玩家。喜欢听点摇滚，喜欢万青、海鹏森、声音玩具。最近在捣鼓 N8N workflow 实现播客自动化，小宇宙有同名播客。对了还喜欢读点王小波~',
+    'Hoho, you found me! 我是椰子，目前是国企臭写代码的。曾是魂游戏重度爱好者，因最后生还者二电子阳痿，现 Dota2 云玩家。喜欢听点摇滚，喜欢万青、海鹏森、声音玩具。最近在捣鼓 N8N workflow 实现播客自动化，小宇宙有同名播客。对了还喜欢读点王小波~',
   language: 'zh-cn',
   theme: 'system', // system, dark or light
   siteUrl: 'https://bonfire.moreve.net',
