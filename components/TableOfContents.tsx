@@ -10,9 +10,14 @@ export interface Heading {
 interface TableOfContentsProps {
   headings: Heading[]
   className?: string
+  onItemClick?: () => void
 }
 
-export default function TableOfContents({ headings = [], className }: TableOfContentsProps) {
+export default function TableOfContents({
+  headings = [],
+  className,
+  onItemClick,
+}: TableOfContentsProps) {
   // 优先查找 level 2 (H2), 使用 'depth'
   let tocHeadings = headings.filter((h) => h.depth === 2)
 
@@ -26,6 +31,21 @@ export default function TableOfContents({ headings = [], className }: TableOfCon
     return null
   }
 
+  const scrollToHeading = (url: string) => {
+    const target = document.querySelector(url)
+    if (target) {
+      const headerOffset = 100 // 顶部导航栏的高度 + 一些额外间距
+      const elementPosition = target.getBoundingClientRect().top
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth',
+      })
+      onItemClick?.()
+    }
+  }
+
   return (
     <nav className={cn('toc', className)} aria-label="Table of contents">
       <ul className="space-y-2">
@@ -33,7 +53,11 @@ export default function TableOfContents({ headings = [], className }: TableOfCon
           <li key={heading.url} className="text-sm">
             <a
               href={heading.url}
-              className="text-muted-foreground hover:text-foreground transition-colors duration-200 dark:hover:text-gray-200"
+              className="text-muted-foreground hover:text-primary-500 dark:hover:text-primary-400 transition-colors duration-200"
+              onClick={(e) => {
+                e.preventDefault()
+                scrollToHeading(heading.url)
+              }}
             >
               {heading.value}
             </a>

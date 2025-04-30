@@ -24,7 +24,7 @@
       "@/utils/*": ["utils/*"],
       "@/lib/*": ["lib/*"],
       "contentlayer/generated": ["./.contentlayer/generated"],
-      "pliny/*": ["node_modules/pliny/*"]
+      "@pliny/*": ["node_modules/pliny/*"]
     },
     "plugins": [
       {

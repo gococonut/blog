@@ -42,7 +42,7 @@ export default function ArticleListItem({ post }: ArticleListItemProps) {
             </Link>
           </h2>
           <Link href={`/blog/${slug}`} aria-label={`Read summary and full article: "${title}"`}>
-            <div className="prose text-muted-foreground hover:text-foreground/80 line-clamp-3 max-w-none text-sm font-normal transition-colors duration-200 sm:text-base dark:text-gray-300 dark:hover:text-gray-200">
+            <div className="prose text-muted-foreground line-clamp-3 max-w-none text-sm font-normal transition-colors duration-200 sm:text-base dark:text-gray-300">
               {summary}
             </div>
           </Link>
