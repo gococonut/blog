@@ -10,12 +10,14 @@ export interface Heading {
 interface TableOfContentsProps {
   headings: Heading[]
   className?: string
+  isMobile?: boolean
   onItemClick?: () => void
 }
 
 export default function TableOfContents({
   headings = [],
   className,
+  isMobile = false,
   onItemClick,
 }: TableOfContentsProps) {
   // 优先查找 level 2 (H2), 使用 'depth'
@@ -42,12 +44,23 @@ export default function TableOfContents({
         top: offsetPosition,
         behavior: 'smooth',
       })
-      onItemClick?.()
+
+      // 如果是移动端，点击后关闭目录
+      if (isMobile) {
+        onItemClick?.()
+      }
     }
   }
 
   return (
-    <nav className={cn('toc', className)} aria-label="Table of contents">
+    <nav
+      className={cn(
+        'toc',
+        className,
+        isMobile ? 'mobile-toc' : ''
+      )}
+      aria-label="Table of contents"
+    >
       <ul className="space-y-2">
         {tocHeadings.map((heading) => (
           <li key={heading.url} className="text-sm">
