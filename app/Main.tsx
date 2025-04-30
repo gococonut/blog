@@ -5,6 +5,7 @@ import { formatDate } from '@/utils/formatDate'
 import NewsletterForm from 'pliny/ui/NewsletterForm'
 import Image from '@/components/Image'
 import { cn } from '@/lib/utils'
+import ArticleListItem from '@/components/ArticleListItem'
 
 const MAX_DISPLAY = 5
 
@@ -19,66 +20,7 @@ export default function Home({ posts }) {
           <p className="text-muted-foreground text-center text-sm sm:text-base">没有找到文章。</p>
         )}
         {posts.slice(0, MAX_DISPLAY).map((post) => {
-          const { slug, date, title, summary, tags, cover } = post
-          return (
-            <article
-              key={slug}
-              className="group bg-card hover:bg-muted/50 relative flex flex-col space-y-4 rounded-lg border p-6 transition-all duration-300 ease-in-out hover:scale-[1.02]"
-            >
-              <div className="flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-6">
-                {cover && (
-                  <div className="flex-shrink-0 md:w-1/3">
-                    <Link href={`/blog/${slug}`} aria-label={`Read more: "${title}"`}>
-                      <Image
-                        src={cover}
-                        alt={title}
-                        width={400}
-                        height={225}
-                        className="rounded-md object-cover object-center transition-transform group-hover:scale-[1.02]"
-                      />
-                    </Link>
-                  </div>
-                )}
-                <div className={cn('space-y-4', cover ? 'md:w-2/3' : 'w-full')}>
-                  <div className="space-y-3">
-                    <div>
-                      <h2 className="text-lg font-medium sm:text-xl md:text-xl">
-                        <Link
-                          href={`/blog/${slug}`}
-                          className="text-foreground hover:text-primary transition-colors"
-                        >
-                          {title}
-                        </Link>
-                      </h2>
-                      <dl>
-                        <dt className="sr-only">Published on</dt>
-                        <dd className="prose text-muted-foreground mt-1 mb-2 text-sm font-light sm:text-base">
-                          <time dateTime={date}>{formatDate(date, siteMetadata.locale)}</time>
-                        </dd>
-                      </dl>
-                      <div className="flex flex-wrap gap-2">
-                        {tags.map((tag) => (
-                          <Tag key={tag} text={tag} />
-                        ))}
-                      </div>
-                    </div>
-                    <div className="prose text-muted-foreground max-w-none text-sm font-normal sm:text-base">
-                      {summary}
-                    </div>
-                  </div>
-                  {/* <div className="text-sm font-medium sm:text-base">
-                    <Link
-                      href={`/blog/${slug}`}
-                      className="text-primary hover:text-primary/80 transition-colors"
-                      aria-label={`Read more: "${title}"`}
-                    >
-                      更多 &rarr;
-                    </Link>
-                  </div> */}
-                </div>
-              </div>
-            </article>
-          )
+          return <ArticleListItem key={post.slug} post={post} />
         })}
       </div>
       {posts.length > MAX_DISPLAY && (
