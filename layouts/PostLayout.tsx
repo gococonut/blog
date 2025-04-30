@@ -29,7 +29,7 @@ const postDateTemplate: Intl.DateTimeFormatOptions = {
 }
 
 interface LayoutProps {
-  content: CoreContent<Blog>
+  content: CoreContent<Blog> & { summary?: string }
   authorDetails: CoreContent<Authors>[]
   next?: { path: string; title: string }
   prev?: { path: string; title: string }
@@ -45,7 +45,7 @@ export default function PostLayout({
   children,
   headings,
 }: LayoutProps) {
-  const { filePath, path, slug, date, title, tags } = content
+  const { filePath, path, slug, date, title, tags, summary } = content
   const basePath = path.split('/')[0]
   const [isTocPanelOpen, setIsTocPanelOpen] = useState(false)
   const tocPanelRef = useRef(null)
@@ -152,21 +152,28 @@ export default function PostLayout({
         <div>
           <header className="pt-6 pb-6">
             <div className="space-y-4">
-              <div>
-                <PageTitle>{title}</PageTitle>
+              <div className="flex items-baseline justify-between gap-4">
+                <div className="flex-grow">
+                  <PageTitle>{title}</PageTitle>
+                </div>
+                <dl className="flex-shrink-0">
+                  <dt className="sr-only">发布于</dt>
+                  <dd className="text-base leading-6 font-medium whitespace-nowrap text-gray-500 dark:text-gray-400">
+                    <time dateTime={date}>{formatDate(date, siteMetadata.locale)}</time>
+                  </dd>
+                </dl>
               </div>
-              <dl className="space-y-1">
-                <dt className="sr-only">发布于</dt>
-                <dd className="text-base leading-6 font-medium text-gray-500 dark:text-gray-400">
-                  <time dateTime={date}>{formatDate(date, siteMetadata.locale)}</time>
-                </dd>
-              </dl>
               {tags && (
                 <div className="flex flex-wrap gap-2">
                   {tags.map((tag) => (
                     <Tag key={tag} text={tag} />
                   ))}
                 </div>
+              )}
+              {summary && (
+                <p className="text-base leading-relaxed text-gray-700 dark:text-gray-300">
+                  {summary}
+                </p>
               )}
             </div>
           </header>

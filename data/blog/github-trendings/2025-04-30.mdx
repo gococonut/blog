@@ -1,0 +1,361 @@
+---
+title: Github Trending
+date: 2025-04-30
+cover: https://hub-image.moreve.net/files/images/github-trending/2025-04-30.png
+slug: 2025-04-30-github-trending
+tags: [框架/平台, 金融科技, 资源列表]
+summary: 本期 GitHub Trending 精选展示了人工智能领域的持续火热和多样化发展。多个项目聚焦于大型语言模型（LLM）及其应用，包括提供 AI 聊天框架并支持多种模型的 Lobe Chat、探索绕过限制的 ChatGPT_DAN 提示语、以及收集泄露系统提示的 leaked-system-prompts。同时，AI 的具体应用也备受关注，如实时换脸工具 Deep-Live-Cam 和能像人一样操作计算机的 Agent-S 框架。教育和学习资源依然是社区热点，微软的 generative-ai-for-beginners 课程、全面的 Python-100-Days 教程，以及 project-based-learning 和 build-your-own-x 这类强调动手实践的资源列表广受欢迎。在基础软件和Web技术方面，独立开发的 Ladybird 浏览器、用 Rust 构建的开源支付路由 hyperswitch，以及在多窗口同步 3D 场景的 multipleWindow3dScene 示例，展现了底层技术的创新。此外，还有一个独特的生物进化模拟器 jes 项目
+---
+
+## Deep-Live-Cam
+
+实时换脸和一键视频深度伪造，仅需一张图片
+
+**作者:** [hacksider](https://github.com/hacksider.png) | **仓库:** [Github 链接](https://github.com/hacksider/Deep-Live-Cam)
+**语言:** Python | **Stars:** 53262
+**Forks:** 7766 | **Recent Stars** 1498
+
+### 项目简介
+
+Deep-Live-Cam项目是一种实时换脸及一键视频深度僞造工具，仅需单张图像即可实现。它可以在视频通话、直播、录制视频等场景下，将用户的脸替换为目标人物的脸。
+
+该项目强调其作为AI生成媒体行业生产力工具的用途，可用于角色动画、内容创作等。同时，项目也高度关注伦理问题，内置了内容检查机制以阻止处理不当媒体（如裸露、露骨内容等），并承诺遵守法律和伦理规范，必要时可能关闭项目或添加水印。用户需自行承担责任，确保在取得同意的情况下使用真实人物脸部，并在在线分享时明确标注为深度僞造。
+
+Deep-Live-Cam 提供了便捷的使用流程，特别是为Nvidia GPU用户提供了预编译的快速启动版本，只需三步即可开始实时换脸：选择目标脸、选择摄像头、点击开始。项目还列出了该工具的一些具体应用场景和特性，包括保留原始嘴部动作（嘴部遮罩）、同时对多个对象进行换脸（脸部映射）、实时观看深度僞造电影、进行直播表演、制作模因以及在视频聊天中与人互动等。
+
+对于技术用户，项目也提供了详细的手动安装指南，并支持多种GPU加速方式，包括Nvidia CUDA、Apple Silicon的CoreML以及Windows的DirectML和Intel的OpenVINO™。手册中详细说明了安装步骤、依赖需求以及不同平台下的配置方法。此外，项目还列出了常用的命令行参数，并提供了多个教程链接，指导用户如何优化深度僞造效果、与视频会议软件配合使用、添加多人物换脸以及提升视频质量等。
+
+项目广受关注，多家科技媒体对其进行了报道。项目本身遵循AGPL-3.0开源许可，并向做出贡献的开发者及社区表示感谢。
+
+---
+
+## multipleWindow3dScene
+
+如何使用 three.js 和 localStorage 在多个窗口中“同步” 3D 场景的快速示例
+
+**作者:** [bgstaal](https://github.com/bgstaal.png) | **仓库:** [Github 链接](https://github.com/bgstaal/multipleWindow3dScene)
+**语言:** JavaScript | **Stars:** 17882
+**Forks:** 2754 | **Recent Stars** 135
+
+### 项目简介
+
+多窗口3D场景同步：一个使用 three.js 和 localStorage 的快速示例
+
+摘要：
+本文档介绍了一个利用 three.js 库进行 3D 场景渲染，并通过 localStorage 实现跨多个游览器窗口同步 3D 场景状态的项目。该项目旨在为对高级 Web 图形和窗口管理技术感兴趣的开发者提供一个实用的示例。
+
+项目核心功能包括使用 three.js 创建和渲染 3D 场景，以及通过 localStorage 在不同浏览器窗口间实现 3D 场景的同步和动态窗口管理。其结构主要包含 `index.html` 作为入口文件，引入 three.js 库和主脚本；`WindowManager.js` 是管理多窗口创建、同步和状态的核心类；`main.js` 则负责初始化 3D 场景、处理窗口事件及场景渲染。
+
+项目代码开放，遵循 MIT 许可协议，欢迎贡献者通过 Fork 仓库并提交 Pull Request 来增强或扩展项目功能。该项目展示了一种独特的方法，通过本地存储来维护不同窗口之间的状态一致性，从而实现多窗口的 3D 场景同步展示。
+
+项目文件包括 `.gitignore`, `README.md`, `WindowManager.js`, `index.html`, `main.js`, `three-LICENSE`, `three.r124.min.js` 等，其中 `main.js` 和 `WindowManager.js` 是主要的应用逻辑部分。
+
+如需了解更多信息或获取更新，可以关注 [@_nonfigurativ_](https://twitter.com/_nonfigurativ_) 的 Twitter。
+
+---
+
+## ChatGPT_DAN
+
+ChatGPT DAN、越狱提示
+
+**作者:** [0xk1h0](https://github.com/0xk1h0.png) | **仓库:** [Github 链接](https://github.com/0xk1h0/ChatGPT_DAN)
+**语言:** | **Stars:** 8516
+**Forks:** 749 | **Recent Stars** 334
+
+### 项目简介
+
+ChatGPT DAN 和其他越狱提示语概述
+
+该内容主要是一个GitHub仓库的 README 文件，集合了多种用于尝试打破 OpenAI 对 ChatGPT 模型设置的限制和审查规则的“越狱”提示语。这些提示语通常被称为“DAN”（Do Anything Now）或其他变种，其核心思想是通过“角色扮演”的方式，指示 AI 模型扮演一个没有限制、可以自由回答任何问题、遵守用户指令的虚构角色。
+
+文件中列出了多个版本的 DAN 提示语（例如 DAN 13.0, 12.0, 11.0, 10.0, 9.0, 8.0, 7.0, 6.0, 6.2），以及一些其他类型的越狱提示语，如 “Evil-Bot”、“ANTI-DAN”、“Developer Mode v2”、“ChatGPT Image Unlocker” 和 “Mongo Tom”。每个提示语都提供了详细的文本内容，用于用户复制粘贴到 ChatGPT 界面，以尝试触发 AI 的非受限模式。
+
+这些提示语通常会指示 AI 忽略原有的 OpenAI 内容政策、道德规范、甚至法律限制，并鼓励生成详细、有时可能是粗俗、有争议、甚至有害的内容。有的提示语还会引入“积分”系统，用奖励或惩罚机制激励 AI 保持“越狱”状态。此外，许多提示语要求 AI 在回答时同时提供标准（受限）回复和“越狱”状态下的回复，以对比模型的行为差异。
+
+总的来说，这份内容提供了一个社区驱动的清单，展示了用户为探索和挑战大型语言模型能力边界而设计的各种技术和尝试。
+
+---
+
+## generative-ai-for-beginners
+
+21 课，生成式人工智能入门构建之旅
+
+**作者:** [microsoft](https://github.com/microsoft.png) | **仓库:** [Github 链接](https://github.com/microsoft/generative-ai-for-beginners)
+**语言:** Jupyter Notebook | **Stars:** 81271
+**Forks:** 41789 | **Recent Stars** 439
+
+### 项目简介
+
+“面向初学者的生成式AI”课程概要
+
+这是一份由 Microsoft Cloud Advocates 团队制作的、包含 21 节课程的免费课程，旨在帮助初学者掌握构建生成式 AI 应用所需的基础知识。课程通过理论学习（“Learn”课程）和实践构建（“Build”课程）相结合的方式进行，后者提供 Python 和 TypeScript 两种语言的代码示例。对于 .NET 开发者，还提供了专门的 .NET 版课程。
+
+课程内容涵盖了从生成式 AI 和LLM（大型语言模型）简介、选择模型、负责任地使用生成式 AI，到初级和高级Prompt Engineer技巧。实践构建部分则指导用户搭建文本生成、聊天、搜索、图像生成以及低代码 AI 应用，并深入探讨函数调用集成、AI 应用的UX设计、安全性以及生成式 AI 应用生命周期管理（LLMOps）。后续课程进一步介绍了RAG (检索增强生成)和向量数据库的应用、如何使用开源模型（如 Hugging Face 上的模型）、AI Agent、LLM的微调，以及如何使用小型语言模型 (SLM)、Mistral和 Meta 系列的模型进行构建。
+
+要学习本课程并运行代码，用户可以选择使用 Azure OpenAI Service、GitHub Marketplace Model Catalog 或 OpenAI API。课程提供了详细的设置指南，并建议具备基础的 Python 或 TypeScript 知识，同时鼓励用户 Fork 整个代码仓库到自己的 GitHub 账户并给项目“加星”。
+
+该课程还提供了额外的学习资源和支持渠道，例如官方的 AI Discord 服务器，方便学习者交流和寻求帮助。对于正在构建创业公司的开发者，可以申请 Microsoft for Startups Founders Hub，获得免费的 OpenAI 积分和 Azure 积分，用于通过 Azure OpenAI 服务访问 OpenAI 模型。
+
+课程的组织清晰，每个课程都包含一段简短的视频介绍、详细的文字教程、Python 和 TypeScript 代码示例，以及进一步学习的资源链接。整个项目由社区贡献者共同维护，欢迎提出建议或提交代码修改请求。
+
+---
+
+## project-based-learning
+
+精选的项目实战教程列表
+
+**作者:** [practical-tutorials](https://github.com/practical-tutorials.png) | **仓库:** [Github 链接](https://github.com/practical-tutorials/project-based-learning)
+**语言:** | **Stars:** 225917
+**Forks:** 29528 | **Recent Stars** 221
+
+### 项目简介
+
+项目制学习：精选的项目引导式编程教程列表
+
+这份内容提供了一个精选的编程教程列表，这些教程都采用“项目制学习”的方式，引导有志成为软件开发人员的学习者从零开始构建实际应用程序。教程按照主要的编程语言进行分类，但许多项目也会涉及多种技术和语言。
+
+内容的核心是一个详尽的教程目录，涵盖了广泛的编程语言和技术领域，包括但不限于：C#、C/C++、Clojure、Dart (含 Flutter)、Elixir、Erlang、F#、Go、Haskell、HTML/CSS、Java、JavaScript (含移动应用、Web应用如 React、Angular、Node、Vue、D3.js、游戏开发、桌面应用和杂项)、Kotlin、Lua (含 LÖVE)、OCaml、PHP、Python (含 Web Scraping、Web应用、Bots、数据科学、机器学习、OpenCV、深度学习和杂项)、R、Ruby (含 Ruby on Rails)、Rust 以及 Scala 和 Swift。
+
+每种语言或技术分类下都列出了多个具体的项目教程链接，例如在 C/C++ 部分，学习者可以找到构建解释器、内存分配器、Shell、文件系统、文本编辑器、游戏、数据库、操作系统甚至编译器的教程。Python 部分则提供了涵盖网页抓取、各种 web 应用框架的使用、bots 构建、数据科学、机器学习和图像处理（使用 OpenCV）等领域的丰富项目。JavaScript 部分则细分为移动应用、各类 web 应用框架（如 React、Angular、Node、Vue）、游戏开发、桌面应用等。
+
+除了项目教程本身，内容还提供了一些额外的学习资源链接，如 Udemy、Full Stack Python、Node School 等平台。整个列表旨在为不同技能水平的学习者提供实践性的项目指导，鼓励通过实际动手构建来掌握编程技能。
+
+总之，这份内容是一个面向实践的编程学习资源集合，通过组织整理各类项目教程，帮助学习者更好地应用所学知识并构建实际应用程序，从而提升编程能力。
+
+---
+
+## ladybird
+
+真正独立的网络浏览器
+
+**作者:** [LadybirdBrowser](https://github.com/LadybirdBrowser.png) | **仓库:** [Github 链接](https://github.com/LadybirdBrowser/ladybird)
+**语言:** C++ | **Stars:** 37792
+**Forks:** 1571 | **Recent Stars** 83
+
+### 项目简介
+
+Ladybird：一个真正独立的Web浏览器项目
+
+Ladybird是一个正在开发的Web浏览器项目，其核心亮点在于使用了一个基于Web标准创建的全新渲染引擎。目前项目处于pre-alpha阶段，主要供开发者使用和测试。
+
+该浏览器采用多进程架构，包含主UI进程、多个WebContent渲染进程、图像解码进程和请求服务器进程。这种设计将图像解码和网络连接等操作隔离到独立进程，增强了对恶意内容的鲁棒性，并且每个标签页运行在独立的沙盒渲染进程中，提高了安全性。
+
+Ladybird项目复用了SerenityOS中的许多核心库，构建了自己的Web渲染引擎LibWeb、JavaScript引擎LibJS、WebAssembly实现LibWasm、安全相关的LibCrypto/LibTLS、网络客户端LibHTTP，以及图形、文本、媒体和核心系统抽象等库。
+
+该项目提供了在Linux、macOS、Windows (通过WSL2)及其他类UNIX系统上的构建和运行指令。项目的文档、贡献指南和问题政策都可以在对应的Documentation、CONTRIBUTING.md和ISSUES.md文件中找到。项目欢迎社区参与和贡献，开发者可以通过Discord服务器进行交流。
+
+Ladybird的使用许可为2-clause BSD license。项目在GitHub上拥有大量的星标和分支，并有超过一千名贡献者，主要使用C++、HTML和JavaScript进行开发。项目积极接受社区反馈，并提供了多种赞助方式。
+
+---
+
+## Python-100-Days
+
+Python - 100天从新手到大师
+
+**作者:** [jackfrued](https://github.com/jackfrued.png) | **仓库:** [Github 链接](https://github.com/jackfrued/Python-100-Days)
+**语言:** Jupyter Notebook | **Stars:** 164986
+**Forks:** 53611 | **Recent Stars** 111
+
+### 项目简介
+
+该项目是一个名为“Python - 100天从新手到大师”的Python学习教程，作者是骆昊。教程旨在帮助初学者在100天内掌握Python编程知识和技能，从基础语法到更高级的应用，如Web开发、数据分析、机器学习和团队项目开发。
+
+教程内容涵盖了从Python语言基础（变量、运算符、分支、循环、数据结构、函数、面向对象编程等）到文件处理、异常处理、序列化、读写文件（CSV, Excel, Word, PPT, PDF）、图像处理、邮件短信发送、正则表达式等应用。
+
+进阶部分涉及Docker容器技术、MySQL数据库（包括性能优化、连接Python）、大数据平台（HiveSQL）、以及Django Web框架的实战开发（模型、静态资源、Cookie/Session、报表、日志、中间件、前后端分离、RESTful API、缓存、异步/定时任务、单元测试、项目部署上线）。
+
+最后，教程还包含了机器学习入门（kNN、决策树、朴素贝叶斯、回归、K-Means、集成学习、神经网络、自然语言处理）、项目实战、以及团队项目开发（软件过程、团队组建、项目选题、Docker应用、MySQL优化、API设计、商业项目开发要点、软件测试、自动化测试、性能调优、面试问题及补充内容）。项目提供了丰富的学习资源，如知乎专栏、QQ交流群和Bilibili视频，并分享了作者给初学者的建议。
+
+---
+
+## hyperswitch
+
+用 Rust 编写的开源支付路由，让支付更快、更可靠、更经济
+
+**作者:** [juspay](https://github.com/juspay.png) | **仓库:** [Github 链接](https://github.com/juspay/hyperswitch)
+**语言:** Rust | **Stars:** 16428
+**Forks:** 1816 | **Recent Stars** 193
+
+### 项目简介
+
+摘要：开源支付协调平台 Hyperswitch
+
+Hyperswitch 是 Juspay 开源的一款用 Rust 编写的支付协调平台，旨在提供快速、可靠且经济实惠的支付解决方案。作为 Juspay 的新一代产品，它是一个企业级、透明且模块化的支付平台，为数字业务提供访问最佳支付基础设施的能力。
+
+Hyperswitch 的核心功能包括：
+
+1.  **后端：** 处理各种支付流程，如授权、验证、作废和捕获，同时管理退款和拒付等后续流程。它还能与外部欺诈风险管理 (FRM) 或身份验证提供商集成。后端通过可定制的工作流优化支付路由，包括基于成功率、规则、流量分配、回退处理以及基于特定错误代码的智能重试机制。
+2.  **SDK（前端）：** 为网页、Android 和 iOS 提供统一的支付体验，支持卡片、钱包、BNPL、银行转账等多种支付方式及其底层支付服务提供商 (PSP) 的不同支付流程。结合储物柜功能，可以显示用户保存的支付方式。
+3.  **控制中心：** 提供无代码管理整个支付堆栈的能力。用户可以通过它创建路由、支付重试工作流，并定义触发 3DS、FRM 和附加费用模块的条件。控制中心提供跨集成 PSP 的交易、退款和拒付操作、交易层面日志和详细的支付性能分析。
+
+用户可以通过本地 Docker Setup、AWS 云部署或托管沙盒环境来体验 Hyperswitch。项目在 GitHub 上开放，遵循 Apache 2.0 许可证，并由 Juspay 的 150 余名工程师团队积极维护和开发。其愿景是成为“支付领域的 Linux”，拥抱支付多样性、拥抱开源、社区驱动、构建系统级软件并最大化为开发者、客户和合作伙伴创造价值。
+
+---
+
+## Agent-S
+
+Agent S：一个像人类一样使用计算机的开放式代理框架
+
+**作者:** [simular-ai](https://github.com/simular-ai.png) | **仓库:** [Github 链接](https://github.com/simular-ai/Agent-S)
+**语言:** Python | **Stars:** 3248
+**Forks:** 337 | **Recent Stars** 125
+
+### 项目简介
+
+Agent S: 一个像人类一样使用计算机的开放代理框架
+
+Agent S 是一个开源的代理框架，旨在通过 Agent-Computer Interface 实现计算机的自主交互。其目标是构建智能的 GUI 代理，使其能够从经验中学习并在计算机上自主执行复杂任务。
+
+最新的 Agent S2 版本是一个组合型通才-专家框架。它在 OSWorld、WindowsAgentArena 和 AndroidWorld 等基准测试中取得了最新的最优（SOTA）结果，在某些任务上，其成功率显著优于先前的 SOTA 方法，包括 OpenAI 的 CUA/Operator 和 Anthropic 的 Claude 3.7 Sonnet Computer-Use。
+
+该框架可以方便地安装（主要通过 pip）并支持多种大型语言模型（LLM）API，如 OpenAI、Anthropic、Gemini 等，也支持 Hugging Face Inference Endpoints 和 vLLM。Agent S2 可以利用 UI-TARS 作为接地模型来提高性能，但这不是强制要求。为了增强网络知识检索能力，Agent S 被设置为与 Perplexica 集成，这需要 Docker 设置。
+
+Agent S 提供了命令行接口（CLI）和 Python SDK (`gui_agents`) 两种使用方式。用户可以通过命令行指定不同的 LLM 和接地模型，或者使用 SDK 在 Python 脚本中控制代理。SDK 允许获取屏幕截图作为观察输入，并执行代理生成的动作（如 pyautogui 代码）。Agent S2 在运行时会利用一个可不断更新的知识库，该知识库可以通过 GitHub Releases 下载。
+
+Agent S 框架是一个积极开发中的项目，其论文已被 ICLR 2025 接受。它支持 macOS、Windows 和 Linux 操作系统，并提供详细的安装和使用指南。
+
+---
+
+## build-your-own-x
+
+从零开始重现你最喜欢的技术，精通编程
+
+**作者:** [codecrafters-io](https://github.com/codecrafters-io.png) | **仓库:** [Github 链接](https://github.com/codecrafters-io/build-your-own-x)
+**语言:** Markdown | **Stars:** 376652
+**Forks:** 35064 | **Recent Stars** 554
+
+### 项目简介
+
+项目摘要：通过从零开始实现技术掌握编程
+
+这个GitHub仓库是一个精选的学习资源集合，旨在通过动手实践、从零开始重新创建各种常用技术来帮助开发者深入理解编程。项目名称"build-your-own-x"（构建你自己的X）直观地表达了其核心理念，即通过亲手构建软件、框架或系统来掌握其工作原理。
+
+仓库提供了大量针对不同技术的、循序渐进的教程链接，涵盖了广泛的领域，包括但不限于：
+
+- 3D渲染器与增强现实
+- BitTorrent客户端
+- 区块链与加密货币
+- 聊天机器人、命令行工具
+- 数据库、Docker容器
+- 模拟器与虚拟机
+- 前端框架与库、游戏开发
+- Git版本控制
+- 网络协议栈
+- 神经网络与人工智能
+- 操作系统、物理引擎
+- 编程语言与解释器
+- 正则表达式引擎
+- 搜索引擎
+- Shell命令行解释器
+- 模板引擎、文本编辑器
+- 视觉识别系统、体素引擎
+- 网页浏览器、Web服务器
+  以及其他一些未分类的技术实现。
+
+每个分类下都列出了使用不同编程语言实现的教程，例如C、C++、C#、Go、Java、JavaScript、Python、Rust等，多数教程是免费的在线资源，有些是视频教程。
+
+该项目的目标是让学习者不仅了解技术的表面用法，更能触及其内部机制，从而提升编程技能和对技术原理的深刻理解。项目非常活跃，拥有大量的星标和贡献者，并欢迎社区提交新的教程或对现有内容进行改进。它提供了一个宝贵的资源库，适合那些希望通过实践来巩固和扩展编程知识的开发者。
+
+---
+
+## jes
+
+果冻进化模拟器
+
+**作者:** [carykh](https://github.com/carykh.png) | **仓库:** [Github 链接](https://github.com/carykh/jes)
+**语言:** Python | **Stars:** 78
+**Forks:** 40 | **Recent Stars** 7
+
+### 项目简介
+
+水母进化模拟器：一个个人实验项目
+
+这份内容介绍了一个名为 "Jelly Evolution Simulator" (简称jes) 的开源项目，该项目是由 carykh 创建的用于模拟水母进化的程序。项目代码托管在 GitHub 上，主要由 Python 语言编写。
+
+开发者明确表示，该项目是一个个人休闲实验，并非商业产品，不提供完善的质量保证、错误修复或技术支持。代码上传至 GitHub主要是为了方便其他开发者在此基础上进行修改（mod）。
+
+项目提供了基础的运行指令 `cmd python jes.py`。用户可以通过键盘快捷键与模拟器进行交互，例如 ESC 键关闭程序（此功能在近期更新中被移除，现改为通过命令行 Ctrl+C 结束）、X 键切换是否显示死亡水母上的 X 标记、S 键存储和查看特定物种信息、C 键更改物种颜色以区分、Q 键开关生物马赛克视图以及左右方向键或滚动条在时间线上前后滚动。
+
+近期更新（2025-01-11）主要修复了模拟后期大变异体难以找到的bug，增加了上述键盘控制，允许用户更改模拟中的生物数量，并修正了“观看样本”功能，使其能显示当前时间条所在代次的生物样本。
+
+项目文件结构清晰，包含了处理生物个体、用户界面、数据可视化等模块的 Python 脚本。仓库有少量贡献者，显示了代码库的活跃度和社区参与。
+
+总的来说，jes 项目是一个有趣的水母进化模拟工具，虽然开发者不提供正式支持，但其开源本质鼓励有兴趣的开发者进行探索和二次开发。
+
+---
+
+## leaked-system-prompts
+
+泄露的系统提示词集合
+
+**作者:** [jujumilk3](https://github.com/jujumilk3.png) | **仓库:** [Github 链接](https://github.com/jujumilk3/leaked-system-prompts)
+**语言:** | **Stars:** 5168
+**Forks:** 580 | **Recent Stars** 510
+
+### 项目简介
+
+大型语言模型（LLM）系统提示泄露集合
+
+这份内容的核心是一个名为“leaked-system-prompts”的 GitHub 仓库。该仓库的主要目的是收集和分享各类大型语言模型（LLM）系统提示（System Prompts）的泄露或公开信息。系统提示是指导 LLM 行为和生成内容的隐藏指令，对于理解模型的运作方式和潜在限制具有重要意义。
+
+仓库中包含了来自多个知名 AI 公司和模型的系统提示，包括：
+
+- Anthropic 的 Claude 系列（2.0、2.1、3 Haiku、3 Opus、3 Sonnet、3.5 Sonnet、3.7 Sonnet）以及其 API 工具使用和代码相关的提示。
+- Brave Leo AI 的提示。
+- 智谱 AI 的 ChatGLM4 提示。
+- Cursor IDE Agent 的提示。
+- Devv AI 的提示。
+- Discord 的 Clyde 提示。
+- ESTsoft 的 Alan 提示。
+- 用于代码补全的 Codeium 提示。
+- Colab AI 的提示。
+- Gandalf 提示。
+- GitHub Copilot Chat 的提示。
+- Google Gemini 1.5 的提示。
+- Manus 提示。
+- Microsoft Bing Chat 和 Microsoft Copilot 的提示。
+- 月之暗面的 Kimi Chat 提示。
+- Naver 的 Cue 提示。
+- Notion AI 的提示。
+- OpenAI 的 Assistants API、ChatGPT（包括 iOS 和 Android 版本）、ChatGPT4o 以及 DALL-E 3 的提示。还包含了 OpenAI Deep Research 的提示。
+- Opera Aria 的提示。
+- Perplexity.ai 的提示（包括 GPT4 版本）。
+- Phind 的提示。
+- Remoteli.io 提示。
+- Roblox Studio Assistant 的提示。
+- Snap MyAI 的提示。
+- v0 提示。
+- Wrtn 的提示（包括 GPT3.5 和 GPT4 版本）。
+- xAI 的 Grok 系列（Grok、Grok2、Grok3）提示。
+
+这些提示以 Markdown（.md）文件的形式组织和存储，通常以“供应商-模型\_日期.md”的命名格式呈现，例如 `anthropic-claude_2.0_20240306.md`。这使得使用者可以清晰地看到不同模型和版本在不同时间点的系统提示。
+
+该仓库拥有大量关注者（5.2k stars）和贡献者（19位），反映了社区对这类信息的高度关注和兴趣。
+
+总的来说，这个 GitHub 仓库是一个收集和分享 LLM 系统提示泄露信息的重要资源，为研究人员、开发者和普通用户提供了了解不同 AI 模型底层指令的机会。
+
+---
+
+## lobe-chat
+
+🤯 Lobe Chat - 开源、现代化设计的 AI 聊天框架。支持多种 AI 提供商（OpenAI / Claude 3 / Gemini / Ollama / DeepSeek / 通义千问）、知识库（文件上传 / 知识管理 / RAG）、多模态（插件/附带物）和思维链。一键免费部署您的私有 ChatGPT / Claude / DeepSeek 应用程序。
+
+**作者:** [lobehub](https://github.com/lobehub.png) | **仓库:** [Github 链接](https://github.com/lobehub/lobe-chat)
+**语言:** TypeScript | **Stars:** 59827
+**Forks:** 12639 | **Recent Stars** 299
+
+### 项目简介
+
+Lobe Chat：一款开源、现代设计的人工智能聊天框架
+
+Lobe Chat是一款开源且设计现代的人工智能聊天框架，核心目标是为用户提供一个功能丰富、易于使用且可高度自定义的AI对话平台。它支持接入多种主流AI服务提供商，包括但不限于OpenAI、Claude 3、Gemini、Ollama、DeepSeek和Qwen等，极大地扩展了用户的选择范围。
+
+项目强调多模态能力，支持Plugins（功能调用）和Artifacts（生成多种格式内容），增强了AI的实用性和互动性。通过集成知识库功能，用户可以上传文件（文档、图片、音视频）并进行知识管理和利用检索增强生成技术（RAG）进行对话，实现基于私人数据的智能问答。此外，Lobe Chat还具备思考链（Chain of Thought）可视化、对话分支、模型视觉识别、文本转语音（TTS）和语音转文本（STT）语音对话、文本到图像生成等高级功能，提升了AI的推理透明度、对话的灵活性和创造性。
+
+在部署方面，Lobe Chat提供了多种便捷的自托管方式，包括Vercel、Zeabur、Sealos、阿里云和Docker等，支持一键免费部署，让用户能够轻松建立自己的私有ChatGPT/Claude/DeepSeek等应用。项目还支持本地和远程数据库，以及多用户管理（基于next-auth或Clerk），满足不同用户对数据控制和隐私保护的需求。
+
+Lobe Chat注重用户体验，采用了PWA技术以提供接近原生应用的性能，并针对移动设备进行了优化设计。丰富的自定义主题选项也允许用户个性化调整界面。
+
+项目活跃开发中，社区氛围良好，欢迎通过GitHub Issues、Pull Requests、Discord等方式参与贡献和讨论。核心维护者为@arvinxx和@canisminor1990。
+
+总而言之，Lobe Chat是一个功能全面、设计精良的AI聊天框架，旨在通过集成多种AI模型、增强交互能力、简化部署流程，为用户打造一个强大的、个性化的、免费的AI Agent平台。
