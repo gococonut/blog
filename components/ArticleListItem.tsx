@@ -2,9 +2,9 @@ import Link from '@/components/Link'
 import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import { formatDate } from '@/utils/formatDate'
-import Image from '@/components/Image'
 import { cn } from '@/lib/utils'
 import type { Blog } from 'contentlayer/generated'
+import Image from '@/components/Image'
 
 interface ArticleListItemProps {
   post: Omit<Blog, 'body' | '_raw' | '_id'>
@@ -16,9 +16,9 @@ export default function ArticleListItem({ post }: ArticleListItemProps) {
   return (
     <article
       key={slug}
-      className="group bg-card hover:bg-primary/10 relative flex flex-col space-y-4 rounded-lg border p-6 transition-all duration-300 ease-in-out hover:scale-[1.02] hover:shadow-2xl"
+      className="group bg-card relative flex flex-col space-y-3 rounded-lg border p-3 transition-all duration-300 ease-in-out hover:scale-[1.02] hover:shadow-2xl sm:space-y-4 sm:p-6"
     >
-      <div className="flex flex-col space-y-4 md:flex-row md:gap-6 md:space-y-0">
+      <div className="flex flex-col space-y-3 md:flex-row md:gap-6 md:space-y-0">
         {cover && (
           <div className="flex-shrink-0 md:w-1/3">
             <Link href={`/blog/${slug}`} aria-label={`Read more: "${title}"`}>
@@ -32,29 +32,31 @@ export default function ArticleListItem({ post }: ArticleListItemProps) {
             </Link>
           </div>
         )}
-        <div className={cn('flex flex-col space-y-3', cover ? 'md:w-2/3' : 'w-full')}>
-          <h2 className="text-lg font-medium sm:text-xl md:text-xl">
-            <Link
-              href={`/blog/${slug}`}
-              className="text-foreground hover:text-primary transition-colors"
-            >
-              {title}
+        <div className="flex flex-1 flex-col justify-between">
+          <div className="space-y-2 sm:space-y-3">
+            <h2 className="text-base font-medium sm:text-lg md:text-xl">
+              <Link
+                href={`/blog/${slug}`}
+                className="text-foreground hover:text-primary transition-colors"
+              >
+                {title}
+              </Link>
+            </h2>
+            <Link href={`/blog/${slug}`} aria-label={`Read summary and full article: "${title}"`}>
+              <div className="prose line-clamp-2 max-w-none text-sm font-normal transition-colors duration-200 dark:text-gray-300">
+                {summary}
+              </div>
             </Link>
-          </h2>
-          <Link href={`/blog/${slug}`} aria-label={`Read summary and full article: "${title}"`}>
-            <div className="prose text-muted-foreground line-clamp-3 max-w-none text-sm font-normal transition-colors duration-200 sm:text-base dark:text-gray-300">
-              {summary}
-            </div>
-          </Link>
-          <div className="flex items-start justify-between">
-            <div className="flex flex-wrap gap-2">
+          </div>
+          <div className="flex items-center justify-between pt-2">
+            <div className="flex flex-wrap gap-1">
               {tags.map((tag) => (
                 <Tag key={tag} text={tag} />
               ))}
             </div>
             <dl className="flex-shrink-0">
               <dt className="sr-only">Published on</dt>
-              <dd className="text-sm font-light text-gray-400 dark:text-gray-500">
+              <dd className="text-muted-foreground text-xs font-light sm:text-sm dark:text-gray-500">
                 <time dateTime={date}>{formatDate(date, siteMetadata.locale)}</time>
               </dd>
             </dl>
