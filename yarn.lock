@@ -4487,6 +4487,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"animejs@npm:^4.0.2":
+  version: 4.0.2
+  resolution: "animejs@npm:4.0.2"
+  checksum: 7225635afcc65a94361a469be7f65aa7a5c0e8f5a777d24a2db6e675a4b6410513149c20da83667919c0b119f6ccb716061a69893a161f0feb6854f8651044fc
+  languageName: node
+  linkType: hard
+
 "ansi-escapes@npm:^5.0.0":
   version: 5.0.0
   resolution: "ansi-escapes@npm:5.0.0"
@@ -12388,6 +12395,7 @@ __metadata:
     "@types/react": ^19.0.8
     "@typescript-eslint/eslint-plugin": ^8.12.0
     "@typescript-eslint/parser": ^8.12.0
+    animejs: ^4.0.2
     body-scroll-lock: ^4.0.0-beta.0
     clsx: ^2.1.1
     contentlayer2: 0.5.5
