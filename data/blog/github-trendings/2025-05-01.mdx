@@ -1,0 +1,373 @@
+---
+title: Github Daily Trending
+date: 2025-05-01
+cover: https://hub-image.moreve.net/files/images/github-trending/2025-05-01.png
+tags: [开源项目,AI前沿,开发工具]
+summary: 这份内容汇总了多个开源项目，涵盖了AI生成领域的前沿技术，例如：Deep-Live-Cam项目旨在实现实时换脸和深度伪造视频生成；AI Engineering Hub提供了LLMs、RAGs和AI Agent的深度教程；Qwen-Agent是基于通义模型的智能体框架，支持函数调用、代码解释器和RAG；Qwen3是阿里巴巴通义团队发布的最新一代大型语言模型系列，具有多模型、强推理、好对齐和多语言等特点；Hyperswitch是一个基于Rust的开源支付协调系统，力图实现快速、可靠、经济的支付；Daytona为运行AI生成代码提供了安全隔离的基础设施；vLLM是一个用于大型语言模型的高效推理和服务引擎；Agent S致力于构建像人类一样使用电脑的开放式智能体；Microsoft的“Generative AI for Beginners”课程为生成式AI初学者提供了实战指导；Ladybird是一个从零开始构建的独立网页浏览器项目；mlx-swift-examples提供了使用MLX Swift库的机器学习示例；LLaMA-Factory是一个统一高效的LLM/VLM微调框架；最后，AutoMQ是基于S3的无状态Kafka替代方案，旨在显著降低成本并提高弹性。这些项目共同展示了当前技术在各自领域的最新进展和开源生态的活力。
+---
+
+
+## Deep-Live-Cam
+
+仅需一张图片即可实现实时换脸和一键视频换脸/深度伪造
+
+**作者:** [hacksider](https://github.com/hacksider.png) | **仓库:** [Github 链接](https://github.com/hacksider/Deep-Live-Cam)
+**语言:** Python | **Stars:** 54876
+**Forks:** 7897 | **Recent Stars** 1682
+
+### 项目简介
+
+Deep-Live-Cam：实时换脸与一键生成单图深度伪造视频
+
+这份内容主要介绍了名为“Deep-Live-Cam”的开源项目，该项目专注于实现实时换脸和利用单张图片快速生成深度伪造视频的功能。项目强调了其易用性，只需几个简单的步骤即可完成深度伪造操作。该工具主要面向AI生成媒体行业，期望作为一种提高生产力的手段，例如帮助艺术家制作自定义角色动画、创建引人入胜的内容或用于服装设计。
+
+项目开发者深知滥用的风险，并在其中内置了内容检查功能，以防止处理包含裸体、暴力、敏感材料等不当内容的媒体。他们承诺将继续负责任地开发该项目，遵守法律和道德规范，并声明如果法律要求，可能会关闭项目或添加水印。同时，项目也强调了用户应负责任且合法地使用该软件，若使用真实人物面部，必须获得许可并在分享时明确标注为深度伪造内容。
+
+项目提供了针对 Windows/Nvidia 用户的预编译版本，以实现更快的启动速度，尤其对于非技术用户而言。对于希望手动安装的用户，内容也提供了详细的步骤，涵盖了 Windows、macOS (包括 Apple Silicon) 的环境设置、代码库克隆、模型下载、依赖项安装以及针对不同硬件平台的 GPU 加速配置（CUDA、CoreML、DirectML、OpenVINO™）。此外，文档还介绍了该软件的两种主要使用模式：图像/视频模式和网络摄像头模式，并提供了一些使用技巧和窍门，例如如何优化图像效果、用于视频通话、添加“特殊嘉宾”（多人物换脸）、实时观看深度伪造电影、创建表情包以及用于虚拟主播等。
+
+内容最后列举了一些关于 Deep-Live-Cam 的新闻报道和评论，并致谢了为该项目做出贡献的个人和所依赖的开源库。
+
+----
+
+## ai-engineering-hub
+
+深入讲解大型语言模型 (LLMs)、检索增强生成 (RAGs) 和实际人工智能智能体应用教程
+
+**作者:** [patchy631](https://github.com/patchy631.png) | **仓库:** [Github 链接](https://github.com/patchy631/ai-engineering-hub)
+**语言:** Jupyter Notebook | **Stars:** 8645
+**Forks:** 1463 | **Recent Stars** 82
+
+### 项目简介
+
+AI Engineering Hub：LLM、RAG 和 AI Agent 应用深度教程集锦
+
+AI Engineering Hub 是一个专注于 AI 工程领域的开源项目，提供了关于大型语言模型（LLMs）、检索增强生成（RAGs）以及实际**AI Agent（人工智能代理）**应用的深度教程和代码示例。项目旨在帮助开发者和研究人员掌握快速发展的 AI 工程技术。
+
+该仓库强调理论与实践相结合，包含了丰富的代码示例，涵盖了构建推理模型、多模态 RAG、本地聊天应用、AI新闻生成器、品牌监控、语音代理等多种应用场景。特别值得关注的是，项目提供了关于如何构建 Agentic RAG、基于不同模型（如 DeepSeek, Gemma, Llama）的本地 Chatbot，以及多智能体协作应用（如股票分析师、航班/酒店预订代理）的详细示例。
+
+项目采用 MIT 许可证，鼓励社区贡献，欢迎通过 Fork 和 Pull Request 的方式分享新的教程、改进现有代码或报告问题。此外，项目还提供了时事通讯订阅，用户可以通过订阅获取数据科学电子书以及最新的教程和资源。
+
+总而言之，AI Engineering Hub 是一个宝贵的资源库，为想要深入了解和实践 LLMs, RAGs 和 AI Agent 构建的开发者提供了一个平台，其中包含大量实际代码和教程，帮助用户在 AI 工程领域取得成功。
+
+----
+
+## Qwen-Agent
+
+基于Qwen>=2.0的Agent框架及应用，包含函数调用、代码解释器、RAG和Chrome扩展
+
+**作者:** [QwenLM](https://github.com/QwenLM.png) | **仓库:** [Github 链接](https://github.com/QwenLM/Qwen-Agent)
+**语言:** Python | **Stars:** 7356
+**Forks:** 638 | **Recent Stars** 191
+
+### 项目简介
+
+Qwen-Agent 是一个基于通义大模型 (Qwen) >= 2.0 构建的智能体框架和应用集合。该框架充分利用了 Qwen 的指令遵循、工具使用、规划和记忆能力，旨在帮助开发者快速构建各种基于大型语言模型（LLM）的应用。Qwen-Agent 提供了核心组件，包括支持函数调用（Function Calling）的 LLM 封装、多种工具（Tool，例如代码解释器 Code Interpreter、检索增强生成 RAG 以及用于浏览器交互的 Chrome 扩展）以及高层级的 Agent 类。
+
+用户可以使用 Qwen-Agent 框架来开发自己的定制 Agent，通过组合不同的 LLM 能力、工具和文件（如 PDF 文档）来实现特定功能。例如，文档中提供了一个详细的 Python 代码示例，展示了如何构建一个能够调用自定义图像生成工具和内置代码解释器，并能读取 PDF 文件的 Agent。这个例子涵盖了如何定义 custom tool、配置 LLM 模型（支持阿里云 DashScope 和兼容 OpenAPI 的自部署模型），以及如何创建和运行 Assistant Agent。
+
+除了核心框架，Qwen-Agent 还提供了一些开箱即用的应用示例，如 Browser Assistant。该项目可以通过 PyPI 或源码安装，并支持通过 Gradio 快速搭建 Web UI 进行交互。
+
+项目的核心特性包括对函数调用的支持、内置的代码解释器工具（需要注意安全风险，不适用于生产环境）、RAG 功能以处理长文档问答，以及浏览器扩展。文档还简要介绍了如何使用 MCP（Model Context Protocol）服务器。
+
+总之，Qwen-Agent 是一个强大的开发框架，为开发者提供了构建基于 Qwen 模型的智能体应用所需的组件和示例，极大地简化了开发流程，并支持多种高级功能。
+
+----
+
+## Qwen3
+
+Qwen3 是阿里巴巴云通义团队开发的大语言模型系列
+
+**作者:** [QwenLM](https://github.com/QwenLM.png) | **仓库:** [Github 链接](https://github.com/QwenLM/Qwen3)
+**语言:** Shell | **Stars:** 19562
+**Forks:** 1288 | **Recent Stars** 570
+
+### 项目简介
+
+Qwen3: 阿里巴巴通义团队发布的最新一代大型语言模型系列。
+
+这篇摘要重点介绍了Qwen3大型语言模型系列的发布及其关键特性。Qwen3由阿里巴巴通义团队开发，是Qwen系列经验积累后的最新成果，提供了一系列多尺寸的密集模型和混合专家（MoE）模型，尺寸涵盖0.6B到235B不等，以满足不同应用场景的需求。
+
+Qwen3的主要亮点包括：
+
+1.  **模型多样性：** 提供多种尺寸的密集模型和MoE模型，包括0.6B, 1.7B, 4B, 8B, 14B, 32B，以及30B-A3B和235B-A22B等。
+2.  **灵活的思考模式：** 支持在复杂逻辑推理、数学和编码所需的“思考模式”与通用聊天所需的“非思考模式”之间无缝切换，以优化性能。
+3.  **推理能力显著提升：** 在数学、代码生成和常识逻辑推理方面显著优于此前的Qwen版本。
+4.  **卓越的人类偏好对齐：** 在创意写作、角色扮演、多轮对话和指令遵循方面表现出色，提供更自然和沉浸的对话体验。
+5.  **强大的Agent能力：** 在思考和非思考模式下都能与外部工具精准集成，在复杂的基于Agent的任务中表现领先。
+6.  **多语言支持：** 支持超过100种语言和方言，并具有出色的多语言指令遵循和翻译能力。
+
+摘要还提供了获取Qwen3模型的多种途径，包括Hugging Face和ModelScope，以及在不同框架下运行和部署Qwen3的指南，例如Transformers、ModelScope、llama.cpp、Ollama、LMStudio、MLX LM、SGLang和vLLM。这些指南涵盖了推理、本地运行、部署和量化等关键环节。此外，Qwen3支持工具使用和微调，并提供了相关框架的推荐。
+
+Qwen3模型采用Apache 2.0许可证开源。文档中包含了引用信息以及联系团队的途径（Discord和微信群）。
+
+----
+
+## hyperswitch
+
+一个用 Rust 编写的开源支付交换系统，旨在让支付变得快速、可靠且经济实惠
+
+**作者:** [juspay](https://github.com/juspay.png) | **仓库:** [Github 链接](https://github.com/juspay/hyperswitch)
+**语言:** Rust | **Stars:** 16912
+**Forks:** 1962 | **Recent Stars** 275
+
+### 项目简介
+
+摘要：开源支付协调平台 Hyperswitch：更快、更可靠、更经济
+
+Hyperswitch 是由 Juspay 公司开发的一款开源支付协调平台，旨在为数字企业提供访问最佳支付基础设施的能力。它以 Rust 语言编写，核心目标是实现支付处理的快速、可靠和经济。
+
+该平台采用模块化和透明的设计，核心组件包括：
+
+1.  **Hyperswitch Backend:** 负责无缝处理各种支付流程，如授权、认证、作废、捕获、退款和拒付处理。它还支持非支付功能，例如将外部欺诈风险管理 (FRM) 或认证提供商集成到支付流程中。后端通过灵活的工作流优化支付路由，支持基于成功率、规则、流量分配、回退处理以及针对特定错误代码的智能重试。
+
+2.  **SDK (Frontend):** 提供统一的支付体验，支持卡片、钱包、先买后付 (BNPL)、银行转账等多种支付方式，同时兼容不同支付服务提供商 (PSP) 的支付流程。配合 Locker 功能，可以展示用户已保存的支付方式。SDK 提供 Web、Android 和 iOS 版本。
+
+3.  **Control Center:** 提供无代码界面管理整个支付堆栈，包括配置路由、支付重试工作流，以及定义调用 3DS、FRM 和附加费模块的条件。用户可以通过控制中心访问跨所有集成 PSP 的交易、退款、拒付操作，查看交易日志进行调试，并获取详细的支付性能分析。
+
+Hyperswitch 可以通过 Docker Compose 在本地快速搭建和测试，也支持在 AWS、GCP 和 Azure 等云平台上部署。此外，用户还可以注册 hosted sandbox 进行产品体验。
+
+Hyperswitch 的愿景是成为“支付领域的 Linux”，构建一个设计良好、基于行业最佳实践的参考平台，帮助企业拥有并定制自己的支付堆栈，同时依靠核心团队持续创新和提供支持。该项目由 Juspay 团队维护，遵循 Apache 2.0 开源许可协议。
+
+----
+
+## daytona
+
+Daytona：运行人工智能生成代码的安全弹性基础设施
+
+**作者:** [daytonaio](https://github.com/daytonaio.png) | **仓库:** [Github 链接](https://github.com/daytonaio/daytona)
+**语言:** TypeScript | **Stars:** 17170
+**Forks:** 1761 | **Recent Stars** 421
+
+### 项目简介
+
+Daytona：安全弹性的人工智能生成代码运行基础设施
+
+本文档介绍了 Daytona 开源项目，它是一个专为运行人工智能（AI）生成代码而设计的安全且弹性的基础设施。Daytona 的核心目标是提供一个安全隔离的环境（Sandbox），以便在不影响基础设施安全的前提下执行 AI 生成的不可信代码。
+
+Daytona 提供以下主要特性：
+
+*   **极速基础设施：** 代码到执行的 Sandbox 创建时间低于 90 毫秒，确保高效的代码运行。
+*   **分离且隔离的运行时：** 提供高度隔离的环境，有效规避运行潜在恶意 AI 代码带来的风险。
+*   **大规模并行处理：** 支持并发的 AI 工作流，未来计划支持 Sandbox 文件系统和内存状态的分叉。
+*   **程序化控制：** 提供全面的 API，用于文件操作、Git 集成、LSP（Language Server Protocol）支持以及代码执行。
+*   **无限持久性：** 创建的 Sandbox 可以持久存在。
+*   **OCI/Docker 兼容性：** 支持使用任何 OCI 或 Docker 镜像来创建 Sandbox，提高灵活性。
+
+
+Daytona 支持 Python 和 TypeScript SDK，方便开发者集成和使用。文档提供了快速入门指南，包括创建账号、生成 API Key 以及如何使用 SDK 创建和管理 Sandbox 的 Python 和 TypeScript 代码示例。这些示例清晰地展示了如何初始化 Daytona 客户端、创建 Sandbox、在 Sandbox 中运行代码，并清理资源。
+
+该项目基于 AGPL-3.0 开源许可证，鼓励社区贡献。文档中包含了贡献指南、行为规范和安全政策等额外资源链接。
+
+总而言之，Daytona 是一个专注于安全和性能的基础设施解决方案，旨在赋能开发者安全高效地在隔离环境中运行 AI 生成的代码，是人工智能应用开发和集成的有力工具。
+
+----
+
+## vllm
+
+一个用于大型语言模型的高吞吐量和内存高效推理和服务引擎
+
+**作者:** [vllm-project](https://github.com/vllm-project.png) | **仓库:** [Github 链接](https://github.com/vllm-project/vllm)
+**语言:** Python | **Stars:** 46283
+**Forks:** 7180 | **Recent Stars** 128
+
+### 项目简介
+
+vLLM是一个专为大型语言模型（LLMs）设计的高吞吐量、内存高效的推理和服务引擎。该项目起源于加州大学伯克利分校的Sky Computing实验室，现已发展成为一个由学术界和工业界共同贡献的开源项目。
+
+vLLM的主要优势在于其卓越的性能，这得益于以下关键技术：
+
+1.  **PagedAttention机制：**高效管理注意力机制中的键值（Key-Value）内存，显著提升内存利用率。
+2.  **连续批量处理：**能够持续处理传入请求，提高硬件利用率。
+3.  **优化的模型执行：**利用CUDA/HIP图形实现快速模型执行。
+4.  **多种量化支持：**支持GPTQ、AWQ、INT4、INT8和FP8等量化技术，进一步提高效率。
+5.  **优化的CUDA内核：**集成FlashAttention和FlashInfer等优化库。
+6.  **推测式解码（Speculative Decoding）：**加速推理过程。
+7.  **分块预填充（Chunked Prefill）：**优化长序列处理。
+
+vLLM不仅性能强大，而且易于使用和灵活部署：
+
+1.  **无缝集成Hugging Face模型：**支持大多数流行的开源模型。
+2.  **支持多种解码算法：**包括并行采样、束搜索等。
+3.  **分布式推理：**支持张量并行和流水线并行。
+4.  **流式输出：**支持实时生成结果。
+5.  **OpenAI兼容API：**方便集成到现有应用中。
+6.  **广泛的硬件支持：**兼容NVIDIA、AMD、Intel、PowerPC的CPU和GPU以及AWS Neuron等硬件平台。
+7.  **前缀缓存：**提高重复请求的响应速度。
+8.  **多LoRA支持：**方便进行高效的模型微调和部署。
+
+vLLM得到了a16z、Dropbox、Sequoia Capital等机构的资金支持，以及AMD、NVIDIA、Google Cloud、AWS等提供计算资源。项目提供了详细的文档、博客、论文、论坛和Slack社区，方便用户学习和贡献。
+
+总而言之，vLLM是一个功能强大、性能优异、易于部署且受到广泛社区支持的LLM推理和服务解决方案，旨在让更多用户能够便捷高效地使用大型语言模型。
+
+----
+
+## Agent-S
+
+Agent S：一个像人类一样使用电脑的开放式智能体框架
+
+**作者:** [simular-ai](https://github.com/simular-ai.png) | **仓库:** [Github 链接](https://github.com/simular-ai/Agent-S)
+**语言:** Python | **Stars:** 3517
+**Forks:** 358 | **Recent Stars** 318
+
+### 项目简介
+
+Agent S：用于像人类一样使用计算机的开放式智能体框架
+
+摘要：
+本文介绍了一个名为 Agent S 的开源框架，特别是其最新版本 Agent S2，旨在构建能够自主与计算机交互并执行复杂任务的智能图形用户界面（GUI）智能体。与现有方法不同，Agent S2 采用了一种组合式的通用-专用框架，使其能够在 OSWorld、WindowsAgentArena 和 AndroidWorld 等多个主流计算机使用基准测试中取得当前的最优（SOTA）结果，性能超越了 OpenAI 和 Anthropic 等公司的相关智能体。
+
+Agent S2 的核心能力在于像人类一样理解并操作计算机界面。框架的设计使其可以通过 agent-computer interface (ACI) 实现自主学习和任务执行。实现这一能力的关键组件是其视觉基础模型和检索机制，结合大型语言模型 (LLM) 进行推理和决策。尤其强调了对 UI-TARS 作为基础模型的支持，并提供了与现有API（如 Claude 和 GPT 系列）以及自定义端点（如 Hugging Face TGI 和 vLLM）的集成方式用于视觉基础。此外，框架集成了对 Perplexica 的支持，以增强网络知识检索能力。
+
+文档提供了详细的安装和设置指南，包括 Python 包安装、环境变量配置以及 Perplexica 的设置步骤，并特别提示了 Linux 环境下使用 conda 可能遇到的兼容性问题。同时，提供了通过命令行界面 (CLI) 和 `gui_agents` SDK 使用 Agent S2 的具体代码示例，展示了如何加载模型、进行视觉基础以及执行操作。框架还利用在线知识库不断更新其能力，并提供了下载知识库的说明。
+
+总而言之，Agent S 是一个积极开发的、开源的计算机使用智能体框架，通过其创新的组合式架构和对多种模型的支持，在自主计算机操作领域展现了领先的水平，为AI领域的研究者和开发者提供了强大的工具和参考。
+
+----
+
+## generative-ai-for-beginners
+
+21 节课，开启你的生成式人工智能实战之路 🔗 https://microsoft.github.io/generative-ai-for-beginners/
+
+**作者:** [microsoft](https://github.com/microsoft.png) | **仓库:** [Github 链接](https://github.com/microsoft/generative-ai-for-beginners)
+**语言:** Jupyter Notebook | **Stars:** 81689
+**Forks:** 41948 | **Recent Stars** 474
+
+### 项目简介
+
+微软发布了一份名为“Generative AI for Beginners”（面向初学者的生成式人工智能）的免费课程，旨在帮助学习者掌握构建生成式AI应用程序的基础知识。该课程包含21个课程，内容涵盖多个方面，包括理解生成式AI和大型语言模型（LLMs）、LLMs的选择与比较、负责任地使用生成式AI、基础和高级的Prompt工程技巧、构建不同类型的应用（如文本生成、聊天应用、搜索应用、图像生成应用）、低代码AI应用的构建、与外部函数集成、AI应用的UX设计、安全性保障、应用生命周期管理、RAG（检索增强生成）与向量数据库、开源模型与Hugging Face、AI Agents、LLMs微调以及使用小型语言模型（SLMs）、Mistral和Meta模型进行构建。
+
+该课程以实践为导向，提供了Python和TypeScript两种语言的代码示例，并支持Azure OpenAI Service、GitHub Marketplace Model Catalog和OpenAI API等多种运行环境。为了方便学习者入门，课程提供了详细的环境搭建指南。每个课程都包含简短的视频介绍、文字课程说明、代码示例以及额外的学习资源。
+
+除了课程内容，项目还积极鼓励社区参与，欢迎提交问题和贡献。针对初创企业，微软提供了**Microsoft for Startups Founders Hub**，注册后可获得免费的OpenAI积分和Azure积分，以通过Azure OpenAI服务访问模型。此外，微软还提供了其他一系列面向初学者的课程，涵盖AI Agents、.NET and JavaScript for Generative AI、机器学习、数据科学、网络开发、物联网、XR开发以及GitHub Copilot的使用等主题。
+
+总之，“Generative AI for Beginners”是一门全面且实用的课程，通过详细的课程安排和丰富的资源，帮助初学者系统地学习并实践生成式AI应用的开发，同时也积极构建学习社区并为初创企业提供支持。
+
+----
+
+## ladybird
+
+真正的独立网络浏览器
+
+**作者:** [LadybirdBrowser](https://github.com/LadybirdBrowser.png) | **仓库:** [Github 链接](https://github.com/LadybirdBrowser/ladybird)
+**语言:** C++ | **Stars:** 37977
+**Forks:** 1577 | **Recent Stars** 231
+
+### 项目简介
+
+Ladybird：一个独立的网页浏览器项目
+
+这份内容主要介绍了 Ladybird，一个“真正独立”的网页浏览器项目。它强调 Ladybird 使用的是基于 Web 标准的全新引擎，并且目前处于“预 Alpha”开发阶段，仅适合开发者使用。项目的目标是构建一个功能完整、可用于现代网络的浏览器。
+
+Ladybird 采用了多进程架构设计，包含主 UI 进程、webContents 渲染进程、图像解码进程和请求服务器进程，以提高对恶意内容的鲁棒性。图像解码和网络连接都在单独的进程中进行，每个标签页也有自己的渲染进程并进行沙箱隔离。
+
+项目目前的核心库组件很多继承自 SerenityOS，包括 Web 渲染引擎 LibWeb、JavaScript 引擎 LibJS、WebAssembly 实现 LibWasm 等。文档中提供了构建和运行 Ladybird 的指引，并提到它可以在 Linux、macOS、Windows (通过 WSL2) 等多个操作系统上运行。
+
+项目的开发遵循 2 条款 BSD 许可协议，并提供了多种参与和获取支持的方式，例如加入 Discord 服务器、阅读贡献指南和问题报告指引等。内容还展示了项目的技术栈语言分布，其中 C++ 占比最高（64.8%），其次是 HTML 和 JavaScript。
+
+总的来说，Ladybird 是一个雄心勃勃的项目，旨在从零开始构建一个独立的浏览器，虽然尚处于早期阶段，但已经具备了基本的架构和核心功能，并积极寻求社区参与和资助。
+
+----
+
+## mlx-swift-examples
+
+使用 MLX-Swift 的示例
+
+**作者:** [ml-explore](https://github.com/ml-explore.png) | **仓库:** [Github 链接](https://github.com/ml-explore/mlx-swift-examples)
+**语言:** Swift | **Stars:** 1718
+**Forks:** 213 | **Recent Stars** 16
+
+### 项目简介
+
+MLX Swift Examples 项目概述
+
+该项目名为 "mlx-swift-examples"，顾名思义，它提供了一系列使用MLX Swift库编写的示例程序。MLX Swift是一个用于机器学习的Swift库，该项目旨在通过实际的代码示例，帮助开发者理解和应用MLX Swift。
+
+项目包含多个不同领域的示例应用和工具，其中包括：
+
+*   **MNISTTrainer**: 用于MNIST手写数字识别，展示了如何在iOS和macOS上下载数据并训练LeNet模型。
+*   **LLMEval**: 用于大型语言模型 (LLM) 的评估，演示了如何从Hugging Face下载模型和tokenizer，并生成文本。
+*   **VLMEval**: 支持视觉语言模型 (VLM)，可在iOS, macOS和visionOS上运行，分析图像并生成文本描述。
+*   **MLXChatExample**: 一个支持LLM和VLM的聊天应用示例，可在iOS和macOS上运行。
+*   **LinearModelTraining**: 一个简单的线性模型训练示例。
+*   **StableDiffusionExample**: 用于图像生成，可在iOS和macOS上下载Stable Diffusion模型并根据提示生成图像。
+*   命令行工具：**llm-tool**用于文本生成，**image-tool**用于图像生成，**mnist-tool**用于MNIST训练。
+
+这些示例不仅可作为学习资源，还可将其中包含的MLXLLM, MLXVLM, MLXLMCommon, MLXMNIST, MLXEmbedders和StableDiffusion等库作为Swift Package在其他项目中重复使用。
+
+项目提供了详细的文档链接，涵盖了模型移植、各种模型类型库的API介绍以及故障排除指南。开发者可以通过Xcode或命令行运行这些示例，`mlx-run`脚本简化了命令行运行流程。
+
+总而言之，"mlx-swift-examples"项目是MLX Swift库的配套资源，通过丰富的示例程序和可重用库，展示了如何在Swift中进行机器学习开发，涵盖了从基本模型训练到大型语言/视觉模型和图像生成等多个应用领域。
+
+----
+
+## LLaMA-Factory
+
+统一高效微调100多个大型语言模型和视觉语言模型（ACL 2024）
+
+**作者:** [hiyouga](https://github.com/hiyouga.png) | **仓库:** [Github 链接](https://github.com/hiyouga/LLaMA-Factory)
+**语言:** Python | **Stars:** 48031
+**Forks:** 5865 | **Recent Stars** 77
+
+### 项目简介
+
+LLaMA Factory 是一个用于大型语言模型（LLMs）和视觉语言模型（VLMs）的高效微调统一框架，项目论文已被 ACL 2024 接收。它支持包括 LLaMA、Qwen、Mistral、ChatGLM、Phi 等在内的 100 多种模型，并集成了持续预训练、监督微调（SFT）、奖励模型（RM）训练、PPO、DPO、KTO、ORPO 等多种训练方法。为了提高效率和降低资源消耗，LLaMA Factory 支持 16 位全参数微调、冻结微调，以及 LoRA、QLoRA（支持 2、3、4、5、6、8 位量化）等参数高效微调技术。
+
+项目提供了用户友好的命令行接口（CLI）和基于 Gradio 的 Web UI (LLaMA Board)，使用户无需编写代码即可轻松进行模型训练、推理和模型合并。它还集成了多种先进算法和实用技巧，如 GaLore、BAdam、APOLLO 等优化器，以及 FlashAttention-2、Unsloth、RoPE scaling 等技术，进一步提升训练速度和降低内存消耗。特别是 QLoRA 技术，在 GPU 显存效率上相较 ChatGLM 的 P-Tuning 有显著优势。
+
+LLaMA Factory 支持从 Hugging Face、ModelScope 和 Modelers Hub 下载模型和数据集，并提供了丰富的预训练、SFT 和偏好数据集。项目文档详细，包含了安装指南、数据准备、快速入门、Web UI 使用、Docker 构建以及使用 OpenAI 风格 API 和 vLLM 进行模型部署的说明。值得一提的是，它还支持 Ascend NPU 设备，并提供相应的安装和使用指导。
+
+LLaMA Factory 开源并在 Apache-2.0 许可下发布，广泛应用于各种研究和实际项目中，如医学、法律、金融、代码生成、机器人控制等。项目活跃更新，不断支持最新的模型和技术。
+
+----
+
+## automq
+
+AutoMQ：基于 S3 的无状态 Kafka，成本效益提升 10 倍，无跨可用区流量成本，数秒内自动扩缩容，个位数毫秒级延迟，多可用区高可用
+
+**作者:** [AutoMQ](https://github.com/AutoMQ.png) | **仓库:** [Github 链接](https://github.com/AutoMQ/automq)
+**语言:** Java | **Stars:** 5989
+**Forks:** 401 | **Recent Stars** 43
+
+### 项目简介
+
+AutoMQ：S3 上的无状态 Kafka
+
+AutoMQ 是一个基于 S3 (或S3兼容存储) 的无状态 Kafka 替代方案。它旨在解决传统 Apache Kafka 在云环境中面临的两个主要痛点。
+
+首先，AutoMQ 解决了 Kafka 集群难以弹性伸缩的问题。由于 Kafka 代理的有状态特性，扩缩容需要进行数据迁移或分区重分配，过程复杂且耗时。AutoMQ 无需数据移动，计算层（broker）无状态，可以在几秒钟内完成 Auto Scaling，真正实现按需付费。
+
+其次，AutoMQ 显著降低了云环境下运行 Kafka 的成本。传统 Kafka 在云上部署会产生高昂的 EBS 存储费、跨可用区（AZ）流量费以及由于扩缩容受限导致的资源过度预留。AutoMQ 利用对象存储作为主要存储，消除了 AWS 和 GCP 上的跨可用区流量成本；通过零 RPO 和秒级 RTO 的高可靠性，以及 99.999999999% 的耐久性，提供了企业级数据保障。实际测试表明，AutoMQ 可将云上 Kafka 成本降低高达 90%。
+
+AutoMQ 保留了 Apache Kafka 的所有功能，并与其 API 完全兼容，因此现有 Kafka 应用无需修改即可迁移到 AutoMQ。其架构基于 Apache Kafka 的分支，通过引入新的存储引擎，将经典共享无关（shared-nothing）架构转变为共享存储架构。核心组件包括 S3 Storage Adapter、S3Stream（包含 WAL 和对象存储模块）以及自动平衡器（Auto Balancer）和机架感知路由器（Rack-aware Router），优化了数据存储、访问性能和流量成本。特别是机架感知路由器，通过向处于不同可用区的客户端提供特定分区元数据，从而避免了跨可用区费用。
+
+该项目提供了易于上手的快速入门，用户可以使用 Docker Compose 在单节点或三节点集群上进行评估和开发。此外，AutoMQ 还提供了 Linux 和 Kubernetes（企业版）、Ceph/MinIO/CubeFS/HDFS 等多种部署选项，并提供 AWS 和阿里云市场的免费试用。
+
+最新的 Table Topic 功能将流处理和数据分析结合，支持 Apache Iceberg 和 S3 Tables 等，进一步扩展了其应用场景。
+
+AutoMQ 已被全球多家大型企业采用，用于替代 Kafka 并获得显著的成本优化和弹性提升。该项目采用 Apache 2.0 许可证，并通过 GitHub Issues、Slack 和微信群提供社区支持。项目代码库活跃，持续进行更新和功能改进。
+
+----
+
+## bitcoin
+
+Bitcoin Core 集成/预发布分支
+
+**作者:** [bitcoin](https://github.com/bitcoin.png) | **仓库:** [Github 链接](https://github.com/bitcoin/bitcoin)
+**语言:** C++ | **Stars:** 83187
+**Forks:** 37138 | **Recent Stars** 46
+
+### 项目简介
+
+Bitcoin Core集成/暂存库概览
+
+这份内容主要介绍了比特币核心（Bitcoin Core）项目在代码托管平台GitHub上的集成和暂存库。Bitcoin Core是连接比特币点对点网络的核心软件，负责下载和验证所有区块和交易，并且可选择包含一个钱包和图形用户界面。项目采用MIT许可证发布。
+
+内容详细展示了项目的文件和文件夹结构，以及各个文件和路径最近的提交信息和日期。它强调了`master`分支会定期构建和测试，但不能保证完全稳定；官方稳定版本会通过标签（tags）在发布分支上创建。GUI（图形用户界面）的开发独立在一个专门的仓库中进行。
+
+项目非常重视开发流程的严谨性，提供了对开发者有用的指南，并强调了测试和代码审查的重要性。鼓励开发者为新代码编写单元测试，并鼓励对他人提交的代码进行测试和审查，指出这是保障项目安全性（避免资金损失）的关键瓶颈。内容还提及了自动化的单元测试和集成测试，以及持续集成（CI）系统在Windows、Linux和macOS上的构建和测试支持。同时，也强调了手动质量保证（QA）测试的必要性。
+
+此外，内容还提到了项目支持翻译，并建议将翻译更改提交到Transifex平台上，而不是通过GitHub Pull Request。
+
+最后，页面展示了项目的基本信息，包括网站链接、许可证信息、安全政策、GitHub上的星标、关注人数、复刻数量、发布版本列表（截止到Bitcoin Core 29.0）、贡献者列表，以及项目使用的主要编程语言及其百分比（C++、Python、C等）。
+
+总而言之，这份内容旨在向潜在贡献者和用户提供比特币核心项目的代码库介绍、开发流程、测试方法、协作方式以及项目的一些基本统计数据。
