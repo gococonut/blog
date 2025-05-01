@@ -163,7 +163,7 @@ export default function PostLayout({
             setTimeout(() => {
               animate(buttonRef.current as Element, {
                 scale: [0, 1],
-                opacity: [0, 1],
+                opacity: [0, 0.9],
                 duration: 300,
                 easing: 'easeOutBack',
               })
@@ -249,13 +249,13 @@ export default function PostLayout({
           <button
             ref={buttonRef}
             onClick={handleToggleToc}
-            className="bg-primary-400/80 hover:bg-primary-500 dark:bg-primary-500/70 dark:hover:bg-primary-400 fixed right-6 bottom-6 z-50 rounded-full p-3 text-white shadow-lg transition-all duration-300 lg:hidden"
+            className="bg-primary-400/70 hover:bg-primary-500 dark:bg-primary-500/70 dark:hover:bg-primary-400 fixed right-6 bottom-6 z-50 rounded-full p-3 text-white shadow-lg transition-all duration-300 lg:hidden"
             aria-label={isTocOpen ? '关闭目录' : '打开目录'}
             style={{
               opacity: 0, // 初始状态为完全透明
               transform: 'scale(0)', // 初始状态为缩小
               ...(isPageLoaded && {
-                opacity: scrollingDown ? 0.3 : 1,
+                opacity: scrollingDown ? 0.3 : 0.7,
                 transform: 'scale(1)',
               }),
             }}
