@@ -13,7 +13,7 @@ import siteMetadata from '@/data/siteMetadata'
 import ScrollTopAndComment from '@/components/ScrollTopAndComment'
 import { formatDate } from '@/utils/formatDate'
 import TableOfContents, { Heading } from '@/components/TableOfContents'
-import { ListOrdered, ChevronUp, ChevronDown } from 'lucide-react'
+import { ListOrdered } from 'lucide-react'
 
 const editUrl = (path) => `${siteMetadata.siteRepo}/blob/main/data/${path}`
 const discussUrl = (path) =>
@@ -50,30 +50,53 @@ export default function PostLayout({
   return (
     <SectionContainer>
       <ScrollTopAndComment />
-      {/* Mobile TOC Panel (fixed, bottom) */}
+      {/* Mobile TOC Button and Panel */}
       {headings && headings.length > 0 && (
-        <div className="fixed bottom-0 left-0 right-0 z-50 lg:hidden bg-background/95 supports-[backdrop-filter]:bg-background/60 backdrop-blur border-t">
-          <div
-            className="container flex items-center justify-between p-4 cursor-pointer"
+        <>
+          {/* TOC Button */}
+          <button
             onClick={() => setIsTocOpen(!isTocOpen)}
+            className="fixed bottom-8 right-8 z-50 lg:hidden rounded-full bg-primary-400 p-3 text-white shadow-lg hover:bg-primary-600 transition-colors"
+            aria-label="打开目录"
           >
-            <h3 className="text-lg font-medium">目录</h3>
-            {isTocOpen ? (
-              <ChevronDown className="h-5 w-5" />
-            ) : (
-              <ChevronUp className="h-5 w-5 text-primary-500" />
-            )}
-          </div>
+            <ListOrdered className="h-5 w-5" />
+          </button>
+
+          {/* TOC Panel */}
           {isTocOpen && (
-            <div className="container max-h-[50vh] overflow-y-auto p-4">
-              <TableOfContents
-                headings={headings}
-                isMobile={true}
-                onItemClick={() => setIsTocOpen(false)}
-              />
+            <div className="fixed bottom-0 left-0 right-0 z-50 lg:hidden bg-background/95 supports-[backdrop-filter]:bg-background/60 backdrop-blur border-t">
+              <div className="container max-h-[50vh] overflow-y-auto p-4">
+                <div className="mb-4 flex items-center justify-between">
+                  <h3 className="text-lg font-medium">目录</h3>
+                  <button
+                    onClick={() => setIsTocOpen(false)}
+                    className="rounded-lg p-1 text-gray-500 hover:bg-gray-100 dark:text-gray-400 dark:hover:bg-gray-800"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-6 w-6"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M6 18L18 6M6 6l12 12"
+                      />
+                    </svg>
+                  </button>
+                </div>
+                <TableOfContents
+                  headings={headings}
+                  isMobile={true}
+                  onItemClick={() => setIsTocOpen(false)}
+                />
+              </div>
             </div>
           )}
-        </div>
+        </>
       )}
       <article>
         <div>
