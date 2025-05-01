@@ -53,10 +53,33 @@ export default function PostLayout({
   const panelRef = useRef<HTMLDivElement>(null)
   const tocContentRef = useRef<HTMLDivElement>(null)
   const [isPageLoaded, setIsPageLoaded] = useState(false)
+  const [scrollingDown, setScrollingDown] = useState(false)
+  const lastScrollY = useRef(0)
+
+  // Handle scroll direction detection
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY
+
+      if (currentScrollY > lastScrollY.current) {
+        setScrollingDown(true)
+      } else {
+        setScrollingDown(false)
+      }
+
+      lastScrollY.current = currentScrollY
+    }
+
+    window.addEventListener('scroll', handleScroll, { passive: true })
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+    }
+  }, [])
 
   useEffect(() => {
     if (root.current) {
-      scope.current = createScope({ root: root.current }).add(self => {
+      scope.current = createScope({ root: root.current }).add((self) => {
         // 创建目录面板的动画
         self.add('toggleToc', (isOpen: boolean) => {
           if (buttonRef.current && panelRef.current) {
@@ -129,35 +152,22 @@ export default function PostLayout({
           }
         })
 
-        // 创建按钮进场动画
+        // 创建按钮进场动画 - 完全与关闭目录时一致
         self.add('buttonEntrance', () => {
           if (buttonRef.current) {
-            // 设置初始状态
+            // 设置初始状态 - 完全透明
             buttonRef.current.style.opacity = '0'
-            buttonRef.current.style.transform = 'scale(0.5) translateY(10px)'
+            buttonRef.current.style.transform = 'scale(0)'
 
-            // 按钮入场动画序列 - 简化版
+            // 完全匹配关闭目录时按钮的动画
             setTimeout(() => {
               animate(buttonRef.current as Element, {
-                scale: [0.8, 1],
-                translateY: ['10px', '0px'],
+                scale: [0, 1],
                 opacity: [0, 1],
-                duration: 400,
-                easing: 'easeOutQuint',
+                duration: 300,
+                easing: 'easeOutBack',
               })
-
-              // 简化后的提示动画，轻微闪烁一次
-              setTimeout(() => {
-                if (buttonRef.current) {
-                  animate(buttonRef.current as Element, {
-                    scale: [1, 1.1, 1],
-                    duration: 500,
-                    easing: 'easeInOutQuad',
-                    loop: 1
-                  })
-                }
-              }, 500)
-            }, 600) // 减少延迟
+            }, 600)
           }
         })
       })
@@ -178,6 +188,11 @@ export default function PostLayout({
 
   // 页面加载时执行按钮动画
   useEffect(() => {
+    // 修改滚动方向状态，确保初始加载时不会应用滚动状态
+    const initialScrollY = window.scrollY
+    lastScrollY.current = initialScrollY
+    setScrollingDown(false)
+
     if (scope.current && !isPageLoaded && headings && headings.length > 0) {
       setTimeout(() => {
         if (scope.current) {
@@ -191,11 +206,13 @@ export default function PostLayout({
   // 监听点击外部关闭目录
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (isTocOpen &&
+      if (
+        isTocOpen &&
         tocContentRef.current &&
         !tocContentRef.current.contains(event.target as Node) &&
         buttonRef.current &&
-        !buttonRef.current.contains(event.target as Node)) {
+        !buttonRef.current.contains(event.target as Node)
+      ) {
         setIsTocOpen(false)
         if (scope.current) {
           scope.current.methods.toggleToc(false)
@@ -213,7 +230,7 @@ export default function PostLayout({
   }, [isTocOpen])
 
   const handleToggleToc = () => {
-    setIsTocOpen(prev => {
+    setIsTocOpen((prev) => {
       const newState = !prev
       if (scope.current) {
         scope.current.methods.toggleToc(newState)
@@ -232,25 +249,32 @@ export default function PostLayout({
           <button
             ref={buttonRef}
             onClick={handleToggleToc}
-            className="fixed bottom-6 right-6 z-50 lg:hidden rounded-full bg-primary-400/80 p-2.5 text-white shadow-lg hover:bg-primary-600 dark:bg-primary-600/80 dark:hover:bg-primary-500 transition-colors"
-            aria-label={isTocOpen ? "关闭目录" : "打开目录"}
-            style={{ opacity: 0 }} // 初始隐藏，等待动画
+            className="bg-primary-400/80 hover:bg-primary-500 dark:bg-primary-500/70 dark:hover:bg-primary-400 fixed right-6 bottom-6 z-50 rounded-full p-3 text-white shadow-lg transition-all duration-300 lg:hidden"
+            aria-label={isTocOpen ? '关闭目录' : '打开目录'}
+            style={{
+              opacity: 0, // 初始状态为完全透明
+              transform: 'scale(0)', // 初始状态为缩小
+              ...(isPageLoaded && {
+                opacity: scrollingDown ? 0.3 : 1,
+                transform: 'scale(1)',
+              }),
+            }}
           >
-            <ListOrdered className="h-4 w-4" />
+            <ListOrdered className="h-5 w-5" />
           </button>
 
           {/* TOC Panel */}
           <div
             ref={panelRef}
-            className="toc-panel fixed bottom-0 left-0 right-0 z-40 lg:hidden bg-background/95 supports-[backdrop-filter]:bg-background/60 backdrop-blur border-t shadow-lg"
+            className="toc-panel bg-background/95 supports-[backdrop-filter]:bg-background/60 fixed right-0 bottom-0 left-0 z-40 border-t shadow-lg backdrop-blur lg:hidden"
             style={{ opacity: 0, transform: 'translateY(100%)' }}
           >
             <div ref={tocContentRef} className="container max-h-[50vh] overflow-y-auto p-4">
-              <div className="mb-4 flex items-center justify-between toc-header">
+              <div className="toc-header mb-4 flex items-center justify-between">
                 <h3 className="text-lg font-medium">目录</h3>
                 <button
                   onClick={handleToggleToc}
-                  className="p-2 text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-300 transition-colors"
+                  className="text-primary-500 hover:text-primary-600 dark:text-primary-400 dark:hover:text-primary-300 p-2 transition-colors"
                   aria-label="关闭目录"
                 >
                   <X className="h-5 w-5" />
