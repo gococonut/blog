@@ -3,8 +3,8 @@
   "short_name": "",
   "icons": [
     {
-      "src": "/favicon-32x32.png",
-      "sizes": "32x32",
+      "src": "/128x128.png",
+      "sizes": "128x128",
       "type": "image/png"
     }
   ],
