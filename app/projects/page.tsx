@@ -12,9 +12,9 @@ export default function Projects() {
           <h1 className="text-lg leading-9 font-bold text-gray-900 sm:text-xl sm:leading-10 md:text-xl md:leading-14 dark:text-gray-100">
             项目展示
           </h1>
-          <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
+          {/* <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
             使用横幅图片（16 x 9）展示您的项目
-          </p>
+          </p> */}
         </div>
         <div className="container py-12">
           <div className="-m-4 flex flex-wrap">
