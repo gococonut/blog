@@ -1,0 +1,392 @@
+---
+title: Github Daily Trending
+date: 2025-05-02
+cover: https://hub-image.moreve.net/files/images/github-trending/2025-05-02.png
+tags: [开源项目, AI前沿, 开发工具]
+summary: 这份摘要涵盖了多个开源项目，包括：Deep-Live-Cam，一款实现实时换脸和视频深度伪造的Python工具，强调创意应用但也内置内容限制；Qwen-Agent，基于通义千问2.0+的AI智能体框架，集成了函数调用、代码执行和RAG等功能；Teable，一个基于PostgreSQL的无代码数据库工具，旨在替代Airtable并支持大规模数据和团队协作；Hyperswitch，一个用Rust构建的开源支付枢纽，提供统一API、快速可靠的支付处理和管理界面；Python-100-Days，一个全面的Python学习资源，从基础到高级应用、框架、数据分析、机器学习和项目实践；Agent-S，一个开放式框架，旨在让AI代理像人类一样与电脑交互，并在基准测试中取得顶尖表现；Qwen3，阿里巴巴云栖团队开发的最新一代大型语言模型系列，模型种类丰富，推理和 Agent 能力显著提升，并广泛支持多语言；Uptime Kuma，一个易于使用的自托管监控工具，支持多种服务和通知；Zed，由Atom和Tree-sitter创建者打造的高性能、多人的Rust代码编辑器；AI Engineering Hub，提供LLM、RAG和AI智能体应用深度教程和代码示例；Daytona，为AI生成代码提供安全弹性的运行基础设施；Open WebUI，一个用户友好的自托管AI交互平台，支持Ollama和OpenAI API，并提供RAG等高级功能；Transformer Lab，一个本地GUI应用，用于LLMs的交互、训练、微调与评估；以及英语语法笔记，为程序员提供从零开始学习英语语法的实用指南。这些项目覆盖了AI技术、数据库、支付、开发工具、学习资源等多个领域，展现了开源社区的活力与创新。
+---
+
+## Deep-Live-Cam
+
+使用单张图像实现实时换脸和一键视频深度伪造
+
+**作者:** [hacksider](https://github.com/hacksider.png) | **仓库:** [Github 链接](https://github.com/hacksider/Deep-Live-Cam)
+**语言:** Python | **Stars:** 56194
+**Forks:** 8022 | **Recent Stars** 1319
+
+### 项目简介
+
+Deep-Live-Cam：实时换脸与一键生成视频Deepfake
+
+Deep-Live-Cam 是一款开源软件，专注于提供实时换脸和仅凭单张图片快速生成视频 Deepfake 的功能。该项目强调其在 AI 生成媒体行业的潜在积极应用，例如协助艺术家创作数字角色动画、生成创意内容或在服装设计中使用模型等。同时，开发者也充分认识到其潜在的非道德用途，并在软件中内置了内容限制，防止处理不适当的内容，如裸露、暴力或敏感材料。项目方承诺遵守相关法律法规，并在必要时可能采取关闭项目或增加水印等措施。
+
+Deep-Live-Cam 提供了便捷的使用方式，特别是针对 Windows 用户，提供了预构建版本，支持 NVIDIA 和 AMD 独立显卡，用户无需手动安装复杂的依赖，只需下载即可快速启动，并通过简单的三步操作：选择人脸图片、选择摄像头、点击开始直播，即可实现实时换脸功能。对于高级用户或开发者，项目也提供了详细的手动安装指南，支持 Windows、macOS（特别是 Apple Silicon 芯片）等平台，并提供了针对不同 GPU（CUDA、CoreML、DirectML、OpenVINO™）的加速配置指导。虽然手动安装需要一定的技术能力，但用户可以更好地定制和配置软件。
+
+软件功能丰富，支持多种实时应用场景，包括：
+
+- **嘴部遮罩**：保留原始嘴部动作，提高换脸效果的准确性。
+- **人脸映射**：同时对多人进行换脸操作。
+- **你的电影，你的脸**：将自己的脸应用到电影角色上，实时观看。
+- **直播表演**：用于直播或在线表演。
+- **表情包制作**：快速创建病毒式传播的表情包。
+- **在线互动**：在 Omegle 等平台进行有趣的互动。
+
+除了核心功能，项目还提供了使用技巧和教程，帮助用户充分利用软件的潜力，例如如何获得更好的 Deepfake 效果、如何在视频通话中使用 Deep-Live-Cam 等。此外，项目列出了其在多家媒体上的报道和引用，并感谢了为项目做出贡献的开发者和用户。这表明该项目具有一定的关注度和社区支持。
+
+总而言之，Deep-Live-Cam 是一个强大的实时换脸和 Deepfake 工具，提供了易于使用的预构建版本和功能丰富的选项，同时也强调了负责任和合乎道德的使用原则。它为创意产业提供了新的可能性，但使用者需要注意其潜在的滥用风险并遵守相关法律法规和道德规范。
+
+---
+
+## Qwen-Agent
+
+基于 Qwen>=2.0 的 Agent 框架及应用，涵盖函数调用、代码解释器、RAG 和 Chrome 扩展
+
+**作者:** [QwenLM](https://github.com/QwenLM.png) | **仓库:** [Github 链接](https://github.com/QwenLM/Qwen-Agent)
+**语言:** Python | **Stars:** 7554
+**Forks:** 648 | **Recent Stars** 216
+
+### 项目简介
+
+Qwen-Agent项目摘要
+
+Qwen-Agent是基于通义千问（Qwen）2.0及更高版本构建的智能体框架和应用集合。它充分利用了Qwen模型在指令遵循、工具使用、规划和记忆等方面的能力，旨在为用户提供强大的AI应用开发平台。该框架集成了多种核心功能，包括函数调用（Function Calling）、代码解释器（Code Interpreter）、检索增强生成（RAG）以及浏览器扩展（Chrome extension）。
+
+项目提供了开发自有Agents的灵活机制，允许开发者利用其原子组件（如LLMs和工具）和高级组件（如Agent类）进行定制化开发。用户可以通过PyPI安装稳定版本，或从源代码安装最新开发版本，并根据需要选择GUI、RAG、代码解释器和MCP（模型上下文协议）等可选依赖进行安装。
+
+Qwen-Agent支持多种模型服务，既可以使用阿里云DashScope提供的模型服务，也可以部署开源的Qwen模型并搭建自己的服务。对于使用 DashScope 服务，需要配置 API Key；对于自建服务，需要按照 Qwen2 的文档部署兼容 OpenAI API 的服务，并建议为 QwQ 和 Qwen3 模型启用推理相关参数。
+
+框架提供了丰富的示例，展示了如何集成自定义工具、使用内置工具（如代码解释器）以及加载文件（如PDF）进行处理。通过简单的 Python 代码即可创建具备特定能力的 Agent。此外，Qwen-Agent 还提供了便捷的 Gradio GUI 界面，方便用户快速启动 Agent 并进行交互。
+
+在FAQ部分，项目解答了关于MCP使用方法（包括环境配置和调用格式）、函数调用支持以及处理超长文档（如1M tokens）问答的方案。对于超长文档问答，Qwen-Agent提供了一种快速的RAG解决方案和一种更全面的Agent实现，并在相关benchmark中取得了不错的表现。
+
+值得注意的是，项目特别强调了代码解释器并非沙盒环境，直接执行代码存在风险，不建议用于生产环境。
+
+总的来说，Qwen-Agent是一个功能丰富、灵活易用的 Agent 开发框架，依托Qwen强大的语言能力，为开发者构建各类智能应用提供了坚实的基础，特别是在工具使用、代码执行和文档处理方面展现出强大的潜力。
+
+---
+
+## teable
+
+下一代 Airtable 替代品：无代码 Postgres
+
+**作者:** [teableio](https://github.com/teableio.png) | **仓库:** [Github 链接](https://github.com/teableio/teable)
+**语言:** TypeScript | **Stars:** 17956
+**Forks:** 880 | **Recent Stars** 86
+
+### 项目简介
+
+Teable：下一代无代码 Postgres 数据库替代方案
+
+Teable 是一款开源项目，旨在成为 Airtable 的下一代替代品，它以一种简单、类似电子表格的界面，帮助用户创建强大的数据库应用程序。这款工具支持团队实时协作，并且能够处理数百万行数据。
+
+Teable 的核心亮点在于其基于 PostgreSQL 的后端，提供了高性能数据管理能力，尤其擅长处理大量数据。它提供了托管版本 `teable.io` 供用户直接体验，对于希望自行部署的用户，也提供了 Docker Compose 和一键部署到 Railway、Sealos、Zeabur 等平台的支持。
+
+Teable 功能全面，开箱即用，包含数据聚合、附件预览、批量编辑、图表、评论、公式支持、导入/导出、实时协作、搜索、排序、SQL 查询等一系列实用功能。此外，它还提供多种数据视图，如表格视图、表单视图、看板视图、画廊视图和日历视图，以满足用户不同场景下的数据可视化和交互需求。
+
+项目代码结构清晰，主要包含前端应用 (nextjs-app)、后端服务 (nestjs-backend)、共享的核心代码、SDK 以及插件系统。Teable Community Edition (CE) 采用 AGPL 许可证，可供自托管和免费使用。而 Enterprise Edition (EE) 版本则提供更高级的功能，如 AI 集成、权限矩阵、自动化等。
+
+项目团队认为，未来的无代码产品应该具有易于使用的界面、方便的数据访问和迁移、支持多种部署方式以确保数据隐私和自主选择、对开发者友好、能够处理大规模数据、易于与其他软件集成以及原生 AI 支持。Teable 正是基于这些理念而构建，旨在成为一个全面的解决方案，满足不同技术水平用户的多样化需求。
+
+---
+
+## hyperswitch
+
+一个用 Rust 编写的开源支付网关，让支付变得快速、可靠且经济实惠
+
+**作者:** [juspay](https://github.com/juspay.png) | **仓库:** [Github 链接](https://github.com/juspay/hyperswitch)
+**语言:** Rust | **Stars:** 17269
+**Forks:** 2064 | **Recent Stars** 523
+
+### 项目简介
+
+Hyperswitch：Rust 构建的开源支付枢纽
+
+Hyperswitch 是一个由 Juspay 公司开发的开源支付枢纽，使用 Rust 语言编写，旨在提供更快、更可靠、更经济的支付处理服务。其核心愿景是成为“支付领域的 Linux”，为企业提供一个开放、透明、可定制的支付基础设施。
+
+该平台提供**单一 API 接口**，连接和管理整个支付生态系统及其各种功能。它包含以下关键组件：
+
+1.  **Hyperswitch 后端**：处理支付流程（授权、认证、撤销、捕获、退款、拒付），并支持与外部风险管理、认证提供商集成。它还具备可定制的支付路由功能，包括基于成功率、规则、流量分配、故障转移和智能重试机制。
+2.  **SDK（前端）**：提供跨平台（Web、Android、iOS）统一的支付体验，支持卡片、数字钱包、先买后付、银行转账等多种支付方式，并与支付服务提供商的多样化流程兼容。
+3.  **Control Center**：一个无需编码即可管理支付堆栈的图形界面，允许用户配置路由、重试工作流，设定 3DS、FRM 和附加费模块触发条件。它提供跨所有集成 PSP 的交易、退款和拒付操作概览、交易日志以及详细的支付性能分析。
+
+Hyperswitch 提供多种试用方式，包括本地 Docker 环境搭建、通过 AWS CDK 或 Helm charts 在云端部署，以及注册托管式沙盒环境。
+
+该项目遵循 Apache 2.0 开源许可协议，并积极推动社区参与。项目的开发团队由 150 多名工程师组成，核心价值观包括拥抱支付多样性、坚持开源、社区驱动、构建系统级软件般的可靠性和安全性以及最大化为开发者、客户和合作伙伴创造价值。
+
+---
+
+## Python-100-Days
+
+Python - 100天从新手到大师
+
+**作者:** [jackfrued](https://github.com/jackfrued.png) | **仓库:** [Github 链接](https://github.com/jackfrued/Python-100-Days)
+**语言:** Jupyter Notebook | **Stars:** 165328
+**Forks:** 53659 | **Recent Stars** 97
+
+### 项目简介
+
+Python - 100天从新手到大师
+
+这篇内容是对一个名为“Python - 100天从新手到大师”的Python学习资源的详细概述。该资源由作者骆昊创建和维护，旨在帮助初学者在100天内系统地学习Python编程。
+
+内容结构清晰，按天划分学习进程。前20天侧重Python语言基础，涵盖了从环境搭建、第一个程序、变量、运算符、控制结构（分支和循环）到常用数据结构（列表、元组、字符串、集合、字典）以及函数和面向对象编程的入门。Day21-30深入Python语言应用，讲解文件读写、异常处理、对象序列化、读写各类文件（CSV, Excel, Word, PowerPoint, PDF）以及图像处理、邮件短信发送和正则表达式。
+
+后续部分进一步 확장 涵盖了更高级的主题，包括Python语言进阶、Web前端入门、Linux操作系统基础、数据库基础和进阶（以MySQL和HiveSQL为例），以及Django框架的实战应用。实战Django部分详细介绍了Django的各个方面，从快速上手、ORM、静态资源、会话管理到报表生成、日志、中间件、前后端分离、RESTful API设计、缓存和异步任务等。
+
+此外，资源还包含了网络数据采集（爬虫）和Python数据分析的内容，涉及相关的工具库（NumPy, pandas, matplotlib, Seaborn, Pyecharts）以及数据分析的各个环节（数据清洗、重塑、透视、可视化）。机器学习部分则介绍了多种常见的算法，如k最近邻、决策树、朴素贝叶斯、回归模型、K-Means聚类以及集成学习和神经网络，并包含了机器学习实战的步骤。
+
+最后，资源也涵盖了团队项目开发的相关内容，包括软件过程模型、团队组建、开发工具、项目选题、需求分析、数据库设计、Docker容器技术、MySQL性能优化、网络API接口设计、软件测试和自动化测试，并提供了面试相关的公共问题和面试宝典等补充内容。
+
+总的来说，这个资源提供了一个全面且循序渐进的Python学习路径，从基础知识到实际应用、框架开发、数据分析和机器学习等领域，并兼顾了项目实践和面试准备，非常适合想要系统学习Python并进一步提升技能的开发者。
+
+---
+
+## Agent-S
+
+Agent S：像人类一样使用电脑的开放式代理框架
+
+**作者:** [simular-ai](https://github.com/simular-ai.png) | **仓库:** [Github 链接](https://github.com/simular-ai/Agent-S)
+**语言:** Python | **Stars:** 3775
+**Forks:** 370 | **Recent Stars** 242
+
+### 项目简介
+
+Agent S：像人类一样使用电脑的开放式代理框架
+
+Agent S 是一个旨在实现智能 GUI 代理与计算机自主交互的开源框架。其核心目标是构建能够通过代理-计算机接口（Agent-Computer Interface）学习并自主执行复杂任务的智能系统。
+
+项目的最新进展是 Agent S2，这是一个用于计算机使用代理的组合式通用-专用框架。Agent S2 在性能上取得了显著提升，在 OSWorld、WindowsAgentArena 和 AndroidWorld 等基准测试中达到了新的技术水平（SOTA），超越了 OpenAI 和 Anthropic 等公司的相关代理。
+
+该项目的安装和使用相对直接，可以通过 pip 安装 `gui-agents` 包。用户需要设置相应的 API 密钥，以便使用不同的语言模型提供商（如 OpenAI、Anthropic 等）以及可视化接地模型。Agent S2 最佳配置推荐使用带有扩展思维的 Claude 3.7 和 UI-TARS-72B-DPO 模型。Agent S 还集成了 Perplexica，一个用于网络知识检索的工具，以增强代理的性能。用户可以通过 CLI 或 Python SDK 来运行 Agent S2，并可以根据需求配置不同的模型和端点。
+
+该项目维护了一个不断更新的知识库，通过 GitHub Releases 提供下载，以支持代理的学习和推理。项目文档中包含了详细的安装、设置和使用指南，以及如何在 OSWorld 环境中部署 Agent S2 的说明。该项目活跃并持续更新，已有多个版本发布，v0.2.3 是最新版本。项目由 Simular AI 团队开发，并向 OSWorld 和 UI-TARS 的开发者表示感谢。
+
+---
+
+## Qwen3
+
+Qwen3 是阿里云量子之父团队开发的大型语言模型系列
+
+**作者:** [QwenLM](https://github.com/QwenLM.png) | **仓库:** [Github 链接](https://github.com/QwenLM/Qwen3)
+**语言:** Shell | **Stars:** 19808
+**Forks:** 1298 | **Recent Stars** 318
+
+### 项目简介
+
+Qwen3：智能力提升的最新一代大语言模型系列
+
+Qwen3 是由阿里巴巴云栖团队开发的最新一代大语言模型系列。该系列模型在现有技术基础上进行了显著改进，是 Qwen 家族中迄今为止最先进、最智能的模型。
+
+Qwen3 系列的主要亮点包括：
+
+1.  **模型种类丰富：** 提供包括密集型（Dense）和混合专家模型（Mixture-of-Expert, MoE）在内的多种规模模型，覆盖 0.6B 到 235B 等不同参数量级，以满足不同需求。
+2.  **灵活的思维模式切换：** 模型支持在“思维模式”（用于复杂逻辑推理、数学和编码）和“非思维模式”（用于高效的通用聊天）之间无缝切换，确保在各种场景下都能实现最优性能。
+3.  **强大的推理能力：** 在数学、代码生成和常识逻辑推理等任务上，Qwen3 的推理能力显著优于前代模型（QwenQ 的思维模式下和 Qwen2.5 指令模型的非思维模式下）。
+4.  **更优的人类偏好对齐：** 在创意写作、角色扮演、多轮对话和指令遵循等方面表现出色，提供更自然、更具吸引力的对话体验。
+5.  **精通 Agent 能力：** 无论在思维模式还是非思维模式下，都能精确集成外部工具，并在复杂的 Agent 相关任务中达到市场领先的水平。
+6.  **广泛的语言支持：** 支持 100 多种语言和方言，并具备强大的多语言指令遵循和翻译能力。
+
+Qwen3 模型采用了新的命名规范，后训练模型不再使用“-Instruct”后缀，基础模型名称以“-Base”结尾。
+
+该系列模型已在 Hugging Face 和 ModelScope 平台发布，提供了详细的文档（支持中文和英文），涵盖快速入门、推理（包括批量推理、流式推理等）、本地运行（支持 CPU 和 GPU，使用 llama.cpp 和 Ollama 等框架）、部署（使用 SGLang、vLLM、TGI 等框架进行大规模推理）、量化（使用 GPTQ、AWQ 等技术）、训练（SFT 和 RLHF，支持 Axolotl、LLaMA-Factory 等框架）以及与应用框架（如 RAG、Agent）的集成指南。
+
+Qwen3 模型开源，采用 Apache 2.0 许可证，允许广泛的使用和分发。欢迎查阅相关技术报告并与开发团队联系以获取更多信息。
+
+---
+
+## uptime-kuma
+
+一个酷炫的自托管监控工具
+
+**作者:** [louislam](https://github.com/louislam.png) | **仓库:** [Github 链接](https://github.com/louislam/uptime-kuma)
+**语言:** JavaScript | **Stars:** 68410
+**Forks:** 6009 | **Recent Stars** 245
+
+### 项目简介
+
+Uptime Kuma是一款简单易用的自托管监控工具。它拥有美观、响应迅速、快速的用户界面/用户体验。其主要功能包括监控HTTP(s)、TCP、HTTP(s)关键词、HTTP(s)Json查询、Ping、DNS记录、Push、Steam游戏服务器和Docker容器的正常运行时间。
+
+该工具提供丰富的通知服务，支持Telegram、Discord、Gotify、Slack、Pushover、电子邮件（SMTP）以及90多种其他通知服务。监控间隔可精确到20秒。
+
+Uptime Kuma还具备多语言支持、多个状态页面（并可映射到特定域名）、Ping图表、证书信息、代理支持和双因素认证（2FA）等特性。
+
+安装方式多样，包括Docker和非Docker方式。对于Docker安装，提供了简单的运行命令；对非Docker方式，说明了对平台、Node.js、npm、Git和pm2的要求，并提供了详细的安装和PM2命令。
+
+项目活跃，提供了实时演示服务器供试用。用户可以通过GitHub Issues或Subreddit进行讨论和寻求帮助。社区贡献方式多样，包括创建或测试Pull Requests、测试Beta版本、提交错误报告和功能请求、翻译以及修正文档和代码的语法和拼写错误。
+
+Uptime Kuma基于JavaScript、Vue、TypeScript、SCSS等语言开发，项目在GitHub上拥有大量星标和贡献者。
+
+---
+
+## zed
+
+思如泉涌般编写代码——Zed 是 Atom 和 Tree-sitter 创建者打造的高性能、多人协作代码编辑器
+
+**作者:** [zed-industries](https://github.com/zed-industries.png) | **仓库:** [Github 链接](https://github.com/zed-industries/zed)
+**语言:** Rust | **Stars:** 57802
+**Forks:** 3988 | **Recent Stars** 111
+
+### 项目简介
+
+Zed代码编辑器项目概述
+
+Zed是一款高性能的、支持多人协作的代码编辑器，由Atom和Tree-sitter的创建者团队开发。项目主要使用Rust语言编写，并辅以少部分Tree-sitter Query、Shell、Metal、WGSL和HTML代码。
+
+项目许可证采用组合方式，包含了未知的AGPL、未知的APACHE以及GPL-3.0协议。项目代码库活跃，拥有大量星标和分支，最新的提交包含对MCP配置流的设计调整以及对HTML语法高亮的改进。
+
+对于开发者而言，项目提供了在macOS和Linux平台上从源代码构建的详细指南，并正在积极开发Windows和Web版本。项目欢迎贡献，并在其官方网站上发布招聘信息。
+
+项目基础设施相关信息也包含在内，例如使用Docker Compose管理服务（包括Postgrest和LiveKit server），以及对Nix构建和包管理器支持的配置和修复。一些关于项目内部工作流程的文件（如lint规则、gitignore等）也在内容中有所体现。
+
+总的来说，Zed项目致力于打造一个快速且高效的编码环境，强调多人协作功能，并通过积极的开发和社区参与不断完善。
+
+---
+
+## ai-engineering-hub
+
+关于大型语言模型（LLM）、检索增强生成（RAG）和实际人工智能代理应用的深度教程
+
+**作者:** [patchy631](https://github.com/patchy631.png) | **仓库:** [Github 链接](https://github.com/patchy631/ai-engineering-hub)
+**语言:** Jupyter Notebook | **Stars:** 8859
+**Forks:** 1485 | **Recent Stars** 245
+
+### 项目简介
+
+AI Engineering Hub：大型语言模型与AI智能体应用深度教程
+
+该项目是一个开源资源库，专注于AI工程领域的深度教程，特别是大型语言模型（LLMs）、检索增强生成（RAGs）技术以及实际应用的AI智能体。项目旨在为不同技能水平的学习者和实践者提供实践示例和详细指导，帮助他们理解和应用前沿的AI技术。
+
+核心内容包括：
+
+1.  **LLMs和RAGs教程：** 提供关于大型语言模型工作原理以及如何通过RAG技术增强其能力的深度教程。
+2.  **实战AI智能体应用：** 包含各种实际用例的AI智能体应用示例，例如基于文件聊天的RAG、多模态RAG、金融分析智能体、航班/酒店预订智能体、品牌监控等。
+3.  **模型微调与评估：** 提供模型微调的代码和教程，以及AI模型和应用的评估与可观察性实践。
+4.  **多种技术集成：** 展示了如何结合不同的AI模型和工具构建应用，例如使用DeepSeek、Gemma、Llama、Qwen等模型，以及利用Autogen等框架。
+
+该项目采用MIT许可证，鼓励社区贡献。通过提供丰富的代码示例和教程，AI Engineering Hub致力于促进AI工程领域的知识共享和实践应用。
+
+---
+
+## daytona
+
+Daytona：用于运行AI生成代码的安全弹性基础设施
+
+**作者:** [daytonaio](https://github.com/daytonaio.png) | **仓库:** [Github 链接](https://github.com/daytonaio/daytona)
+**语言:** TypeScript | **Stars:** 17626
+**Forks:** 1870 | **Recent Stars** 639
+
+### 项目简介
+
+Daytona：安全弹性的AI生成代码运行基础架构
+
+Daytona项目是一个开源平台，专注于为AI生成代码提供安全、弹性且高性能的运行环境。其核心目标是解决在不可信环境中运行AI代码所带来的安全风险和效率挑战。
+
+Daytona通过提供隔离的Sandbox环境来执行AI生成的代码，确保这些代码的执行不会对底层基础设施造成损害。此外，它还具备闪电般快速的Sandbox创建能力（亚90毫秒），大大缩短了从代码生成到执行的等待时间。项目正在开发大规模并行化功能，以支持并发的AI工作流程。
+
+平台提供全面的API，包括文件操作、Git集成、语言服务器协议（LSP）以及直接代码执行等，方便开发者对Sandbox进行编程控制。Sandbox可以实现永久性存储，支持OCI/Docker兼容性，意味着可以使用任何OCI/Docker镜像来创建运行环境。
+
+Daytona项目遵守AGPL-3.0开源许可，欢迎社区贡献。其主要由TypeScript、Python、JavaScript和Go语言构建。
+
+总而言之，Daytona致力于成为运行AI生成代码的可靠且高效的基础设施解决方案，特别强调安全隔离和弹性伸缩能力。
+
+---
+
+## open-webui
+
+用户友好的AI界面（支持Ollama、OpenAI API等）
+
+**作者:** [open-webui](https://github.com/open-webui.png) | **仓库:** [Github 链接](https://github.com/open-webui/open-webui)
+**语言:** JavaScript | **Stars:** 92452
+**Forks:** 11724 | **Recent Stars** 175
+
+### 项目简介
+
+Open WebUI 是一个用户友好、功能丰富且支持多种大型语言模型 (LLM) 接口（如 Ollama 和 OpenAI API）的自托管 AI 平台。它的设计目标是完全离线运行，并通过提供 Docker 或 Kubernetes 等多种简便的安装方式，帮助用户轻松部署。
+
+该平台的核心功能包括：
+
+- **广泛集成**：支持 Ollama 和兼容 OpenAI API 的服务，例如 LM Studio、GroqCloud 等，极大地提高了应用的灵活性。
+- **增强的用户交互**：提供响应式设计，支持 Progressive Web App (PWA) 提供类原生移动端体验。支持完整的 Markdown 和 LaTeX，便于展示内容。集成语音/视频通话和图片生成功能。
+- **高级特性**：内置模型构建器，方便用户创建和导入自定义模型及角色。提供本地 RAG (Retrieval Augmented Generation) 功能，支持加载文档进行问答，并通过 `#` 命令集成网页搜索结果或抓取网页内容，丰富了AI的知识来源。支持通过 Python 函数调用工具扩展llm能力。
+- **安全与管理**：具备基于角色的访问控制 (RBAC) 和用户组权限管理，确保数据安全。支持多模型同时对话，提升效率。
+- **可扩展性**：通过 Pipelines 插件框架支持自定义逻辑和 Python库集成，例如实现函数调用、用户速率限制、使用监控、翻译和消息过滤等。
+- **持续更新和社区支持**：项目活跃，定期更新并提供全面的文档和 Discord 社区支持。
+
+Open WebUI 旨在为个人和企业提供一个强大的、易于使用的本地 AI 交互和部署解决方案。用户可以通过 Python pip、Docker（支持 CPU、GPU 和捆绑 Ollama 的镜像）或 Kubernetes 灵活安装。对于希望获得增强企业级功能的用户，还提供了企业版计划。
+
+---
+
+## transformerlab-app
+
+用于高级大语言模型工程的开源应用：在本地电脑上与大语言模型交互、训练、微调和评估
+
+**作者:** [transformerlab](https://github.com/transformerlab.png) | **仓库:** [Github 链接](https://github.com/transformerlab/transformerlab-app)
+**语言:** TypeScript | **Stars:** 2751
+**Forks:** 200 | **Recent Stars** 72
+
+### 项目简介
+
+Transformer Lab：本地先进大语言模型工具包
+
+Transformer Lab 是一个开源应用程序，专为先进的大语言模型（LLM）工程设计。该应用提供了一个跨平台的图形用户界面（GUI），使用户可以在本地计算机上与各种大型语言模型进行交互、训练、微调和评估。它支持包括 DeepSeek、Llama3、Qwen、Phi4、Gemma、Mistral、Mixtral、Command-R 在内的数百种流行模型的一键下载，并允许下载 Huggingface 上的任意 LLM。
+
+该工具包具备全面的功能，包括：
+
+- **模型操作**：涵盖了模型的下载、微调（支持 Apple Silicon 上的 MLX 和 GPU 上的 Huggingface）、强化学习人类反馈（RLHF）和偏好优化（如 DPO、ORPO、SIMPO）以及奖励建模。
+- **跨平台支持**：提供 Windows、MacOS 应用程序和 Linux 版本。
+- **交互与推理**：支持模型间的聊天、补全、预设模板提示、聊天记录、调整生成参数、批量推理以及工具使用/函数调用（alpha 阶段）。
+- **多种推理引擎**：兼容 Apple Silicon 上的 MLX、Huggingface Transformers、vLLM 和 Llama CPP 等。
+- **评估与数据集**：提供模型评估功能，并可从 HuggingFace 拉取或通过拖放提供自定义数据集用于训练。
+- **高级功能**：包括计算嵌入、完整的 REST API 接口、云端运行能力（UI 本地，引擎远程或云端）、模型格式转换（Huggingface、MLX、GGUF 互转）、插件支持（内置和自定义）、嵌入式 Monaco 代码编辑器用于编辑插件和查看日志，以及便捷的提示编辑和推理日志查看。
+
+项目由 Mozilla 通过 Mozilla Builders Program 支持，正在积极开发中。用户可以通过 Discord、Twitter 获取最新信息，并通过报告 Bug 和建议功能贡献力量。该项目采用 AGPL V3 许可证发布。
+
+---
+
+## english-note
+
+从0开始学习英语语法
+
+**作者:** [hzpt-inet-club](https://github.com/hzpt-inet-club.png) | **仓库:** [Github 链接](https://github.com/hzpt-inet-club/english-note)
+**语言:** | **Stars:** 3498
+**Forks:** 327 | **Recent Stars** 45
+
+### 项目简介
+
+英语语法笔记：程序员学习英语的实用指南
+
+这份文档项目名为“英语语法笔记”，旨在为那些英语基础薄弱、特别是程序员群体提供一个从零开始学习英语语法的资源。项目发起人认为，在这个社会，英语能力对程序员至关重要，不仅有助于学习效率的提高，更能成为个人发展的优势。通过查阅资料和整理，该项目力求将复杂的语法知识点以易于理解的方式呈现。
+
+项目参考了知名程序员尤雨溪关于英语学习方法的观点，强调语法是理解句子的基础，而非死记硬背的规则。推荐在掌握基础语法后，通过主动使用（写作和口语）来培养和提高语感，并建议使用百词斩和新概念英语作为辅助学习工具。
+
+该项目基于 VuePress 进行文档编写，并利用 GitHub Actions 进行自动化部署到 GitHub Page，方便用户直接通过网页链接进行在线阅读和学习。同时，也提供了本地下载和运行的方式。所有内容均采用 Markdown 格式编写。
+
+项目的维护者是 @hzpt-inet 和 @xiaoxunyao，并欢迎社区成员通过提交 Issue 或 Pull Request 的方式贡献内容和改进项目。文档还列出了内容贡献者（如百词斩和 VuePress）以及主要的参与人员，并在 MIT 许可下发布。项目的关键信息包括拥有 3.5k Stars、327 Forks 和 3 位贡献者（elonehoo, hzpt-inet, github-actions[bot]）。
+
+---
+
+## MNN
+
+MNN：阿里巴巴经过业务关键用例验证的极速轻量级深度学习框架。全多模态LLM安卓应用：[MNN-LLM-Android](./apps/Android/MnnLlmChat/README.md)
+
+**作者:** [alibaba](https://github.com/alibaba.png) | **仓库:** [Github 链接](https://github.com/alibaba/MNN)
+**语言:** C++ | **Stars:** 10468
+**Forks:** 1827 | **Recent Stars** 31
+
+### 项目简介
+
+阿里巴巴的MNN是一个高性能、轻量级的深度学习推理和训练框架。它已经在淘宝、天猫、优酷等阿里巴巴的30多个应用程序中得到广泛应用，覆盖直播、短视频、搜索推荐、图像搜索、互动营销、风控等70多个场景。
+
+MNN框架专注于设备端的推理和训练，具有显著的轻量化特性，在iOS和Android平台上的集成大小非常小。它支持FP16/Int8量化，可以有效减小模型大小。
+
+MNN具有出色的多功能性，支持Tensorflow、Caffe、ONNX、Torchscripts等多种主流深度学习框架的模型转换，并支持CNN、RNN、GAN、Transformer等多种网络结构。它还支持多输入、多输出、动态输入和控制流的AI模型。
+
+在性能方面，MNN通过大量优化的汇编代码充分利用ARM/x64 CPU性能，并支持Metal、OpenCL、Vulkan和CUDA等GPU推理。它实现了高效稳定的卷积算法，如Winograd算法，并在ARM v8.2等新架构上实现了显著的速度提升。
+
+MNN易于使用，提供了用于数值计算的MNN OP、轻量级的图像处理模块MNN-CV，并支持在PC和移动设备上进行模型构建和训练。Python API使得开发更加便捷。
+
+该项目还提供了MNN-LLM和MNN-Diffusion等基于MNN引擎的大模型运行时解决方案，旨在将大型语言模型和稳定扩散模型部署到移动端、PC和物联网设备上，并提供了相应的用户指南。最新的Android版本已经支持Qwen3等模型并增加了暗模式，iOS版本也发布了多模态LLM应用。
+
+MNN还是阿里巴巴Walle系统（一个端到端、通用、大规模的设备-云协同机器学习生产系统）的基础模块。该项目的相关研究成果已在OSDI’22和MLSys 2020等顶级会议发表。
+
+项目提供了MNN-Converter、MNN-Compress、MNN-Express、MNN-CV和MNN-Train等一系列工具。MNN采用Apache 2.0许可证开源。

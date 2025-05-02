@@ -78,6 +78,9 @@
     ],
     "*.+(js|jsx|ts|tsx|json|css|md|mdx)": [
       "prettier --write"
+    ],
+    "*.mdx": [
+      "node ./scripts/escape-mdx-tags.js"
     ]
   },
   "packageManager": "yarn@3.6.1"
