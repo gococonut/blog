@@ -21,7 +21,7 @@ const projectsData: Project[] = [
   {
     title: '字节篝火网站',
     description: `字节篝火网站，致力于扫除信息壁垒，高效获取全球技术前沿。通过 N8N workflow 实现精选来源，聚合 Hacker News、GitHub Trending 等优质技术社区内容。自动完成中文化翻译与摘要提炼。便于快速把握技术热点与行业脉动。
-更进一步，网站与字节篝火播客 无缝联动，提供详尽的 Shownotes (节目笔记) 查询功能，让信息获取与深度学习相得益彰。`,
+ 更进一步，字节篝火播客 Shownotes 与网站无缝联动，让信息获取与深度学习相得益彰。`,
     imgSrc: '/static/images/ByteBonfireWeb.png',
     href: 'https://bytebonfire.com',
   },
