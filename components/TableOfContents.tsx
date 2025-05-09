@@ -49,69 +49,75 @@ export default function TableOfContents({
   const [showAllTags, setShowAllTags] = useState(false)
   const [userHasInteractedWithHeadings, setUserHasInteractedWithHeadings] = useState(false)
 
-  // 将 scrollToHeading 移至 useEffect 依赖项之前，并用 useCallback 包裹
+  // 辅助函数，用于根据 URL 查找标题元素
+  // 此函数在组件内部定义，因为它不依赖于组件实例的状态或props，
+  // 但为了组织结构，放在这里。它也可以被提取到组件外部如果它不访问任何闭包变量。
+  const findHeadingElementByUrl = (url: string): Element | null => {
+    const trySelector = (selector: string): Element | null => {
+      try {
+        return document.querySelector(selector)
+      } catch {
+        return null
+      }
+    }
+
+    let target = trySelector(url)
+    if (target) return target
+
+    if (url.startsWith('#')) {
+      const idWithoutHash = url.substring(1)
+      if (idWithoutHash) {
+        target = document.getElementById(idWithoutHash)
+        if (target) return target
+        try {
+          // CSS.escape 用于安全地创建选择器字符串
+          target = document.querySelector(`[id="${CSS.escape(idWithoutHash)}"]`)
+          if (target) return target
+        } catch {
+          // 忽略选择器错误
+        }
+      }
+    }
+
+    const possibleTextContent = url
+      .substring(url.startsWith('#') ? 1 : 0)
+      .replace(/--/g, ' / ')
+      .replace(/-/g, ' ')
+
+    if (possibleTextContent.trim()) {
+      const allHeadingElements = document.querySelectorAll('h1, h2, h3, h4, h5, h6')
+      for (const headingEl of Array.from(allHeadingElements)) {
+        if (
+          headingEl.textContent &&
+          (headingEl.textContent.includes(possibleTextContent) ||
+            possibleTextContent.includes(headingEl.textContent))
+        ) {
+          target = headingEl
+          break
+        }
+      }
+    }
+    return target
+  }
+
   const scrollToHeading = useCallback(
     (url: string, closeMobileTocOnTrigger?: boolean) => {
-      // 安全地尝试使用选择器
-      const trySelector = (selector: string) => {
-        try {
-          return document.querySelector(selector)
-        } catch (error) {
-          return null
-        }
-      }
+      const targetElement = findHeadingElementByUrl(url)
 
-      // 1. 尝试直接使用 URL 作为选择器
-      let target = trySelector(url)
-
-      // 2. 如果URL以#开头，尝试使用去掉#的方式查找元素
-      if (!target && url.startsWith('#')) {
-        const idWithoutHash = url.substring(1)
-        target = document.getElementById(idWithoutHash)
-
-        // 3. 如果ID以数字开头，这可能是选择器错误的原因
-        if (!target && /^\d/.test(idWithoutHash)) {
-          // 使用属性选择器而不是ID选择器
-          target = trySelector(`[id="${idWithoutHash}"]`)
-        }
-      }
-
-      // 4. 尝试查找包含特定文本的标题
-      if (!target) {
-        // 从URL推测可能的标题文本
-        const possibleText = url
-          .substring(1) // 移除#
-          .replace(/--/g, ' / ') // 将双横线替换回斜杠
-          .replace(/-/g, ' ') // 将单横线替换为空格
-
-        // 查找所有标题元素
-        const allHeadings = document.querySelectorAll('h1, h2, h3, h4, h5, h6')
-
-        allHeadings.forEach((heading) => {
-          if (
-            heading.textContent &&
-            (heading.textContent.includes(possibleText) ||
-              possibleText.includes(heading.textContent))
-          ) {
-            target = heading
-          }
-        })
-      }
-
-      if (target) {
-        const headerOffset = 80 // 保持此偏移量，以便标题不会被固定页眉遮挡
-        const elementPosition = target.getBoundingClientRect().top
+      if (targetElement) {
+        const headerOffset = 80
+        const elementPosition = targetElement.getBoundingClientRect().top
         const offsetPosition = elementPosition + window.pageYOffset - headerOffset
         window.scrollTo({ top: offsetPosition, behavior: 'smooth' })
-        if (isMobile && closeMobileTocOnTrigger) {
-          onItemClick?.()
+
+        if (isMobile && closeMobileTocOnTrigger && onItemClick) {
+          onItemClick()
         }
       }
     },
-    [isMobile, onItemClick] // 依赖项
+    [isMobile, onItemClick, findHeadingElementByUrl] // findHeadingElementByUrl 加入依赖，因为它在闭包中被引用
   )
 
-  // 使用 useMemo 优化派生状态的计算
   const tocHeadingsSource = useMemo(() => {
     let base = headings.filter((h) => h.depth === 2)
     if (base.length === 0) {
@@ -123,7 +129,6 @@ export default function TableOfContents({
   const uniqueTags = useMemo(() => {
     const allTagsSet = new Set<string>()
     headings.forEach((heading) => {
-      // 从原始 headings 提取，保证筛选器总有所有标签
       if (heading.tags && heading.tags.length > 0) {
         heading.tags.forEach((tag) => allTagsSet.add(tag))
       }
@@ -136,54 +141,51 @@ export default function TableOfContents({
     return tocHeadingsSource.filter((h) => h.tags && h.tags.includes(selectedTag))
   }, [selectedTag, tocHeadingsSource])
 
-  const displayedTagsLimit = 5 // 初始显示的标签数量
+  const displayedTagsLimit = 5
   const tagsToShow = showAllTags ? uniqueTags : uniqueTags.slice(0, displayedTagsLimit)
   const hasMoreTags = uniqueTags.length > displayedTagsLimit
 
-  // 将 handleTagClick 和 clearTagFilter 的定义移到依赖项声明之后
   const handleTagClick = useCallback(
     (tag: string) => {
       const newSelectedTag = selectedTag === tag ? null : tag
       setSelectedTag(newSelectedTag)
 
-      // 更新 URL
       const currentUrl = new URL(window.location.href)
       if (newSelectedTag) {
         currentUrl.searchParams.set('tag', newSelectedTag)
       } else {
         currentUrl.searchParams.delete('tag')
       }
-      router.replace(currentUrl.toString(), { scroll: false }) // 使用 replace 避免增加浏览器历史记录，scroll: false 避免页面滚动
+      router.replace(currentUrl.toString(), { scroll: false })
 
       setUserHasInteractedWithHeadings(false)
       if (uniqueTags.length > displayedTagsLimit) {
         setShowAllTags(false)
       }
     },
-    [selectedTag, router, uniqueTags, displayedTagsLimit] // 添加 router 到依赖
+    [selectedTag, router, uniqueTags, displayedTagsLimit]
   )
 
   const clearTagFilter = useCallback(() => {
     setSelectedTag(null)
-    // 更新 URL
     const currentUrl = new URL(window.location.href)
     currentUrl.searchParams.delete('tag')
     router.replace(currentUrl.toString(), { scroll: false })
+    setUserHasInteractedWithHeadings(false) // 清除筛选时，允许后续可能的自动滚动（如果逻辑需要）
+    // 或者也设为 true，如果清除筛选也不应自动滚动
+  }, [router])
 
-    setUserHasInteractedWithHeadings(false)
-  }, [router]) // 添加 router 到依赖
-
-  // 初始滚动逻辑的 useEffect
   useEffect(() => {
-    if (selectedTag && filteredHeadings.length > 0 && !userHasInteractedWithHeadings) {
+    const canConsiderAutoScroll =
+      selectedTag && filteredHeadings.length > 0 && !userHasInteractedWithHeadings
+
+    if (canConsiderAutoScroll) {
       const firstHeadingToScroll = filteredHeadings[0]
       if (firstHeadingToScroll) {
-        const timeoutId = setTimeout(
-          () => {
-            scrollToHeading(firstHeadingToScroll.url, false)
-          },
-          isMobile && initialSelectedTag === selectedTag ? 400 : 100
-        )
+        const scrollDelay = isMobile && initialSelectedTag === selectedTag ? 400 : 100
+        const timeoutId = setTimeout(() => {
+          scrollToHeading(firstHeadingToScroll.url, false)
+        }, scrollDelay)
         return () => clearTimeout(timeoutId)
       }
     }
@@ -193,7 +195,7 @@ export default function TableOfContents({
     scrollToHeading,
     isMobile,
     initialSelectedTag,
-    userHasInteractedWithHeadings, // Add new state to dependency array
+    userHasInteractedWithHeadings,
   ])
 
   const scrollbarStyles = hideScrollbar
@@ -290,7 +292,7 @@ export default function TableOfContents({
                   className="text-foreground/75 hover:text-primary-500 dark:hover:text-primary-400 font-medium transition-colors duration-200"
                   onClick={(e) => {
                     e.preventDefault()
-                    setUserHasInteractedWithHeadings(true) // User clicked a specific heading
+                    setUserHasInteractedWithHeadings(true)
                     scrollToHeading(heading.url, true)
                   }}
                 >
@@ -303,7 +305,7 @@ export default function TableOfContents({
                       type="button"
                       className="group w-full text-left"
                       onClick={() => {
-                        setUserHasInteractedWithHeadings(true) // User clicked a specific heading via summary
+                        setUserHasInteractedWithHeadings(true)
                         scrollToHeading(heading.url, true)
                       }}
                       aria-label={`跳转到"${heading.value}"章节`}
@@ -321,19 +323,15 @@ export default function TableOfContents({
                             <Tag
                               key={`${heading.url}-tag-${index}`}
                               text={tagText}
-                              asButton={true} // Ensures it doesn't behave like a link, base text color from Tag.tsx if not overridden
+                              asButton={true}
                               isActive={isActiveTag}
                               className={cn(
-                                // Common for Type 3 Heading Tags: always transparent background & no hover background effect.
                                 'bg-transparent hover:bg-transparent dark:bg-transparent dark:hover:bg-transparent',
                                 isActiveTag
-                                  ? // Active Type 3 Tag: Use a distinct, brighter text color and font weight.
-                                    'text-primary-600 dark:text-primary-400 font-semibold'
-                                  : // Inactive Type 3 Tag (when a filter is selected elsewhere):
-                                    // Apply opacity. Default text color comes from Tag.tsx's non-active button style.
-                                    selectedTag
+                                  ? 'text-primary-600 dark:text-primary-400 font-semibold'
+                                  : selectedTag
                                     ? 'opacity-50'
-                                    : '' // No specific style if no filter is active and tag is not active.
+                                    : ''
                               )}
                             />
                           )

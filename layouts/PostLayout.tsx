@@ -68,6 +68,7 @@ export default function PostLayout({
   const lastScrollY = useRef(0)
   const searchParams = useSearchParams()
   const queryTag = searchParams.get('tag')
+  const hasScrolledRef = useRef(false)
 
   // Handle scroll direction detection
   useEffect(() => {
@@ -274,6 +275,46 @@ export default function PostLayout({
 
     return heading
   })
+
+  useEffect(() => {
+    const hash = window.location.hash
+    if (hash && !hasScrolledRef.current) {
+      const id = decodeURIComponent(hash.substring(1))
+
+      // 延迟一段时间以确保 DOM 更新，特别是对于动态内容
+      // 您可以根据需要调整延迟时间，或者使用更健壮的元素检测机制
+      const timeoutId = setTimeout(() => {
+        let element = document.getElementById(id)
+
+        // 如果 getElementById 未找到，尝试使用 querySelector 和 CSS.escape
+        // 这与您 TableOfContents 组件中的 findHeadingElementByUrl 逻辑类似
+        if (!element) {
+          try {
+            element = document.querySelector(`#${CSS.escape(id)}`)
+          } catch (e) {
+            console.warn(`[InitialScroll] 使用 querySelector 查找 ID "${id}" 失败:`, e)
+          }
+        }
+
+        if (element) {
+          console.log(`[InitialScroll] 滚动到 ID 为 "${id}" 的元素`)
+          const headerOffset = 80 // 与您的 TableOfContents 组件中的偏移量保持一致
+          const elementPosition = element.getBoundingClientRect().top
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset
+
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth',
+          })
+          hasScrolledRef.current = true // 标记为已滚动
+        } else {
+          console.warn(`[InitialScroll] 未找到 ID 为 "${id}" 的元素`)
+        }
+      }, 100) // 初始延迟可以设为 100ms，如果问题依旧，可以适当增加
+
+      return () => clearTimeout(timeoutId) // 组件卸载时清除 timeout
+    }
+  }, []) // 空依赖数组确保此 effect仅在组件挂载时运行一次
 
   return (
     <SectionContainer>
