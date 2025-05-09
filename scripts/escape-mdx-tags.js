@@ -35,6 +35,12 @@ files.forEach((file) => {
       return match
     })
 
+    // 新增：将 \( ... \) 替换为 $ ... $
+    newContent = newContent.replace(/\\\\?\(([^)]+)\\\\?\)/g, (match, equation) => {
+      const cleanEquation = equation.trim()
+      return `$ ${cleanEquation} $`
+    })
+
     // 仅当内容实际发生更改时才写回文件
     if (newContent !== originalContent) {
       fs.writeFileSync(filePath, newContent, 'utf8')
