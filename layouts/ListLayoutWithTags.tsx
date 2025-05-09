@@ -20,6 +20,7 @@ interface ListLayoutProps {
   title: string
   initialDisplayPosts?: CoreContent<Blog>[]
   pagination?: PaginationProps
+  currentTag?: string
 }
 
 function Pagination({ totalPages, currentPage }: PaginationProps) {
@@ -72,6 +73,7 @@ export default function ListLayoutWithTags({
   title,
   initialDisplayPosts = [],
   pagination,
+  currentTag,
 }: ListLayoutProps) {
   const pathname = usePathname()
   const tagCounts = tagData as Record<string, number>
@@ -137,7 +139,9 @@ export default function ListLayoutWithTags({
                   ...post,
                   slug: actualSlug,
                 }
-                return <ArticleListItem key={post.path} post={postForListItem} />
+                return (
+                  <ArticleListItem key={post.path} post={postForListItem} currentTag={currentTag} />
+                )
               })}
             </div>
             {pagination && pagination.totalPages > 1 && (

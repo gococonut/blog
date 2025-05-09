@@ -146,15 +146,17 @@ async function createSearchIndex(allBlogs) {
     const sortedBlogs = sortPosts(filteredBlogs)
 
     for (const blog of sortedBlogs) {
-      searchEntries.push({
-        objectID: blog.path,
-        title: blog.title,
-        date: blog.date,
-        summary: processSummary(blog.summary),
-        tags: processTags(blog.tags),
-        kind: 'Article',
-        path: blog.path,
-      })
+      if (!blog.headingSummaries) {
+        searchEntries.push({
+          objectID: blog.path,
+          title: blog.title,
+          date: blog.date,
+          summary: processSummary(blog.summary),
+          tags: processTags(blog.tags),
+          kind: 'Article',
+          path: blog.path,
+        })
+      }
 
       // 优先使用 headingSummaries 字段
       if (blog.headingSummaries && blog.headingSummaries.length > 0 && blog.headings) {
@@ -204,6 +206,19 @@ async function createSearchIndex(allBlogs) {
         }
       }
     }
+
+    // 根据日期降序和标题升序排序搜索条目
+    searchEntries.sort((a, b) => {
+      // 首先按日期降序排序
+      const dateA = new Date(a.date).getTime()
+      const dateB = new Date(b.date).getTime()
+      if (dateB !== dateA) {
+        return dateB - dateA // 降序排列日期
+      }
+
+      // 日期相同时按标题升序排序
+      return a.title.localeCompare(b.title)
+    })
 
     const formattedEntries = await prettier.format(JSON.stringify(searchEntries, null, 2), {
       parser: 'json',

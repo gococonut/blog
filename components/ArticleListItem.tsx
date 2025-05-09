@@ -9,9 +9,10 @@ import React from 'react'
 
 interface ArticleListItemProps {
   post: Omit<Blog, 'body' | '_raw' | '_id'>
+  currentTag?: string
 }
 
-export default function ArticleListItem({ post }: ArticleListItemProps) {
+export default function ArticleListItem({ post, currentTag }: ArticleListItemProps) {
   const { slug, date, title, summary, tags, headingSummaries, cover } = post
 
   // 获取要显示的标签
@@ -62,7 +63,10 @@ export default function ArticleListItem({ post }: ArticleListItemProps) {
     >
       {cover && (
         <div className="hidden flex-shrink-0 md:block md:w-1/3">
-          <Link href={`/blog/${slug}`} aria-label={`Read more: "${title}"`}>
+          <Link
+            href={currentTag ? `/blog/${slug}?tag=${currentTag}` : `/blog/${slug}`}
+            aria-label={`Read more: "${title}"`}
+          >
             <Image
               src={cover}
               alt={title}
@@ -78,7 +82,7 @@ export default function ArticleListItem({ post }: ArticleListItemProps) {
           <div className="flex items-baseline justify-between gap-4">
             <h2 className="flex-grow text-base font-medium sm:text-lg md:text-xl">
               <Link
-                href={`/blog/${slug}`}
+                href={currentTag ? `/blog/${slug}?tag=${currentTag}` : `/blog/${slug}`}
                 className="text-foreground hover:text-primary transition-colors"
               >
                 {title}
@@ -91,7 +95,10 @@ export default function ArticleListItem({ post }: ArticleListItemProps) {
               </dd>
             </dl>
           </div>
-          <Link href={`/blog/${slug}`} aria-label={`Read summary: "${title}"`}>
+          <Link
+            href={currentTag ? `/blog/${slug}?tag=${currentTag}` : `/blog/${slug}`}
+            aria-label={`Read summary: "${title}"`}
+          >
             <div
               className={cn(
                 'prose dark:prose-invert max-w-none text-sm font-normal',

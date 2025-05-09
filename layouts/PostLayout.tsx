@@ -15,6 +15,7 @@ import { formatDate } from '@/utils/formatDate'
 import TableOfContents, { Heading } from '@/components/TableOfContents'
 import { ListOrdered, X } from 'lucide-react'
 import { animate, createScope, Scope, stagger } from 'animejs'
+import { useSearchParams } from 'next/navigation'
 
 const editUrl = (path) => `${siteMetadata.siteRepo}/blob/main/data/${path}`
 const discussUrl = (path) =>
@@ -65,6 +66,8 @@ export default function PostLayout({
   const [isPageLoaded, setIsPageLoaded] = useState(false)
   const [scrollingDown, setScrollingDown] = useState(false)
   const lastScrollY = useRef(0)
+  const searchParams = useSearchParams()
+  const queryTag = searchParams.get('tag')
 
   // Handle scroll direction detection
   useEffect(() => {
@@ -319,6 +322,7 @@ export default function PostLayout({
                 showSummary={!!headingSummaries && headingSummaries.length > 0}
                 onItemClick={handleToggleToc}
                 className="mobile-toc"
+                initialSelectedTag={queryTag || undefined}
               />
             </div>
           </div>
@@ -402,6 +406,7 @@ export default function PostLayout({
                   headings={headingsWithSummary}
                   isMobile={false}
                   showSummary={!!headingSummaries && headingSummaries.length > 0}
+                  initialSelectedTag={queryTag || undefined}
                 />
               </div>
             </aside>

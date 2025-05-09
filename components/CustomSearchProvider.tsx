@@ -89,7 +89,6 @@ export const CustomSearchProvider = ({
               id: doc.objectID || doc.path,
               name: doc.title,
               keywords: keywords,
-              section: doc.kind === 'Article' ? '文章' : '章节',
               subtitle: subtitle,
               // 添加HTML标签元素到摘要之后
               extraHTML: tagsDisplay,

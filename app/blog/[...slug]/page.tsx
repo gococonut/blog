@@ -13,6 +13,7 @@ import PostBanner from '@/layouts/PostBanner'
 import { Metadata } from 'next'
 import siteMetadata from '@/data/siteMetadata'
 import { notFound } from 'next/navigation'
+import { Suspense } from 'react'
 
 const defaultLayout = 'PostLayout'
 const layouts = {
@@ -112,15 +113,19 @@ export default async function Page(props: { params: Promise<{ slug: string[] }> 
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <Layout
-        content={mainContent}
-        authorDetails={authorDetails}
-        next={next}
-        prev={prev}
-        headings={post.headings}
+      <Suspense
+        fallback={<div className="container mx-auto px-4 py-12 text-center">正在加载内容...</div>}
       >
-        <MDXLayoutRenderer code={post.body.code} components={components} toc={post.headings} />
-      </Layout>
+        <Layout
+          content={mainContent}
+          authorDetails={authorDetails}
+          next={next}
+          prev={prev}
+          headings={post.headings}
+        >
+          <MDXLayoutRenderer code={post.body.code} components={components} toc={post.headings} />
+        </Layout>
+      </Suspense>
     </>
   )
 }
