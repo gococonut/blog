@@ -1,0 +1,30 @@
+---
+title: 'Google Gemini：最差的 LLM API'
+date: '2025-05-04'
+sourceDate: '2025-05-04'
+sourceType: 'hacker-news'
+tags: [开源项目, Web技术, 开发工具]
+cover: 'https://hub-image.moreve.net/files/images/hacker-news/2025-05-04.png'
+---
+
+## Google Gemini：最差的 LLM API
+
+**作者:** [indigodaddy](https://news.ycombinator.com/user?id=indigodaddy) | **发布时间:** 2025-05-04 06:29:54
+
+### 内容摘要
+
+谷歌 Gemini API：功能领先，开发者体验欠佳
+
+文章分析了谷歌 Gemini 模型在长文本处理、多模态能力、代码推理以及微调等方面的领先优势，但同时指出了其 API 在开发者体验上的显著不足。作者详细列举了以下几个主要问题：
+
+1.  **双平台并行带来困惑：** Gemini API 同时存在于 Vertex AI 和 Google AI Studio 两个平台，功能发布不同步且部分功能仅在 Vertex AI 上可用，导致开发者，特别是初创公司和个人用户，需要同时管理和应对这两个平台，增加了使用复杂性。
+2.  **文档质量问题：** 两个平台各有独立的文档，内容存在冲突和过时之处（例如，部分文档仍提及已弃用的 Gemini 1.5），使得开发者难以快速准确地获取所需信息。
+3.  **API 设计的特殊性：** Google AI Studio 的 API SDK 对某些功能（如多模态）支持不完善，且 Vertex AI SDK 不支持常见的 API Key 认证方式，需要开发者额外学习和配置其独特的认证流程。
+4.  **微调模型的使用障碍：** 尽管 Vertex AI 支持 Gemini 2.0 的微调，但使用流程繁琐，需要手动部署终端节点，且官方的 TypeScript SDK 竟然不支持直接调用这些微调后的模型，开发者只能依赖于 REST API 或第三方工具。
+5.  **前缀缓存机制不友好：** 与其他服务提供商自动或通过简单标记实现前缀缓存不同，Gemini 的前缀缓存需要通过独立的 API 进行管理，开发者需要额外构建系统来跟踪缓存ID和管理缓存生命周期，增加了实现复杂性和维护成本。
+
+尽管存在这些问题，由于 Gemini 模型在功能和价格上的优势，开发者通常仍需要使用它。作者建议从 Vertex AI 开始，并同时考虑集成 Google AI Studio。为了规避 API 的不足，作者强烈推荐使用 LLM 路由工具（如 Vercel AI SDK 或 OpenRouter）来简化与 Gemini 的集成，并提及了使用 Vercel AI SDK 调用微调模型的代码示例。
+
+### 讨论焦点
+
+[阅读原文](https://news.ycombinator.com/item?id=43882905)

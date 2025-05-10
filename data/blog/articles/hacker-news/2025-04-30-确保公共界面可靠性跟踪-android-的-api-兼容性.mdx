@@ -1,0 +1,36 @@
+---
+title: '确保公共界面可靠性：跟踪 Android 的 API 兼容性'
+date: '2025-05-04'
+sourceDate: '2025-04-30'
+sourceType: 'hacker-news'
+tags: [开源项目, Web技术, 开发工具]
+cover: 'https://hub-image.moreve.net/files/images/hacker-news/2025-05-04.png'
+---
+
+## 确保公共界面可靠性：跟踪 Android 的 API 兼容性
+
+**作者:** [skydoves](https://news.ycombinator.com/user?id=skydoves) | **发布时间:** 2025-04-30 08:03:52
+
+### 内容摘要
+
+确保公共接口可靠性：跟踪 Android 和 Kotlin 的 API 兼容性
+
+本文探讨了如何通过跟踪兼容性变化来确保公共 API 的可靠性，并以 RevenueCat SDK 为例进行说明。对于构建库、SDK 或模块的开发者来说，仔细修改公共 API 至关重要，因为这些修改直接影响着依赖项目的迁移工作。意外或剧烈的 API 变化可能破坏依赖关系，迫使使用者花费时间进行调整。
+
+在大型项目中，手动跟踪公共 API 变化容易出错且常被忽视。文章介绍了两种强大的工具：Binary Compatibility Validator 和 Metalava，可自动跟踪和监控公共 API 变化，确保在新版本发布前了解可能影响用户的修改。即使不构建库或 SDK，这些工具也可用于多模块架构中，以跟踪并限制可从其他模块访问的公共类和接口。
+
+Binary Compatibility Validator 是 JetBrains 开发的 Kotlin Gradle 插件，可生成并比较公共 API 快照，检测二进制不兼容变化。它易于集成，并可通过 `apiValidation` 配置参数，如忽略项目、忽略类和非公共标记等。可以使用 `./gradlew apiDump` 生成 .api 文件查看当前公共 API，`apiCheck` 命令则用于验证 API 是否与 .api 文件匹配，特别适用于 CI 管道。
+
+Metalava 是 Google 开发的 JVM 元数据生成工具，广泛应用于 Android 平台和 AndroidX 库。其功能包括提取公共 API 到签名文件、生成 stub API 文件、导出注解以及执行 API diff 比较兼容性。相较于 Binary Compatibility Validator，Metalava 的一个优势在于支持带有产品变体的模块，使其更加灵活。
+
+可以通过 metalava-gradle 插件轻松集成 Metalava，并使用 `metalava` 进行配置，例如隐藏带有特定注解的元素或排除特定源集。`metalavaGenerateSignature` 命令用于生成 api.txt 文件，`metalavaCheckCompatibility` 命令则用于验证 API 兼容性，同样可集成到 CI 管道。
+
+结合 Git Hooks 和 CI 管道，这些工具能更有效地预检查 API 变化。将 API 检查集成到 CI 流程中，可以防止带有不兼容 API 变化的提交被合并到主分支，从而早期发现和解决问题。RevenueCat 的 Android SDK 就使用了 Metalava 与 CircleCI 集成进行兼容性检查。
+
+总而言之，通过自动跟踪公共 API 变化，使用 Binary Compatibility Validator 或 Metalava，并将 API 检查集成到 CI 流程中，可以显著提高模块的可靠性，为开发者提供稳定、一致的体验。即使在多模块项目中，这些工具也有助于维护清晰的内部和外部 API 边界。
+
+### 讨论焦点
+
+这篇帖子只有一篇热门评论，作者skydoves。评论内容是对文章主题的概述，强调了公共API变更对开发者迁移成本的影响，并介绍了文章将探讨通过跟踪兼容性变更来确保公共API可靠性的方法，以RevenueCat SDK为例。由于只有一个评论且是文章作者本人对主题的引述，因此没有形成讨论分支、没有嵌套回复、也没有出现讨论焦点、核心观点、争议点或情感倾向的互动分析，仅是文章主题的复述。
+
+[阅读原文](https://news.ycombinator.com/item?id=43839572)

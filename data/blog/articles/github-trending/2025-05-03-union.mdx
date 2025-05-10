@@ -1,0 +1,28 @@
+---
+title: 'union'
+date: '2025-05-03'
+sourceDate: '2025-05-03'
+sourceType: 'github-trending'
+tags: [开源项目, AI前沿, 开发工具]
+cover: 'https://hub-image.moreve.net/files/images/github-trending/2025-05-03.png'
+---
+
+## union
+
+最少信任的零知識橋接協議，設計用於抗審查、極高安全性和去中心化金融應用
+
+**作者:** [unionlabs](https://github.com/unionlabs.png) | **仓库:** [Github 链接](https://github.com/unionlabs/union)
+**语言:** Rust | **Stars:** 56280
+**Forks:** 2821 | **Recent Stars** 369
+
+### 项目简介
+
+Union项目概述：去中心化信任最小化跨链桥协议
+
+Union 是一个采用信任最小化和零知识证明技术的跨链桥协议，旨在提供高度的抗审查性和安全性，特别适用于去中心化金融（DeFi）领域。该协议基于“共识验证”（Consensus Verification），不依赖于可信第三方、预言机、多重签名或多方计算（MPC）。
+
+Union 协议实现了 IBC（跨链通信协议），兼容 Cosmos 生态链，同时连接 EVM 兼容链，例如以太坊、Berachain、Arbitrum 等。协议的升级、连接管理和代币配置等关键方面将通过去中心化治理方式进行控制，以确保协议的发展与用户、验证者和运营商的利益保持一致。
+
+项目的代码库包含多个核心组件，使用 Go、Rust、TypeScript 和 Solidity 等多种编程语言开发。主要组件包括 Union 节点实现 (`uniond`)，零知识证明器 (`galoisd`)，高性能跨生态中继器 (`voyager`)，多生态链索引器 (`hubble`)，CosmWasm 智能合约栈 (`cosmwasm`)，以及用于不同生态系统的轻客户端 (`light-clients`)。此外，项目还提供了用于生产部署的节点监督器 (`unionvisor`)，Cosmos 链的水龙头工具 (`drip`)，EVM 智能合约栈 (`evm`)，以及一个用户界面 (`app`) 和官方网站 (`site`) 的实现。为了方便开发者交互，还提供了 TypeScript SDK (`typescript-sdk`)。
+
+项目强调可重复构建，推荐使用 Nix 包管理器来构建任何组件并进入包含所有依赖项的开发环境。文档可在官方网站获取，每个组件也有相应的开发文档位于其 README 文件中。项目的代码遵循 Apache-2.0 和 MIT 双重开源许可证。

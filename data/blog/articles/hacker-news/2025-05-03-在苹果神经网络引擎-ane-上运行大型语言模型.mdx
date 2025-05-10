@@ -1,0 +1,34 @@
+---
+title: '在苹果神经网络引擎 (ANE) 上运行大型语言模型'
+date: '2025-05-04'
+sourceDate: '2025-05-03'
+sourceType: 'hacker-news'
+tags: [开源项目, Web技术, 开发工具]
+cover: 'https://hub-image.moreve.net/files/images/hacker-news/2025-05-04.png'
+---
+
+## 在苹果神经网络引擎 (ANE) 上运行大型语言模型
+
+**作者:** [behnamoh](https://news.ycombinator.com/user?id=behnamoh) | **发布时间:** 2025-05-03 23:29:10
+
+### 内容摘要
+
+ANEMLL：加速 LLM 在 Apple Neural Engine 上的推理
+
+ANEMLL（发音类似于 "animal"）是一个开源项目，致力于加速大型语言模型（LLMs）在张量处理器上的移植，特别是针对 Apple Neural Engine (ANE)。该项目的核心目标是建立一个完全开源的管道，实现在 ANE 上运行常见 LLM 架构的模型转换和推理过程。
+
+项目主要提供了将 LLMs 直接从 Hugging Face 模型转换为适用于 ANE 的 CoreML 格式的工具，并提供了用于 Swift 应用的优化推理代码，以及用于测试的 Python 示例代码。此外，ANEMLL 还提供了 iOS/macOS 平台的示例聊天应用，方便用户快速进行模型下载、集成和对话测试。
+
+ANEMLL 目前优化支持 Meta 的 LLaMA 3.2 1B 和 8B 模型，包括基于 LLaMA 3.1 架构的 DeepSeek R1 8B, DeepHermes 3B 和 8B 模型。尽管当前的量化（尤其是 LUT4）效果受限于 ANE 的块量化功能尚待改进，但未来版本计划增加对更多模型和架构的支持，并提升量化质量。
+
+该项目强调在边缘设备上实现低功耗、高隐私和安全性的设备端推理，这对于无需互联网连接的自主应用至关重要。项目还包含 ANEMLL-BENCH 工具，用于基准测试 ANE 上的模型性能和优化效果。
+
+安装 ANEMLL 需要 macOS Sequoia 系统、至少 16GB 内存和 Python 3.9，并需要安装 Xcode Command Line Tools 以获取 CoreML 编译器。项目积极鼓励社区贡献，并展示了基于 ANEMLL 构建的第三方开源项目，例如 anemll-server。
+
+项目提供了详细的模型转换、CLI 使用、Python 测试以及 iOS/macOS 应用指南文档。用户可以通过 Hugging Face 获取预转换模型，并参与 TestFlight 计划测试最新的 iOS/macOS 应用。ANEMLL 遵循 MIT 许可证。
+
+### 讨论焦点
+
+讨论主要围绕Apple的神经引擎 (ANE) 在运行大型语言模型 (LLMs) 方面的现状、潜力、限制以及苹果公司对其开放性和支持的态度。评论者们探讨了ANE与GPU相比的优劣势，以及苹果自身和第三方框架对其的支持程度和实际效果。争议点集中在ANE的实际可用性、性能以及苹果是否充分利用了这一硬件能力，尤其是在AI领域快速发展的背景下。
+
+[阅读原文](https://news.ycombinator.com/item?id=43879702)

@@ -1,0 +1,68 @@
+---
+title: '展示 HN: 使用 Kindle Comic Converter 优化的电子墨水漫画 (+Kobo/ReMarkable)'
+date: '2025-05-08'
+sourceDate: '2025-05-07'
+sourceType: 'hacker-news'
+tags: [开发工具, AI前沿, 深度分析, 社区互动]
+cover: 'https://hub-image.moreve.net/files/images/hacker-news/2025-05-08.png'
+---
+
+## 展示 HN: 使用 Kindle Comic Converter 优化的电子墨水漫画 (+Kobo/ReMarkable)
+
+**作者:** [seam_carver](https://news.ycombinator.com/user?id=seam_carver) | **发布时间:** 2025-05-07 23:26:43
+
+### 内容摘要
+
+KCC (Kindle Comic Converter) 是一款开源工具，旨在为各种电子墨水阅读器（如 Kindle、Kobo、ReMarkable 等）优化漫画和漫画。
+
+**核心功能：**
+KCC 能够处理多种输入格式，包括包含 JPG/PNG/GIF/WebP 图像的文件夹、CBZ、CBR、CB7、ZIP 和 PDF 文件（仅提取 JPG）。其主要优势在于其图像处理能力，可以将漫画页面转换为适合电子墨水屏幕的格式，实现全屏无边距显示和固定布局支持。通过下采样到特定设备的屏幕分辨率，KCC 还能优化文件大小，提高在性能较低的电子阅读器上的表现。
+
+**主要特点：**
+
+- 支持多种电子阅读器设备，并提供相应的设备配置文件，以优化输出效果。
+- 提供多种图像处理选项，包括放大质量提升、双页解析模式（分割、旋转或两者）、伽马校正、页面裁剪和黑白边框强制等。
+- 支持漫画风格（从右到左阅读和分割）、Webtoon 处理模式以及最大输出文件大小控制。
+- 提供命令行工具 `kcc-c2e.py` 和 `kcc-c2p.py`，供高级用户进行更精细的控制。
+- 支持批量分割输出到多个文件。
+
+**使用说明：**
+该工具提供了直观的用户界面，大多数选项都有详细的工具提示。转换完成后，生成的文件会与原始输入文件位于同一目录。对于高级用户，提供了带有更多参数的命令行版本。项目维护者鼓励用户通过 Mobileread 论坛或 GitHub issue 报告问题、提出新功能或提供捐赠。
+
+**安装与贡献：**
+用户可以从项目的 GitHub 发布页面下载预编译的 Windows 和 macOS 版本（包括 Intel 和 Apple Silicon 版本），或通过 wiki 了解 Flatpak、Docker 和 AppImage 版本。对于希望从源代码安装或贡献的开发者，项目提供了详细的步骤和依赖说明，支持 Windows 和 macOS 环境，并推荐使用虚拟环境进行依赖管理。项目代码主要由 Python 编写，利用了 Pillow 和 PyInstaller 等库，也使用了 DualMetaFix 和 Mangle 的部分代码。
+
+**隐私：**
+KCC 仅在启动时进行版本检查以及在发生错误时（Windows 和 macOS）进行自动报告，会发起互联网连接。
+
+总的来说，KCC 是一款强大且灵活的漫画转换工具，为电子墨水设备用户提供了定制化阅读体验的能力。
+
+### 讨论焦点
+
+主要讨论区为技术实现细节及其性能优化。
+
+Calibre 集成与文件传输方式:
+
+讨论了 KCC 是否以及如何与 Calibre 集成。目前作者推荐直接 USB 传输，因 Calibre 可能修改文件格式。评论者认为理论上 Calibre 插件（基于 Python）可行，同时有用户提问 USB 传输的具体操作。
+
+学习 PyQt 的资源:
+
+有评论者询问学习 PyQt 的推荐资源。作者分享了自己的经验，表示通过阅读官方文档入门。
+
+与 Koreader 的功能对比及 KCC 优势:
+
+对比了 KCC 与 Koreader 在 Kobo 设备上的功能。Koreader 具有自动裁剪边缘、调整对比度等功能。KCC 的主要优势在于文件大小优化和更精细的裁剪（不仅仅是边缘，还包括面板间空白和页码）。有用户表示文件大小优化是他们的主要需求痛点。
+
+ePub 转 epub 需求与处理:
+
+有用户提出将 epub 格式的漫画转换为适用于电子墨水屏的 epub 格式的需求，尤其提到 Humble Bundle 来源的文件。作者表示 KCC 更推荐使用 PDF 作为源文件，因为质量更好。并解释了处理 epub 的复杂性，如页面命名顺序不一，需要读取 opf 文件。
+
+优化电子墨水屏阅读体验:
+
+讨论了 KCC 如何提升在 Kindle Paperwhite 上的阅读体验。作者提到新实现的虚拟面板视图功能，允许放大局部或横屏阅读一半页面，以及使用了 LANCOZ 算法进行优秀的缩放处理。
+
+总体印象:
+
+评论区氛围积极，用户对 KCC 的功能表现出兴趣，并围绕技术实现细节、与其他工具的对比以及特定用例（如文件大小、格式转换）展开了具体的技术性讨论和交流，作者积极回应 user 的问题，提供解决方案和背景信息。
+
+[阅读原文](https://news.ycombinator.com/item?id=43916956)

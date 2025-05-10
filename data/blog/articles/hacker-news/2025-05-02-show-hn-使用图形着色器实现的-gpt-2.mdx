@@ -1,0 +1,48 @@
+---
+title: 'Show HN: 使用图形着色器实现的 GPT-2'
+date: '2025-05-03'
+sourceDate: '2025-05-02'
+sourceType: 'hacker-news'
+tags: [行业动态, 开发工具, AI前沿]
+cover: 'https://hub-image.moreve.net/files/images/hacker-news/2025-05-03.png'
+---
+
+## Show HN: 使用图形着色器实现的 GPT-2
+
+**作者:** [nathan-barry](https://news.ycombinator.com/user?id=nathan-barry) | **发布时间:** 2025-05-02 23:21:49
+
+### 内容摘要
+
+在 GPT-2 WebGL 项目摘要中，该项目提供了一个基于浏览器的、利用 WebGL2 技术的 GPT-2 模型实现，重点在于其在浏览器中的推理能力以及对 Transformer 块和注意力矩阵的可视化。
+
+核心功能包括：
+
+1.  **浏览器中的 GPT-2 推理：** 完全使用 WebGL2 Shader 在 GPU 上进行 GPT-2 small (117M) 模型的正向传播计算。
+2.  **浏览器端 BPE 分词：** 利用 `js-tiktoken` 库，在浏览器中进行 BPE（Byte Pair Encryption）分词，无需 WebAssembly (WASM) Fetch。
+3.  **权重下载工具：** 提供一个简单的 Python 脚本，用于下载预训练的 GPT-2 权重。
+
+项目的环境要求包括需要 Node.js ≥ 16.x 和 npm、Python ≥ 3.8 以及支持 WebGL2 的现代浏览器。使用 HuggingFace 的 `transformers` 库下载权重文件，并通过 `pip install torch numpy transformers` 安装相关依赖，然后运行 `python download_weights.py` 脚本来获取模型所需的各种二进制文件（如词嵌入、位置嵌入和注意力权重等）以及一个 `manifest.json`。
+
+前端开发使用了 Vite 进行构建打包，支持 Typescript、ESM 模块以及 `js-tiktoken`。通过 `npm install` 安装 JavaScript 依赖，然后运行 `npm run dev` 启动本地开发服务器，即可在浏览器中访问并进行实时开发调试。
+
+该项目采用 MIT 许可证发布，是一个开源项目，目前已有 100 个 Star 和 2 个 Fork，主要的贡献者包括 nathan-barry 和 leejasper851。项目的主要代码语言是 TypeScript，此外还有 CSS、Python 和 HTML 代码。
+
+总而言之，该项目展示了如何在浏览器环境中高效运行 GPT-2 模型，并提供了对模型内部机制的可视化功能，为在客户端进行 AI 模型推理和探索提供了有价值的参考和工具。
+
+### 讨论焦点
+
+讨论焦点主要集中在技术的实现选择（WebGL vs WebGPU），尤其是作者为何选择 WebGL；如何部署和托管项目，方便用户在线体验；以及用户在使用过程中遇到的具体问题（如可视化显示异常）和解决方案的探讨。部分评论也表达了对项目创意和实现的赞赏，并提到了类似项目或技术实现。
+
+评论作者 ianand 作为曾经用 Excel 实现 GPT2 的人，首先对项目的创意和实现表示赞赏，并向作者 nathan-barry 致敬。他提出的第一个核心问题是作者为何选择 WebGL 而非 WebGPU，隐含了对技术选型原因的好奇，并猜测是否只是为了展示 WebGL 的可能性。作者 nathan-barry 回复 ianand 解释了选择 WebGL 的原因，主要是因为这是图形课程的期末项目，课程中大量使用了 WebGL，且自己对 OpenGL 更熟悉，对 WebGPU 研究不多。作者 littlestymaar 回应 ianand 的关于技术选择的问题，认为选择 WebGL 可能更具原创性，因为使用 WebGPU 可以直接利用 transformers.js 等现有库，而 transformers.js 封装了 ONNX Runtime，支持多种后端（包括 WebGL、WebGPU），因此作者 85392_school 补充说明，后端选择（如 WebGL）本身并非其新颖之处，ONNX Runtime 的多后端支持使其更通用。评论作者 \_dijs 对作者 ianand 提及了久违的问候，表达了朋友间的情感。作者 divan 开玩笑说既然有人用 Excel 实现了 GPT2，又有人用图形着色器，那现在该有人用图形着色器实现 Excel 了。
+
+评论作者 SamosaGuru 表达了希望项目能托管在静态网页上方便用户在线体验的愿望。作者 nathan-barry 回复 SamosaGuru 表示正在努力将项目部署到 Github Pages，但担心权重文件托管问题，会继续研究。评论作者 Philpax 和 jasonjmcghee 分别向 nathan-barry 建议可以尝试直接从 Hugging Face 获取权重文件，jasonjmcghee 特别提到了 Hugging Face 上 Xenova 的 GPT2 模型，可能支持 ONNX 权重。
+
+评论作者 throwaway314155 称赞项目很棒，但报告自己在 MacBook 上使用 Firefox 运行项目时，可视化显示与 GitHub 演示不一致的问题，并询问是否是浏览器兼容性导致。作者 nathan-barry 回复 throwaway314155，鼓励他在仓库中提交 issue，并表示自己主要在 Safari 上测试，会检查其他浏览器。throwaway314155 随后确认已提交 issue。
+
+评论作者 jasonjmcghee 表达了对项目的惊叹，并注意到项目正在尝试通过 Github Page 部署（提供了链接），但加载失败。他分析失败原因可能是 Github Page 直接托管了源代码（main.ts），而不是构建后的 dist 文件夹。作者 nathan-barry 回复 jasonjmcghee 确认了部署失败的事实，解释是因为权重文件尚未推送到仓库，导致 Github Page 无法加载。他提到正在考虑让页面加载时从其他地方抓取权重文件，并鼓励其他开发者提交 PR 来实现这一功能，提供了 weights 压缩文件的下载链接。
+
+评论作者 Philpax 提到了一个在 VRChat 中使用着色器运行 Qwen2-0.5B 模型的类似项目，作为参考。
+
+讨论中的核心观点和分歧集中在技术选型的理由、部署方案的可行性（尤其涉及大文件如模型权重的托管）、以及用户体验和跨浏览器兼容性遇到的实际问题。情感倾向方面，大部分评论表达了对项目的正面评价、好奇、支持和帮助的意愿，但也包含少量关于技术细节和实现问题的客观讨论和反馈。分歧主要体现在对技术选型的看法（WebGPU 是否更合适或更常见）以及部署和用户使用中遇到的具体技术难题上。
+
+[阅读原文](https://github.com/nathan-barry/gpt2-webgl)

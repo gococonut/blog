@@ -1,0 +1,26 @@
+---
+title: 'unionlabs / union'
+date: '2025-05-05'
+sourceDate: '2025-05-05'
+sourceType: 'github-trending'
+tags: [AI前沿, 开源项目, Web技术, 开发工具]
+cover: 'https://hub-image.moreve.net/files/images/github-trending/2025-05-05.png'
+---
+
+## unionlabs / union
+
+信任最小化、零知识跨链桥协议：专为抗审查、极高安全性和去中心化金融设计
+
+**作者:** [unionlabs](https://github.com/unionlabs) | **仓库:** [Github 链接](https://github.com/unionlabs/union) | **语言:** Rust
+
+### 项目简介
+
+Union 是一个专注于提供无需信任、零知识的区块链跨链桥接协议。其核心目标在于确保极高的安全性和抗审查能力，同时应用于去中心化金融领域。
+
+Union 采用“共识验证”（Consensus Verification）机制，不依赖于中心化的第三方、预言机、多重签名或 MPC 等组件，从而最大化地降低对信任的需求。它支持与Cosmos 生态链通过 IBC 协议进行兼容，同时也连接了以太坊、Berachain、Arbitrum 等 EVM 兼容链。
+
+该协议的设计包含了多个核心组件，以支持其跨链功能和整体生态系统的运行。主要组件包括处理节点实现的 `uniond` (Go语言)、负责零知识证明生成的 `galoisd` (Go 和 Gnark)、高性能的跨生态中继器 `voyager` (Rust)、支持多链、通用消息传递的链索引器 `hubble` (Rust)。此外，还有服务于 Cosmos 生态的 `cosmwasm` 合约栈和各种生态系统的轻客户端 (Rust)，用于生产环境的节点管理工具 `unionvisor` (Rust)，以及为 Cosmos 链提供代币的水龙头服务 `drip` (Rust)。在 EVM 生态方面，Union 提供了基于 Solidity 的智能合约栈 `evm`。为了方便用户交互和开发者集成，Union 还提供了基于 TypeScript 和 Svelte 的用户界面 `app`，基于 TypeScript 和 Astro 的官方网站 `site`，以及用于与协议交互的 `TypeScript SDK`。
+
+项目的开发和构建流程利用了 Nix 工具，旨在实现组件的可重现构建和依赖管理。官方文档提供了关于项目概念和各组件的详细信息。协议的未来升级、连接和配置变动等将通过去中心化治理来决策，以确保项目发展方向与用户、验证者和运营者的利益保持一致。
+
+Union 项目在 GitHub 上拥有较高的关注度，表明其在社区中的影响力和潜力。代码库主要使用 Rust 语言编写，同时包含 Move, TypeScript, Solidity, Svelte 和 Nix 等多种其他语言。

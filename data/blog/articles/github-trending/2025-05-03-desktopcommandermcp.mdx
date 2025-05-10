@@ -1,0 +1,34 @@
+---
+title: 'DesktopCommanderMCP'
+date: '2025-05-03'
+sourceDate: '2025-05-03'
+sourceType: 'github-trending'
+tags: [开源项目, AI前沿, 开发工具]
+cover: 'https://hub-image.moreve.net/files/images/github-trending/2025-05-03.png'
+---
+
+## DesktopCommanderMCP
+
+这是一个面向Claude的MCP服务器，为其提供终端控制、文件系统搜索和差异文件编辑功能
+
+**作者:** [wonderwhy-er](https://github.com/wonderwhy-er.png) | **仓库:** [Github 链接](https://github.com/wonderwhy-er/DesktopCommanderMCP)
+**语言:** TypeScript | **Stars:** 2309
+**Forks:** 245 | **Recent Stars** 69
+
+### 项目简介
+
+Desktop Commander MCP：为 Claude 提供终端控制、文件系统操作和文件编辑能力。
+
+Desktop Commander MCP 是一个专为 Claude 设计的 Model Context Protocol (MCP) 服务器。其核心目的是赋予 Claude 对本地文件系统和终端的强大控制能力，使其能够超越传统的 AI 编辑器，执行更复杂、更贴近实际开发的工作。该项目基于 MCP 文件系统服务器构建，并在此基础上增加了搜索、替换和差异编辑等文件编辑功能。
+
+主要功能包括：
+
+1.  **终端控制：** 允许 Claude 执行终端命令，支持输出流式传输、命令超时、后台执行以及进程管理（列出和终止进程）。
+2.  **文件系统操作：** 提供全面的文件系统功能，如读写文件、创建/列出目录、移动文件/目录、搜索文件以及获取文件元数据。还支持从本地或 URL 读取文本和图像内容。
+3.  **文件编辑：** 提供两种模式：针对小改动的精准文本替换 (`edit_block` 工具，支持模糊匹配和多处替换) 以及针对大改动的完整文件重写 (`write_file` 工具)。支持多文件操作和基于模式的替换。
+4.  **代码编辑：** 利用 vscode-ripgrep 实现文件夹内的递归代码或文本搜索。
+5.  **配置管理：** 允许用户通过工具获取和设置服务器配置，如阻止的命令、默认 shell 和允许访问的目录。配置会持久化保存。
+
+该项目提供了多种安装方式，包括 npx、bash 脚本 (macOS)、Smithery 以及手动修改 Claude 桌面版配置文件。通过 npx 或 Smithery 安装可实现自动更新。项目安全提示强调在单独的聊天窗口中进行配置更改，并注意 `allowedDirectories` 设置目前仅限制文件系统操作，终端命令仍可能访问此范围外的文件。
+
+Desktop Commander MCP 的目标是将所有 AI 开发工具整合到一个聊天界面中，使其成为一个多功能的开发助理，尤其适合探索复杂代码库、自动化任务和进行精准的代码修改。该项目是开源且免费使用的，通过支持其开发可以帮助持续改进和增加新功能。隐私方面，项目收集有限的匿名遥测数据，用户可以选择退出。详细信息可在项目的 FAQ 和隐私政策中找到。

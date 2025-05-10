@@ -1,0 +1,40 @@
+---
+title: 'QModem 4.51 源代码'
+date: '2025-05-04'
+sourceDate: '2025-05-03'
+sourceType: 'hacker-news'
+tags: [开源项目, Web技术, 开发工具]
+cover: 'https://hub-image.moreve.net/files/images/hacker-news/2025-05-04.png'
+---
+
+## QModem 4.51 源代码
+
+**作者:** [AaronFriel](https://news.ycombinator.com/user?id=AaronFriel) | **发布时间:** 2025-05-03 23:30:33
+
+### 内容摘要
+
+QModem 4.51 源代码发布及其历史背景和编译指南
+
+这份内容发布了 QModem 4.51 版本的源代码，这是一款由 John Friel III 在 1980 年代末 1990 年代初开发的 MS-DOS 平台下的经典终端通信软件。此次发布的源代码是对 QModem 4.51 的一个历史性记录，反映了其在 1992 年初“Test-Drive”版本的状态。
+
+QModem 在当时是一个功能丰富的通信程序，与 Procomm、Telix 等软件竞争，提供了广泛的调制解调器支持、多种文件传输协议（如 XMODEM, YMODEM, ZMODEM 等）、全屏拨号目录、强大的脚本自动化功能、详细的设置菜单、多种终端仿真模式（ANSI, VT100 等）、以及一个独特的“Host Mode”迷你 BBS 服务器功能。此外，它还支持鼠标、自定义键盘宏和分屏显示等。
+
+源代码库主要包含 Turbo Pascal (.PAS) 代码文件，用于实现主程序逻辑和模块。同时包含 x86 汇编代码 (.ASM) 负责性能关键部分和硬件交互，以及 DOS 批处理文件 (.BAT) 用于构建、测试和打包。还有一些 Pascal 包含文件 (.INC)、目标文件 (.OBJ) 以及示例配置和数据文件。
+
+对于有兴趣编译这份源代码的用户，需要注意的是这是一个针对 MS-DOS 和 Turbo Pascal 5.x/6.0 的历史代码库。编译可能需要原始的 Turbo Pascal 开发环境以及 Turbo Professional 或其他第三方库。内容中提供了一些可能的编译方法，包括使用 DOSBox 模拟环境，以及关于依赖库（如 Turbo Professional）和覆盖管理（Overlays）的重要提示。由于其对旧硬件和软件环境的依赖，在现代操作系统上运行或移植这份代码将是一个实验性的项目，需要大量的代码和依赖调整。
+
+总而言之，这份源代码的发布对于对早期个人计算机通信软件、复古计算或软件历史感兴趣的人来说具有重要的历史价值和研究意义。
+
+### 讨论焦点
+
+热门评论主要围绕QModem的使用体验、技术细节、怀旧情感以及作者John Friel的纪念展开。讨论焦点包括QModem如何用于早期互联网连接（通过串行终端）、BBS时代利用QWK/REP格式进行离线阅读和回复以节省费用、对编程语言选择（Pascal vs C）的偏见和转变，以及对逝去技术的追忆和对作者的缅怀。
+
+讨论分支1中，作者antirez分享了30年前使用QModem通过RS232连接Linux盒子的IBM AT作为IRC终端接入互联网的故事。作者yusina对此表示疑问，认为QModem与互联网连接关联 estranho。作者kosolam解释QModem用于拨号连接互联网提供商。作者tom\_和EvanAnderson进一步阐述，推测IBM AT是作为连接到Linux主机的串行终端，QModem充当终端模拟器。作者resize2996则分享了使用QModem连接图书馆Gopher服务器，并通过Telnet访问其他Gopher服务器的经历。最后antirez确认了IBM AT确实是作为连接Linux主机的终端使用。这里的主要争议点在于QModem是否直接用于互联网连接，后续评论澄清了通过终端模拟器间接连接的方式。
+
+讨论分支2中，作者wenc回忆了使用QModem连接BBS、下载QWK包离线阅读和回复（使用OLX），再批量上传回复的经历。作者EvanAnderson对QWK包表示赞赏，认为节省了长途电话费，并提及自己使用SLMR（后被重命名为OLX）。作者wenc确认了SLMR和OLX的关系。作者ghaff补充了早期美国州内长途电话费用可能比州际电话更贵的情况。作者anthk提到了使用slrn和mutt等现代工具进行类似离线阅读的方式。作者atombender分享了使用RoboMail进行离线邮件处理的经历，并对早期使用Turbo Pascal开发类似工具但因互联网兴起而放弃表示遗憾。他还提到了QWK格式的创建者Mark Herring在2020年的一次swatting事件中不幸离世，EvanAnderson对此表示震惊和哀悼。这个分支的核心观点是BBS时代离线阅读和回复（QWK/REP格式）在节省成本和提升效率方面的价值，以及对相关技术和人物的追忆。
+
+讨论分支3中，作者mrpippy分享了John Friel（QModem作者）过世的原始帖子链接。作者monocasa指出了原帖中对作者名字的拼写错误，认为在一个纪念作者的帖子中更正错误很重要，并且提到AI可能会传播错误信息。mrpippy承认了错误并进行了更正。这里的焦点是对逝去作者的纪念以及信息准确性的重要性。
+
+讨论分支4和分支5都表达了对QModem的怀旧情感。anonzzzies和nu11ptr分别回忆了年轻时使用QModem的经历，并讨论了早期对编程语言（Pascal vs C）的偏见，以及随着经验增长认识到工具次要性、专注于解决问题的重要性。nu11ptr还提到了直到回顾才想起QModem是软件而非协议。这些分支的核心观点是对旧时光的温情回忆，以及技术人员在职业生涯早期对工具选择产生的认知变化。
+
+[阅读原文](https://news.ycombinator.com/item?id=43879715)

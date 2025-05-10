@@ -1,0 +1,34 @@
+---
+title: 'yuaotian / go-cursor-help'
+date: '2025-05-08'
+sourceDate: '2025-05-08'
+sourceType: 'github-trending'
+tags: [AI前沿, 开发工具, 科技动态, 深度分析]
+cover: 'https://hub-image.moreve.net/files/images/github-trending/2025-05-08.png'
+---
+
+## yuaotian / go-cursor-help
+
+解决Cursor免费订阅期间提示“您已达到试用请求限制”或“此计算机上使用了过多的免费试用账户，请升级到专业版。我们设置此限制是为了防止滥用。如果您认为这是个错误，请告知我们”的问题
+
+**作者:** [yuaotian](https://github.com/yuaotian) | **仓库:** [Github 链接](https://github.com/yuaotian/go-cursor-help) | **语言:** Shell
+
+### 项目简介
+
+Cursor 免费试用重置工具
+
+该项目提供了一个针对开发工具 Cursor 在免费试用期间遇到的各种限制提示（包括试用请求次数达到上限、机器上使用了过多免费试用账号、API Key 限制以及 Claude 3.7 高负载问题）的解决方案。该解决方案通过修改 Cursor 的配置文件和 Windows 注册表中的机器标识符来实现重置试用状态。
+
+核心功能与解决方案：
+
+该工具主要通过修改 Cursor 配置文件 `storage.json` 中的多个唯一标识符 (`telemetry.machineId`, `telemetry.macMachineId`, `telemetry.devDeviceId`, `telemetry.sqmId`) 来达到重置设备识别的目的。对于 Windows 用户，还会修改注册表中的 `MachineGuid`。
+
+文章给出了解决不同问题的详细步骤，包括针对 API Key 问题的完全卸载重装方案，以及针对“次数用尽”或“账号过多”等问题的“快速重置”、“切换账号”、“网络优化”等临时解决方案。
+
+工具的使用提供了“一键脚本”方式，支持 **Windows、macOS 和 Linux** 三大主流操作系统，并提供了针对中国用户的加速链接。对于不熟悉命令行操作的用户，提供了 Windows 下打开管理员终端的多种方法。此外，还提供了手动安装和下载预编译好的二进制文件的方式。
+
+文章还详细说明了工具修改的配置文件位置、具体的修改字段，以及 Windows 注册表修改的路径和潜在影响，并提供了自动备份和手动恢复注册表的方法，强调了操作的安全性。
+
+为了防止 Cursor 自动更新导致工具失效，文章提供了禁用自动更新的两种方法：使用内置脚本或手动删除/替换更新相关的目录或文件。最后分享了MIT开源许可，并提供了项目相关的链接和统计信息。
+
+总体来说，这是一个针对 Cursor 免费版限制的高效解决方案，通过修改本地机器标识符来绕过试用检测，并提供了详细的操作指南和安全提示。

@@ -1,0 +1,54 @@
+---
+title: '为什么 HTML 不能单独实现 include？'
+date: '2025-05-04'
+sourceDate: '2025-05-03'
+sourceType: 'hacker-news'
+tags: [开源项目, Web技术, 开发工具]
+cover: 'https://hub-image.moreve.net/files/images/hacker-news/2025-05-04.png'
+---
+
+## 为什么 HTML 不能单独实现 include？
+
+**作者:** [susam](https://news.ycombinator.com/user?id=susam) | **发布时间:** 2025-05-03 20:50:55
+
+### 内容摘要
+
+HTML 未能直接支持代码引用的原因及现有解决方案
+
+文章探讨了前端开发中一个长期存在的基础需求：在多个 HTML 页面中重复使用相同的代码片段（例如头部导航或页脚），即实现 HTML 的“引用”（includes）功能。尽管这在开发中非常常见且必要，但 HTML 标准本身却不像 CSS 或 JavaScript 那样提供原生的导入或引用机制。
+
+作者指出，虽然 HTML 缺乏原生的“引用”功能，但开发者已经找到了多种变通方案。这些方案包括使用 JavaScript (如 Fetch API 或 `insertAdjacentElement`) 在客户端动态加载和插入 HTML 片段，利用服务器端指令 (如 SSI)，静态网站生成器，任务运行器 (如 Gulp)，模板引擎，后端语言，甚至 Web Components。历史上也曾有过 HTML Imports 的尝试，但未能获得广泛支持。
+
+文章的核心问题是：“为什么 HTML 标准未能像其他 Web 技术那样，为这一普遍需求提供一个简单、直接的标签或机制？” 作者推测了可能的原因，包括潜在的性能问题 (如对预加载扫描器的影响)、加载体验的不流畅 (异步加载导致页面跳动)、与 HTML 纯粹性的冲突、处理嵌套和循环引用的复杂性、对 Web Hostings 请求量的影响，以及安全限制等。评论区也补充了更多观点，包括 HTML 标准演进缓慢、“所见即所得”的设计理念与动态引用的冲突、跨域和安全沙箱问题，以及现有解决方案的普及降低了对标准化的需求。
+
+文章引发了开发者社区的讨论，许多人认为原生 HTML include 功能将极大地简化静态网站的开发，减少对构建工具或服务器端逻辑的依赖，使得更加“纯粹”的 HTML 和 CSS 项目成为可能，并对现有解决方案的复杂性表示不满。也有评论提到了 `<object>` 标签和 HTMX 作为接近原生 HTML include 的替代方案。
+
+总而言之，文章揭示了 HTML 在处理代码重用方面的不足，探讨了开发者为了弥补这一不足所采用的各种方法，并深入思考了 HTML 标准为何没有集成原生 include 功能，以及背后的潜在技术和非技术原因。这一问题在前端开发实践中仍然是一个值得关注的痛点。
+
+### 讨论焦点
+
+讨论主要围绕HTML是否应该拥有像服务器端包含（SSI）那样的原生客户端包含功能展开。核心焦点在于：
+
+1.  现有解决方案（SSI、框架集、iframe、JS、模板引擎等）的优缺点，特别是iframe在自适应内容和布局方面的不足。
+2.  HTML作为标记语言的本质与包含功能的关系，以及这种功能是否属于编程范畴的争论。
+3.  历史上的尝试（如frameset和XML includes）失败或未普及的原因。
+4.  对客户端包含潜在技术挑战的探讨（如内容加载延迟、布局抖动）。
+
+dimal在根评论中回顾了自己过去的经历，强调了在静态网站中重复使用头部和侧边栏的需求，认为iframe在自适应内容方面存在问题，并且服务器端解决方案需要服务器，因此提出了客户端简单方法的需求。econ和dimal讨论了通过消息传递解决iframe尺寸问题，但dimal认为这只是权宜之计，客户端包含是常见的“牛行道”，值得原生支持。atoav回顾了frameset，认为其过于复杂且与缓存目的混淆，倾向于简单直接的文本包含，并提出了独立的缓存属性建议。luotuoshangdui认为HTML是标记语言，不能单独处理包含，类似于Markdown。paulddraper反驳说HTML的“超文本”特性使其适合引用外部资源。dimal反驳luotuoshangdui，认为这不是编程，而是“转包含”，并指出iframe和图片已是转包含形式。franga2000也认为包含文档更像标记操作，与其他资源包含类似。crazygringo认同luotuoshangdui的观点，认为HTML设计初衷是独立文档，而非组件化网站。lenkite则举例Asciidoc支持包含来反驳标记语言不能支持包含的说法。actinium226认为Markdown没有包含头部/尾部的常见需求。api抱怨Web平台故意缺乏组合性。giantrobot怀念Web 2.0早期XML服务的潜力。
+codr7认为最佳方案是使用模板引擎生成静态文档。keeganpoppen补充了宏的说法。JadeNB提出模板引擎对创作者有利，但消费者仍需重复下载内容。
+unilynx指出iframe曾计划支持seamless属性以适应内容。omneity和unilynx讨论了iframe seamless属性的实际效果，omneity指出它并未解决布局流和自适应高度问题。
+fooker建议用一行JS实现客户端包含。sbarre质疑使用JS的开销，认为如果可被优化为I/O操作，直接原生支持更合适。
+matchagaucho推荐了htmx作为解决方案，认为其为HTML增加了动态导入静态HTML的能力。
+
+rchaud在分支2中认为包含是服务器端功能，HTML是客户端标记语言，不是编程语言，指出问题已通过服务器端（PHPIncludes、模板 partials）解决。assimpleaspossi和rchaud讨论了HTML的本质，assimpleaspossi认为是文档描述语言而非展示格式，PaulDavisThe1st认为HTML既是标记语言也是一种展示格式。cantSpellSober同意问题已解决，但仍质疑为何不能有简单的`&lt;include&gt;`标签，并认为HTML是声明性语言而非编程语言（争议）。gyesxnuibh就HTML名称中的ML（Markup Language）进行了辩论。naasking反驳rchaud，认为拥有客户端包含标签是自然的，HTML已有iframe等类似功能，只是体验不好。tgv注意到HTML可以包含多种资源，但不能包含HTML本身，认为可以通过自定义元素实现。amadeuspagel质疑为何CSS和JS有包含功能，而HTML没有。adregan回应说CSS/JS的包含是为了缓存和资源复用。
+
+austin-cheney在分支3中指出HTML曾试图通过frameset解决类似问题，frameset因各种问题失宠，而XML includes也未获得广泛浏览器支持。Linux-Fan确认XML includes在浏览器中支持有限，需要预处理。LegionMammal978反驳Linux-Fan，展示了使用XSLT在现代浏览器中实现XML includes的示例。
+
+axelfontaine在分支4中认为iframe接近包含功能。lelandfe和axelfontaine讨论了iframe尺寸问题，ledlandfe引用了一种提取iframe内容的技术（新发现）。dleeftink提及在`&lt;object&gt;`元素上尝试该技术但尺寸更难。cratermoon提出了是解决信息转包含还是设计资产复用问题的本质疑问。rendaw指出iframe跨域交互受限。danans回应说可通过PostMessage进行跨域通信。
+
+nico在分支5中质疑文章前后矛盾，一边说有iframe是HTML方案，一边说没有纯粹的HTML标签方案。pjc50解释iframe是矩形盒子，不适合非矩形或流式布局。vlovich123反驳pjc50，认为页眉页脚等通常是矩形。ComplexSystems解释作者认为iframe有自己的DOM，与期望的客户端SSI不同，并引用了作者后续阐述iframe问题的文字（性能、可访问性、 awkward）。
+
+核心分歧在于：HTML作为标记语言是否应该具备包含功能；客户端包含是否必要，尤其是在已有服务器端和JS方案的情况下；现有客户端技术（如iframe）能否满足需求，其不足之处是否是设计缺陷而非可以饶恕的限制；客户端包含可能带来的技术挑战。
+情感倾向：许多评论者表现出对原生客户端包含功能的需求和兴趣，认为现有解决方案不够理想，希望能有更简单、更符合需求的HTML标签。同时也有一些评论者认为现有方案（服务器端、JS）已经足够，或者认为原生支持在技术或理念上存在障碍。
+
+[阅读原文](https://news.ycombinator.com/item?id=43878728)

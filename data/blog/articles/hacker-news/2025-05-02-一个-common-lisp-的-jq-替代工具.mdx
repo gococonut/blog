@@ -1,0 +1,40 @@
+---
+title: '一个 Common Lisp 的 jq 替代工具'
+date: '2025-05-03'
+sourceDate: '2025-05-02'
+sourceType: 'hacker-news'
+tags: [行业动态, 开发工具, AI前沿]
+cover: 'https://hub-image.moreve.net/files/images/hacker-news/2025-05-03.png'
+---
+
+## 一个 Common Lisp 的 jq 替代工具
+
+**作者:** [tmtvl](https://news.ycombinator.com/user?id=tmtvl) | **发布时间:** 2025-05-02 20:15:48
+
+### 内容摘要
+
+Common Lisp jq 工具替代及其博客内容概览
+
+这篇网页内容是一个个人博客文章列表，重点突出了一篇题为“A Common Lisp jq replacement”的文章。该文章讨论了作者开发一个使用 Common Lisp 语言替代流行 JSON 处理工具 `jq` 的经历和动机。作者认为 `jq` 的领域特定语言（DSL）复杂难记，更倾向于使用 Common Lisp 这样已知语言的 `eval` 功能来处理 JSON。
+
+作者开发的 `cljq` 工具目前功能尚不完善，但已经实现了一个受 JSONPath 启发的查询操作符 `?`，并提供了 JSONPath 表达式与 `?` 写法的对照表，展示了其简洁性。文章还提及了该工具正在进行的工作，并鼓励其他开发者分享他们自制的工具来对抗 DSL 的过度使用。
+
+除了这篇重点文章，网页还展示了博客的近期发布内容，包括 2025 年 1 月至 5 月的多篇博文。这些文章主题广泛，涵盖小说和音乐评论（涉及科幻、奇幻、金属乐等流派）、技术讨论（如 Common Lisp、Tcl、Linux pipe、dotfiles 管理、git secret filter、sfeed 配置等），以及一些个人体验（如逃过 Google 审查传播文件、年度编程挑战 Advent of Code 回顾、GC 的思考等）。通过这些文章列表，可以了解到博客作者在技术领域（特别是 Lisp 和 Tcl）以及文化领域（文学、音乐、电影）的兴趣广泛且活跃。标签列表进一步细化了博客内容的主题分类，方便读者按兴趣浏览。
+
+### 讨论焦点
+
+讨论主要围绕 Common Lisp 实现的 jq 替代工具的性能、与现有工具（如 jq、Nushell）的比较、jq 的使用技巧以及其他替代工具的推荐展开。
+
+pama 发布了一条关于性能提升的链接，引发了关于基准测试方法有效性以及 Common Lisp 代码中 (safety 0) 用法的讨论。 stassats 质疑了 (safety 0) 的使用，sauercrowd 和 BoingBoomTschak 询问并确认了其用途和存在的问题。naniwaduni 认为性能测试存在问题，主要测试的是进程启动时间而非核心任务性能，并建议了更公平的测试方法（jq 的 find {} + 方式）。
+
+account-5 分享了使用 Nushell 替代 jq 的经验，认为 Nushell 在 CLI 数据处理方面表现出色。1oooqooq 误解了 Nushell 是 Bash 补全工具，询问它如何替代 jq。 rafram 澄清了 Nushell 是一个支持复杂数据结构的新型 Shell，而非 Bash 补全。account-5 进一步说明 Nushell 可以直接读取 JSON 等格式到其数据模型（表格）中进行查询。
+
+gray\_-_wolf 指出 jq 的主要优势在于普遍安装，并分享了学习 jq 的经验，认为其语法虽然有些神秘但适合流处理。ramses0 分享了多个 jq 的实用技巧，包括处理记录流、导入外部 JSON 文件进行合并，以及利用 jq 进行字符串格式化，并强调了 jq 在捕获和安全处理命令输出数据方面的价值。naniwaduni 对 ramses0 的 jq 技巧进行了补充和优化，提出了使用 --null-input/-n 选项以及 --slurpfile 替代 cat 的方法，并指出了这些方法各自的适用场景。 great_wubwub 推荐了 gron 工具，认为它可以满足大部分 JSON 处理需求。 aidenn0 质疑了 ramse0 使用 jq 进行字符串格式化的方法是否优于 Bash 的 printf。
+
+precompute 赞扬了博客文章的网站设计。mhitza 进一步评论网站风格类似于 Common Desktop Environment，并推荐了 Xfce 和 KDE 中可以模仿这种风格的主题。 ramses0 提到网站的“about”部分提供了设计细节，并认为这种复古风格效果不错。
+
+diggan 推荐了另一个类似的工具 Jet，它基于 Clojure，支持多种数据格式转换和查询。foobarqux 和 Jenk 进一步补充推荐了 lqn/jqn 和 jaq 这两个其他的 jq 替代工具。
+
+讨论中存在的主要分歧在于性能测试方法的有效性（naniwaduni 对 pama 的测试提出质疑）以及 jq 某些使用方法的优化（naniwaduni 和 ramses0 对 jq 技巧的辩论）。同时，关于 Nushell、gron、Jet、lqn/jqn 和 jaq 等替代工具的推荐也呈现出不同的观点和使用偏好。情感倾向表现为对 Common Lisp 工具的好奇和积极评价（体现在对性能的关注，以及对网站设计的喜爱），以及对现有工具（如 jq）实用性和替代工具的推荐。对 jq 的讨论既有对其普遍性、流处理能力的肯定，也有对其语法复杂性的认知和对替代工具的需求。
+
+[阅读原文](https://world-playground-deceit.net/blog/2025/03/a-common-lisp-jq-replacement.html)

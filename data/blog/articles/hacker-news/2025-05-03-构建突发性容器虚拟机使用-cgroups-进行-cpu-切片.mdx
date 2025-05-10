@@ -1,0 +1,34 @@
+---
+title: '构建突发性容器/虚拟机：使用 cgroups 进行 CPU 切片'
+date: '2025-05-03'
+sourceDate: '2025-05-03'
+sourceType: 'hacker-news'
+tags: [行业动态, 开发工具, AI前沿]
+cover: 'https://hub-image.moreve.net/files/images/hacker-news/2025-05-03.png'
+---
+
+## 构建突发性容器/虚拟机：使用 cgroups 进行 CPU 切片
+
+**作者:** [msarnowicz](https://news.ycombinator.com/user?id=msarnowicz) | **发布时间:** 2025-05-03 00:45:29
+
+### 内容摘要
+
+Ubicloud 构建可突增虚拟机：利用 cgroups 进行 CPU 切片
+
+本文介绍了 Ubicloud 如何利用 Linux Control Groups v2 (cgroups v2) 技术实现成本效益更高的可突增虚拟机（Burstable VMs）。这些虚拟机能在共享的 CPU 资源上运行，并在需要更高性能时暂时突增 CPU 使用率。
+
+文中详细阐述了 cgroups v2 的基本构建块。它是一个分层结构的进程和线程管理系统，能够对 CPU、内存、I/O 等资源进行限制。可以通过虚拟文件系统接口 `/sys/fs/cgroup` 或 `systemd` 的 `slice` 单元来配置 cgroups。虽然 `systemd` 提供了一定的功能，但 CPU 突增等高级设置需要通过虚拟文件系统进行管理。
+
+为实现可突增虚拟机，Ubicloud 主要使用了 `cpuset` 和 `cpu` 这两个控制器。`cpuset` 控制器通过设置分区类型为 `root` 来隔离 CPU 集合，为虚拟机创建一个独立的“资源盒”。`cpu` 控制器则通过 `cpu.max` 设置最大 CPU 限制，并通过 `cpu.max.burst` 允许虚拟机在一定时间窗内超过常规限制，利用累积的 CPU “信用”。
+
+Ubicloud 的控制平面负责协调这些设置，为标准虚拟机分配独立的 CPU 集合，而可突增虚拟机则共享 CPU 资源。可突增虚拟机被配置为拥有基础的最低 CPU 分配，并在资源允许的情况下突增。控制平面会监控 CPU 分配，计算并应用限制，确保不同虚拟机组之间的隔离。
+
+性能测试表明，在低密度环境下，可突增虚拟机能够有效利用突增能力提升约 30% 的性能。但在高密度、资源竞争激烈的环境下，突增效果会减弱。此外，文章提到 cgroups v2 的突增信用局限于微间隔累积，长时间的突增需要额外的机制来实现。
+
+总结来看，可突增虚拟机是针对小型网站、SaaS 服务、开发测试环境等工作负载的经济高效解决方案。虽然 cgroups v2 的突增功能有局限性，但它仍然提供了强大的资源管理和隔离能力。Ubicloud 承诺继续改进其开源云平台，并透明地分享技术实现细节。
+
+### 讨论焦点
+
+讨论围绕如何在共享环境中（尤其是 Kubernetes）使用 cgroups 进行 CPU 资源管理，确保性能隔离与效率之间的平衡，特别是对 CPU 爆发（bursting）机制的看法和实践差异。核心观点是 cgroups 提供了精细控制，但如何组合使用这些参数（如 cpu.max.burst, cpu.weight, cpu.shares, cpu.sets）以满足不同工作负载的需求是一个复杂的权衡问题，存在对“邻居”效应和资源保障力度的讨论。主要争议点在于允许 CPU burst 是否会加剧“噪音邻居”问题，以及如何在灵活性和可预测性之间找到最佳平衡点，不同平台（如原生 cgroups 使用 vs. Kubernetes 抽象层）的使用体验也存在差异。情感倾向整体偏技术探讨，作者乐于分享自己的实践，评论者也积极提问和分享相关经验，对 cgroups 的复杂性和强大功能表示认可，但也认识到实际应用中的挑战。
+
+[阅读原文](https://www.ubicloud.com/blog/building-burstables-cpu-slicing-with-cgroups)

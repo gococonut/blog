@@ -1,0 +1,32 @@
+---
+title: 'jj-vcs / jj'
+date: '2025-05-05'
+sourceDate: '2025-05-05'
+sourceType: 'github-trending'
+tags: [AI前沿, 开源项目, Web技术, 开发工具]
+cover: 'https://hub-image.moreve.net/files/images/github-trending/2025-05-05.png'
+---
+
+## jj-vcs / jj
+
+一个既简单又强大的Git兼容版本控制系统
+
+**作者:** [jj-vcs](https://github.com/jj-vcs) | **仓库:** [Github 链接](https://github.com/jj-vcs/jj) | **语言:** Rust
+
+### 项目简介
+
+新型版本控制系统 Jujutsu (jj)：简洁且强大
+
+Jujutsu (**jj**) 是一种新型的版本控制系统（VCS），旨在提供兼具简洁性和强大功能的用户体验。它的一个核心特点是与 Git 兼容，目前将 Git 仓库作为其默认存储后端，这意味着用户可以与现有的 Git 工具和远程仓库无缝协作。Jujutsu 的设计灵感来自多种流行的 VCS，包括 Git（强调速度和互操作性）、Mercurial 和 Sapling（借鉴了 revset 语言、无感索引/暂存区、匿名的分支以及强大的历史重写原语），以及 Darcs（将冲突视为独立对象）。
+
+Jujutsu 引入了一些创新特性：
+
+1.  **工作副本即提交**：文件的修改会自动记录为一个常规提交，并在每次后续更改时进行修正。这种“快照”设计简化了用户可见的数据模型和内部算法，取代了 Git 的 stash 或暂存区概念。
+2.  **操作日志和撤销**：仓库中的所有操作（包括提交、拉取、推送）都会被记录下来，可以轻松回溯到之前的仓库状态或撤销特定操作。
+3.  **自动变基和冲突解决**：修改提交后，所有后代提交会自动变基到新的提交之上。如果解决了冲突，冲突的解决方案也会传播到后代。这是一种透明的 `git rebase --update-refs` 和 `git rerere` 组合实现。
+
+Jujutsu 还包含一些虽尚处于实验阶段但很有潜力的特性，例如在并发场景下的安全复制，即使在使用 Dropbox 或 rsync 等工具时也能确保仓库状态不被破坏，只会暴露冲突供用户解决。
+
+该项目目前仍处于相对早期的发展阶段，但核心开发者已在日常工作中全面使用 Jujutsu。虽然存在一些待完善的功能和潜在的向后不兼容变更，但项目团队正积极提供透明升级或辅助工具。用户可以通过官方网站、教程、 Git 比较文档等资源了解和入门 Jujutsu，并通过 Discord、GitHub Discussion 和 IRC 频道与开发者社区交流和贡献。
+
+值得注意的是，Jujutsu 最初由 Google 员工作为个人项目启动，目前有多位 Google 工程师参与开发，但它并非 Google 的正式产品。项目采用 Apache 2.0 许可。

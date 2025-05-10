@@ -1,0 +1,43 @@
+---
+title: 'linera-io / linera-protocol'
+date: '2025-05-08'
+sourceDate: '2025-05-08'
+sourceType: 'github-trending'
+tags: [AI前沿, 开发工具, 科技动态, 深度分析]
+cover: 'https://hub-image.moreve.net/files/images/github-trending/2025-05-08.png'
+---
+
+## linera-io / linera-protocol
+
+Linera 协议主仓库
+
+**作者:** [linera-io](https://github.com/linera-io) | **仓库:** [Github 链接](https://github.com/linera-io/linera-protocol) | **语言:** Rust
+
+### 项目简介
+
+Linera协议主体仓库概述
+
+Linera项目致力于构建高度可扩展、低延迟的Web3应用程序去中心化区块链基础设施。该仓库是Linera协议的核心代码库。
+
+项目结构清晰，主要包含以下Rust模块：
+
+- `linera-base`: 提供基础定义和加密功能。
+- `linera-version`: 用于管理二进制文件和服务的版本信息。
+- `linera-views`: 将复杂数据结构映射到键值存储，其过程宏在`linera-views-derive`中实现。
+- `linera-execution`: 包含Linera应用程序运行时和执行的持久化数据及相关逻辑。
+- `linera-chain`: 管理链、证书和跨链消息传递的持久化数据和逻辑。
+- `linera-storage`: 在`linera-chain`之上定义协议的存储抽象。
+- `linera-core`: 包含核心Linera协议，如客户端、服务器逻辑和节点同步等。
+- `linera-rpc`: 定义RPC消息的数据类型及数据模式。
+- `linera-client`: 用于开发Linera客户端，包括命令行客户端和节点服务，以及Web客户端。
+- `linera-service`: 包含客户端（CLI钱包）、代理（验证器前端）和服务器的可执行文件。
+- `linera-sdk`: 用于使用Rust为Wasm虚拟机开发Linera应用程序，过程宏在`linera-sdk-derive`中实现。
+- `examples`: 包含用Rust编写的Linera应用程序示例。
+
+项目提供了便捷的CLI工具。
+
+该仓库采用Apache-2.0许可证，并在GitHub上获得了大量关注（26.1k stars，1.7k forks）。项目主要使用Rust开发，辅以少量Vue、TypeScript、Shell和Solidity代码，并定期发布版本。
+
+核心贡献者包括math2bd、jvff、afck等。
+
+更多信息可访问Linera开发者页面和阅读白皮书。

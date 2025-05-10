@@ -1,0 +1,30 @@
+---
+title: 'Qwen-Agent'
+date: '2025-05-03'
+sourceDate: '2025-05-03'
+sourceType: 'github-trending'
+tags: [开源项目, AI前沿, 开发工具]
+cover: 'https://hub-image.moreve.net/files/images/github-trending/2025-05-03.png'
+---
+
+## Qwen-Agent
+
+基于Qwen >= 2.0的代理框架和应用，包含函数调用、代码解释器、RAG和Chrome扩展
+
+**作者:** [QwenLM](https://github.com/QwenLM.png) | **仓库:** [Github 链接](https://github.com/QwenLM/Qwen-Agent)
+**语言:** Python | **Stars:** 7722
+**Forks:** 658 | **Recent Stars** 190
+
+### 项目简介
+
+Qwen-Agent：基于通义模型的智能体开发框架
+
+Qwen-Agent 是一个基于通义 Qwen 2.0 及更高版本大型语言模型（LLM）构建的开源智能体开发框架。该框架利用 Qwen 的指令遵循、工具使用、规划和记忆能力，旨在简化LLM应用的开发。它提供了丰富的功能，包括函数调用（Function Calling）、代码解释器（Code Interpreter）、检索增强生成（RAG）以及浏览器扩展（Chrome extension）。
+
+Qwen-Agent 不仅是一个框架，还包含了一些示例应用，例如浏览器助手（Browser Assistant）、代码解释器和自定义助手（Custom Assistant）。目前，Qwen-Agent 已经作为通义千问聊天（Qwen Chat）的后端使用。
+
+项目提供详细的入门指南，包括如何从 PyPI 或源代码安装，以及如何配置模型服务（支持阿里云灵积 DashScope 服务或自部署的 OpenAI 兼容 API 服务）。框架的核心组件如 LLMs 和 Tools 提供基础功能，并可以组合构建更高级的 Agents。开发者可以方便地添加自定义工具，并利用内置工具，如代码解释器，来扩展智能体的能力。文档中还提供了一个详细的 Python 示例，展示了如何创建一个能够读取 PDF 文件、使用自定义工具和内置工具的智能体，并介绍了如何运行交互式聊天或快速启动基于 Gradio 的 GUI 界面。
+
+对于常见问题（FAQ），项目解答了关于 MCP（Model Context Protocol）的使用、函数调用支持以及如何处理超长文档问答的问题。特别强调了 Qwen-Agent 在处理超长文档（如 1M tokens）问答方面的优势，通过快速 RAG 解决方案和高效智能体，在测试中表现优于原生长上下文模型。
+
+总而言之，Qwen-Agent 是一个功能强大且灵活的框架，为开发者提供了构建基于 Qwen 模型的高级智能体应用的全面工具和资源，特别在工具集成和长文本理解方面具有显著优势。需要注意的是，内置的代码解释器未沙箱化，开发者应谨慎使用，避免用于生产环境或执行危险任务。

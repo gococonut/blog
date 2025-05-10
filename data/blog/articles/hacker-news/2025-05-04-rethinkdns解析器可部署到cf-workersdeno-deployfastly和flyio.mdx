@@ -1,0 +1,34 @@
+---
+title: 'RethinkDNS解析器：可部署到CF Workers、Deno Deploy、Fastly和Fly.io'
+date: '2025-05-04'
+sourceDate: '2025-05-04'
+sourceType: 'hacker-news'
+tags: [开源项目, Web技术, 开发工具]
+cover: 'https://hub-image.moreve.net/files/images/hacker-news/2025-05-04.png'
+---
+
+## RethinkDNS解析器：可部署到CF Workers、Deno Deploy、Fastly和Fly.io
+
+**作者:** [indigodaddy](https://news.ycombinator.com/user?id=indigodaddy) | **发布时间:** 2025-05-04 02:04:14
+
+### 内容摘要
+
+## Serverless DNS 解析器与内容过滤
+
+这份文档主要介绍了 `serverless-dns` 开源项目，这是一个类似于 Pi-Hole 的内容过滤 DNS 解析器。其核心是建立一个无服务器的 DNS-over-HTTPS (DoH) 和 DNS-over-TLS (DoT) 解析器，可以轻松部署到多种流行的边缘计算平台，包括 Cloudflare Workers、Deno Deploy、Fastly Compute@Edge 和 Fly.io。这些平台提供了免费层级，能够满足个人用户或小型团队的日常 DNS 流量需求。
+
+项目亮点在于其跨平台部署能力，利用不同平台的特性实现高性能的 DNS 解析服务。文档详细列出了 RethinkDNS 在这些平台上运行的生产环境 DoH/DoT 端点及其性能指标，例如服务器处理时间中位数在 0-2 毫秒之间，端到端延迟通常在 10-30 毫秒之间。
+
+`serverless-dns` 支持自托管，并提供了在不同平台上（Cloudflare、Deno、Fastly、Fly.io）的详细部署指南和难易度评估。部署后，用户可以通过访问特定域名来配置内容过滤列表（即 blocklists）。
+
+对于想要参与开发的人员，文档提供了详细的开发环境搭建步骤，包括使用 Node 和 Deno 运行时，以及如何与 Fastly 和 Cloudflare Workers 的 CLI 工具（wrangler）进行交互。此外，还介绍了代码风格指南、环境变量配置、请求处理流程、认证机制以及日志和分析的配置方法。
+
+特别值得注意的是，项目强调了不同运行环境（例如 Cloudflare Workers 的 Isolates、Fastly 的 WASMtime Sandbox、Fly.io 的 Persistent VMs）的特点及其对 `serverless-dns` 运行的影响。并详细说明了在不同平台上如何配置 TLS、依赖管理（如 Deno 的 import maps, Node 的 package.json）以及打包部署流程。
+
+其内容过滤功能依赖于一个庞大的 Blocklists 集合，这些列表被压缩并组织成一个高效的 Succinct Radix Trie 数据结构，以加快查询速度。Blocklists 会定期更新并托管在 Cloudflare R2 上，提供持续的内容过滤能力。
+
+总而言之，`serverless-dns` 提供了一个灵活、可部署在多种无服务器及边缘计算平台上的开源 DNS 解析和内容过滤解决方案，为用户提供了自托管和定制化 DNS 服务的能力，同时详细的开发和部署文档也方便社区参与和贡献。
+
+### 讨论焦点
+
+[阅读原文](https://news.ycombinator.com/item?id=43880883)

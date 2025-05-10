@@ -1,0 +1,33 @@
+---
+title: 'zapret-discord-youtube'
+date: '2025-05-03'
+sourceDate: '2025-05-03'
+sourceType: 'github-trending'
+tags: [开源项目, AI前沿, 开发工具]
+cover: 'https://hub-image.moreve.net/files/images/github-trending/2025-05-03.png'
+---
+
+## zapret-discord-youtube
+
+**作者:** [Flowseal](https://github.com/Flowseal.png) | **仓库:** [Github 链接](https://github.com/Flowseal/zapret-discord-youtube)
+**语言:** Batchfile | **Stars:** 12574
+**Forks:** 838 | **Recent Stars** 47
+
+### 项目简介
+
+Windows下绕过Discord和YouTube封锁的“即插即用”工具
+
+这份内容主要介绍了一个名为“zapret-discord-youtube”的项目。该项目旨在为Windows用户提供一种简便的解决方案，以绕过对Discord和YouTube的封锁。作者将其描述为一种“Plug & Play”的绕过方式。
+
+项目是基于[zapret-win-bundle](https://github.com/bol-van/zapret-win-bundle)项目的Windows版本实现的，并特别提到了项目中的二进制文件（位于`bin`文件夹）均来源于zapret-win-bundle。项目提醒用户，该工具使用了WinDivert，这是一种流量拦截和过滤工具，类似于Linux下的iptables和NFQUEUE，在Windows环境下实现类似功能。由于其性质，WinDivert可能被某些杀毒软件误报为高风险或黑客工具，建议用户在遇到问题时将其添加至例外或禁用杀毒软件。
+
+使用方法简单，只需下载最新版本的压缩包，解压到一个不含中文或特殊字符的路径下，然后运行相应的`.bat`文件即可。项目提供了几个不同的启动文件：
+
+- `discord.bat`：专门用于绕过Discord的封锁。
+- `general.bat`：同时用于绕过Discord和YouTube的封锁，此外还提供了多个`general (ALT).bat`等替代策略。
+- `cloudflare_switch.bat`：用于控制是否绕过Cloudflare的封锁（通过修改列表，无需重启）。
+- `service.bat`：用于安装/卸载服务实现开机自启、检查服务状态、诊断和检查更新。
+
+内容还包含了一个常见的“问题与解决方案”部分，涵盖了Discord/YouTube无法工作、绕过整体失效、文件无法运行、Windows 7下驱动签名问题、与VPN冲突以及服务删除不彻底等问题，并提供了相应的排查和解决步骤，包括更新文件、尝试其他策略、禁用VPN的TUN功能以及手动通过命令行管理WinDivert服务。
+
+最后，项目说明了如何修改列表文件（`list-general.txt`和`list-discord.txt`）来添加更多需要绕过的地址，并强调更新列表后需要重启工具。项目采用MIT许可证，并对项目的贡献者以及原项目zapret的开发者表示感谢。项目在GitHub上获得了超过1.2万个星，活跃度较高。

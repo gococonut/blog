@@ -1,0 +1,30 @@
+---
+title: '我们不再热爱 Next.js，却重新爱上了 Ruby on Rails'
+date: '2025-05-04'
+sourceDate: '2025-05-04'
+sourceType: 'hacker-news'
+tags: [开源项目, Web技术, 开发工具]
+cover: 'https://hub-image.moreve.net/files/images/hacker-news/2025-05-04.png'
+---
+
+## 我们不再热爱 Next.js，却重新爱上了 Ruby on Rails
+
+**作者:** [mike1o1](https://news.ycombinator.com/user?id=mike1o1) | **发布时间:** 2025-05-04 02:26:06
+
+### 内容摘要
+
+## 从 Next.js 到 Ruby on Rails 与 Inertia.js 的技术迁移：Hardcover 的经验与思考
+
+本文是 Hardcover 团队关于其 Alexandria 版本发布系列文章的第一部分，重点讲述了他们为何从 Next.js 迁移到 Ruby on Rails 和 Inertia.js 的原因、过程以及带来的影响。作者 Adam Fortuna 作为一名资深的 Ruby on Rails 开发者，回顾了 Hardcover 项目最初选择使用 Next.js 的考虑，主要是为了利用其服务器端渲染（SSR）来优化 SEO。随着项目的发展，他们在 Next.js 的使用中遭遇了几个关键问题：
+
+1.  **不清晰的缓存机制：** 尤其在使用 GraphQL API 进行数据获取时，难以确定哪些请求被缓存，导致性能提升不明显。
+2.  **高昂且不可预测的成本：** 基于 Serverless 架构的 Next.js 部署在 Vercel 和 Google Cloud Run 上带来了不断上涨的托管费用。
+3.  **缓慢的开发体验：** 本地开发时，加载页面需要漫长的编译时间，严重影响了开发效率。
+
+为了解决这些痛点并实现既定目标（继续 SSR、直接连接数据库、保留 React 前端），他们评估了 Remix 等替代方案后，最终回归了熟悉的 Ruby on Rails，并选择了 Inertia.js 作为连接 Rails 后端和 React 前端框架的桥梁。文章详细介绍了 Rails + Inertia.js + Vite 的技术栈工作流程，包括 Rails 控制器如何渲染 Inertia 页面、如何高效利用 Rails 的缓存机制（特别是 `Rails.cache.fetch`），以及 React 组件如何通过 `usePage` Hook 获取后端传递的数据。此外，也提及了在配置 Vite 与 Kamal 部署时的一些细节和挑战。
+
+尽管迁移过程中仍存在一些需要改进的地方，例如共享布局的实现和 SSR 调试的复杂性，但迁移成果显著。Hardcover 在上线后，Google 搜索引擎的曝光度立即增加，Google Pagespeed 评分大幅提升，特别是 Overall Blocking Time（总阻塞时间）显著下降，用户访问时长也有所增加。这些积极变化印证了这次技术栈迁移的价值。文章最后预告了下一部分将探讨从云服务迁移到 Digital Ocean 和 Kamal 的实践，并邀请对 Inertia.js 或 Ruby on Rails 感兴趣的开发者加入社区，共同参与 Hardcover 的开源工作。
+
+### 讨论焦点
+
+[阅读原文](https://news.ycombinator.com/item?id=43881035)

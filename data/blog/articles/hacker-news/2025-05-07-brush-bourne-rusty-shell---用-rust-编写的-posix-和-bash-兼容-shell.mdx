@@ -1,0 +1,44 @@
+---
+title: 'Brush (Bo(u)rn(e) RUsty SHell) - 用 Rust 编写的 POSIX 和 Bash 兼容 shell'
+date: '2025-05-07'
+sourceDate: '2025-05-07'
+sourceType: 'hacker-news'
+tags: [开源项目, 开发工具, AI前沿, 行业动态]
+cover: 'https://hub-image.moreve.net/files/images/hacker-news/2025-05-07.png'
+---
+
+## Brush (Bo(u)rn(e) RUsty SHell) - 用 Rust 编写的 POSIX 和 Bash 兼容 shell
+
+**作者:** [voxadam](https://news.ycombinator.com/user?id=voxadam) | **发布时间:** 2025-05-07 02:47:49
+
+### 内容摘要
+
+Rust 实现的 Bash/POSIX 兼容 Shell 项目 Brush
+
+Brush 是一个使用 Rust 编程语言实现的命令行 Shell，旨在兼容 POSIX 和 Bash。
+
+Brush 定位为一个功能性的交互式 Shell，可以执行大多数 sh 和 bash 脚本。尽管项目仍在积极开发中，已知存在一些局限性，例如部分 `set` 和 `shopt` 选项尚未完全实现，以及代码中标记为 TODO 的地方。
+
+项目的测试策略主要是通过与其他现有 Shell （如 Bash）的行为进行对比来实现。整合测试包含了超过 550 个测试用例，用于比较输出和退出代码。
+
+项目依赖了多个开源 Rust 库，包括 `reedline`（用于交互式输入）、`clap`（用于命令行解析）、`fancy-regex` （用于正则表达式）、`tokio`（用于异步处理）和 `nix`（用于 Unix/POSIX 系统 API）。
+
+Brush 欢迎各种贡献和反馈，并提供了详细的贡献指南。用户可以通过 cargo 安装或从 AUR 安装来尝试 Brush。
+
+总的来说，Brush 是一个使用 Rust 构建的、旨在提供 Bash 兼容性的新型 Shell 项目，虽然还有待完善，但已具备交互式使用的基本功能，并积极通过对比测试来确保兼容性。
+
+### 讨论焦点
+
+评论主要围绕着新的 Rust 实现的 shell Brush 以及其他替代性 shell（如 Fish、Nushell、Oils/OSH/YSH、PowerShell、Busybox sh 等）。讨论焦点集中在以下几个方面：
+
+一是 对 POSIX 兼容性的讨论。许多评论者认为 POSIX 兼容性限制了 shell 的创新和现代化，支持 Fish 和 Nushell
+这类不追求完全兼容性的新 shell。
+但是，也有评论指出 POSIX 标准虽然进展缓慢，但仍在演进。同时，兼容性对于脚本的可移植性和现有大量脚本资产至关重要，这也解释了 Bash 和 POSIX shell 在云、嵌入式等领域仍广泛使用的原因，以及 LLM 在生成 Bash 脚本方面的优势。
+
+二是 各种替代性 shell 的对比和推广。评论提及 Fish 的 Rust 重写带来的改进、Nushell 基于结构化数据的优势及其易用性、Oils 项目（包括兼容性的 OSH 和更现代的 YSH）在兼容性和现代化之间的平衡，以及 PowerShell 的跨平台特性。
+
+三是 在 Windows 环境下运行 Bash 脚本的需求和现有解决方案。评论提到了 Busybox sh 和 Cosmopolitan Libc 实现的 Bash 作为在 Windows 上运行 POSIX 脚本的替代方案，但也指出这些方案可能无法完全支持 Bash 的所有特性（如数组），这凸显了对 Bash 兼容 shell 的需求。
+
+总体印象是，评论区对基于 Rust 等新语言开发的 shell 抱有积极兴趣，认为它们可能带来性能提升和内存安全。同时，对于 shell 未来的发展方向存在分歧，一部分人支持摆脱 POSIX 束缚以追求创新，另一部分人则强调兼容性的重要性。大家乐于分享和推荐自己偏好的替代性 shell，并讨论它们各自的优缺点和应用场景，尤其是在跨平台和现代化脚本编写方面的潜力。
+
+[阅读原文](https://news.ycombinator.com/item?id=43908368)

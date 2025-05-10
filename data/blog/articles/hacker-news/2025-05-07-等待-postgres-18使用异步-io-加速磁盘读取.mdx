@@ -1,0 +1,32 @@
+---
+title: '等待 Postgres 18：使用异步 I/O 加速磁盘读取'
+date: '2025-05-08'
+sourceDate: '2025-05-07'
+sourceType: 'hacker-news'
+tags: [开发工具, AI前沿, 深度分析, 社区互动]
+cover: 'https://hub-image.moreve.net/files/images/hacker-news/2025-05-08.png'
+---
+
+## 等待 Postgres 18：使用异步 I/O 加速磁盘读取
+
+**作者:** [lfittl](https://news.ycombinator.com/user?id=lfittl) | **发布时间:** 2025-05-07 22:57:03
+
+### 内容摘要
+
+Postgres 18 通过引入异步 I/O (AIO) 功能，显著提升了磁盘读性能，尤其在网络附加存储延迟较高的云环境中。AIO 允许数据库并发地发出多个读请求，无需等待每个请求完成，从而减少了 I/O 等待时间，提高了吞吐量。 Postgres 18 中引入了新的配置参数 `io_method`，提供三种 I/O 处理方式：`sync`（同步，与 Postgres 17 相同）、`worker`（使用独立的 I/O Worker 进程处理读请求）和 `io_uring`（在较新的 Linux 内核上使用高效的内核接口）。基准测试显示，与传统的同步方法相比，`worker` 和 `io_uring` 模式在冷缓存场景下能带来 2-3 倍的读性能提升，其中 `io_uring` 表现最佳。 AIO 的引入也改变了性能监测和调优的方式。`effective_io_concurrency` 参数在异步模式下更能直接控制预读请求数量，需要根据具体 I/O 子系统进行调优。同时，由于后端不再阻塞等待磁盘读取，`EXPLAIN ANALYZE` 输出中的 I/O 计时信息可能无法完全反映实际 I/O 时间，需要借助新的 `pg_aios` 视图等工具来监控进行中的 I/O 操作。 总之，Postgres 18 的异步 I/O 是一个重要的架构改进，为提高数据库在现代云基础设施中的性能奠定了基础，但也需要用户调整其监测和调优方法来充分利用新功能。
+
+### 讨论焦点
+
+主要讨论主题:
+云服务（特别是AWS）的存储性能与其成本
+评论者们普遍对大型云提供商（如AWS、Azure）的存储性能表示沮丧，认为其I/O性能（尤其是IOPS）远低于同等成本的现代消费级NVMe硬盘。有人指出云服务存在"武断的"限制，认为这是为旧硬件进行优化。讨论中提及了AWS的instance store虽然IOPS更高，但存在数据易失性的风险，不适合持久化存储。
+Postgres异步I/O与跨平台的兼容性
+评论者讨论了Postgres新的异步I/O功能是否仅限于Linux（依赖io_uring），还是也支持Windows等其他操作系统。有评论指出，虽然核心功能（io_uring）源于Linux，但Postgres也提供了基于"worker"的方法，可以在其他系统上工作（尽管性能可能不如io_uring）。关于Windows，有评论提到Windows已有自己的IORing实现及更早的IOCP，并期望Postgres未来能支持这些。
+非云环境下的数据库部署与优化经验
+有评论分享了在独立服务器（如Hetzner）上部署Postgres的积极经验，强调其卓越的性价比和充足的资源。讨论中提出了除了异步I/O之外的其他优化手段，如使用PGTune、PgHero进行监控，以及自动化的VACUUM ANALYZE。关于备份，有评论分享了自建备份工具，并引发了关于使用更成熟备份方案（如pgbackrest、barman）还是自定义工具的讨论。
+Postgres的内部技术演进与其他系统的对比
+有评论将Postgres的新异步I/O功能与MySQL InnoDB的现有实现进行对比，认为这是Postgres早就应该具备的功能。讨论还触及了Postgres在存储引擎和数据布局方面尚需改进之处（如缺乏原生页面压缩），并提到了Orioledb等项目对Postgres未来发展的启示。
+总体印象:
+评论区的讨论围绕技术细节、性能对比和成本效益展开，对云服务商的存储策略表现出普遍的质疑和批评，同时对于Postgres的新技术进展表示关注，并在非云环境部署和优化方面分享经验。讨论氛围务实，技术性较强，并带有一定程度的情感倾向（如对云服务性能的不满）。
+
+[阅读原文](https://news.ycombinator.com/item?id=43916577)

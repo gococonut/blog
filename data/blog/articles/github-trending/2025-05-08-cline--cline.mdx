@@ -1,0 +1,28 @@
+---
+title: 'cline / cline'
+date: '2025-05-08'
+sourceDate: '2025-05-08'
+sourceType: 'github-trending'
+tags: [AI前沿, 开发工具, 科技动态, 深度分析]
+cover: 'https://hub-image.moreve.net/files/images/github-trending/2025-05-08.png'
+---
+
+## cline / cline
+
+自主编码代理，直接集成在你的IDE中，经你授权后即可完成创建/编辑文件、执行命令、使用浏览器等更多功能。
+
+**作者:** [cline](https://github.com/cline) | **仓库:** [Github 链接](https://github.com/cline/cline) | **语言:** TypeScript
+
+### 项目简介
+
+Cline是一个强大的自主编码智能体，它深度集成到开发环境（IDE）中，旨在通过自动化文件创建、编辑、命令执行、网页浏览等任务，显著提升开发效率。Cline的设计理念强调用户控制，在执行每一步操作前都会征得用户的许可，确保安全性和用户掌控。
+
+Cline的核心功能在于其利用先进的AI模型（如Claude 3.7 Sonnet）的代理能力，能够逐步处理复杂的软件开发任务。它能分析项目结构、源代码、ASTs，进行正则搜索，并读取相关文件以理解现有项目。为了处理大型项目，Cline会智能管理上下文信息，避免信息过载。
+
+具体而言，Cline能够直接在编辑器中创建和修改文件，并通过差异视图展示修改内容，用户可以随时编辑或回滚。它还能监控Linter/编译器错误，并自主修复如缺少导入和语法错误等问题。此外，凭借与VSCode终端的集成，Cline可以直接执行终端命令，响应命令行输出，从而执行安装依赖、运行构建脚本、部署应用、管理数据库和执行测试等多种任务，并能适应不同的开发环境。对于Web开发任务，Cline可以启动无头浏览器，模拟用户操作（点击、输入、滚动），捕获屏幕截图和控制台日志，协助修复运行时错误和视觉问题。
+
+Cline支持广泛的API提供商和模型，包括OpenRouter、Anthropic、OpenAI、Google Gemini、AWS Bedrock、Azure和GCP Vertex，同时也支持任何兼容OpenAI的API及本地模型，并会跟踪API使用成本。通过Model Context Protocol，用户可以定制和安装自己的工具，进一步扩展Cline的功能。
+
+Cline还提供“检查点”（Checkpoints）功能，在任务执行的每个步骤创建工作空间的快照，用户可以方便地比较当前状态与快照之间的差异，或回滚到之前的状态，以安全地探索不同的开发路径。
+
+该项目活跃开发中，遵循Apache 2.0许可证，并鼓励社区贡献，提供了详细的贡献指南和本地开发说明。

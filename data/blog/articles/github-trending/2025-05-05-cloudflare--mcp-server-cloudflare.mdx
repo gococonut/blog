@@ -1,0 +1,26 @@
+---
+title: 'cloudflare / mcp-server-cloudflare'
+date: '2025-05-05'
+sourceDate: '2025-05-05'
+sourceType: 'github-trending'
+tags: [AI前沿, 开源项目, Web技术, 开发工具]
+cover: 'https://hub-image.moreve.net/files/images/github-trending/2025-05-05.png'
+---
+
+## cloudflare / mcp-server-cloudflare
+
+无需标题
+
+**作者:** [cloudflare](https://github.com/cloudflare) | **仓库:** [Github 链接](https://github.com/cloudflare/mcp-server-cloudflare) | **语言:** TypeScript
+
+### 项目简介
+
+Cloudflare MCP 服务器项目概览
+
+该项目是 Cloudflare 在 GitHub 上托管的一个公开仓库，核心内容是实现一系列模型上下文协议（Model Context Protocol, MCP）服务器。MCP 是一种新的标准化协议，旨在管理大型语言模型（LLM）与外部系统之间的上下文信息交互。通过这些 MCP 服务器，用户可以使用支持 MCP 协议的客户端（如 Certain MCP 客户端）通过自然语言与其 Cloudflare 账户进行交互。
+
+该仓库提供了多个针对 Cloudflare 不同服务的 MCP 服务器，包括用于获取最新 Cloudflare 参考信息的文档服务器、用于构建 Workers 应用的 Workers Bindings 服务器、用于调试和分析应用日志的 Observability 服务器、提供全球互联网流量洞察的 Radar 服务器、用于创建沙盒开发环境的 Container 服务器、用于获取网页内容和截图的 Browser rendering 服务器、用于查看 Logpush 任务健康状况的 Logpush 服务器、用于搜索 AI Gateway 日志的 AI Gateway 服务器、用于管理 AutoRAG 文档的 AutoRAG 服务器、用于查询审计日志的 Audit Logs 服务器，以及用于优化 DNS 和监控数字体验的 DNS Analytics 和 Digital Experience Monitoring 服务器，还有用于识别 SaaS 应用安全配置错误的 Cloudflare One CASB 服务器。每个服务器都提供了对应的 URL，方便客户端连接。
+
+用户 accessing these remote MCP servers 可以通过支持远程 MCP 服务器的客户端直接添加 URL，或者对于尚不支持的客户端，可以使用 `mcp-remote` 工具配置访问。项目还提供了贡献指南，以及针对一些常见问题（如 Claude 回复中断）的排查建议。
+
+该项目采用 Apache-2.0 许可证，目前拥有 1.8k stars 和 130 forks，主要使用 TypeScript、JavaScript、CSS 和 HTML 进行开发。

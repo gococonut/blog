@@ -1,0 +1,34 @@
+---
+title: 'hyperswitch'
+date: '2025-05-03'
+sourceDate: '2025-05-03'
+sourceType: 'github-trending'
+tags: [开源项目, AI前沿, 开发工具]
+cover: 'https://hub-image.moreve.net/files/images/github-trending/2025-05-03.png'
+---
+
+## hyperswitch
+
+用 Rust 编写的开源支付交换系统，让支付变得快速、可靠且经济实惠
+
+**作者:** [juspay](https://github.com/juspay.png) | **仓库:** [Github 链接](https://github.com/juspay/hyperswitch)
+**语言:** Rust | **Stars:** 17431
+**Forks:** 2086 | **Recent Stars** 264
+
+### 项目简介
+
+Hyperswitch：一款基于 Rust 的开源支付网关
+
+Hyperswitch 是由 Juspay 开发的一款开源支付网关，旨在提供快速、可靠且经济实惠的支付解决方案。该项目采用 Rust 语言编写，并遵循 Apache 2.0 许可证开源。Hyperswitch 的核心愿景是成为“支付领域的 Linux”，打造一个开放、社区驱动、高性能的支付平台，以应对全球支付生态系统中日益增长的多样性和复杂性。
+
+Hyperswitch 提供了一个单一的 API，用于接入各种支付处理方和支付生态系统功能。主要组件包括：
+
+- **Hyperswitch Backend：** 负责处理支付流程，包括授权、认证、作废、捕获、退款和拒付等。它还支持非支付用例，并能集成欺诈风险管理和认证服务。后端具备强大的支付路由优化能力，支持基于成功率、规则、流量分配、故障转移以及基于错误代码的智能重试机制。
+- **SDK (Frontend)：** 提供 Web、Android 和 iOS 版本，统一了不同支付方式（卡、电子钱包、先买后付等）的支付体验，并支持底层支付服务提供商的多种支付流程。与支付方法存储配合使用时，可以展示用户已保存的支付方式。
+- **Control Center：** 一个无代码界面，用于管理整个支付堆栈。用户可以通过它创建路由和支付重试工作流，定义触发 3DS、FRM 和附加费模块的条件。Control Center 还提供跨支付服务提供商的交易、退款和拒付操作管理，以及详细的交易日志和支付表现分析。
+
+Hyperswitch 提供了多种部署和试用方式，包括一键式本地 Docker 设置、基于 AWS CDK 的云部署（适用于原型开发），以及基于 Helm Charts 的 GCP 和 Azure 部署。同时，用户还可以通过其托管沙盒体验产品，进行连接器配置、工作流定义和支付测试。
+
+该项目强调拥抱支付多样性、开源透明、社区驱动、系统级软件的可靠性和高性能，并致力于为开发者、客户和合作伙伴创造最大价值。项目拥有一个由 150 多名工程师组成的核心团队。
+
+代码库主要使用 Rust (80.6%) 和 JavaScript (18.3%)，并包含其他少量语言的代码。项目积极维护，并有详细的更新日志和丰富的贡献者社区。

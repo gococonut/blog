@@ -1,0 +1,28 @@
+---
+title: 'LadybirdBrowser / ladybird'
+date: '2025-05-08'
+sourceDate: '2025-05-08'
+sourceType: 'github-trending'
+tags: [AI前沿, 开发工具, 科技动态, 深度分析]
+cover: 'https://hub-image.moreve.net/files/images/github-trending/2025-05-08.png'
+---
+
+## LadybirdBrowser / ladybird
+
+真正独立的网页浏览器
+
+**作者:** [LadybirdBrowser](https://github.com/LadybirdBrowser) | **仓库:** [Github 链接](https://github.com/LadybirdBrowser/ladybird) | **语言:** C++
+
+### 项目简介
+
+Ladybird 浏览器项目简介
+
+Ladybird 是一个尚处于早期开发阶段（预 Alpha 状态）的独立网络浏览器。其核心亮点在于采用一套全新的、基于 Web 标准的渲染引擎。项目目标是构建一个完整且功能齐全的浏览器，能够支持现代 Web 的需求。
+
+项目采用多进程架构设计，包含一个主 UI 进程、多个 WebContent 渲染进程、一个图像解码进程和一个请求服务器进程。这种设计将图像解码和网络连接等操作隔离到独立的进程中，以提高对恶意内容的健壮性。每个标签页拥有独立的渲染进程，并与其他系统部分进行沙盒隔离以增强安全性。
+
+Ladybird 项目大量复用自 SerenityOS 的核心库组件，例如：LibWeb（网页渲染）、LibJS（JavaScript 引擎）、LibWasm（WebAssembly 实现）、LibCrypto/LibTLS（加密与 TLS）、LibHTTP（HTTP/1.1 客户端）、LibGfx（2D 图形、图像解码和渲染）、LibUnicode（Unicode 和本地化支持）、LibMedia（音视频播放）以及 LibCore 和 LibIPC（事件循环、操作系统抽象和进程间通信）。
+
+该项目目前支持在 Linux、macOS、Windows (通过 WSL2) 以及其他多种类 Unix 系统上构建和运行。项目文档提供了详细的构建指南、代码相关文档和贡献指南。鼓励贡献者加入 Discord 开发社区进行讨论和参与贡献。
+
+Ladybird 项目基于 BSD 2-条款许可证发布，目前在 GitHub 上获得了超过 4 万颗星和 1.7 千个 Fork，拥有超过 1100 名贡献者，主要使用 C++、HTML 和 JavaScript 等语言开发。

@@ -1,0 +1,58 @@
+---
+title: 'Show HN: 免费的浏览器内 PDF 编辑器'
+date: '2025-05-04'
+sourceDate: '2025-05-04'
+sourceType: 'hacker-news'
+tags: [开源项目, Web技术, 开发工具]
+cover: 'https://hub-image.moreve.net/files/images/hacker-news/2025-05-04.png'
+---
+
+## Show HN: 免费的浏览器内 PDF 编辑器
+
+**作者:** [philjohnson](https://news.ycombinator.com/user?id=philjohnson) | **发布时间:** 2025-05-04 02:15:45
+
+### 内容摘要
+
+Breeze PDF：免费、私密的浏览器内PDF编辑工具
+
+Breeze PDF 是一款强大且完全免费的在线PDF编辑工具，其核心优势在于提供极致的隐私保护。与许多需要上传文件的在线服务不同，Breeze PDF 的所有操作都在用户自己的浏览器内本地完成，文件永远不会离开用户的设备并上传到任何服务器。这确保了用户敏感信息的绝对安全和保密。
+
+这款工具无需安装任何软件，只需通过现代浏览器即可直接使用，且加载后支持离线编辑。它提供了全面的PDF处理功能，包括：
+
+- 添加和修改文本：轻松在PDF文档的任何位置添加或编辑文字。
+- 插入图像：支持JPG和PNG格式的图片插入。
+- 添加签名：可以通过绘制、输入文字或上传图片的方式进行数字签名。
+- 添加表单字段：创建可填写的交互式文本输入框。
+- 合并PDF：将多个PDF文件合并成一个文档。
+- 删除页面：方便地移除PDF中不需要的页面。
+- 密码保护：为敏感文件设置密码以增加安全性。
+
+Breeze PDF 强调其易用性和强大功能的同时，将用户隐私放在首位。它完全免费，没有任何隐藏费用或文件使用限制。虽然在移动浏览器上可用，但开发者推荐在桌面端获得最佳体验。处理大型文件时的性能取决于用户设备的硬件配置。
+
+总体而言，Breeze PDF 是一个理想的选择，适用于需要免费、便捷且高度重视文件隐私的PDF编辑需求。
+
+### 讨论焦点
+
+围绕帖子中的浏览器内PDF编辑器展开讨论，主要焦点包括：该工具的核心功能（实际是添加内容而非编辑现有文本）、PDF格式本身的编辑难度、用户对特定编辑功能（如修改现有文本和内容审查）的需求、现有免费或开源PDF工具的局限性以及与Adobe Acrobat等商业软件的对比、在浏览器中运行该工具的优缺点以及开发者未来的商业模式和功能规划。
+
+第一个讨论分支： behnamoh评论指出工具并未真正“编辑”PDF文本，只是“添加”内容。开发者philjohnson和behnamoh讨论了描述的准确性，philjohnson承认目前是“添加”，但计划未来实现编辑。wild_pointer进一步解释了PDF格式难以编辑的根本原因（为查看和打印设计，而非编辑），并提到PDF内容布局的复杂性。jbarrow和layer8进一步阐述了PDF格式文本编辑困难的技术细节，如文本非块状、依赖字形位置等，确认了现有技术和格式本身的限制。matsemann提出了对内容审查/涂黑的需求，希望是真正移除内容而非简单覆盖。philjohnson回应matsemann，提供了他开发的另一个专门用于内容审查的工具pdfredactoronline.com，并解释了为何目前未集成进此工具（许可协议问题）。
+
+第二个讨论分支：moffkalast对缺乏与Adobe Acrobat匹敌的免费或开源PDF工具表示沮丧，尤其是在Linux平台上进行填写和证书签名等常见操作的困难。用户cbracketdash推荐使用LibreOffice Draw，crazygringo和cbracketdash讨论了LibreOffice导入PDF的准确性和导出后可能出现的问题。tap-snap-or-nap认为LibreOffice Draw是个新思路。JLook推荐了Scribus。sgc推荐了Master PDF Editor for Linux (非免费或开源但功能较好)。Propelloni提到了Gnome Papers、KDE Okular以及MasterPDF，认为现有工具能满足日常需求但签名功能受读卡器厂商限制。layer8将PDF编辑难题类比于难以完全克隆MS Word，指出格式复杂性、细节不明确等问题。philjohnson提到计划增加证书签名功能。okanat深入分析了PDF编辑的难度，包括PDF作为渲染结果的特性、字体授权、反向工程文档结构的高成本，因此高质量的免费或开源工具稀缺，并列举了一些闭源替代品。
+
+第三个讨论分支：Labo333询问如何在PDF中进行真正的“内容审查”（移除内容而非覆盖）。fortran77提到有专门的“redaction”工具，并提供了一个在线工具链接。andrecarini建议一种原始但安全的方法：打印后扫描。mamonoleechi建议使用Inkscape。philjohnson再次提到了他开发的pdfredactoronline.com作为专门的审查工具。ValdikSS推荐使用LibreOffice Writer（需指定文件类型）。讨论确认了用户对此功能的需求，并提供了多种解决方案（在线工具、其他软件、原始方法）。
+
+第四个讨论分支：johnea质疑为何要在浏览器中实现此功能，认为浏览器主要用于HTTP接口。vntok解释工具是通过HTTP访问网站，运行在浏览器中。layer8纠正说功能本身不在浏览器，而在通过HTTP下载的文件中。philjohnjson解释了在浏览器中运行的好处：无需下载应用，且PDF不离开用户设备，保障隐私。bigstrat2003对此提出反驳，认为无需下载并非优点，下载本地应用且不触碰服务器反而更好。
+
+第五个讨论分支：a1371赞扬了工具的功能和简洁性，指出缺少的功能（标注、审查、压平），并表达了对未来“堕落化”（enshitification）的担忧，询问开发者如何保持免费和无注册。philjohnson回应a1371的正面评价，确认将增加缺失功能，并解释其个人开发者身份、没有投资方使其能听取用户意见来避免“堕落化”。他计划通过无干扰的Google Adsense创收，但承诺基本功能和a1371提到的功能将保持免费，并强调浏览器内运行带来隐私和低成本优势。colesantiago强烈反对使用Google Adsense，认为损害用户隐私并助长“堕落化”，建议使用小型赞助商横幅。
+
+分歧和争议主要体现在：
+
+1.  对工具功能描述的准确性：behnamoh认为工具实际只添加内容，不是真正的编辑，与网站描述有出入，但开发者philjohnson承认并说明了功能现状和未来计划。
+2.  PDF编辑的难度：多个用户（wild_pointer, jbarrow, layer8, okanat）确认了PDF格式本身的复杂性导致编辑困难，这是普遍认知而非争议。
+3.  Linux平台上免费/开源PDF工具的可用性和功能：moffkalast认为严重缺乏，其他用户则提供了LibreOffice Draw, Scribus, Master PDF Editor (非免费)等选项，表明存在一些替代方案，但功能和兼容性有待讨论。
+4.  在浏览器中运行工具的优缺点：johnea质疑其必要性，vntok, layer8和philjohnson解释了其基于网页访问和隐私优势，bigstrat2003则认为下载本地应用更好，存在明显不同观点。
+5.  开发者未来的商业模式和广告形式：a1371担忧“堕落化”，philjohnson计划使用Google Adsense，但colesantiago强烈反对，提出其他建议，这是一个明显的争议点。
+
+总体情感倾向：用户普遍认可工具作为免费、无注册、浏览器内运行（有隐私优势）的PDF工具的优点，对其简洁性和部分功能表示满意。但用户也普遍对PDF编辑（特别是修改现有内容和真正的审查）的困难性有共识，并表达了对缺乏功能齐全的免费/开源工具（尤其Linux上）的无奈。用户对开发者未来的商业模式（如广告）存在担忧，希望能保持免费和隐私，避免“堕落化”。
+
+[阅读原文](https://news.ycombinator.com/item?id=43880962)

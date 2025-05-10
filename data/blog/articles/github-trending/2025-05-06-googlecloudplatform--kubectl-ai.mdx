@@ -1,0 +1,30 @@
+---
+title: 'GoogleCloudPlatform / kubectl-ai'
+date: '2025-05-06'
+sourceDate: '2025-05-06'
+sourceType: 'github-trending'
+tags: [开源项目, AI前沿, 开发工具, 架构设计]
+cover: 'https://hub-image.moreve.net/files/images/github-trending/2025-05-06.png'
+---
+
+## GoogleCloudPlatform / kubectl-ai
+
+AI驱动的Kubernetes助手
+
+**作者:** [GoogleCloudPlatform](https://github.com/GoogleCloudPlatform) | **仓库:** [Github 链接](https://github.com/GoogleCloudPlatform/kubectl-ai) | **语言:** Go
+
+### 项目简介
+
+Kubernetes智能助手：kubectl-ai项目概述
+
+kubectl-ai 是一个由 GoogleCloudPlatform 开发的开源项目，其核心功能是作为 AI 驱动的 Kubernetes 助手运行在终端中。它利用大型语言模型（LLM）的能力，使用户能够通过自然语言指令与 Kubernetes 集群进行交互。
+
+项目的目标是简化 Kubernetes 的操作和管理，特别是对于不熟悉复杂 kubectl 命令的用户。用户可以直接用简单的英语提问或发出命令，kubectl-ai 会理解这些指令，并执行相应的 kubectl 命令，然后提供结果和解释。这种交互模式极大地降低了 Kubernetes 的使用门槛。
+
+kubectl-ai 支持多种 LLM 供应商，包括 Google 的 Gemini（默认）、Azure OpenAI 和 OpenAI。此外，它还支持使用本地运行的 AI 模型，如 ollama 和 llama.cpp，这为用户提供了更大的灵活性和数据隐私控制。
+
+该工具提供了交互式模式，允许用户进行多轮对话，并保持上下文。用户也可以通过命令行直接传递一个任务作为输入，甚至可以通过管道结合其他Unix命令来使用。为了方便用户，kubectl-ai 还内置了一些特殊关键字，如 `model` 显示当前模型，`models` 列出可用模型，`version` 显示版本，`reset` 清除对话上下文，`clear` 清除屏幕，以及 `exit` 或 `quit` 退出。
+
+作为一个 kubectl 插件，kubectl-ai 可以方便地通过 `kubectl ai` 命令调用，进一步整合到现有的 Kubernetes 工作流程中。项目还包含一个名为 `k8s-bench` 的基准测试工具，用于评估不同 LLM 模型在 Kubernetes 相关任务上的表现，并提供了最近一次测试的结果。
+
+总的来说，kubectl-ai 是一个旨在通过集成 AI 技术提升 Kubernetes 用户体验的创新工具，它使得管理和排查 Kubernetes 集群变得更加直观和高效。

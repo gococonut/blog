@@ -1,0 +1,39 @@
+---
+title: 'unionlabs / union'
+date: '2025-05-06'
+sourceDate: '2025-05-06'
+sourceType: 'github-trending'
+tags: [开源项目, AI前沿, 开发工具, 架构设计]
+cover: 'https://hub-image.moreve.net/files/images/github-trending/2025-05-06.png'
+---
+
+## unionlabs / union
+
+最小信任、零知识桥接协议，旨在抵抗审查、提供极高安全性，并用于去中心化金融。
+
+**作者:** [unionlabs](https://github.com/unionlabs) | **仓库:** [Github 链接](https://github.com/unionlabs/union) | **语言:** Rust
+
+### 项目简介
+
+Union 是一个高度安全、抗审查的零知识跨链桥协议，专为去中心化金融应用设计。其核心亮点在于采用“共识验证”机制，摆脱了对可信第三方、预言机、多重签名或多方计算的依赖，极大地增强了协议的信任最小化程度。
+
+Union 协议兼容如 Cosmos 等链，并能连接到 EVM 兼容链，例如以太坊、Berachain、Arbitrum 等。它支持通用消息传递、资产转移、NFT 以及 DeFi 应用。协议的升级、跨链连接和配置演进将通过去中心化治理来控制，确保了协议目标与用户、验证者和运营者的利益一致。
+
+该项目是开源的，拥有庞大的代码库，并提供 Apache-2.0 和 MIT 双许可证。核心组件涵盖多个功能模块，例如：
+
+- `uniond`：基于 `CometBLS` 实现的 Union 节点，使用 Go 语言开发。
+- `galoisd`：零知识证明实现，结合了 Go 和 Gnark 技术。
+- `voyager`：高性能的跨生态系统中继器，使用 Rust 语言开发。
+- `hubble`：多生态系统、支持 GMP 的链索引器，也使用 Rust 语言开发。
+- `cosmwasm`：基于 CosmWasm 的智能合约堆栈，使用 Rust 开发。
+- `light-clients`：用于不同生态系统的轻客户端，使用 Rust 开发。
+- `unionvisor`：用于生产环境的节点监控器，使用 Rust 开发。
+- `drip`：面向 Cosmos 链的 Faucet，使用 Rust 实现。
+- `evm`：EVM 智能合约堆栈，使用 Solidity 语言。
+- `app`：用户前端应用，使用 TypeScript 和 Svelte 开发。
+- `site`：项目网站，采用 TypeScript 和 Astro 技术。
+- `TypeScript SDK`：用于与 Union 交互的 TypeScript 开发工具包。
+
+项目提供了便捷的快速上手指南，推荐使用 Nix 来实现可重复构建和管理依赖。开发者可以通过安装 Nix 进入包含所有必要依赖（如 `cargo`, `rustc`, `node`, `go` 等）的开发环境，从而方便地构建和开发 Union 的各个组件。项目文档详细，每个组件都有相应的开发者文档。Union 在 GitHub 上拥有大量星标和分支，显示出社区的活跃度。
+
+总而言之，Union 是一个前沿的跨链互操作性解决方案，其核心理念在于通过零知识证明和去中心化治理，构建一个安全、去中心化且高效的跨链基础设施，特别适用于 DeFi 应用场景。

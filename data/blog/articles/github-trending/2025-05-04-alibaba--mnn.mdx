@@ -1,0 +1,20 @@
+---
+title: 'alibaba / MNN'
+date: '2025-05-04'
+sourceDate: '2025-05-04'
+sourceType: 'github-trending'
+tags: [开源项目, AI前沿, Web技术]
+cover: 'https://hub-image.moreve.net/files/images/github-trending/2025-05-04.png'
+---
+
+## alibaba / MNN
+
+用于全多模态 LLM Android 应用的 MNN
+
+**作者:** [alibaba](https://github.com/alibaba) | **仓库:** [Github 链接](https://github.com/alibaba/MNN) | **语言:** C++
+
+### 项目简介
+
+MNN（Mobile Neural Network）是阿里巴巴开源的一款高性能、轻量级深度学习推理和训练框架。该框架在阿里巴巴内部经过了大量业务场景的严格验证，例如淘宝、天猫、优酷等，涵盖了直播、短视频、搜索推荐、图像识别等多方面应用场景，并广泛应用于嵌入式设备（如IoT）。
+
+MNN 的主要优势在于其轻量化、通用性和高性能。在轻量化方面，它针对移动端和嵌入式设备进行了深度优化，依赖少，部署方便。例如，iOS 平台静态库（含所有选项）大小约为 12MB，Android 平台核心 so 文件（armv7a-c++\_shared）大小约为 800KB，通过 MNN_BUILD_MINI 选项可进一步缩小体积。此外，它支持 FP16 和 Int8 量化，可有效减少模型大小。在通用性方面，MNN 支持 TensorFlow、Caffe、ONNX、TorchScripts 等多种主流深度学习框架，并支持 CNN、RNN、GAN、Transformer 等常见神经网络模型，以及多输入/输出、动态输入、控制流等复杂特性。其转换工具箱支持大量不同框架的 OP 转换。在高性能方面，MNN 通过大量汇编代码优化充分利用 ARM/x64 CPU 性能，支持 Metal、OpenCL、Vulkan、CUDA 等 GPU 加速，并针对新旧 ARM 架构进行了深度优化。框架提供了 MNN-LLM 和 MNN-Diffusion 解决方案，分别用于在终端设备上部署大语言模型和 Stable Diffusion 模型，并提供了相应的 Android 和 iOS 应用演示。MNN 还提供了 MNN-Converter、MNN-Compress、MNN-Express、MNN-CV 和 MNN-Train 等一系列工具，方便开发者进行模型转换、压缩、计算、图像处理和训练。项目的文档完善，可通过 Read the Docs 访问，并提供 MNN Workbench 桌面工具，简化模型预训练、可视化和部署流程。开源社区主要通过钉钉群进行讨论（以中文为主，但也欢迎并协助英文用户）。

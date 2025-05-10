@@ -1,0 +1,40 @@
+---
+title: 'commaai / openpilot'
+date: '2025-05-06'
+sourceDate: '2025-05-06'
+sourceType: 'github-trending'
+tags: [开源项目, AI前沿, 开发工具, 架构设计]
+cover: 'https://hub-image.moreve.net/files/images/github-trending/2025-05-06.png'
+---
+
+## commaai / openpilot
+
+openpilot 是一个机器人操作系统。目前支持增强 300 多种汽车的驾驶辅助系统
+
+**作者:** [commaai](https://github.com/commaai) | **仓库:** [Github 链接](https://github.com/commaai/openpilot) | **语言:** Python
+
+### 项目简介
+
+openpilot 是一个机器人操作系统，主要用于升级车辆的驾驶辅助系统。目前，它支持超过300款车型。该项目是开源的，采用 MIT 许可证。
+
+要将 openpilot 应用到汽车上，需要满足以下条件：
+
+1.  **兼容的硬件设备**：如 comma 3/3X。
+2.  **安装 openpilot 软件**：在 comma 3/3X 设备设置时使用 `openpilot.comma.ai` 这个 URL 进行安装。
+3.  **受支持的车型**： openpilot 支持超过 275款汽车。
+4.  **车载线束**：用于连接 comma 3/3X 和车辆。
+
+安装过程有详细的操作说明。项目提供不同分支供用户选择：
+
+- `release3` (openpilot.comma.ai): 稳定发布版本。
+- `release3-staging` (openpilot-test.comma.ai): 发布前的预发布版本。
+- `nightly` (openpilot-nightly.comma.ai): 最前沿的开发版本，可能不稳定。
+- `nightly-dev` (installer.comma.ai/commaai/nightly-dev): 与 nightly 类似，包含针对部分车型的实验性开发功能。
+
+对于开发者，可以通过 GitHub 参与贡献，包括提交拉取请求和报告问题。项目社区活跃，有 Discord 频道进行交流。还有专门的贡献文档、工具、开发流程说明以及代码文档。comma 提供工作机会和赏金计划来鼓励外部贡献。
+
+安全方面，openpilot 遵循 ISO26262 指南，并通过持续的软件和硬件在环测试来保证安全模型。安全相关的核心代码（panda）使用 C 语言实现并经过严格的代码审查。
+
+默认情况下，openpilot 会上传驾驶数据到服务器，用户可以通过 comma connect 访问自己的数据。这些数据用于训练模型和改进 openpilot。用户也可以选择禁用数据收集。上传的数据包括路摄像头、CAN、GPS、传感器、碰撞和操作系统日志，但未记录麦克风音频。使用 openpilot 意味着同意其隐私政策，并授权 comma 使用生成的数据。需要注意的是，这是一款处于 Alpha 阶段的科研软件，并非商业产品。用户需遵守当地法律法规，软件不提供任何明示或暗示的担保。
+
+openpilot项目的核心是作为一个机器人操作系统，旨在提升车辆的驾驶辅助能力，通过开源的方式促进技术发展和社区参与。

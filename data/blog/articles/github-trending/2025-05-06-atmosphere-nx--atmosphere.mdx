@@ -1,0 +1,31 @@
+---
+title: 'Atmosphere-NX / Atmosphere'
+date: '2025-05-06'
+sourceDate: '2025-05-06'
+sourceType: 'github-trending'
+tags: [开源项目, AI前沿, 开发工具, 架构设计]
+cover: 'https://hub-image.moreve.net/files/images/github-trending/2025-05-06.png'
+---
+
+## Atmosphere-NX / Atmosphere
+
+Atmosphère 是一个正在开发的 Nintendo Switch 定制固件。
+
+**作者:** [Atmosphere-NX](https://github.com/Atmosphere-NX) | **仓库:** [Github 链接](https://github.com/Atmosphere-NX/Atmosphere) | **语言:** C++
+
+### 项目简介
+
+Atmosphere是任天堂Switch（Nintendo Switch）正在开发中的定制固件项目。它的目标是提供一个可定制的系统环境，增强或修改Switch的现有功能。
+
+Atmosphere项目由多个核心组件构成，每个组件负责Switch操作系统不同层面的定制和修改：
+
+- **Fusée**：第一阶段加载器，负责加载和验证后续阶段的文件（如自定义的TrustZone），并进行必要的补丁。
+- **Sept**：用于在特定系统版本上实现运行时密钥派生（runtime key derivation）的Payload。
+- **Exosphère**：定制的TrustZone，用于运行自定义的Secure Monitor。
+- **Thermosphère**：支持EL2级别的EmuNAND（虚拟化/重定向的存储镜像）。
+- **Stratosphère**：自定义系统模块，旨在扩展内核功能、提供新特性或通过hook关键系统行为来实现功能。
+- **Troposphère**：应用层面的Horizon OS补丁，用于实现定制固件的功能特性。
+
+该项目遵循GPLv2许可协议，同时对任天堂等特定贡献者有豁免条款。项目由核心开发团队（SciresM, TuxSH, hexkyz, fincs）以及众多其他贡献者共同维护和开发，包括switchbrew（提供libnx、文档和工具）、devkitPro（提供工具链和libnx支持）、ReSwitched团队（提供文档、研究和工具）、以及其他在文件系统、硬件、代码优化、图形设计等方面做出贡献的个人和团队。
+
+总的来说，Atmosphere是一个为Switch设计的模块化定制固件，允许技术用户深度定制其设备的系统行为和功能。

@@ -1,0 +1,46 @@
+---
+title: 'Show HN: 我基于三维物理构建了一个合成器'
+date: '2025-05-03'
+sourceDate: '2025-05-03'
+sourceType: 'hacker-news'
+tags: [行业动态, 开发工具, AI前沿]
+cover: 'https://hub-image.moreve.net/files/images/hacker-news/2025-05-03.png'
+---
+
+## Show HN: 我基于三维物理构建了一个合成器
+
+**作者:** [humbledrone](https://news.ycombinator.com/user?id=humbledrone) | **发布时间:** 2025-05-03 02:12:15
+
+### 内容摘要
+
+Anukari 3D 物理合成器：基于交互式 3D 物理仿真，革新音效设计与乐器演奏
+
+Anukari 是一款独特的软件合成器和效果处理器，其核心在于一个完全交互式的 3D 物理仿真环境。用户可以通过拖拽质量块和弹簧等物理组件，来设计和构建自己的 3D 乐器或音效，并实时听取和观察其物理运动产生的声音。该软件目前处于 Beta 测试阶段，并以五折优惠的价格发售。
+
+Anukari 提供了一种全新的 MIDI 乐器体验。用户可在 3D 物理游乐场中构建想象中的乐器，通过 MIDI 键盘触发槌、拨片、弓弦或传统振荡器，与质量块和弹簧构成的结构互动。同时，可以放置虚拟麦克风拾取 3D 乐器发出的声音，结构简单或复杂皆可。
+
+作为强大的效果处理器，Anukari 可以接收外部音频信号作为侧链输入或主要输入。用户可以将音频信号连接到物理系统的特定部分使其振动，再用虚拟麦克风拾取声音。通过添加延迟线可以实现混响或反馈效果，甚至可以用 LFO 调制弹簧的刚度。Anukari 支持传统 MIDI 和 MPE（Midi Polyphonic Expression），并可将 MPE 输入映射到任意物理参数。
+
+这款合成器的调制功能极其丰富，提供采样精准的 LFO（可达音频频率）、MIDI 触发的包络、包络跟随器，以及支持所有 MIDI 控制信号和 DAW 自动化参数。调制关系通过 3D 世界中的物理连接直观展示，几乎所有参数都可被调制。
+
+Anukari 利用 GPU 进行音频处理，释放 CPU 资源，支持构建包含数百个振荡器、LFO 或拨片的复杂系统。它支持 VST3、AU 和 AAX 插件格式，可在 Windows 和 MacOS 的 DAW 中运行，也可作为独立的 MIDI 乐器使用，且可以运行多个实例。
+
+Anukari 的 3D 界面直观且具有触感，用户在类似游戏的 3D 编辑器中构建物理结构，实时观察其运动和声音。可以通过鼠标拖拽质量块来触发声音。此外，支持定制的 3D 视觉效果，可用于演出。
+
+软件提供令人惊叹的混响效果，可以将外部音频通过不同形状的弹簧系统处理，实现各种音色，并通过调制物理参数和添加延迟线创造独特效果。Anukari 还能创造奇特的小故障和音效，通过将物理系统推至极限或构建不寻常的结构来探索未知的声音。
+
+最后，Anukari 的基础构建模块包括质量块 (Mass)、锚点 (Anchor) 和弹簧 (Spring)，激励器包括槌 (Mallet)、振荡器 (Oscillator)、拨片 (Plectrum)、弓弦 (Bow) 和音频信号 (Audio Signal)。麦克风 (Microphone) 具有指向性、内置压缩器和延迟线。调制源包括可视化矩阵、LFO、MIDI 控制、DAW 自动化、触发包络和包络跟随器。
+
+Anukari 支持 Windows 10+ (64-bit) 和 macOS 11+ (Apple Silicon M1+)，对硬件有特定要求，不支持 ARM CPU 的 Windows 和 Intel Mac。
+
+### 讨论焦点
+
+热门评论围绕合成器网站展示、技术细节（确定性、GPU需求）、潜在合作（物理学家参与、开源）、软件兼容性（Linux VST/CLAP支持）以及与类似二维项目的对比展开。
+在讨论分支1中，作者rvba、humbledrone、shannifin、mkl和tbalsam讨论了网站展示问题。rvba认为网站需要更好的YouTube视频，且应放在开头。humbledrone承认自己是糟糕的营销者，同意需要改进。shannifin和mkl提出应增加音频示例，尤其是漂亮的截图旁，并建议营销合成器应以声音为主而非图像。tbalsam强调演示视频对于用户理解重要性。
+讨论分支2中，作者throwpoaster和humbledrone讨论模拟的确定性问题。throwpoaster询问模拟是否确定性。humbledrone确认模拟是确定性的，这有助于测试，但不同GPU上的浮点运算差异会导致结果略有不同。fsckboy询问是否需要高端GPU才能获得最佳结果。
+讨论分支3中，作者sunray2和humbledrone讨论合作和性能问题。sunray2表达了对项目的兴趣并询问是否能贡献（作为物理学家），并分享了对Korg Phase8的联想。humbledrone表示近期专注于稳定性和性能，非开源，但欢迎sunray2这位物理学家联系交流。sunray2后续分享了使用演示时的积极体验（声音好、编辑直观）但也指出了CPU占用高、声音卡顿的问题，并提供了自己的设备（M1 Pro）和设置信息寻求帮助。
+讨论分支4中，作者dfedbeef、humbledrone和thrtythreeforty讨论软件兼容性。dfedbeef询问是否有Linux VST或CLAP版本。humbledrone表示希望支持Linux，但优先级较低，且非平凡工作；对于CLAP，他使用JUCE框架，该框架尚不支持CLAP，但未来版本会支持。thrtythreeforty补充说存在外部JUCE插件可以生成CLAP插件。
+讨论分支5中，作者bufferoverflow、sunray2、IshKebab和humbledrone讨论了与二维项目的对比。bufferoverflow表示自己也在做类似但二维的项目，感到气馁。sunray2和IshKebab鼓励bufferoverflow，认为二维可能更好，因为计算成本低，UI更容易，且同样可以实现好的声音，并提出声音是关键。humbledrone也认可二维有许多优势，计算需求低可以模拟更多物体，GUI更容易，且二维版本与三维版本差异可以很大，就像不同的压缩器一样。这个分支没有明显分歧，更多是互相鼓励和对不同维度模拟优劣势的探讨。
+总的来说，讨论围绕用户体验（网站、演示）、核心技术（确定性、硬件）和软件生态（平台支持、开发框架）展开，并对未来发展（合作、二维方向）进行了探讨。存在的问题反馈主要集中在网站展示不足和性能问题（CPU占用高）。
+
+[阅读原文](https://anukari.com)

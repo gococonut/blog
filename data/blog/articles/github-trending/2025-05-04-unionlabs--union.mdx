@@ -1,0 +1,35 @@
+---
+title: 'unionlabs / union'
+date: '2025-05-04'
+sourceDate: '2025-05-04'
+sourceType: 'github-trending'
+tags: [开源项目, AI前沿, Web技术]
+cover: 'https://hub-image.moreve.net/files/images/github-trending/2025-05-04.png'
+---
+
+## unionlabs / union
+
+为抗审查、极高安全性和在去中心化金融中使用而设计的、最小化信任、零知识的跨链协议
+
+**作者:** [unionlabs](https://github.com/unionlabs) | **仓库:** [Github 链接](https://github.com/unionlabs/union) | **语言:** Rust
+
+### 项目简介
+
+Union：一种高安全、抗审查的零知识证明跨链协议
+
+Union 是一个致力于高安全性、抗审查和应用于去中心化金融（DeFi）的零知识证明跨链协议。该协议采用信任最小化的设计，其核心机制是“共识验证”（Consensus Verification），与依赖于受信任第三方、预言机、多重签名或 MPC（多方计算）的传统跨链方案不同，Union 旨在提供更高的安全性和去中心化属性。
+
+Union 协议的关键特性包括：
+
+- **信任最小化和零知识证明:** 利用零知识证明技术，允许在不泄露敏感信息的情况下进行验证，从而最小化对第三方的信任。
+- **抗审查性:** 协议的设计考虑了审查阻力，提高了在不同网络环境下运行的鲁棒性。
+- **极高的安全性:** 通过共识验证等机制，Union 专注于提升跨链操作的安全性。
+- **DeFi 应用:** 定位于去中心化金融领域，方便在不同区块链之间进行资产转移、NFT 操作以及更复杂的 DeFi 交互。
+
+Union 兼容 Cosmos 生态中的 IBC（跨链通信协议），并计划连接到以太坊、Berachain、Arbitrum 等 EVM 兼容链，实现跨链的互操作性。
+
+该项目由多个核心组件组成，包括用于节点实现的 `uniond` (Go 语言), 零知识证明生成器 `galoisd` (Go/Gnark), 高性能跨链中继器 `voyager` (Rust), 多生态通用消息传递索引器 `hubble` (Rust), CosmWasm 智能合约栈 (Rust), 用于不同生态系统的轻客户端 (Rust), 生产级节点监控工具 `unionvisor` (Rust), Cosmos 链龙头 `drip` (Rust), EVM 智能合约栈 (Solidity), 用户界面应用 `app` (TypeScript/Svelte) 以及用于交互的 TypeScript SDK (TypeScript)。
+
+项目的迭代和演进，包括合约升级、连接维护和协议变更，将通过去中心化治理进行控制，以确保项目的优先级与用户、验证者和操作者保持一致。
+
+对于开发者而言，Union 项目提供了利用 Nix 工具进行可复现构建和管理开发环境的能力，简化了依赖管理和组件开发流程。

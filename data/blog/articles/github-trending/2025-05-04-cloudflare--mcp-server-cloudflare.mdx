@@ -1,0 +1,28 @@
+---
+title: 'cloudflare / mcp-server-cloudflare'
+date: '2025-05-04'
+sourceDate: '2025-05-04'
+sourceType: 'github-trending'
+tags: [开源项目, AI前沿, Web技术]
+cover: 'https://hub-image.moreve.net/files/images/github-trending/2025-05-04.png'
+---
+
+## cloudflare / mcp-server-cloudflare
+
+标题：
+
+**作者:** [cloudflare](https://github.com/cloudflare) | **仓库:** [Github 链接](https://github.com/cloudflare/mcp-server-cloudflare) | **语言:** TypeScript
+
+### 项目简介
+
+摘要：Cloudflare MCP 服务器项目概述
+
+Cloudflare MCP 服务器项目是一个基于模型上下文协议（Model Context Protocol, MCP）的开源项目，旨在通过自然语言交互的方式，连接大型语言模型（LLMs）与 Cloudflare 的各种服务。MCP 是一种新的标准化协议，用于管理 LLMs 与外部系统之间的上下文。
+
+该项目的核心目标是允许用户通过支持 MCP 协议的客户端（如 Cursor, Claude 或 Cloudflare AI Playground），使用自然语言指令来执行与 Cloudflare 账户相关的任务。这些任务涵盖了广泛的功能，包括但不限于读取账户配置、处理信息、基于数据提供建议，甚至直接应用建议的更改。支持的服务范围广泛，涉及 Cloudflare 在应用开发、安全和性能等多个领域的产品。
+
+仓库中包含了多个独立运作的 MCP 服务器，每个服务器对应 Cloudflare 的一项特定服务，例如文档查询、Workers 应用开发、应用日志分析、全球互联网流量洞察、沙盒开发环境、网页渲染、日志推送健康检查、AI Gateway 日志搜索、AutoRAG 文档管理以及 DNS 分析等。每个服务器都提供了一个特定的 URL (`.mcp.cloudflare.com/sse`)，供 MCP 客户端连接使用。
+
+项目提供了详细的说明，指导用户如何通过支持远程 MCP 服务器的客户端直接添加服务器 URL，或者对于尚未直接支持的客户端，可以使用 `mcp-remote` 工具配置客户端访问这些服务。项目中还包含了关于故障排查和贡献指南的信息，并提及部分高级功能可能需要付费的 Cloudflare Workers 计划。
+
+总体而言，Cloudflare MCP 服务器项目通过利用 MCP 协议，极大地简化了用户与 Cloudflare 服务的交互方式，使得开发者和用户能够更加便捷、直观地管理和利用其 Cloudflare 账户资源，尤其是在结合 LLMs 的应用场景下。

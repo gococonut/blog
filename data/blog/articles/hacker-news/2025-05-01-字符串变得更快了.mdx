@@ -1,0 +1,42 @@
+---
+title: '字符串变得更快了'
+date: '2025-05-03'
+sourceDate: '2025-05-01'
+sourceType: 'hacker-news'
+tags: [行业动态, 开发工具, AI前沿]
+cover: 'https://hub-image.moreve.net/files/images/hacker-news/2025-05-03.png'
+---
+
+## 字符串变得更快了
+
+**作者:** [Tomte](https://news.ycombinator.com/user?id=Tomte) | **发布时间:** 2025-05-01 14:33:45
+
+### 内容摘要
+
+**Java JDK 25 对 String 性能的显著提升：聚焦 hashCode 的常量折叠**
+
+这篇 Inside Java 文章详细介绍了在 Java JDK 25 版本中，对 `String` 类性能进行的一项重要优化。核心改进在于使 `String::hashCode` 函数在大多数情况下能够进行常量折叠（constant folding）。
+
+文章解释道，当一个 `String` 对象首次创建时，其哈希码是未知状态。首次调用 `String::hashCode` 时，会计算并存储哈希码在一个内部私有字段 `String.hash` 中。由于 `String` 是不可变的，这种内部状态的改变对外部观察者来说是透明的，但可以在后续调用中提升性能。
+
+JDK 25 的关键变化是在内部字段 `String.hash` 上标记了 JDK 内部的 `@Stable` 注解。这个注解告诉虚拟机，一旦该字段的值不是其默认值（对于 int 类型即非零），该值将永远不会改变。因此，虚拟机可以对 `String::hashCode` 操作进行常量折叠，用已知的哈希值替换函数调用。
+
+这项优化特别适用于使用不可变 `Map<String, V>` 并以 String 作为 Key 的场景。文章提供了一个使用 Foreign Function & Memory API 将 native calls 绑定到 Java `MethodHandle` 的例子。在这种场景下，通过常量折叠，包括 String 哈希计算、Map 查找、MethodHandle 获取甚至 native call 解析在内的整个操作链都可以被短路，从而带来了超过 8 倍的性能提升。文章通过基准测试数据对比了 JDK 24 和 JDK 25 在 String 哈希码计算上的显著差异。
+
+文章也提到了一点局限性：如果 String 的哈希码恰好为零，常量折叠将不会生效，因为常量折叠依赖于非默认字段值。然而，开发者团队期望未来能解决这个问题，并指出像空字符串（""）这样的常用字符串哈希码就是零。
+
+最后，文章指出 `@Stable` 注解目前仅用于内部 JDK 代码，但未来的 JEP 502 (Stable Values (Preview)) 计划提供机制，让用户代码也能以类似方式间接受益于 `@Stable` 字段。文章鼓励用户下载并测试 JDK 25，以评估这项性能改进对其现有应用程序的影响。
+
+### 讨论焦点
+
+讨论分支1中，作者gavinray首先提出对新JEP“Stable Values”与Records和Value Objects之间的功能差异感到困惑，他引用了定义并指出Record和Value Object都是不可变的。sagacity回复解释StableValue类似Kotlin的lateinit，用于延迟初始化运行时常量，与可以在生命周期中创建和销毁的Record不同。gavinray反驳Records也可以通过静态初始化方法实现延迟初始化。pkulak提问String哈希是否会泄露内存。leksak质疑lateinit的实现层级。w10-1进一步澄清StableValue并非编译时常量，而是延迟初始化，一旦设定即不可变，但具有初始化前后的两种状态行为，这与Record等不同，并指出String的hashcode在equals方法中的使用可能导致不同行为。whartung推测Record和Value Object的区别在于Value Object缺乏对象标识，可能支持去重和内存连续化，与传统的Java对象（指针集合）不同。blacklion指出Record可以通过反射修改，因此不能进行JIT的常量折叠，而@Stable或StableValue用于向JIT保证值不会被修改，从而支持常量折叠。*old_dude*反驳通过反射修改Record字段并不可能。*old_dude*还解释了Java中静态final常量与StableValue在延迟初始化方面的区别。主要争议点在于StableValue与Records和Value Objects的功能区别、延迟初始化方式以及Record是否能通过反射修改。情感倾向以技术探讨和澄清为主。
+
+讨论分支2聚焦于String哈希是否应该随机化以抵抗DoS攻击。int_19h对此表示惊讶，并猜测Java不随机化是为了兼容性。sedatk指出Java通过使用树而非链表来缓解哈希冲突的性能下降。yxhuvud提出JVM即使随机化哈希也可以缓存。PaulHoule补充说空字符串哈希为0导致每次需要重新计算。ivan_gammel强调Java哈希设计是为了速度，而非抗冲突攻击，不应用于需要加密属性的场景。tialaramex反驳说，为了哈希表安全，需要一定的加密属性（如SipHash），Java因其固定哈希算法必须通过结构本身来抵抗攻击。GolDDranks和andrewaylett都指出即使仅用于集合，可控的输入也可能通过哈希冲突导致DoS攻击，并引用了Python的CVE事例。ncruces引用官方文档说明String哈希算法是固定的，根据海勒姆定律无法更改。分歧在于String哈希的随机化需求与Java的兼容性及现有算法之间的冲突。情感倾向是关注安全问题和技术限制。
+
+讨论分支3围绕新特性对Map操作的影响和收益。Traubenfuchs疑问其是否仅限于Map.of，能否用于map.put，对平均Java服务的性能提升，以及对String.intern()和String缓存的影响。amiga386回复表示新特性在map.put中会更快，但在Map.of结合不可变Map时，由于键的hashcode和Map的不可变性，JVM可以进行更深度的优化（类似直接替换）。amiga386解释String.intern()旨在节省内存，与新特性不同。Traubenfuchs追问JVM如何知道Map是不可变的，以及interned字符串是否也能重用hashcode。Traubenfuchs还询问了直接替换键值的方式以及如何处理哈希冲突。daxfohl认为新特性可能对String.intern()价值有影响，取决于具体用例。分歧点在于新特性在不同Map操作中的具体性能差异以及String.intern()的相对价值变化。情感倾向是寻求理解和量化收益。
+
+讨论分支4询问Kotlin和Scala是否会受益于此。esafak提出问题。daxfohl认为会受益，因为这是核心JDK类的JVM特性。taeric对此表示惊讶，并询问Kotlin和Scala是否有自己的String实现，这让他感到意外。讨论点在于JVM层面的改进对使用JVM语言的影响。
+
+讨论分支5针对原文代码块的非ASCII字符使用。vault质疑一个编程网站为何不在代码块中使用ASCII字符，而是使用非ASCII引号等。VWWHFSfQ回应说Java早就支持非ASCII源代码。dullcrisp补充说虽然支持非ASCII源代码，但不支持使用非ASCII字符作为字符串定界符。讨论点在于代码可读性和对非ASCII字符在不同上下文（源代码 vs. 字符串定界符）中的支持。
+
+[阅读原文](https://inside.java/2025/05/01/strings-just-got-faster/)

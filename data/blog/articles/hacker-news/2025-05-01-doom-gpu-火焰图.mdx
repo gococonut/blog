@@ -1,0 +1,36 @@
+---
+title: 'Doom GPU 火焰图'
+date: '2025-05-03'
+sourceDate: '2025-05-01'
+sourceType: 'hacker-news'
+tags: [行业动态, 开发工具, AI前沿]
+cover: 'https://hub-image.moreve.net/files/images/hacker-news/2025-05-03.png'
+---
+
+## Doom GPU 火焰图
+
+**作者:** [zdw](https://news.ycombinator.com/user?id=zdw) | **发布时间:** 2025-05-01 22:30:42
+
+### 内容摘要
+
+# Doom GPU Flame Graphs
+
+AI Flame Graphs 开源现已支持英特尔 Battlemage GPU，能够生成全栈 GPU 火焰图，为游戏性能分析提供新视角。结合 FlameScope（作者的另一旧有开源项目），可以更深入地洞察性能问题。文章以 GZDoom 为例，展示了 CPU 和 GPU Flame Scope 的并排视图，通过颜色深度揭示样本数量，从而发现性能波动和异常。这种并排分析使得通过模式匹配快速定位 CPU 和 GPU 之间的性能关联成为可能，例如 GPU 忙碌的间隙与 CPU 负载较高时期相对应。
+
+文章重点介绍了如何通过 FlameScope 选择特定时间段进行 CPU 和 GPU 分析。通过选择 CPU 上的着色器编译条纹，获得的火焰图清晰显示了 CPU 在编译 GPU 着色器和预处理 NIR 中花费的时间。这是火焰图的典型应用，即通过观察最宽的“塔”来确定性能瓶颈。
+
+更重要的是，文章着重介绍了新的全栈 GPU 火焰图和 GPU Flame Scope。GPU Flame Scope 中选择有趣的时间段（例如 GZDoom 地图中的特定房间），生成的 GPU 火焰图能详细展示 GPU 上运行的指令、对应的源代码以及引发这些 GPU 程序的 CPU 代码路径。x 轴表示成本，可用于识别和优化开销最大的部分。文章提供了交互式 SVG 版本，方便用户进一步探索数据。
+
+在 GZDoom 示例中，GPU 火焰图揭示了性能瓶颈主要来自墙体渲染、后处理效果、模板测试和精灵渲染。CPU 堆栈进一步细分了导致停顿的各个着色器及其原因。
+
+为了在 GZDoom 中获取足够的 GPU 样本，作者构建了更具挑战性的地图，并调整了 Battlemage 的参数以放大资源利用率。
+
+文章还介绍了用于 GPU 分析的 Intel 开源加速器分析器 iaprof。iaprof 的使用需要满足特定的系统要求，包括具有 root 权限的 Linux 系统、较新的 Linux 内核和最新的 Intel GPU 驱动、支持特定接口的内核构建以及包含帧指针的应用程序和库。目前在 Intel 云上使用更方便，在本地系统上可能需要进行一些系统配置和编译工作。尽管如此，iaprof 提供了一种类似 Linux perf 命令的 GPU 分析方式。
+
+文章最后展望了未来的工作，包括 GitHub 发布、更多硬件支持和开销降低。作者希望这些新的性能分析工具能够帮助用户解决新的性能问题。
+
+### 讨论焦点
+
+帖子主要围绕“Doom GPU Flame Graphs”这一特定话题展开。热门讨论分支一的核心焦点在于火焰图（Flame Graphs）在游戏性能分析中的局限性与优势，并将其与时间线视图分析工具如Superluminal或Tracy进行对比。讨论分支二则是一个简单的链接分享，指向另一篇关于 Doom GPU Flame Graphs 的讨论，其焦点在于内容本身的转发和参考，没有形成深入讨论。
+
+[阅读原文](https://www.brendangregg.com/blog/2025-05-01/doom-gpu-flame-graphs.html)
