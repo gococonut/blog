@@ -1,0 +1,765 @@
+---
+title: Github Daily Trending
+date: 2025-05-16
+cover: https://hub-image.moreve.net/files/images/github-trending/2025-05-16.png
+summary: '本期内容涵盖免费教材资源分享工具ChinaTextbook、个人数字分身创建方案WeClone、AI助手记忆层mem0、1位LLM高性能CPU推理框架BitNet.cpp、B站会员购抢票辅助工具biliTickerBuy、在线LaTeX协作编辑器Overleaf、AI Agent跨应用数据语义搜索工具Airweave、大型语言模型全程学习资源llm-course、材料与量子化学机器学习库fairchem、智慧教育平台电子课本下载器tchMaterial-parser以及基于Spring AI的Java AI应用框架spring-ai-alibaba、专为AI Agent设计的容器化平台Cua。'
+headingSummaries:
+  - heading: 'TapXWorld / ChinaTextbook'
+    summary: '`ChinaTextbook` 是一个开源项目，提供中国大陆从小学到大学的免费PDF教材，旨在促进教育资源共享、缩小地区差距，并帮助海外华人了解国内教育。'
+    tags: [学习资源, 应用, 库]
+  - heading: 'xming521 / WeClone'
+    summary: 'WeClone是一个基于个人聊天记录、旨在通过微调大语言模型来创建用户专属数字分身的一站式解决方案，并支持将此分身部署到各类主流聊天机器人平台。'
+    tags: [人工智能, 开发工具, 实验项目]
+  - heading: 'mem0ai / mem0'
+    summary: 'mem0项目为AI助手提供智能记忆层， enabling 个性化、上下文感知和适应性交互，尤其适用于需要长期记忆和学习的应用，并提供本地部署选项。'
+    tags: [人工智能, 库, 实验项目]
+  - heading: 'microsoft / BitNet'
+    summary: 'BitNet.cpp是一个用于高效运行1.58位大型语言模型（如BitNet b1.58）的官方推理框架，尤其优化了CPU性能，显著提升了推理速度并降低了能耗，甚至能在单个CPU上流畅运行100B参数模型。'
+    tags: [人工智能, 开发工具, 库]
+  - heading: 'mikumifa / biliTickerBuy'
+    summary: '这份内容主要介绍了开源免费的Bilibili会员购辅助工具biliTickerBuy，它使用Python开发，提供图形界面和多种高级功能帮助用户抢购票务。'
+    tags: [应用, 开发工具, 实验项目]
+  - heading: 'overleaf / overleaf'
+    summary: 'Overleaf是一个开源的在线LaTeX协作编辑工具，支持多人实时编辑、编译LaTeX文档，适用于学术写作和技术文档等场景。'
+    tags: [开发工具, 应用, 库]
+  - heading: 'airweave-ai / airweave'
+    summary: 'Airweave 是一款强大的工具，能帮助AI代理进行跨应用数据的语义搜索，解决信息孤岛问题，通过连接并处理各种应用数据为代理提供知识库。'
+    tags: [人工智能, 开发工具, 应用]
+  - heading: 'openai / simple-evals'
+    summary: 'OpenAI开源了轻量级评估库simple-evals，用于提高其模型评估准确性和透明度，包含多个基准测试和主流模型性能数据，方便衡量大型语言模型能力。'
+    tags: [人工智能, 库, 开发工具]
+  - heading: 'mlabonne / llm-course'
+    summary: '这份GitHub项目是一个关于大型语言模型的全面学习资源，包含详细的学习路径、实用工具和实践笔记本，旨在帮助用户从基础到进阶掌握LLM的原理、构建与应用。'
+    tags: [人工智能, 学习资源, 开发工具]
+  - heading: 'facebookresearch / fairchem'
+    summary: 'fairchem是FAIR团队开发的专注于材料科学和量子化学的机器学习方法库，其最新版本2推出了UMA统一模型和数据集，并提供与ASE集成的计算器，使用户能方便地进行结构优化和分子动力学模拟等任务。'
+    tags: [人工智能, 库, 应用]
+  - heading: 'happycola233 / tchMaterial-parser'
+    summary: '这是一个名为`tchMaterial-parser`的工具，专用于下载国家中小学智慧教育平台的电子课本PDF，通过支持Access Token登录和批量下载等功能，方便用户获取离线阅读资源。'
+    tags: [开发工具, 应用, 学习资源]
+  - heading: 'alibaba / spring-ai-alibaba'
+    summary: 'Spring AI Alibaba 是一个基于Spring AI的Java AI应用框架，旨在简化开发者在Spring Boot应用中集成阿里云通义千问等生成式AI能力，帮助快速构建AI原生Java应用。'
+    tags: [框架, 人工智能, 开发工具]
+  - heading: 'trycua / cua'
+    summary: 'Cua是一个专为AI Agent设计的Docker项目，利用高性能虚拟机让AI Agent在Apple Silicon平台上高速控制操作系统，提供统一管理工具、灵活的Agent框架和丰富的计算机接口。'
+    tags: [开发工具, 人工智能, 框架]
+---
+
+## TapXWorld / ChinaTextbook
+
+> `ChinaTextbook` 是一个开源项目，提供中国大陆从小学到大学的免费PDF教材，旨在促进教育资源共享、缩小地区差距，并帮助海外华人了解国内教育。
+
+### 项目介绍
+
+这是一个名为 `ChinaTextbook` 的开源项目，其核心目标是收集并分享中国大陆地区的小学部、初中部、高中部以及大学阶段的 PDF 格式教材。
+
+项目的创建初衷是为了应对现有教育资源获取途径的限制，尤其是一些付费或带有私人水印的资源售卖行为，旨在促进义务教育资源的普及，缩小地区间教育差距。同时，项目也特别希望能帮助海外华人家庭，使其子女能够方便地接触和了解国内的教育内容。除了教学资源本身，项目也表达了对“非为考学而读书”理念的倡导。
+
+项目主要提供以下类别的PDF教材资源：
+
+- 小学数学教材
+- 初中数学教材（包括七、八、九年级的人教版资源）
+- 高中数学教材（提供人教版A版目录和部分资源，注明主编信息）
+- 大学数学涵盖高等数学（同济大学第七版）、线性代数、离散数学、概率论等。项目中还提供了一个外部链接指向“大学数学网”，以获取更多数学资料。
+
+由于 GitHub 对单个文件大小的限制（特别是大于 50MB 的文件会收到警告，大于 100MB 会被拒绝），部分较大的 PDF 文件会被拆分成小于 35MB 的多个部分（例如 `.pdf.1`, `.pdf.2`）。为了方便用户使用，项目提供了一个名为 `mergePDFs.exe` 的合并程序，用户只需将该程序与被拆分的文件放在同一目录下运行，即可自动完成合并。该合并程序的文件及其源代码（Go 语言编写）也已开源提供审计。
+
+项目建议内地用户可以考虑使用另一个开源项目 `tchMaterial-parser` 进行教材下载，而对于国外用户，由于网络延迟原因，建议直接使用本项目进行下载。
+
+项目目前处于活跃维护状态，已经获得了大量关注（超过1.5万 Star）。鼓励用户通过提供的二维码进行捐赠以支持项目的持续发展。项目的贡献者包括项目创建者 TapXWorld 和另一位名为 keminshu 的用户。项目的核心内容是基于 Roff 语言描述的 README 文件。
+
+### 项目统计与信息
+
+- **作者:** [TapXWorld](https://github.com/TapXWorld）)
+- **主要语言:** Roff
+- **Stars:** 15190 ⭐
+- **Forks:** 3113 🍴
+- **本周期新增 Stars:** 4103 ⭐
+
+_要了解更多关于 **TapXWorld / ChinaTextbook** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/TapXWorld/ChinaTextbook)。_
+
+---
+
+## xming521 / WeClone
+
+> WeClone是一个基于个人聊天记录、旨在通过微调大语言模型来创建用户专属数字分身的一站式解决方案，并支持将此分身部署到各类主流聊天机器人平台。
+
+### 项目介绍
+
+WeClone 是一个旨在通过个人社交聊天记录创建数字分身的一站式解决方案。其核心理念是利用用户的聊天数据微调大语言模型（LLM），使模型学习并模仿用户的语言风格、习惯和“味道”，最终将微调后的模型绑定到聊天机器人平台，从而实现用户的数字分身。该项目涵盖了从聊天数据导出、预处理、模型训练到部署的完整流程。
+
+主要功能和特性包括：
+
+- 提供创建数字分身的全链路解决方案，从数据准备到模型应用。
+- 支持使用微信聊天记录作为主要数据源，通过微调使大模型具备用户独特的语言风格。
+- 可绑定到多种主流聊天机器人平台，如微信、QQ、Telegram、企微、飞书等，实现数字分身的便捷交互。
+- 具备隐私信息过滤功能，可以在数据预处理阶段移除敏感信息。
+- 支持本地化微调和部署，确保数据安全可控。
+- 项目正在快速迭代，持续优化效果。
+- 支持使用命令行工具进行各项操作。
+- 提供详细的Windows部署指南。
+
+技术栈/依赖：
+
+- 项目基于Python语言开发。
+- 使用PyTorch框架。
+- 微调部分主要依赖LLaMA Factory库，支持其兼容的多种大模型和微调方法，默认使用Qwen2.5-7B-Instruct模型和LoRA微调方法。
+- 利用uv作为推荐的Python环境管理器和依赖安装工具。
+- （可选）支持安装FlashAttention以加速训练和推理。
+- 数据导出方面，推荐使用PyWxDump工具提取微信聊天记录。
+- 推理服务可使用vLLM进行离线推理。
+- 支持将微调后的模型部署到如AstrBot、LangBot等开源聊天机器人平台。
+
+安装与配置指南概述：
+
+- 需要首先安装CUDA（要求版本12.4及以上）。
+- 建议使用uv创建虚拟环境并安装项目依赖，包括主功能依赖和（可选的）开发依赖。
+- 复制配置文件模板`settings.template.jsonc`为`settings.jsonc`，并在其中进行各项配置。
+- 需要自行下载基础的大语言模型，例如Qwen2.5-7B-Instruct。
+- 使用PyWxDump等工具导出聊天记录，并将处理后的csv文件放入指定目录（./dataset/csv）。
+
+基本使用方法概述：
+
+- 使用命令行工具`weclone-cli`执行各项操作。
+- 数据预处理：运行`weclone-cli make-dataset`对聊天记录进行清洗、格式化和问答对匹配，可配置单人消息合并的时间窗口。支持通过LLM Judge对数据进行打分和清洗。
+- 模型微调：根据硬件条件和数据集质量，配置`settings.jsonc`中的训练参数，如模型路径、批次大小、显存优化参数、LoRA参数等。支持单卡和多卡（使用deepspeed）训练，通过运行`weclone-cli train-sft`启动单卡训练或使用deepspeed命令启动多卡训练。
+- 模型推理：启动API服务，运行`weclone-cli server`。或使用浏览器demo进行简单推理测试，运行`weclone-cli webchat-demo`。
+- 模型测试：运行API服务后，使用`weclone-cli test-model`对模型进行常见聊天问题测试。
+
+代码示例/命令示例：
+
+- 安装依赖（不含音频克隆）：`uv pip install --group main -e .`
+- 复制配置文件：`cp settings.template.jsonc settings.jsonc`
+- 数据预处理：`weclone-cli make-dataset`
+- 单卡训练：`weclone-cli train-sft`
+- 启动接口推理服务：`weclone-cli server`
+- 启动浏览器demo：`weclone-cli webchat-demo`
+
+适用场景/目标用户：
+
+- 面向希望创建个人AI数字分身、数字永生或克隆特定人物对话风格的开发者和技术爱好者。
+- 可用于个人娱乐、构建个性化机器人、尝试基于个人数据的LLM微调等场景。
+- 目标用户对LLM、微调技术有基础了解。
+
+项目状态与许可证：
+
+- 项目处于快速迭代期。
+- 项目采用AGPL-3.0许可证。
+- 项目明确包含免责声明，强调项目仅供学习交流，禁止用于非法用途，用户需自行承担相关风险和责任。
+
+独特的优势或创新点：
+
+- 提供了一站式的解决方案，整合了数据处理、微调和部署到聊天平台的流程。
+- 专注于使用个人聊天记录进行个性化LLM微调，力求捕捉用户独特的语言风格。
+- 重视隐私信息保护，在数据处理流程中内置了过滤功能。
+- 支持将微调成果无缝对接主流开源聊天机器人平台。
+
+### 项目统计与信息
+
+- **作者:** [xming521](https://github.com/xming521）)
+- **主要语言:** Python
+- **Stars:** 8363 ⭐
+- **Forks:** 657 🍴
+- **本周期新增 Stars:** 1019 ⭐
+
+_要了解更多关于 **xming521 / WeClone** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/xming521/WeClone)。_
+
+---
+
+## mem0ai / mem0
+
+> mem0项目为AI助手提供智能记忆层， enabling 个性化、上下文感知和适应性交互，尤其适用于需要长期记忆和学习的应用，并提供本地部署选项。
+
+### 项目介绍
+
+mem0 项目旨在为AI助手和代理提供一个智能化的记忆层，以便实现个性化的AI交互体验。通过记忆用户偏好、适应个人需求并持续学习，它特别适用于需要长期记忆和上下文理解的场景，如客户支持聊天机器人、AI助手以及自动化系统。项目名称 “mem0” 意为 “零记忆点”，强调在其之上构建的AI能够拥有智能记忆。
+
+核心功能和主要特性包括：
+
+- 多级记忆管理：能够无缝地存储和管理用户级、会话级和代理级的状态信息，实现自适应的个性化。
+- 开发者友好：提供直观的API、跨平台SDK（目前支持Python和TypeScript），并可选托管服务。
+- 本地和安全记忆管理：通过 OpenMemory MCP (Memory Computing Platform) 提供本地化部署选项，增强数据安全性和隐私。
+- 卓越的记忆性能：根据 LOCOMO 基准测试，在准确性、速度和Token使用效率方面表现出色，相比直接使用全上下文有显著提升（准确性提高26%，响应速度快91%，Token使用减少90%）。
+
+项目支持多种大型语言模型（LLMs），默认使用 OpenAI 的 gpt-4o-mini，但也兼容其他多种模型。
+
+安装与配置方式灵活，用户可以选择使用 mem0 托管平台快速上手，或通过 pip (用于 Python) 或 npm (用于 TypeScript) 安装 SDK 进行自托管部署。
+
+基本使用方法围绕着记忆的实例化、搜索（检索相关记忆以提供上下文）和添加（从对话中学习并存储新记忆）三个核心操作展开。典型的流程是：接收用户输入 -> 检索相关历史记忆 -> 将检索到的记忆与用户输入一同发送给 LLM 生成响应 -> 将本次对话（用户输入和AI响应）添加为新的记忆。
+
+代码示例（Python）展示了如何初始化 `Memory` 对象，结合 OpenAI LLM，通过 `search` 方法检索用户相关记忆，并利用这些记忆和当前对话通过 `add` 方法创建新记忆，从而在用户互动中实现记忆的累积和利用。
+
+该项目适用于广泛的应用场景：
+
+- 构建具有连贯性和上下文能力的 AI 助手。
+- 增强客户支持系统，使其能记住用户历史和偏好，提供更个性化的服务。
+- 在教育、医疗等领域跟踪个体信息，实现定制化交互。
+- 为生产力工具和游戏应用创建能适应用户行为的工作流或环境。
+
+该项目以 Apache 2.0 许可证开源，处于积极开发和维护中，是构建需要长期、个性化记忆的 AI 代理的重要工具。同时，项目作者也发布了相关研究论文，进一步验证其在 AI Agent 记忆领域的技术领先性。
+
+### 项目统计与信息
+
+- **作者:** [mem0ai](https://github.com/mem0ai）)
+- **主要语言:** Python
+- **Stars:** 30408 ⭐
+- **Forks:** 2932 🍴
+- **本周期新增 Stars:** 679 ⭐
+
+_要了解更多关于 **mem0ai / mem0** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/mem0ai/mem0)。_
+
+---
+
+## microsoft / BitNet
+
+> BitNet.cpp是一个用于高效运行1.58位大型语言模型（如BitNet b1.58）的官方推理框架，尤其优化了CPU性能，显著提升了推理速度并降低了能耗，甚至能在单个CPU上流畅运行100B参数模型。
+
+### 项目介绍
+
+BitNet.cpp 是一个面向1-bit大型语言模型（LLMs），特别是BitNet b1.58模型的官方推理框架。该项目致力于提供高性能、无损的1.58位模型推理能力，目前主要针对CPU平台进行了优化，未来计划扩展支持NPU和GPU。
+
+项目核心目标是显著提升1-bit LLMs在CPU上的推理速度并降低能耗。根据项目提供的数据，相对于基线方法，BitNet.cpp在ARM CPU上实现了1.37倍至5.07倍的加速，同时能耗降低了55.4%至70.0%；在x86 CPU上则实现了2.37倍至6.17倍的加速，能耗降低了71.9%至82.2%。尤为突出的是，BitNet.cpp能够在单个CPU上运行100B参数规模的BitNet b1.58模型，推理速度可达到每秒5-7个token，接近人类阅读速度，这极大地提升了LLMs在本地设备上运行的可行性。
+
+主要功能和特性：
+
+- 为1-bit LLMs（如BitNet b1.58）提供官方推理支持。
+- 提供高度优化的CPU推理内核，实现显著的性能提升和能效优化。
+- 支持在单个CPU上运行大型1-bit模型（例如100B参数模型）。
+- 基于Lookup Table（查表法）构建推理内核，利用了T-MAC项目的方法。
+- 提供了便捷的安装与构建脚本，支持从Hugging Face下载官方及第三方BitNet模型。
+- 提供基础的推理运行脚本和端到端基准测试脚本。
+- 支持交互式聊天模式（针对指令微调模型）。
+
+技术栈/依赖：
+
+- 主要使用C++和Python进行开发。
+- 基于llama.cpp框架进行构建，并在此基础上开发了针对1-bit模型的优化内核。
+- 依赖于CMake（版本>=3.22）和Clang（版本>=18）进行构建。
+- Python依赖项通过requirements.txt文件管理，推荐使用conda环境进行安装。
+- 支持运行官方发布的 `microsoft/BitNet-b1.58-2B-4T` 模型，并兼容多个社区在Hugging Face上发布的1-bit模型，包括 `1bitLLM/bitnet_b1_58-large`、`1bitLLM/bitnet_b1_58-3B`、`HF1BitLLM/Llama3-8B-1.58-100B-tokens` 以及 `tiiuae/Falcon3` 系列的部分1.58bit模型。
+- 支持不同的量化类型内核，如i2_s和tl1。
+
+安装与配置：
+
+- 需要克隆项目仓库及其子模块。
+- 使用conda环境安装Python依赖。
+- 需要安装特定版本的CMake和Clang编译器。
+- 提供 `setup_env.py` 脚本用于下载模型、配置编译选项并构建项目。
+
+基本使用方法：
+
+- 使用 `run_inference.py` 脚本运行推理。
+- 通过命令行参数指定模型文件路径、预测token数量、输入prompt、线程数等。
+- `-cnv` 参数可启用聊天模式。
+- 提供 `e2e_benchmark.py` 脚本用于模型的端到端性能测试。
+
+适用场景/目标用户：
+
+- 面向希望在资源受限设备（特别是CPU）上高效运行LLMs的开发者和研究人员。
+- 适用于需要在本地设备进行快速、低能耗AI推理的应用场景。
+
+项目状态与许可证：
+
+- 项目处于活跃开发状态。
+- 采用MIT许可证。
+
+项目的独特之处在于其专注于1-bit LLMs的高效推理，通过定制化的内核优化，显著提升了这类模型在CPU上的性能和能效，为在更广泛的设备上部署大型语言模型提供了新的可能性。项目还参考了llama.cpp和T-MAC的成熟技术，站在了巨人的肩膀上。
+
+### 项目统计与信息
+
+- **作者:** [microsoft](https://github.com/microsoft）)
+- **主要语言:** C++
+- **Stars:** 19469 ⭐
+- **Forks:** 1445 🍴
+- **本周期新增 Stars:** 219 ⭐
+
+_要了解更多关于 **microsoft / BitNet** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/microsoft/BitNet)。_
+
+---
+
+## mikumifa / biliTickerBuy
+
+> 这份内容主要介绍了开源免费的Bilibili会员购辅助工具biliTickerBuy，它使用Python开发，提供图形界面和多种高级功能帮助用户抢购票务。
+
+### 项目介绍
+
+该项目名为 biliTickerBuy，是一个开源且免费的 Bilibili 会员购辅助工具，主要用于抢购各种票务，如漫展门票等。
+
+项目核心功能包括：
+
+- 提供图形化用户界面，方便用户操作。
+- 采用纯接口方式与 Bilibili 会员购系统交互。
+- 支持验证码预演练习，帮助用户熟悉验证码识别过程。
+- 实现分布式和代理服务器功能。
+
+项目的技术栈主要基于 Python 语言，并可能包含 Dockerfile 用于容器化部署。
+
+安装方面，用户可以通过访问项目 Releases 页面下载相应的可执行文件或源码进行安装。详细的使用指南和说明文档托管在飞书平台。
+
+该项目专注于解决用户在 Bilibili 会员购平台上抢购热门票务时遇到的困难，旨在提供一个辅助手段来提高抢票成功率。
+
+项目的许可证是 MIT License，意味着它是开源免费的，用户可以自由使用、修改和分发，但需遵守许可证条款，特别是避免用于盈利目的，否则一切后果自负。项目处于积极维护状态，并有多个贡献者参与开发。
+
+### 项目统计与信息
+
+- **作者:** [mikumifa](https://github.com/mikumifa）)
+- **主要语言:** Python
+- **Stars:** 1479 ⭐
+- **Forks:** 221 🍴
+- **本周期新增 Stars:** 94 ⭐
+
+_要了解更多关于 **mikumifa / biliTickerBuy** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/mikumifa/biliTickerBuy)。_
+
+---
+
+## overleaf / overleaf
+
+> Overleaf是一个开源的在线LaTeX协作编辑工具，支持多人实时编辑、编译LaTeX文档，适用于学术写作和技术文档等场景。
+
+### 项目介绍
+
+Overleaf 是一个开源的、基于 Web 的实时协作 LaTeX 编辑器。它旨在提供一个在线平台，让用户能够方便地创建、编辑和编译 LaTeX 文档，并支持多人同时协作。除了官方托管版本 overleaf.com 外，用户也可以自行部署其开源的社区版。
+
+该项目的主要功能和特性包括：
+
+- **实时协作编辑：** 允许多个用户同时编辑同一份 LaTeX 文档，类似于在线文档编辑工具。
+- **LaTeX 编译：** 集成了 LaTeX 编译环境，用户可以直接在浏览器中编写代码并生成 PDF 输出。
+- **项目管理：** 提供文件和文件夹管理功能，方便组织复杂的 LaTeX 项目。
+- **版本控制：** 支持一定程度的版本追踪，方便查看和管理文档修改历史。
+- **富文本编辑与源代码编辑切换：** 提供 WYSIWYG（所见即所得）和 LaTeX 源代码两种编辑模式，适应不同用户的需求。
+- **模板支持：** 可能包含丰富的模板库，帮助用户快速开始撰写文章、报告等。
+
+项目的技术栈主要依赖于 Web 技术，包括 JavaScript 和 TypeScript 用于前后端开发，Less 和 SCSS 用于样式，Pug 用于模板。尽管这部分信息主要从代码文件类型推断，但核心功能实现应基于这些 Web 技术。此外，Overleaf 依赖于 TeX Live 等 LaTeX 编译工具。项目的安装和部署主要通过 Docker 进行，提供了构建基础镜像和社区版镜像的 Dockerfile，并使用 runit 作为容器内的服务管理器。
+
+安装通常涉及使用 Overleaf Toolkit 提供的详细指南，而升级则需要参考 Wiki 中的版本发布说明。项目采用 Docker 实现环境打包和管理，构建基础镜像 `sharelatex/sharelatex-base` 包含基础依赖如 TeX Live，而社区版镜像 `sharelatex/sharelatex` 在此基础上加入具体的 Overleaf 应用代码和服务。
+
+Overleaf 的典型适用场景包括学术写作、技术文档编写、报告撰写等需要使用 LaTeX 的领域。主要目标用户群体是需要进行 LaTeX 创作和协同工作的学生、研究人员、工程师和团队。
+
+该项目的代码遵循 AGPL-3.0 许可证发布，允许用户自由使用、修改和分发，但在分发修改后的版本时需要遵守 AGPL-3.0 的相关条款，特别是源代码公开的要求。
+
+项目社区版 (Community Edition) 提供了核心的协作编辑功能，而企业版 (Server Pro) 则在此基础上增加了更多面向企业用户的特性，如SSO、高级安全设置和管理工具。项目持续维护和更新，并且接受社区贡献。
+
+### 项目统计与信息
+
+- **作者:** [overleaf](https://github.com/overleaf）)
+- **主要语言:** JavaScript
+- **Stars:** 15492 ⭐
+- **Forks:** 1586 🍴
+- **本周期新增 Stars:** 26 ⭐
+
+_要了解更多关于 **overleaf / overleaf** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/overleaf/overleaf)。_
+
+---
+
+## airweave-ai / airweave
+
+> Airweave 是一款强大的工具，能帮助AI代理进行跨应用数据的语义搜索，解决信息孤岛问题，通过连接并处理各种应用数据为代理提供知识库。
+
+### 项目介绍
+
+Airweave 是一个强大的工具，旨在帮助人工智能代理（agents）对来自任何应用程序的数据进行语义搜索。它能够无缝连接各种应用程序、数据库和 API，将它们的丰富内容转换为代理随时可用的知识库，并兼容 MCP 协议。通过 Airweave，用户可以极大地简化信息检索过程，无论是结构化数据还是非结构化数据，都能轻松地被处理、存储，并通过 REST 和 MCP 端点进行高效检索。
+
+其主要功能和特性包括：
+
+- 从超过 25 种不同的应用源同步数据，配置过程简单快速。
+- 具备实体提取和转换管道，能够将原始数据转化为可处理的实体。
+- 采用多租户架构，并支持 OAuth2 认证。
+- 利用内容哈希实现数据的增量更新。
+- 提供语义搜索能力，优化代理对数据的查询效率。
+- 支持数据 변경的版本控制。
+- 提供白标（white-labeling）支持，方便 SaaS 开发者集成。
+
+Airweave 的技术栈主要包括：
+
+- 前端：使用 React 和 TypeScript 构建，UI 库采用 ShadCN。
+- 后端：基于 Python 的 FastAPI 框架。
+- 数据库：PostgreSQL 用于存储元数据，Qdrant 用于存储向量数据。
+- 部署方式：开发环境使用 Docker Compose，生产环境计划支持 Kubernetes。
+
+快速入门使用 Docker Compose 可以轻松构建并运行 Airweave，通过 `git clone` 项目后，执行 `chmod +x start.sh && ./start.sh` 即可启动服务，前端界面可在 `http://localhost:8080` 访问，API 文档可在 `http://localhost:8001/docs` 查看。
+
+项目提供了 Python 和 TypeScript/JavaScript 的 SDK，方便开发者在各自的应用中集成 Airweave 的功能，进行数据源列表查询、同步任务创建、以及数据搜索等操作。
+
+Airweave 支持广泛的应用集成，覆盖了常见的项目管理、日历、邮件、办公协作、数据库、CRM等多种类型，例如 Asana, Calendly, Gmail, Google Drive, Jira, Notion, PostgreSQL, Slack 等。
+
+项目的路线图显示未来计划增加更多数据源集成、支持利用 Redis 队列处理大规模同步以及事件驱动的 Webhook 同步，并提供 Kubernetes 的 Helm Chart 支持。
+
+Airweave 项目遵循 MIT 许可证，鼓励社区贡献，并提供了 Discord、GitHub Issues 和 Twitter 等渠道进行交流和获取支持。它的目标用户群体是需要让 AI 代理能够灵活访问和利用分散在各种应用中的数据的开发者和组织，解决信息孤岛问题，提升代理的工作效率和智能水平。
+
+### 项目统计与信息
+
+- **作者:** [airweave-ai](https://github.com/airweave-ai）)
+- **主要语言:** Python
+- **Stars:** 1934 ⭐
+- **Forks:** 195 🍴
+- **本周期新增 Stars:** 399 ⭐
+
+_要了解更多关于 **airweave-ai / airweave** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/airweave-ai/airweave)。_
+
+---
+
+## openai / simple-evals
+
+> OpenAI开源了轻量级评估库simple-evals，用于提高其模型评估准确性和透明度，包含多个基准测试和主流模型性能数据，方便衡量大型语言模型能力。
+
+### 项目介绍
+
+"simple-evals" 是一个轻量级的语言模型评估库。OpenAI 开发并开源此项目，旨在提高其最新模型发布的评估准确性，并增强透明度。该库提供了一组核心基准测试，用于衡量大型语言模型在不同任务上的表现。
+
+项目主要功能和特性：
+
+- 提供针对语言模型的评估工具。
+- 包含多个知名的基准测试，例如：
+  - MMLU (Measuring Massive Multitask Language Understanding)
+  - MATH (Measuring Mathematical Problem Solving With the MATH Dataset)
+  - GPQA (A Graduate-Level Google-Proof Q&A Benchmark)
+  - DROP (A Reading Comprehension Benchmark Requiring Discrete Reasoning Over Paragraphs)
+  - MGSM (Multilingual Grade School Math Benchmark)
+  - HumanEval (Evaluating Large Language Models Trained on Code)
+  - SimpleQA (Measuring short-form factuality)
+  - BrowseComp (A Simple Yet Challenging Benchmark for Browsing Agents)
+  - HealthBench (Evaluating Large Language Models Towards Improved Human Health)
+- 强调零样本 (zero-shot) 和思维链 (chain-of-thought) 评估设置，认为这更贴近模型的实际使用表现。
+- 提供了针对主流语言模型 API 的采样器接口，目前支持 OpenAI 和 Anthropic Claude API。
+- 仓库中包含了 OpenAI 自身模型以及部分其他厂商模型（如 Claude、Llama、Grok、Gemini）在上述基准测试上的性能数据表格。
+
+技术栈/依赖：
+
+- 主要使用 Python 语言。
+- 依赖特定的评估数据集和其对应的 Python 脚本，例如 HumanEval、MATH 等需要单独克隆和安装依赖。
+- 使用 OpenAI 或 Anthropic 的 Python SDK 来调用相应的模型 API。
+
+安装与配置指南概述：
+
+- 克隆项目仓库。
+- 针对特定的评估基准（如 HumanEval）或需要使用的模型 API（如 OpenAI, Anthropic），需要额外安装相应的 Python 包（如 `openai`, `anthropic`）以及特定数据集的依赖。
+- 使用 API 需要设置相应的 API 密钥环境变量。
+
+基本使用方法概述：
+
+- 通过命令行接口运行评估。
+- 可以使用 `--list-models` 参数查看可评估的模型列表。
+- 使用 `python -m simple-evals.simple_evals --model <model_name> --examples <num_examples>` 命令指定模型名称和评估的样本数量来启动评估。
+
+适用场景/目标用户：
+
+- 需要评估大型语言模型性能的开发者、研究人员和技术团队。
+- 希望了解不同语言模型在特定领域基准测试上表现的用户。
+
+项目状态与许可证：
+
+- 项目正在积极开发和维护中，但官方表明不会积极监控 Pull Request 和 Issues，只接受 Bug Fixes、新模型适配器和模型评估结果更新等贡献。
+- 项目遵循 MIT 许可证。
+
+总而言之，"simple-evals" 是一个专注于语言模型基准测试评估的 Python 库，尤其侧重于零样本和思维链的评估方法，为开发者提供了一个便捷的工具来衡量模型能力，并提供了主流模型在多个基准测试上的参考数据。其目标是提供一个透明和高效的评估框架。
+
+### 项目统计与信息
+
+- **作者:** [openai](https://github.com/openai）)
+- **主要语言:** Python
+- **Stars:** 3345 ⭐
+- **Forks:** 325 🍴
+- **本周期新增 Stars:** 199 ⭐
+
+_要了解更多关于 **openai / simple-evals** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/openai/simple-evals)。_
+
+---
+
+## mlabonne / llm-course
+
+> 这份GitHub项目是一个关于大型语言模型的全面学习资源，包含详细的学习路径、实用工具和实践笔记本，旨在帮助用户从基础到进阶掌握LLM的原理、构建与应用。
+
+### 项目介绍
+
+该 GitHub 项目提供了一个关于大型语言模型 (LLMs) 的全面学习路径和相关资源，旨在帮助用户入门并深入理解 LLMs 的原理、实践与应用。项目核心内容包括详细的学习路线图以及一系列实用的 Google Colab 笔记本，便于用户进行实践操作。
+
+该课程分为三个主要部分：
+
+- LLM 基础：此部分为可选，涵盖了数学、Python 和神经网络等基础知识，为理解 LLMs 奠定必要基础。
+- LLM 科学家：专注于构建最佳 LLMs 的最新技术，深入探讨模型架构、预训练、后训练（数据集构建、监督式微调、偏好对齐）以及模型评估和量化等高级主题。
+- LLM 工程师：侧重于创建基于 LLM 的应用并进行部署，包括 LLM 的运行（API 调用、本地部署）、向量存储构建、检索增强生成（RAG）、高级 RAG 技术、代理（Agents）、推理优化以及 LLM 的安全等实践内容。
+
+项目提供了大量配套的 Colab 笔记本和相关文章链接，覆盖了 LLMs 生命周期的多个关键环节，包括：
+
+- 工具类：如 AutoEval（自动评估）、LazyMergekit（模型合并）、LazyAxolotl（微调）、AutoQuant（模型量化）、Model Family Tree（模型谱系可视化）和 ZeroSpace（Gradio聊天界面创建）等实用工具。
+- 微调实践：提供使用 Unsloth、ORPO、DPO、QLoRA 等技术微调不同模型（如 Llama 3.1、Mistral-7b、CodeLlama）的详细步骤。
+- 量化技术：介绍权重量化基础、GPTQ、GGUF (llama.cpp) 和 ExLlamaV2 等量化方法，帮助用户在消费级硬件上运行 LLMs。
+- 其他主题：涵盖模型合并 (MergeKit)、创建 MoEs、抗审查技术 (abliteration)、知识图谱增强、解码策略等。
+
+该项目对于希望系统学习 LLMs、从理论到实践、从模型科学家到应用工程师角色的开发者和技术人员非常有价值。它提供了清晰的学习路径、丰富的实践资源和最新的技术分享，适合对机器学习、深度学习和自然语言处理有一定基础，并希望深入 LLMs 领域的学习者。项目采用 Apache-2.0 许可证，允许广泛的使用和分发。
+
+### 项目统计与信息
+
+- **作者:** [mlabonne](https://github.com/mlabonne）)
+- **主要语言:** Jupyter Notebook
+- **Stars:** 51383 ⭐
+- **Forks:** 5499 🍴
+- **本周期新增 Stars:** 347 ⭐
+
+_要了解更多关于 **mlabonne / llm-course** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/mlabonne/llm-course)。_
+
+---
+
+## facebookresearch / fairchem
+
+> fairchem是FAIR团队开发的专注于材料科学和量子化学的机器学习方法库，其最新版本2推出了UMA统一模型和数据集，并提供与ASE集成的计算器，使用户能方便地进行结构优化和分子动力学模拟等任务。
+
+### 项目介绍
+
+fairchem 是 FAIR Chemistry 团队 द्वारा 开发的机器学习方法库的中心仓库，专注于材料科学和量子化学领域的数据、模型、演示和应用工作。
+
+该项目目前发布了 fairchem 版本 2，这是一个重要的更新，与之前的版本 1 不兼容。版本 2 对训练器、微调、模型和计算器进行了彻底重写。虽然之前的预训练模型在版本 2 中暂时不可用，但计划很快兼容 Gemnet-OC、EquiformersV2 和 ESEN 等模型，并会提供更详细的文档。如果需要使用版本 1 的模型和代码，需要安装 fairchem-core 的特定版本（例如 1.10），并使用 `OCPCalculator`。
+
+fairchem 的核心功能和特点包括：
+
+- **UMA 模型和数据集**: 最新版本重点介绍了统一材料表征 (UMA) 模型和相应的数据集。
+- **多任务应用**: 单个 UMA 模型可以通过指定不同的任务名称（task_name）来应用于广泛的化学和材料科学问题。支持的任务包括：
+  - `oc20`: 用于催化领域的研究。
+  - `omat`: 用于无机材料领域的研究。
+  - `omol`: 用于分子领域的研究。
+  - `odac`: 用于金属有机框架 (MOFs) 的研究。
+  - `omc`: 用于分子晶体领域的研究。
+- **与 ASE 集成**: 项目提供了基于 ASE (Atomic Simulation Environment) 的 `FAIRChemCalculator` 接口，便于用户利用预训练模型进行原子模拟计算。
+- **支持多种计算**: 利用 `FAIRChemCalculator`，用户可以轻松执行结构弛豫（包括催化表面上的吸附质弛豫和无机晶体弛豫）和分子动力学模拟等任务。
+
+技术栈与依赖概述：
+
+- 主要使用 Python 语言开发。
+- 利用 ASE (Atomic Simulation Environment) 库进行原子模拟设置和计算。
+- 集成了 Hugging Face Hub，用于访问和管理预训练模型。
+- 支持在 GPU (`cuda`) 上运行以加速计算。
+
+安装与配置指南概述：
+
+- 主要通过 pip 进行安装，当前版本需要直接从 GitHub 仓库安装特定分支。
+- 使用预训练模型需要 Hugging Face 账号，并申请模型访问权限，然后通过访问令牌登录。
+
+基本使用方法概述：
+
+- 用户首先需要实例化 `FAIRChemCalculator`，指定要使用的模型文件名（例如 `uma_sm.pt`）、设备（`cuda` 或 `cpu`）和针对特定应用的 `task_name`。
+- 然后，将 `FAIRChemCalculator` 对象分配给 ASE 的 `Atoms` 对象的 `calc` 属性。
+- 利用 ASE 提供的优化器 (如 LBFGS, FIRE) 或动力学模拟工具 (如 Langevin) 对体系施加操作，计算器会自动提供必要的能量和力信息。
+
+典型的代码示例包括：
+
+- 利用 `FAIRChemCalculator(..., task_name="oc20")` 驱动 ASE 对催化表面吸附质进行弛豫。
+- 利用 `FAIRChemCalculator(..., task_name="omat")` 驱动 ASE 对无机晶体进行弛豫。
+- 利用 `FAIRChemCalculator(..., task_name="omol")` 驱动 ASE 进行分子的分子动力学模拟。
+
+适用场景/目标用户：
+
+- 该项目主要面向计算化学家、材料科学家以及利用机器学习方法研究原子和分子体系的开发者和研究人员。
+- 适用于需要进行结构优化、分子动力学模拟以及基于机器学习模型进行性质预测的场景，特别是催化、无机材料、分子和 MOFs 等领域。
+
+项目状态与许可证：
+
+- 项目处于持续开发中，当前主要推 fairchem 版本 2。
+- 项目遵循 MIT 许可证。
+
+独特的优势或创新点：
+
+- 提供了 FAIR Chemistry 团队在材料科学和量子化学领域集中的机器学习模型和数据资源。
+- 推出的 UMA 模型旨在提供一个统一的框架来处理不同领域的化学体系。
+- 通过与 ASE 集成，为用户提供了熟悉的接口来进行基于机器学习模型的原子模拟计算。
+
+### 项目统计与信息
+
+- **作者:** [facebookresearch](https://github.com/facebookresearch）)
+- **主要语言:** Python
+- **Stars:** 1202 ⭐
+- **Forks:** 306 🍴
+- **本周期新增 Stars:** 70 ⭐
+
+_要了解更多关于 **facebookresearch / fairchem** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/facebookresearch/fairchem)。_
+
+---
+
+## happycola233 / tchMaterial-parser
+
+> 这是一个名为`tchMaterial-parser`的工具，专用于下载国家中小学智慧教育平台的电子课本PDF，通过支持Access Token登录和批量下载等功能，方便用户获取离线阅读资源。
+
+### 项目介绍
+
+该项目名为 `tchMaterial-parser`，是一个专门用于下载国家中小学智慧教育平台（basic.smartedu.cn/tchMaterial/）上电子课本 PDF 文件的工具。项目的核心定位是帮助用户更便捷地获取和管理这些在线课本内容。
+
+项目的v3.0版本是最新版，引入了对平台登录机制的支持。自2025年2月起，该平台需登录才能访问资源，因此此工具需要用户提供 Access Token（登录凭据）才能正常解析和下载。用户需要先在浏览器中登录智慧教育平台，并通过开发者工具获取 Access Token，然后在工具中进行设置。Access Token 在 Windows 系统下会保存在注册表中，方便下次自动加载；在 Linux 下保存在特定配置文件中；目前在 macOS 等系统下需每次手动输入。工具不会上传或存储用户的 Token 到云端，仅用于本地授权请求。
+
+该工具的主要功能包括：
+
+- **支持 Access Token 登录**：允许用户输入登录凭据以访问受限资源。
+- **支持批量下载**：可以同时处理多个电子课本的预览页面网址，实现批量下载。
+- **自动文件命名**：下载的 PDF 文件会自动以教材名称命名，方便用户整理。
+- **高 DPI 适配**：用户界面优化，适用于高分辨率屏幕。
+- **下载进度可视化**：提供实时的下载进度显示，并支持暂停和恢复操作。
+- **跨平台支持**：支持 Windows、Linux 和 macOS 等带有图形界面的操作系统。
+
+工具基于 Python 语言开发。用户可以通过项目的 GitHub Releases 页面下载 Windows 和 Linux (x64) 的预编译程序，无需额外安装步骤即可运行。对于 Arch Linux 用户，也可以通过 AUR 仓库使用 `yay -S tchmaterial-parser` 命令进行安装。
+
+使用流程概述：
+
+1.  获取电子课本的预览页面网址。
+2.  如果首次使用或 Token 过期，打开智慧教育平台登录账号，在浏览器开发者工具控制台运行特定 JavaScript 代码获取 Access Token，并在工具中“设置 Token”进行保存。
+3.  在工具界面输入一个或多个教材预览页面网址，点击“下载”按钮开始下载。
+
+该工具主要面向需要离线查阅或存档国家中小学智慧教育平台电子课本的学生、教师或家长等用户群体，解决了平台资源访问下载的便捷性问题。
+
+项目采用 MIT 许可证，允许自由使用和修改。项目鼓励用户提交 Issue 或 Pull Request 以贡献改进。
+
+值得注意的是，由于平台要求登录，用户需要自行处理登录和获取 Access Token 的步骤，并注意 Token 的有效性（过期需重新获取）。下载失败的常见原因通常与 Access Token 无效或网络问题有关。
+
+### 项目统计与信息
+
+- **作者:** [happycola233](https://github.com/happycola233）)
+- **主要语言:** Python
+- **Stars:** 1033 ⭐
+- **Forks:** 118 🍴
+- **本周期新增 Stars:** 262 ⭐
+
+_要了解更多关于 **happycola233 / tchMaterial-parser** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/happycola233/tchMaterial-parser)。_
+
+---
+
+## alibaba / spring-ai-alibaba
+
+> Spring AI Alibaba 是一个基于Spring AI的Java AI应用框架，旨在简化开发者在Spring Boot应用中集成阿里云通义千问等生成式AI能力，帮助快速构建AI原生Java应用。
+
+### 项目介绍
+
+Spring AI Alibaba 是一个专为 Java 开发者设计的智能体 AI 应用框架，构建于 Spring AI 之上。其核心目标是简化在 Spring Boot 应用中集成生成式 AI 能力的过程，并提供与阿里云通义千问 (QWen) 等大型语言模型服务以及云原生基础设施的无缝集成。它致力于帮助开发者降低构建 AI 原生 Java 应用的复杂性，涵盖从开发、评估到部署和可观测性的全生命周期。
+
+主要功能和特性：
+
+- 支持集成阿里云通义千问 (QWen) 模型和百炼（Dashscope）模型服务。
+- 提供高级别的 AI 智能体抽象 ChatClient，简化 AI 交互开发。
+- 支持多种 AI 模型类型，包括聊天 (Chat)、文本到图像 (Text to Image)、音频转录 (Audio Transcription) 和文本到语音 (Text to Speech)。
+- 支持同步和流式 API 选项，满足不同场景的需求。
+- 能够将 AI 模型输出映射到 Java POJO 对象。
+- 为不同的向量数据库提供可移植的 API。
+- 支持函数调用能力。
+- 提供 Spring Boot 自动配置和 Starter 模块，简化集成过程。
+- 支持 RAG (Retrieval-Augmented Generation) 能力，包括文档读取器 (DocumentReader)、分词器 (Splitter)、Embedding、向量存储 (VectorStore) 和检索器 (Retriever)。
+- 支持使用 ChatMemory 管理对话历史。
+
+技术栈与依赖：
+
+- 基于 Java 语言和 Spring AI 框架。
+- 需要 JDK 17 或更高版本。
+- 核心依赖包括 `spring-ai-alibaba-starter`。
+- 集成阿里云百炼模型服务。
+- 部分设计理念和代码受 Spring AI、LangGraph、Langgraph4J 等项目启发。
+
+安装与配置概述：
+
+- 需要添加 Maven 依赖 `spring-ai-alibaba-starter`。
+- 可能需要配置 Spring Milestone Maven 仓库以解析相关依赖。
+- 需要注意本地 Maven `settings.xml` 中 `mirrorOf` 配置可能需要调整，以包含 Spring Milestone 仓库。
+
+基本使用方法概述：
+
+- 通过在 Spring Boot 项目中添加 `spring-ai-alibaba-starter` 依赖。
+- 注解注入 `ChatClient` 接口。
+- 使用 `chatClient.prompt().user(input).call().content()` 等方法发起聊天请求并获取结果。
+
+适用场景/目标用户：
+
+- 面向 Java 开发者。
+- 适用于需要在 Spring Boot 应用中快速集成大型语言模型，构建智能体应用。
+- 适用于利用阿里云 AI 服务开发应用。
+
+项目状态与许可证：
+
+- 项目处于积极开发状态。
+- 项目遵循 Apache-2.0 许可证。
+
+未来规划（路线图）：
+
+- 扩展对更多向量数据库的支持。
+- 实现提示词模板管理功能。
+- 支持事件驱动的 AI 应用开发。
+- 提供函数部署能力。
+- 增强可观测性支持。
+- 支持 AI 代理功能，如提示词过滤、速率限制、多模型管理等。
+- 开发相关开发工具。
+
+该项目为 Java 开发者提供了一站式的 AI 应用开发解决方案，尤其是对于使用 Spring 生态和阿里云服务的用户，能够显著提升开发效率。
+
+### 项目统计与信息
+
+- **作者:** [alibaba](https://github.com/alibaba）)
+- **主要语言:** Java
+- **Stars:** 3176 ⭐
+- **Forks:** 603 🍴
+- **本周期新增 Stars:** 136 ⭐
+
+_要了解更多关于 **alibaba / spring-ai-alibaba** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/alibaba/spring-ai-alibaba)。_
+
+---
+
+## trycua / cua
+
+> Cua是一个专为AI Agent设计的Docker项目，利用高性能虚拟机让AI Agent在Apple Silicon平台上高速控制操作系统，提供统一管理工具、灵活的Agent框架和丰富的计算机接口。
+
+### 项目介绍
+
+Cua（发音：koo-ah）是一个专为 AI Agent 设计的 Docker 容器项目，其核心目标是使 AI Agent 能够高速、近乎原生地控制完整的操作系统，特别是在 Apple Silicon 平台上通过高性能虚拟机实现。它旨在为 AI Agent 的计算机使用能力提供一个稳定、高效的环境。
+
+项目主要功能和特性：
+
+- 提供高性能虚拟机环境：利用 Apple 的 Virtualization.Framework 在 Apple Silicon 平台上运行 macOS 和 Linux 虚拟机，实现接近原生的性能。
+- 统一的虚拟机管理工具：提供 Lume CLI，用于便捷地安装、拉取、创建、运行、停止和删除虚拟机镜像。
+- Docker 接口的虚拟机管理：通过 Lumier 模块，为 macOS 和 Linux 虚拟机提供类似 Docker 的命令行接口，方便容器化管理和部署。
+- 灵活的 AI Agent 框架：提供 Agent SDK (cua-agent)，支持多种 Agent Loop 和大型语言模型 (LLM) 提供商。
+- 支持多种 Agent Loop：包括本地运行在 Apple Silicon 上的 UITARS-1.5 (基于 MLX)、使用 OpenAI Computer-Use Preview 模型的 OpenAI CUA、使用 Anthropic 计算机使用能力的 Anthropic CUA，以及使用 Set-of-Marks (SOM) 提示技术与任意视觉模型结合的 OmniParser-v2.0。
+- 丰富的计算机接口：提供 Python SDK (cua-computer)，允许 AI Agent 执行各类操作系统交互操作，例如鼠标点击、键盘输入、屏幕截图、剪贴板操作、文件系统操作和运行 shell 命令。
+- 支持多种 LLM Providers：集成了对 MLXVLM, OpenAI, Anthropic, Ollama, 以及通过 OAICOMPAT 支持 OpenRouter 等多种 LLM API 提供商的访问。
+- 提供 MCP Server：一个 MCP (Multi-modal Control Protocol) 服务端，方便与 Claude Desktop 或其他 MCP 客户端集成，从而更容易地利用 Cua。
+- 提供 SOM 库：一个 Self-of-Mark (SOM) Python 库，用于辅助 Agent 进行屏幕元素的识别和交互。
+
+技术栈与依赖：
+
+- 编程语言：主要使用 Python 和 Swift。Swift 用于底层虚拟机管理（Lume），Python 用于上层 Agent 框架和接口（Computer, Agent 等）。
+- 虚拟机技术：Apple's Virtualization.Framework。
+- AI 模型：支持包括本地 MLX 模型 (如 UITARS-1.5)、OpenAI、Anthropic、Ollama 以及支持 OpenAI 兼容 API 的模型。
+- 容器化：利用 Docker 技术（通过 Lumier 模块）。
+
+安装与配置概述：
+
+项目的快速启动通常涉及以下步骤：
+
+1. 安装 Lume CLI，用于虚拟机管理。
+2. 拉取 macOS CUA 虚拟机镜像，其中已包含默认应用和计算机服务器。
+3. 安装 Python SDK (cua-computer 和 cua-agent)。
+   开发者也可选择从源代码构建项目模块。
+
+基本使用方法概述：
+
+用户可以通过 Python SDK 实例化 `Computer` 对象来启动和控制虚拟机，并使用 `ComputerAgent` 类结合不同的 Agent Loop 和 LLM 模型来实现自动化任务。API 接口清晰，例如 `computer.interface.left_click(x, y)` 用于模拟鼠标点击，`agent.run("执行任务描述")` 用于运行 Agent 完成指定任务。
+
+代码示例特点：
+
+项目提供了清晰的 Python 代码示例，演示如何启动虚拟机、直接控制虚拟机界面（鼠标、键盘、截图等），以及如何创建和运行不同类型的 AI Agent 来执行复杂任务，例如让 Agent 在 GitHub 上查找项目并遵循快速启动指南。
+
+适用场景/目标用户：
+
+- AI Agent 开发者：需要一个稳定、可控的环境来开发、测试和运行能够操作计算机界面的 AI Agent。
+- 研究人员：研究人机交互自动化、Agent 能力评估等领域。
+- 需要自动化复杂、跨应用操作的用户：希望通过 AI Agent 实现传统脚本难以处理的、涉及多个应用和界面的自动化流程。
+  主要面向拥有 Apple Silicon Mac 并运行 macOS 15 或更新版本的用户。
+
+项目状态与许可证：
+
+Cua 项目正在积极开发中，提供多个模块，并持续更新。项目采用 MIT License 开源许可证。项目中使用到的 Microsoft OmniParser 部分则遵循 Creative Commons Attribution 4.0 International License (CC-BY-4.0) 许可证。
+
+独特的优势：
+
+Cua 利用 Apple Silicon 的硬件优势，在 macOS 虚拟机中提供了高性能的运行环境，特别适合需要快速、频繁与操作系统交互的 AI Agent。通过 Lume 和 Lumier 提供了灵活的虚拟机管理和容器化能力，降低了 Agent 开发和部署的复杂度。
+
+### 项目统计与信息
+
+- **作者:** [trycua](https://github.com/trycua）)
+- **主要语言:** Python
+- **Stars:** 6792 ⭐
+- **Forks:** 269 🍴
+- **本周期新增 Stars:** 288 ⭐
+
+_要了解更多关于 **trycua / cua** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/trycua/cua)。_
