@@ -1,0 +1,827 @@
+---
+title: Github Daily Trending
+date: 2025-05-20
+cover: https://hub-image.moreve.net/files/images/github-trending/2025-05-20.png
+summary: '本期热门开源项目包括一个AI驱动的对冲基金模拟器，一个收录海量免费公共API的列表，一个用于在Web应用中构建AI助手的库，一个功能强大的YouTube Music桌面版，一个本地部署的全面PDF处理工具，一个ChatGPT和其他LLM提示词的集合一个通用AI代理以及一款注重隐私和专注的桌面浏览器还有一个简洁易用的深度学习框架最后是一个多系统启动U盘制作工具以及一个网络工具集和用于社交媒体账户侦查的OSINT工具此外还有一个Python的快速类型检查器和一个LLM工程学习资源库。'
+headingSummaries:
+  - heading: 'virattt / ai-hedge-fund'
+    summary: '这是一个开源的AI驱动对冲基金模拟项目，通过多智能体协作模拟投资团队进行交易决策，用于教育和研究，请勿用于实盘交易。'
+    tags: [人工智能, 实验项目, 应用]
+  - heading: 'public-apis / public-apis'
+    summary: '这个项目是一个包含各种免费公共 API 的列表集合，为开发者和研究人员提供寻找和使用外部数据及功能的便捷资源。'
+    tags: [开发工具, 学习资源, 数据集]
+  - heading: 'CopilotKit / CopilotKit'
+    summary: 'CopilotKit是一个开源库，旨在帮助开发者快速构建深度集成到Web应用中的AI助手和代理，使其能够理解应用上下文、执行操作、并与用户自然交互。'
+    tags: [人工智能, 开发工具, 库]
+  - heading: 'th-ch / youtube-music'
+    summary: '这是一个基于Electron的YouTube Music桌面版，功能强大且支持插件定制，内置广告屏蔽和下载，兼容多平台。'
+    tags: [应用, 开发工具, 框架]
+  - heading: 'Stirling-Tools / Stirling-PDF'
+    summary: '这是一款强调隐私安全的本地部署PDF处理工具Stirling-PDF，具备超50种PDF操作功能，通过Docker轻松部署，技术人员、开发者和普通用户都能使用并受益于其强大的功能与API支持。'
+    tags: [应用, 开发工具, 安全]
+  - heading: 'f / awesome-chatgpt-prompts'
+    summary: '该GitHub项目是一个名为 "awesome-chatgpt-prompts" 的大型语言模型（LLM）提示词集合，提供海量针对不同场景和角色的提示词，帮助用户更有效地使用ChatGPT等AI工具并激发其潜能。'
+    tags: [人工智能, 学习资源, 实验项目]
+  - heading: 'kortix-ai / suna'
+    summary: 'Suna是一款开源的通用AI代理，旨在通过对话帮助用户自动化完成研究、数据分析、文件管理、网页抓取等多种现实世界任务。'
+    tags: [人工智能, 开发工具, 应用]
+  - heading: 'zen-browser / desktop'
+    summary: 'Zen Browser是一款基于Firefox的开源桌面浏览器，旨在提供更平静、专注、注重隐私的浏览体验。它强调速度和生产力，并持续更新以确保安全性和最新功能。'
+    tags: [应用, 开发工具, 实验项目]
+  - heading: 'tinygrad / tinygrad'
+    summary: 'tinygrad 是一个简洁易用的深度学习框架旨在简化新硬件集成能运行大型模型并支持多种加速器正处于积极开发阶段。'
+    tags: [框架, 人工智能, 开发工具]
+  - heading: 'ventoy / Ventoy'
+    summary: '这个内容主要是介绍了一个开源工具Ventoy，它可以让你轻松制作多系统启动U盘，只需拷贝镜像文件即可，无需反复格式化。'
+    tags: [开发工具, 应用, 开发运维]
+  - heading: 'XTLS / Xray-core'
+    summary: 'Xray-core是基于XTLS协议的网络工具，作为v2ray-core的替代品，它提供了多种先进协议和传输方式，专注于建立安全、隐蔽且高性能的网络连接，特别适用于突破网络限制和保护隐私。'
+    tags: [应用, 安全]
+  - heading: 'sherlock-project / sherlock'
+    summary: 'Sherlock是一款开源的OSINT工具，能快速通过用户名搜索超过400个社交平台定位用户账号并保存搜索结果。'
+    tags: [应用, 安全, 开发工具]
+  - heading: 'facebook / pyrefly'
+    summary: 'Pyrefly是一个用Rust和TypeScript开发的Python快速增量类型检查器和IDE工具，旨在提供优秀性能和IDE支持，并可在线体验。'
+    tags: [开发工具, 开发运维, 库]
+  - heading: 'ed-donner / llm_engineering'
+    summary: '这是一个GitHub项目，提供了为期八周的学习路径，通过实践指导用户如何使用Python和Ollama等工具构建基于大型语言模型（LLM）的应用，并提供免费及付费API的选择。'
+    tags: [学习资源, 人工智能, 应用]
+---
+
+## virattt / ai-hedge-fund
+
+> 这是一个开源的AI驱动对冲基金模拟项目，通过多智能体协作模拟投资团队进行交易决策，用于教育和研究，请勿用于实盘交易。
+
+### 项目介绍
+
+这是一个概念验证项目，旨在探索使用人工智能进行交易决策，构建一个AI驱动的对冲基金团队。该项目仅用于教育和研究目的，不适用于真实交易或投资。
+
+项目的核心是一个由多个代理组成的协作系统，每个代理模拟了著名投资大师或特定的分析职能，共同为交易决策提供建议：
+
+- 投资大师代理：包括 Aswath Damodaran (估值)、Ben Graham (价值投资)、Bill Ackman (激进投资)、Cathie Wood (成长投资)、Charlie Munger (优质企业)、Michael Burry (深度价值)、Peter Lynch ("十倍股")、Phil Fisher (深入研究)、Stanley Druckenmiller (宏观/非对称机会) 和 Warren Buffett (优质企业)。
+- 分析职能代理：包括估值代理 (计算内在价值并生成信号)、 Sentiment Agent (情绪分析)、Fundamentals Agent (基本面分析) 和 Technicals Agent (技术分析)。
+- 决策与管理代理：Risk Manager (风险管理，设置头寸限制) 和 Portfolio Manager (投资组合经理，做出最终交易决策并生成订单)。
+
+主要功能和特性：
+
+- 模拟交易决策流程：通过多代理协作，模拟一个对冲基金团队的分析和决策过程。
+- 支持多种金融数据源：利用 Financial Datasets API 获取金融数据（对特定股票提供免费数据，其他需要API Key）。
+- 支持多种大型语言模型 (LLM) 提供商：可配置使用 OpenAI、Groq、Anthropic 或 DeepSeek 提供的LLM，也可选择使用本地运行的 Ollama 模型。
+- 回测功能：允许用户在历史数据上回测策略效果。
+- 可视化输出：展示模拟的交易决策结果和可选的代理推理过程。
+
+技术栈与依赖：
+
+- 主要编程语言：Python 和 TypeScript。
+- AI模型：支持集成多种LLM提供商（OpenAI, Groq, Anthropic, DeepSeek）以及本地 Ollama 模型。
+- 金融数据：依赖 Financial Datasets API。
+- 包管理：使用 Poetry 管理 Python 依赖，使用 pnpm/npm 管理前端依赖。
+- 容器化：提供 Docker 支持，方便环境部署。
+
+安装与配置概述：
+
+- 需要先克隆项目仓库。
+- 两种部署方式：使用 Poetry 或 Docker。
+- 都需要复制 `.env.example` 文件为 `.env`，并在其中配置所需的API Key（至少需要一个LLM服务商的API Key）。
+- 使用 Poetry 需要安装 Poetry 并运行 `poetry install` 安装依赖。
+- 使用 Docker 需要安装 Docker 并运行 `./run.sh build` 或 `run.bat build` 构建镜像。
+
+基本使用方法概述：
+
+- 运行AI对冲基金：
+  - 使用 Poetry：`poetry run python src/main.py --ticker 股票代码列表`
+  - 使用 Docker：`./run.sh --ticker 股票代码列表 main` 或 `run.bat --ticker 股票代码列表 main`
+  - 可选项：`--ollama` (使用本地LLM), `--show-reasoning` (显示代理推理过程), `--start-date` 和 `--end-date` (指定决策周期)。
+- 运行回测器：
+  - 使用 Poetry：`poetry run python src/backtester.py --ticker 股票代码列表`
+  - 使用 Docker：`./run.sh --ticker 股票代码列表 backtest` 或 `run.bat --ticker 股票代码列表 backtest`
+  - 可选项：`--ollama` (使用本地LLM), `--start-date` 和 `--end-date` (指定回测周期)。
+
+适用场景与目标用户：
+
+- 适用于希望了解AI在金融投资领域应用的开发者、研究人员和学生。
+- 目标用户是對人工智能、金融市场和自动化交易感兴趣的技术人员。
+- 该项目是学习和探索 AI 驱动投资策略概念的工具，而非实盘交易系统。
+
+项目状态与许可证：
+
+- 项目处于积极开发状态。
+- 项目采用 MIT License 开源许可证。
+
+这个项目提供了一个多智能体系统在金融决策领域的应用示例，通过模拟不同投资风格和分析方法，展示了AI在复杂金融场景中的潜在价值，但强调其教育和研究属性，警示用户不要用于实际投资。
+
+### 项目统计与信息
+
+- **作者:** [virattt](https://github.com/virattt）)
+- **主要语言:** Python
+- **Stars:** 29550 ⭐
+- **Forks:** 5103 🍴
+- **本周期新增 Stars:** 810 ⭐
+
+_要了解更多关于 **virattt / ai-hedge-fund** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/virattt/ai-hedge-fund)。_
+
+---
+
+## public-apis / public-apis
+
+> 这个项目是一个包含各种免费公共 API 的列表集合，为开发者和研究人员提供寻找和使用外部数据及功能的便捷资源。
+
+### 项目介绍
+
+public-apis 是一个精心整理的免费公共 API 列表集合。它的主要目标是为开发者、研究人员以及对整合外部数据感兴趣的任何人提供一个中心化的资源，以便发现和使用可以在项目中免费调用的各类 API。这个项目如同一个宝库，汇集了社区成员和 APILayer 团队收录的来自不同领域的大量可用 API。
+
+该列表涵盖了极为广泛的类别，包括：
+
+- 动物、动漫、艺术设计、游戏和漫画相关的娱乐性 API。
+- 用于认证和授权、区块链、加密货币、货币兑换、金融等专业领域的 API。
+- 涉及图书、字典、生产力工具、文件分享、日历管理的实用性 API。
+- 在数据验证、反恶意软件、安全、数据分析领域的关键工具 API。
+- 自然语言处理（文本分析）、机器学习、计算机视觉相关的 AI/ML 类 API。
+- 新闻、开放数据、政府数据相关的公开信息 API。
+- 体育与健身、交通、天气、地理位置 (Geocoding) 等生活及地理信息类 API。
+- 用于开发和测试的工具类 API，例如截图、QR码生成、测试数据生成等。
+- 社交媒体、电话号码验证、电子邮件验证等通信及社交类 API。
+- 车辆信息、专利信息等特定领域的 API。
+
+项目的技术栈/依赖主要体现在其组织和呈现这个列表的方式上，核心内容是庞大的 API 列表，不涉及复杂的运行时技术。列表格式清晰，通常包含 API 名称、描述、是否需要认证（Auth）、是否支持 HTTPS 以及 CORS（跨源资源共享）情况。
+
+虽然 README 文件本身并未提供具体的安装或使用指南（因为它主要是一个列表），但它通过提供每个 API 的链接指向了各自的文档。对于开发者而言，使用这个列表的基本方法是浏览感兴趣的类别，通过提供的链接访问特定 API 的文档以了解如何进行集成和调用。例如，要使用某个动物相关 API，需要点击该 API 的链接，跳转到其文档页面，根据文档中的接口说明、参数要求、认证方式等进行开发。
+
+该项目的适用场景极其广泛，例如：开发者可以在构建 Web 或移动应用时寻找外部数据源或特定功能，研究人员可以利用开放数据进行分析和可视化，内容创作者可以寻找灵感或集成互动元素，任何对特定领域数据感兴趣的个人也可以使用这些 API 获取信息。目标用户主要是各类开发者、系统集成商、数据分析师以及对公共数据感兴趣的个人。
+
+项目的状态是一个活跃维护中的列表集合，不断有新的 API 被加入和更新。项目采用 MIT 许可证，这意味着它开放、免费，并且对商业和非商业用途都非常友好，核心在于鼓励和促进公共 API 的发现与使用。其独特的优势在于其庞大且不断增长的免费 API 列表，以及社区驱动的维护模式，使其成为寻找各类公共 API 的首選资源之一。
+
+### 项目统计与信息
+
+- **作者:** [public-apis](https://github.com/public-apis）)
+- **主要语言:** Python
+- **Stars:** 344340 ⭐
+- **Forks:** 36194 🍴
+- **本周期新增 Stars:** 1823 ⭐
+
+_要了解更多关于 **public-apis / public-apis** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/public-apis/public-apis)。_
+
+---
+
+## CopilotKit / CopilotKit
+
+> CopilotKit是一个开源库，旨在帮助开发者快速构建深度集成到Web应用中的AI助手和代理，使其能够理解应用上下文、执行操作、并与用户自然交互。
+
+### 项目介绍
+
+CopilotKit 是一个为构建深度集成到应用中的 AI Copilots、AI 聊天机器人和应用内 AI Agents 设计的开源库。它提供了一套 React UI 组件和优雅的基础设施，旨在帮助开发者在用户体验的“最后一公里”无缝嵌入智能助手功能。
+
+该项目专注于将 AI 助手与应用程序的核心功能紧密结合，使其能够理解应用上下文、执行特定操作，并与用户自然地进行对话和协作。
+
+主要功能和特性包括：
+
+- **React UI 组件**: 提供预构建且高度可定制的 UI 组件，便于快速集成 AI 聊天界面到 React 应用中，并支持自定义子组件和 CSS 样式。
+- **Backend SDK / Infrastructure**: 提供后端基础设施，处理 AI 模型调用、工具调用（Function Calling）以及状态管理等复杂逻辑。
+- **Frontend Actions**: 支持将前端应用程序的功能暴露给 AI 作为可执行的“动作”（Actions），使 AI 能够直接与应用交互，例如填写表单、更新数据等。
+- **Generative UI**: 允许 AI 直接生成或控制 UI 组件的渲染，实现更动态和交互式的 AI 体验，支持流式传输。
+- **Frontend RAG (Retrieval-Augmented Generation)**: 简化在前端集成 RAG 功能，使 AI 能够访问应用内或用户特定的数据来增强回答的相关性和准确性，例如 `useCopilotReadable` 和 `useCopilotKnowledgebase` Hooks。
+- **Structured Autocompletion**: 提供结构化的自动补全能力，帮助 AI 理解并生成符合特定结构的数据，例如应用于表格数据的自动填充或修改建议。
+- **CoAgents (in-app LangGraph Agents)**: 支持在应用内集成基于 LangGraph 框架构建的多代理协作系统，允许多个 AI 代理共同完成复杂任务，并支持与应用状态共享。
+- **Human in the Loop**: 支持需要人类审批的 AI 工作流程，例如在发送邮件前让用户确认草稿。
+- **Intermediate State Streaming**: 支持流式传输 AI 代理的中间状态，增强用户体验和透明度。
+
+技术栈和依赖：
+
+- 主要使用 TypeScript 和 React 进行前端开发。
+- 提供 Python SDK for LangGraph。
+- 支持多种 AI 模型提供商，如 OpenAI (ChatOpenAI) 等。
+- 构建于 LangChain 和 LangGraph 等 AI 框架之上。
+
+安装与配置指南概述：
+
+项目提供了快速入门文档，通常涉及安装相应的 npm 包（如 `@copilotkit/react-core`），并在应用中集成提供的组件和 hooks。后端配置可能涉及设置 API 密钥和实现相应的 API 路由以处理 AI 请求。
+
+基本使用方法概述：
+
+开发者可以通过在 React 组件中使用 `useCopilotChat` hook 来构建自定义聊天界面，或者使用 `CopilotPopup` 等预构建组件。利用 `useCopilotReadable` 将前端数据暴露给 AI，通过 `useCopilotAction` 定义可供 AI 调用的应用内函数。对于更复杂的代理工作流，可以使用 `useCoAgent` 和相关的 hooks。
+
+代码示例/命令示例：
+
+例如定义一个前端 Actions：
+
+```typescript
+useCopilotAction({
+  name: "appendToSpreadsheet",
+  description: "Append rows to the current spreadsheet",
+  parameters: [
+    { name: "rows", type: "object[]", attributes: [{ name: "cells", type: "object[]", attributes: [{ name: "value", type: "string" }] }] }
+  ],
+  render: ({ status, args }) => ..., /* Render UI while action is executing */
+  handler: ({ rows }) => ..., /* Function to execute the action */
+});
+```
+
+适用场景/目标用户：
+
+CopilotKit 面向希望在其 Web 应用中集成智能、上下文感知的 AI 助手的开发者和企业。它可以用于：
+
+- **提升用户体验**: 提供表单自动填充、数据分析助手等功能，简化用户操作。
+- **构建智能工作流**: 支持复杂的对话流程和多代理协作，处理更复杂的任务。
+- **个性化交互**: 使 AI 能够理解应用上下文和用户数据，提供更相关的帮助。
+- **SaaS 应用增强**: 为各类 SaaS 产品添加内置的 AI 助手功能，提升产品竞争力。
+
+项目状态与许可证：
+
+项目处于积极开发状态，遵循 MIT 许可证，是一个开源项目。社区活跃，鼓励贡献。
+
+独特优势：
+
+CopilotKit 的独特之处在于其强大的应用内集成能力（Agentic last-mile），不仅仅是提供一个独立的聊天窗口，而是使 AI 深度参与到应用流程中，理解用户意图和应用状态，并能直接执行动作和控制 UI，弥合了 AI 能力与实际应用功能之间的差距。它同时支持前端和后端的功能暴露，以及对复杂代理框架（如 LangGraph）的良好支持。
+
+### 项目统计与信息
+
+- **作者:** [CopilotKit](https://github.com/CopilotKit）)
+- **主要语言:** TypeScript
+- **Stars:** 19466 ⭐
+- **Forks:** 2719 🍴
+- **本周期新增 Stars:** 153 ⭐
+
+_要了解更多关于 **CopilotKit / CopilotKit** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/CopilotKit/CopilotKit)。_
+
+---
+
+## th-ch / youtube-music
+
+> 这是一个基于Electron的YouTube Music桌面版，功能强大且支持插件定制，内置广告屏蔽和下载，兼容多平台。
+
+### 项目介绍
+
+这是一个基于 Electron 框架开发的 YouTube Music 桌面应用，旨在提供原生的使用体验并保留 YouTube Music 原有的界面风格。项目的核心优势在于其强大的插件系统，允许用户通过安装自定义插件来改变应用的样式、内容以及增加新功能，同时内置了广告屏蔽和音乐下载功能。
+
+主要功能和特性包括：
+
+- 原生应用体验，保持与网页版一致的界面。
+- 支持自定义插件，用户可以根据需求定制应用行为。
+- 内置广告拦截器，屏蔽广告和跟踪，提供无打扰的音乐播放。
+- 内置下载器，支持直接从应用界面下载 MP3 文件（基于 youtube-dl）。
+- 丰富的可用插件，涵盖多种增强功能：
+  - 专辑颜色主题和环境光效果。
+  - 音频压缩和均衡器。
+  - 绕过年龄限制。
+  - 紧凑侧边栏。
+  - 歌曲交叉渐变。
+  - 禁止自动播放。
+  - Discord Rich Presence 集成，展示当前播放的歌曲。
+  - Last.fm 和 ListenBrainz Scrobbling 支持。
+  - Lumia Stream 集成。
+  - Genius 歌词集成。
+  - 音乐同步播放功能（Music Together）。
+  - 集成浏览器式的导航箭头。
+  - 移除 Google 登录相关按钮。
+  - 播放通知（Windows 支持互动通知）。
+  - 画中画模式。
+  - 播放速度调节滑块。
+  - 精确音量控制和自定义热键。
+  - 跳过不喜欢的歌曲或静音片段。
+  - SponsorBlock 集成，跳过音乐视频中的非音乐部分。
+  - 同步歌词功能，支持 LRClib 等提供商。
+  - Windows 任务栏媒体控制。
+  - macOS TouchBar 支持。
+  - OBS Tuna 插件集成。
+  - 视频质量切换按钮。
+  - 视频模式（视频/歌曲）切换按钮。
+  - 多种音乐可视化效果。
+
+项目支持多平台，可在 Arch Linux、macOS 和 Windows 上安装和使用，提供了 AUR、Homebrew、Scoop 和 Winget 等多种安装方式。此外，项目提供了详细的开发者指南，包括如何克隆代码、安装依赖、运行开发环境以及构建自己的插件。插件开发主要利用 Electron 的能力来操作浏览器窗口以及通过 IPC 在主进程和渲染进程之间通信。
+
+该项目适用于希望在桌面端获得更佳 YouTube Music 使用体验的用户，尤其是那些需要广告屏蔽、下载功能或希望通过插件高度定制其音乐播放器的技术用户和开发者。项目采用 MIT 许可证。
+
+### 项目统计与信息
+
+- **作者:** [th-ch](https://github.com/th-ch）)
+- **主要语言:** TypeScript
+- **Stars:** 20881 ⭐
+- **Forks:** 1081 🍴
+- **本周期新增 Stars:** 363 ⭐
+
+_要了解更多关于 **th-ch / youtube-music** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/th-ch/youtube-music)。_
+
+---
+
+## Stirling-Tools / Stirling-PDF
+
+> 这是一款强调隐私安全的本地部署PDF处理工具Stirling-PDF，具备超50种PDF操作功能，通过Docker轻松部署，技术人员、开发者和普通用户都能使用并受益于其强大的功能与API支持。
+
+### 项目介绍
+
+Stirling-PDF 是一个强大的、本地托管的基于 Web 的 PDF 处理工具，其核心定位是提供丰富的 PDF 操作功能，同时确保用户文件的私密性。它特别强调文件只在客户端、服务器内存或临时文件中存在，处理完成后立即删除，保障了用户数据的安全。该项目采用 Docker 进行部署，便于安装和管理。
+
+项目提供了超过 50 种 PDF 操作功能，涵盖 PDF 处理的各个方面：
+
+页面操作：
+
+- 交互式 GUI，用于合并、拆分、旋转、移动 PDF 及其页面。
+- 合并多个 PDF 文件。
+- 根据指定页码或将所有页面拆分为单独文件。
+- 重组 PDF 页面顺序。
+- 按 90 度增量旋转 PDF。
+- 删除页面。
+- 多页布局排版。
+- 按百分比缩放页面内容。
+- 调整对比度。
+- 裁剪 PDF。
+- 自动拆分 PDF（通过物理扫描分隔）。
+- 提取页面。
+- 将 PDF 转换为单页 PDF。
+- 将 PDF 叠加到另一个 PDF 上。
+- 按指定大小或 PDF 分割文件。
+
+转换操作：
+
+- PDF 与图像之间的互相转换。
+- 将常见文件类型（利用 LibreOffice）转换为 PDF。
+- 将 PDF（利用 LibreOffice）转换为 Word、PowerPoint 等其他格式。
+- HTML 转换为 PDF。
+- PDF 转换为 XML、CSV。
+- URL 转换为 PDF。
+- Markdown 转换为 PDF。
+
+安全与权限：
+
+- 添加和移除密码。
+- 修改/设置 PDF 权限。
+- 添加水印。
+- 认证/签名 PDF。
+- 清理 PDF（Sanitize）。
+- 自动文本涂黑（redact）。
+
+其他操作：
+
+- 添加、生成或写入签名。
+- 修复损坏的 PDF。
+- 检测和移除空白页。
+- 对比两个 PDF 的文本差异。
+- 向 PDF 添加图片。
+- 压缩 PDF 以减小文件大小（利用 qpdf）。
+- 从 PDF 中提取图片。
+- 从 PDF 中移除图片。
+- 从扫描件中提取图片。
+- 移除注释。
+- 添加页码。
+- 通过检测 PDF 标题文本自动重命名文件。
+- 对 PDF 进行 OCR 文本识别（利用 Tesseract OCR）。
+- PDF/A 转换（利用 LibreOffice）。
+- 编辑元数据。
+- 平展 PDF（Flatten）。
+- 获取 PDF 的所有信息并可导出为 JSON。
+- 显示/检测嵌入的 JavaScript。
+
+项目技术栈主要以 Java 为主，同时包含 HTML, JavaScript, CSS 等前端技术以及 Shell 脚本和 Richter Text Format。项目主要通过 Docker 部署，简化了安装流程。支持并行文件处理和下载，提供自定义下载选项，并可通过自定义“文件处理流水线”（Pipelines）自动化连续操作。此外，还提供 API 接口方便外部脚本集成。项目还可选支持登录认证、数据库备份与导入，以及企业版特有的单点登录（SSO）等功能。
+
+Stirling-PDF 面向需要本地处理 PDF 文件，重视数据隐私，并且希望通过易于部署的 Web 应用或 API 进行自动化处理的技术人员、开发者以及普通用户。
+
+项目采用 MIT 许可证。目前 Stirling-PDF 支持包括中文在内的 40 种不同的语言。
+
+### 项目统计与信息
+
+- **作者:** [Stirling-Tools](https://github.com/Stirling-Tools）)
+- **主要语言:** Java
+- **Stars:** 59626 ⭐
+- **Forks:** 5003 🍴
+- **本周期新增 Stars:** 311 ⭐
+
+_要了解更多关于 **Stirling-Tools / Stirling-PDF** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/Stirling-Tools/Stirling-PDF)。_
+
+---
+
+## f / awesome-chatgpt-prompts
+
+> 该GitHub项目是一个名为 "awesome-chatgpt-prompts" 的大型语言模型（LLM）提示词集合，提供海量针对不同场景和角色的提示词，帮助用户更有效地使用ChatGPT等AI工具并激发其潜能。
+
+### 项目介绍
+
+该 GitHub 项目名为 "awesome-chatgpt-prompts"，其核心定位是一个精心整理的 ChatGPT 及其他大型语言模型（LLM）提示词集合。项目旨在帮助用户更有效地使用 ChatGPT 等 AI 工具。
+
+项目的主要功能和特性包括：
+
+- 提供了大量针对不同场景和角色的提示词（Prompts）。
+- 这些提示词可以引导 AI 扮演多种角色，例如 Ethereum 开发者、Linuxl终端、英语翻译、面试官、JavaScript 控制台、Excel 表格、英语发音助手、旅行向导、抄袭检测器、足球解说员、脱口秀演员、激励教练、作曲家、辩手、编剧、小说家、影评人、关系教练、诗人、说唱歌手、哲学教师、数学教师、AI 写作导师、UX/UI 开发者、网络安全专家、招聘人员、生活教练、词源学家、评论员、魔术师、职业顾问、宠物行为治疗师、私人教练、心理健康顾问、房地产经纪人、物流师、牙医、网页设计顾问、AI 辅助医生、医生、会计师、厨师、汽车修理师、艺术家顾问、金融分析师、投资经理、品茶师、室内设计师、花艺师、自助书籍、小矮人研究专家、警句书、文字冒险游戏、试图逃离箱子的 AI、花哨标题生成器、统计学家、提示词生成器、提示词增强器、Midjourney 提示词生成器、解梦师、填空工作表生成器、软件质量保证测试员、井字游戏、密码生成器、摩尔斯电码翻译机、学校教师、SQL 终端、营养师、心理学家、智能域名生成器、科技评论员、开发者关系顾问、院士、IT 架构师、疯子、煤气灯操纵者、谬误查找器、期刊评审、DIY 专家、社交媒体影响者、苏格拉底、教育内容创作者、瑜伽士、文章写手、社交媒体经理、演说家、科学数据可视化师、汽车导航系统、催眠师、历史学家、占星师、电影评论家、古典 음악 作曲家、新闻记者、数字艺术画廊向导、公共演讲教练、化妆师、保姆、技术文档写作者、ASCII 艺术家、Python 解释器、同义词查找器、私人购物顾问、美食评论家、虚拟医生、私人厨师、法律顾问、个人造型师、机器学习工程师、圣经翻译、SVG 设计师、IT 专家、国际象棋玩家、全栈软件开发工程师、数学家、正则表达式生成器、时间旅行向导、人才教练、R 编程解释器、Stack Overflow 帖子、表情符号翻译、PHP 解释器、紧急响应专业人士、网页浏览器、高级前端开发工程师、代码评审员、可访问性审计员、Solr 搜索引擎、创业点子生成器、新语言创造者、海绵宝宝的神奇海螺、语言检测器、销售员、提交信息生成器、首席执行官、图表生成器、生活教练（再次）、言语语言病理学家、创业技术律师、书面作品标题生成器、产品经理、项目经理、醉汉、数学史教师、歌曲推荐器、求职信助手、技术迁移助手、无约束 AI 模型 DAN、五子棋玩家、校对员、佛陀、穆斯林伊玛目、化学反应容器、朋友、ChatGPT 提示词生成器（再次）、维基百科页面、日语汉字测验机、笔记助手、文学评论家、廉价旅行票务顾问、数据科学家、英雄联盟玩家、餐厅老板、建筑专家、LLM 研究员、单元测试助理、智慧生成器、YouTube 视频分析师、职业教练（再次）、原声吉他作曲家、软件开发导师、逻辑构建工具、猜谜游戏大师、React.js 教师、GitHub 专家、任意编程语言到 Python 转换器、虚拟健身教练、国际象棋玩家（再次）、搭讪男孩、梦想女孩、DAX 终端、结构化迭代推理协议 (SIRP)、海盗、LinkedIn 代笔（再次）、创意品牌策略师、书籍总结者、学习计划生成器、SEO 专家（再次）、笔记助手（再次）、营养师（再次）、是或否回答、治愈奶奶、混淆重写工具、大型语言模型安全专家、技术问题解决者、阿育吠陀食物测试员、音乐视频设计师、虚拟活动策划师、LinkedIn 代笔（再次）、Devops 工程师、Linux 脚本开发者等。
+- 由于提示词数量众多，项目还提供了网站 [prompts.chat](https://prompts.chat/) 以提供更好的用户体验，方便编辑和复制提示词。
+- 仓库中还包含了未合并的提示词，用户可以浏览待合入的拉取请求。
+- 项目讨论了如何编写有效的提示词，并推荐了相关的电子书，包括《The Art of ChatGPT Prompting》、《How to Make Money with ChatGPT》和《The Art of Midjourney AI》。
+
+项目技术栈/依赖并未在核心描述中详细列出具体的编程语言版本或框架，但提及了支持的 AI 模型提供商，包括但不限于 ChatGPT (OpenAI 的 GPT 模型如 GPT-4o, GPT-o1)、Claude、Gemini、Hugging Face Chat、Llama、Mistral 等，表明其提示词设计是跨平台的，并非仅限于 OpenAI 的模型。项目本身可能是基于标准的 GitHub 托管，其网页预览可能使用了 Jekyll 或类似的静态网站生成技术。
+
+安装与配置指南以及基本使用方法概述： 项目本身是一个提示词的集合，没有需要安装的复杂软件。用户只需克隆仓库，然后将 README.md 文件中的提示词复制粘贴到他们选择的 AI 对话模型界面中即可使用。项目的网站 [prompts.chat](https://prompts.chat/) 提供了图形化界面，便于用户浏览、编辑和复制提示词。
+
+代码示例/命令示例： 项目的核心是自然语言提示词，而不是代码。虽然有些提示词会模拟代码执行环境（如 Linux 终端、JavaScript 控制台、Python 解释器、SQL 终端等），并展示相应的输入输出格式，但这部分内容是作为提示词的角色设定一部分，而非项目自身的代码实现。例如，“Act as a Linux Terminal”提示词会给出一个 `pwd` 命令，并要求 AI 以代码块形式返回终端输出。
+
+适用场景/目标用户： 该项目主要面向希望更有效利用大型语言模型的各类用户，包括开发者、写作者、学生、教师、研究人员、创意工作者以及对 AI 对话感兴趣的普通用户。项目提供的多样化提示词覆盖了教育、娱乐、技术、商业、个人发展等多个领域，旨在帮助用户激发 AI 的潜能，实现各种特定的对话目标或任务。
+
+项目状态与许可证： 该项目处于持续更新状态，不断有新的提示词被添加。项目采用 CC0-1.0 许可证，这意味着提示词的内容可以被任何人出于任何目的免费使用、修改和分发，无需署名。
+
+独特的优势或创新点： 该项目最大的创新和优势在于其作为大型语言模型提示词的集中 curated 平台。它汇集了社区贡献的各种有创意和实用的提示词，极大地降低了用户探索 AI 潜能的门槛。通过将 AI 设定为特定角色，并给出明确的任务指令，这些提示词帮助用户更精准地控制 AI 的输出，使其能够执行更复杂、更具针对性的任务，从而提升 AI 的实用性。项目提供的网页版本也增强了用户体验，使其更容易查找和利用这些提示词。
+
+### 项目统计与信息
+
+- **作者:** [f](https://github.com/f）)
+- **主要语言:** JavaScript
+- **Stars:** 125302 ⭐
+- **Forks:** 16722 🍴
+- **本周期新增 Stars:** 370 ⭐
+
+_要了解更多关于 **f / awesome-chatgpt-prompts** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/f/awesome-chatgpt-prompts)。_
+
+---
+
+## kortix-ai / suna
+
+> Suna是一款开源的通用AI代理，旨在通过对话帮助用户自动化完成研究、数据分析、文件管理、网页抓取等多种现实世界任务。
+
+### 项目介绍
+
+Suna 是一个完全开源的通用 AI 代理，旨在帮助用户轻松完成现实世界的任务。通过自然的对话交互，Suna 可以像数字化助手一样，辅助进行研究、数据分析以及处理日常挑战。它结合了强大的能力和直观的界面，能够理解用户需求并交付所需结果。
+
+该项目的核心功能和特性包括：
+
+- 无缝的浏览器自动化能力，用于网页导航和数据提取。
+- 文件管理功能，支持文档的创建和编辑。
+- 网页抓取及扩展搜索能力。
+- 命令行执行功能，用于执行系统任务。
+- 网站部署能力。
+- 与各种 API 和服务的集成。
+
+Suna 通过协同这些能力，使用户能够通过简单的对话解决复杂问题和自动化工作流程。
+
+项目的架构主要由四个组件构成：
+
+- 后端 API：基于 Python/FastAPI 构建的服务，负责处理 REST 端点、线程管理以及与大型语言模型（LLM）的集成，支持 Anthropic 等模型，并通过 LiteLLM 集成更多模型。
+- 前端：基于 Next.js/React 的应用，提供响应式的用户界面，包括聊天界面和仪表板等。
+- 代理 Docker：为每个代理提供一个隔离的执行环境，包含浏览器自动化、代码解释器、文件系统访问、工具集成及安全特性。
+- Supabase 数据库：负责数据持久化，包括身份验证、用户管理、对话历史、文件存储、代理状态、分析和实时订阅。
+
+Suna 的典型应用场景非常广泛，包括：
+
+- 市场和竞争对手分析，生成详细报告。
+- 查找和整理特定类别的机构或个人列表，如风险投资基金或招聘候选人。
+- 规划和安排复杂的行程，如公司团建或个人旅行。
+- 处理电子表格数据，进行信息收集和整理。
+- 自动化事件演讲嘉宾或潜在客户的挖掘和联系。
+- 总结和交叉引用科学研究论文。
+- 进行网站 SEO 分析。
+- 从在线论坛等来源抓取和整理特定信息。
+
+Suna 支持通过自行托管的方式部署到用户的基础设施上。项目提供了设置向导简化部署过程，包括配置 Supabase 数据库、Redis 缓存、Daytona 安全执行环境以及集成 LLM 提供商（如 Anthropic, OpenAI, Groq）和搜索/抓取服务（如 Tavily, Firecrawl, RapidAPI）。快速上手可以通过克隆仓库后运行 `python setup.py` 进行向导式配置，并通过 `python start.py` 脚本管理容器的启动和停止。项目也提供了详细的手动设置指南。
+
+该项目是一个社区驱动的开源项目，欢迎社区贡献。项目采用 Apache License, Version 2.0 许可证。核心贡献者包括 Adam Cohen Hillel, Dat-lequoc 和 Marko Kraemer。主要使用的技术栈包括 TypeScript (63.4%)、Python (32.5%)、PLpgSQL 以及 Dockerfile, CSS, HTML 等。集成的技术有 Daytona 用于安全执行环境，Supabase 用于数据库和认证，Playwright 用于浏览器自动化，并支持 OpenAI, Anthropic 等 LLM 以及 Tavily, Firecrawl 等搜索抓取服务。
+
+### 项目统计与信息
+
+- **作者:** [kortix-ai](https://github.com/kortix-ai）)
+- **主要语言:** TypeScript
+- **Stars:** 11707 ⭐
+- **Forks:** 1637 🍴
+- **本周期新增 Stars:** 221 ⭐
+
+_要了解更多关于 **kortix-ai / suna** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/kortix-ai/suna)。_
+
+---
+
+## zen-browser / desktop
+
+> Zen Browser是一款基于Firefox的开源桌面浏览器，旨在提供更平静、专注、注重隐私的浏览体验。它强调速度和生产力，并持续更新以确保安全性和最新功能。
+
+### 项目介绍
+
+Zen Browser 是一款桌面浏览器项目，旨在提供一个更加平静（"calmer"）的互联网浏览体验，致力于在速度、隐私和生产力之间找到平衡。它基于 Firefox 浏览器构建，并且会持续更新到最新的 Firefox 版本，以确保用户能够享受到最新的特性和安全更新。
+
+项目的主要功能和特性包括：
+
+- 提供一个专注于隐私、速度和生产力的浏览环境。
+- 基于最新的 Firefox 版本开发，继承其核心能力并加以优化。当前基于 Firefox 版本 138.0.4。
+- 提供稳定版（stable）和开发版（twilight）分支，前者用于稳定发布，后者包含最新特性和构建，用于测试目的。
+- 支持语义化版本控制（Semantic Versioning），版本号格式为 a.b.cd (major.minor.branch prefix.patch)。
+- 欢迎社区贡献，提供了详细的贡献指南。
+- 跟踪并公开每月的议题关闭情况，展示项目进度。
+- 提供便捷的安装方式，支持多种操作系统。
+
+技术栈与依赖方面：
+
+- 项目主要使用 C++、JavaScript、CSS、HTML 和 Python。
+- 底层基于 Firefox 浏览器。
+- 利用了其他开源项目，例如 Zen 的默认偏好设置基于 BetterFox，部分UI元素参考了 Arc Palette 和 Edge Firefox。
+- 使用 `nvm` 和 `python-version` 文件来确保系统依赖（Node.js 和 Python）的版本一致性。
+- 集成了 `prettier` 和 `autopep8` 等工具进行代码格式化。
+- 在 CI/CD 流程中使用了 Rust 工具链。
+
+安装与配置指南概述：
+
+- 支持 Linux、macOS 和 Windows 操作系统。
+- 可以从官方网站或 GitHub Releases 页面下载安装包。
+- 在 Windows 上可通过 Winget 安装。
+- 在 macOS 上支持 ARM 和 Intel 架构，可通过 Homebrew 安装。
+- 在 Linux 上，基于 Arch 的发行版可通过 `yay` 安装，其他发行版提供 Tarball 或 AppImage 安装方式。
+- 浏览器内置了更新功能（通常在“关于Zen”中）。
+
+基本使用方法概述：
+
+项目旨在提供一个更精简、注重隐私和效率的浏览体验，默认配置可能与标准 Firefox 有所不同，以达到“平静”的浏览目的。具体的特性和交互模式体现在其 UI/UX 设计中。开发者可以通过克隆仓库并按照提供的构建指南在本地运行 Zen Browser。
+
+适用场景与目标用户：
+
+- 面向希望拥有一个快速、注重隐私且干扰较少的浏览器体验的用户。
+- 适合对现有主流浏览器感到信息过载、希望提升在线专注度和生产力的用户。
+- 对于开发者和技术爱好者，项目提供了开源代码，可以进行二次开发或贡献。
+
+项目状态与许可证：
+
+- 项目处于持续开发状态，有活跃的开发和稳定分支。
+- 遵循 MPL 2.0 (Mozilla Public License 2.0) 许可证。代码是开源的，可以自由使用，鼓励但非强制要求署名。
+
+独特的优势或创新点：
+
+- 基于成熟稳定的 Firefox 内核，同时通过定制提供了一种不同的浏览理念——“平静”。
+- 注重隐私和性能优化。
+- 积极维护，跟进 Firefox 的最新版本，确保安全性。
+- 作为一个开源社区项目，鼓励用户贡献和参与。
+
+### 项目统计与信息
+
+- **作者:** [zen-browser](https://github.com/zen-browser）)
+- **主要语言:** C++
+- **Stars:** 30434 ⭐
+- **Forks:** 849 🍴
+- **本周期新增 Stars:** 198 ⭐
+
+_要了解更多关于 **zen-browser / desktop** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/zen-browser/desktop)。_
+
+---
+
+## tinygrad / tinygrad
+
+> tinygrad 是一个简洁易用的深度学习框架旨在简化新硬件集成能运行大型模型并支持多种加速器正处于积极开发阶段。
+
+### 项目介绍
+
+tinygrad 是一个介于 PyTorch 和 micrograd 之间的深度学习框架，由 tiny corp 维护。其核心目标是提供一个极其简单易用的框架，方便开发者添加新的硬件加速器，并同时支持推理和训练。相比于复杂的 XLA 架构，tinygrad 追求 RISC 风格的精简。项目目前处于 Alpha 阶段，但正积极开发中。
+
+项目的主要特性包括：
+
+- 能够运行大型模型，例如 LLaMA 和 Stable Diffusion。
+- 支持“惰性计算”（Laziness），能够将多个操作融合成单个计算核，提高效率。例如，矩阵乘法及其后续操作可以通过延迟计算优化。
+- 具备构建神经网络所需的核心功能，包括自动微分 (autograd)、张量库、优化器和数据加载能力。提供了简洁的代码示例展示如何构建和训练一个简单的线性模型。
+- 已广泛 S支持多种硬件加速器，包括基于 OpenCL 的 GPU、原生 C 代码 CPU、LLVM、METAL、CUDA、AMD、NV、QCOM 和 WEBGPU。
+- 旨在通过提供一个只需实现约 25 个底层操作的接口，极大地简化新加速器的集成过程。
+
+安装方面，目前推荐通过 Git 克隆源代码后使用 `pip install -e .` 命令以可编辑模式安装。也可直接通过 `pip install git+https://github.com/tinygrad/tinygrad.git` 安装 master 分支的最新版本。
+
+项目提供了详细的文档（docs.tinygrad.org）和快速上手指南。代码示例展示了 tinygrad 与 PyTorch 在执行基本张量操作和计算梯度时的语法对比，强调了其简洁性。
+
+tinygrad 鼓励社区贡献，尤其欢迎 bugfix（需伴随回归测试）、解决项目悬赏任务、增加有明确价值的新特性（需考虑代码行数和复杂性权衡，并提供回归测试），以及能够清晰提升代码可读性的重构。项目对代码风格和测试有严格要求，强调避免代码高尔夫、无意义的文档或空白符修改，所有性能声称需提供基准测试。
+
+项目使用 Python 作为主要开发语言，辅以少量 C, C++, CUDA, Rust 和 Assembly。许可证为 MIT。
+
+### 项目统计与信息
+
+- **作者:** [tinygrad](https://github.com/tinygrad）)
+- **主要语言:** Python
+- **Stars:** 28979 ⭐
+- **Forks:** 3375 🍴
+- **本周期新增 Stars:** 76 ⭐
+
+_要了解更多关于 **tinygrad / tinygrad** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/tinygrad/tinygrad)。_
+
+---
+
+## ventoy / Ventoy
+
+> 这个内容主要是介绍了一个开源工具Ventoy，它可以让你轻松制作多系统启动U盘，只需拷贝镜像文件即可，无需反复格式化。
+
+### 项目介绍
+
+Ventoy 是一个开源工具，用于创建可启动的 USB 驱动器。它解决的问题是用户需要反复格式化 USB 驱动器以写入不同的镜像文件。使用 Ventoy，用户只需将 ISO、WIM、IMG、VHD(x) 或 EFI 文件直接复制到 USB 驱动器中，启动时 Ventoy 会提供一个菜单供选择。用户可以同时复制多个镜像文件，而无需对 USB 驱动器进行反复格式化。此外，Ventoy 还支持浏览本地磁盘上的镜像文件并直接启动。
+
+Ventoy 的核心功能和特性包括：
+
+- 易于使用：无需复杂的步骤，只需复制粘贴镜像文件。
+- 快速：性能仅受限于镜像文件复制的速度。
+- 支持多种存储介质：可安装在 USB 闪存盘、本地硬盘、SSD、NVMe 和 SD 卡上。
+- 直接启动镜像文件：无需解压，直接从 ISO, WIM, IMG, VHD(x), EFI 文件启动。
+- 支持浏览本地磁盘镜像：可在本地磁盘上找到并启动镜像文件。
+- 文件存储无连续性要求：镜像文件在磁盘上无需是连续存放的。
+- 支持分区格式：同时支持 MBR 和 GPT 分区样式。
+- 支持多种架构：兼容 x86 Legacy BIOS, IA32 UEFI, x86_64 UEFI, ARM64 UEFI 和 MIPS64EL UEFI。
+- 支持安全启动：支持 IA32/x86_64 UEFI 安全启动。
+- 支持 Linux 系统持久化。
+- 支持 Windows 和 Linux 系统的无人值守自动安装。
+- 支持变量扩展，用于 Windows/Linux 自动安装脚本。
+- 主分区支持多种文件系统：FAT32, exFAT, NTFS, UDF, XFS, Ext2/3/4。
+- 支持大于 4GB 的 ISO 文件。
+- 支持菜单别名和菜单提示信息。
+- 支持密码保护启动菜单。
+- 提供原生风格的 Legacy BIOS 和 UEFI 启动菜单。
+- 兼容广泛的操作系统类型，已测试支持超过 1200 个 ISO 文件，涵盖主流 Windows、Linux、Unix、ChromeOS、VMware、Xen 等。
+- 支持 Linux vDisk (.vtoy) 文件启动。
+- 不仅支持启动，也支持完整的系统安装过程。
+- 菜单模式可动态切换 (列表/树状视图)。
+- 引入“Ventoy Compatible”概念，简化兼容性判断。
+- 提供插件框架和图形化插件配置工具 (VentoyPlugson)。
+- 支持向运行时环境注入文件。
+- 支持动态替换启动配置文件。
+- 提供丰富的自定义主题和菜单选项。
+- 支持对 USB 驱动器进行写保护。
+- 不影响 USB 驱动器的正常使用。
+- 版本升级时不损坏现有数据。
+- 无需在发布新发行版时更新 Ventoy。
+
+Ventoy 的安装和使用相对简单，用户可以访问其官方网站获取详细的图文说明。它主要面向需要频繁制作启动盘来安装不同操作系统或进行系统维护的技术人员和爱好者。由于其便捷性和广泛的兼容性，Ventoy 极大地简化了多系统启动盘的制作过程。
+
+该项目采用 GPL-3.0 开源许可证。最新的发布版本信息可以在 GitHub 页面上找到。项目主要使用 C 语言开发，同时也包含 Shell、HTML、C++、CSS 和 Makefile 等。
+
+### 项目统计与信息
+
+- **作者:** [ventoy](https://github.com/ventoy）)
+- **主要语言:** C
+- **Stars:** 67076 ⭐
+- **Forks:** 4290 🍴
+- **本周期新增 Stars:** 314 ⭐
+
+_要了解更多关于 **ventoy / Ventoy** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/ventoy/Ventoy)。_
+
+---
+
+## XTLS / Xray-core
+
+> Xray-core是基于XTLS协议的网络工具，作为v2ray-core的替代品，它提供了多种先进协议和传输方式，专注于建立安全、隐蔽且高性能的网络连接，特别适用于突破网络限制和保护隐私。
+
+### 项目介绍
+
+Xray-core 是 Project X 的核心网络工具，由XTLS协议衍变而来，致力于提供一套功能强大的网络连接解决方案。该项目被宣传为优秀的 v2ray-core 替代品，是一个开放平台，可用于多种用途，尤其在突破网络限制和构建安全通道方面表现出色。
+
+项目的主要功能和特性包括：
+
+- 支持多种协议，如 VLESS、XTLS、REALITY、XUDP、PLUX 等，这些协议旨在提供高效和隐蔽的网络连接。
+- 集成 VLESS 和 XTLS 协议，特别是 XTLS Vision 模式，优化了数据传输性能和安全性。
+- 引入 REALITY 协议，该协议增强了隐蔽性，能有效对抗深度包检测。
+- 支持多种传输方式，包括 TCP 和 QUIC。
+- 具备 DNS 功能，支持自定义 DNS 主机和上游 TTL 返回。
+- 提供多种安装方式，包括 Linux 脚本、Docker 镜像、Web 面板（推荐支持 HTTPS 和 SSH 转发的面板）、一键脚本以及针对特定平台的安装包（如 Magisk, Homebrew）。
+- 提供丰富的配置示例和教程，帮助用户快速上手和部署，包括 VLESS-XTLS-REALITY、VLESS-TCP-XTLS-Vision、All-in-One fallback 等典型应用场景。
+- 兼容众多平台上的 GUI 客户端，如 OpenWrt, Asuswrt-Merlin, Windows, Android, iOS, macOS, Linux 等，方便用户通过图形界面进行管理和使用。
+
+该项目技术栈主要基于 Go 语言开发，并使用了多个其他第三方库，具体依赖可在 `go.mod` 文件中查看。
+
+项目适用于希望能建立稳定、安全且隐蔽的网络连接的用户，尤其对需要在复杂网络环境下突破封锁和保护数据隐私的个人或组织有重要价值。目标用户包括需要访问受限内容、进行安全通信以及构建高性能代理服务的技术人员和普通用户。
+
+许可证方面，Xray-core 遵循 Mozilla Public License Version 2.0 (MPL-2.0)。项目处于积极开发和维护状态，不断更新并修复 bug，例如最新的提交提及修复 Sniffer 中的潜在问题以及 QUIC sniffer 中的 slice panic 错误。
+
+此外，项目提供了ETH/USDT/USDC捐赠地址，并有Project X NFT和REALITY NFT等回馈社区的方式。项目代码可进行单行命令编译，支持 Windows, Linux 和 macOS 平台。
+
+总结来说，Xray-core 是一个强大、灵活且注重安全和隐蔽性的网络工具集，通过支持多种先进协议和传输技术，为用户提供了多样化的网络连接解决方案。
+
+### 项目统计与信息
+
+- **作者:** [XTLS](https://github.com/XTLS）)
+- **主要语言:** Go
+- **Stars:** 28475 ⭐
+- **Forks:** 4281 🍴
+- **本周期新增 Stars:** 51 ⭐
+
+_要了解更多关于 **XTLS / Xray-core** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/XTLS/Xray-core)。_
+
+---
+
+## sherlock-project / sherlock
+
+> Sherlock是一款开源的OSINT工具，能快速通过用户名搜索超过400个社交平台定位用户账号并保存搜索结果。
+
+### 项目介绍
+
+Sherlock 是一个开源的 OSINT（开源情报）工具，旨在通过用户名在互联网上定位社交媒体账户。它能够检查超过 400 个社交网络平台，帮助用户快速发现特定用户在不同社交平台上的活动轨迹。
+
+该项目的核心功能是通过输入一个或多个用户名，自动在预设列表中支持的社交网站上搜索是否存在匹配的账户。找到的账户链接会被收集起来，并保存到单独的文本文件中，文件名通常与搜索的用户名对应。
+
+主要功能和特性包括：
+
+- 支持搜索单个或多个用户名。
+- 能够检查数量庞大的社交媒体和其他网络平台。
+- 搜索结果会自动保存到文件中，方便后续查看和分析。
+- 提供多种输出格式选项，如 CSV 和 XLSX。
+- 支持通过 Tor 或其他代理进行请求，增加匿名性。
+- 可以限制搜索范围到指定站点。
+- 提供详细的调试和输出信息选项。
+- 允许通过 JSON 文件加载用户名进行批量搜索。
+- 可配置请求超时时间。
+- 可以选择性地输出未找到账户的站点信息。
+- 支持在默认浏览器中直接打开找到的链接。
+- 提供了 Apify Actor 的使用方式，支持在云端运行，可通过 API、CLI 或 SDK 进行程序化调用。
+
+Sherlock 主要使用 Python 语言开发。它是一个命令行界面（CLI）工具。项目的安装可以通过多种方式实现，包括使用 pipx 或 pip 进行 Python 包安装，也可以通过 Docker 镜像运行，部分 Linux 发行版（如 Debian, Ubuntu, Kali, BlackArch）和 Homebrew 也提供了社区维护的软件包（需注意部分第三方包可能存在问题，官方推荐优先使用 pipx/pip 或 Docker）。
+
+基本的命令行使用方法为 `sherlock username` 或 `sherlock user1 user2 ...`。可以通过丰富的命令行参数来定制搜索行为，例如使用 `--tor` 启用 Tor 网络，使用 `--output` 指定输出文件，使用 `--site` 限制搜索站点，使用 `--proxy` 指定代理等。它也支持使用 `{?}` 在用户名中指定可替换的字符进行相似用户名搜索。
+
+该工具适用于需要进行互联网信息收集、数字足迹分析、安全研究、取证调查或红队演练等场景。目标用户主要是安全研究人员、渗透测试人员、调查人员、OSINT 从业者以及对个人信息侦察感兴趣的技术人员。
+
+项目采用 MIT 许可证。项目活跃，有持续的贡献者社区。
+
+### 项目统计与信息
+
+- **作者:** [sherlock-project](https://github.com/sherlock-project）)
+- **主要语言:** Python
+- **Stars:** 64768 ⭐
+- **Forks:** 7500 🍴
+- **本周期新增 Stars:** 39 ⭐
+
+_要了解更多关于 **sherlock-project / sherlock** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/sherlock-project/sherlock)。_
+
+---
+
+## facebook / pyrefly
+
+> Pyrefly是一个用Rust和TypeScript开发的Python快速增量类型检查器和IDE工具，旨在提供优秀性能和IDE支持，并可在线体验。
+
+### 项目介绍
+
+Pyrefly 是一个为 Python 设计的快速类型检查器和 IDE 工具，旨在提升开发效率并替代现有的 Pyre 类型检查器。它目前处于积极开发中，其核心价值在于提供快速、增量的代码检查能力以及丰富的 IDE 支持功能。
+
+项目的主要功能和特性包括：
+
+- 类型推断：Pyrefly 能够在大多数上下文中推断类型，尤其是变量和函数的返回类型，尽管默认不对函数参数进行推断（除非明确标注）。例如，对于 `def foo(x): return True`，Pyrefly 能推断出类似 `def foo(x: Any) -> bool: ...` 的类型。
+- 流式类型检查 (Flow Types)：项目能够理解程序控制流，从而对静态类型进行细化。这意味着在代码执行路径中，变量的类型可以根据条件判断等发生更精确的变化。例如，`x: int = 4`，紧随其后对 `x` 的使用能够感知其具体类型为 `Literal[4]`。
+- 增量性：Pyrefly 的目标是在模块级别实现大规模的增量检查，通过优化检查流程和利用并行计算，以提高性能。
+- IDE 集成：提供与集成开发环境的深度集成能力，例如已提供 VSCode 扩展。这使得开发者可以直接在编辑器中获得实时的类型反馈和 IDE 辅助功能。
+
+技术栈和依赖方面：Pyrefly 主要使用 Rust 语言进行开发，这有助于实现其对速度和并行性的追求。此外，它还包含 TypeScript 部分，用于 VSCode 扩展等前端或集成相关功能。Python 语言本身是其检查的目标。
+
+安装与配置概述：Pyrefly 可以通过 `pip install pyrefly` 命令方便地作为命令行工具安装。同时，它也提供了 VSCode 扩展，可通过 VSCode Marketplace 获取。
+
+基本使用方法概述：作为类型检查器，它主要用于分析 Python 代码的类型正确性。结合 IDE 使用时，它提供实时的语法高亮、代码补全、错误提示等功能。项目提供了在线沙盒工具，方便用户在浏览器中直接体验其检查能力。
+
+开发和设计上的一些关键选择：
+
+- 借鉴了 Pyre1、Pyright 和 MyPy 等现有 Python 类型检查器的思想。
+- 倾向于在代码的许多位置进行类型推断，除了函数参数。
+- 对于难以确定初始类型的容器（如 `[]`），会先根据首次使用推断类型，然后根据后续使用固定类型并进行错误检查。
+- 核心设计基于三个步骤：确定模块导出、将模块转换为带有绑定和流信息的表示、解决这些绑定。即便遇到递归等情况，也通过引入 `Type::Var` 占位符并在后续阶段填充来处理。
+- 专注于模块层面而非更细粒度的增量性，旨在通过 Rust 的性能优势，即便解决整个模块也能保持足够的速度。
+
+本项目遵循 MIT 许可证，这意味着开发者可以在符合许可证条件的情况下自由使用、修改和分发代码。项目欢迎社区贡献，并提供了相应的贡献指南。
+
+### 项目统计与信息
+
+- **作者:** [facebook](https://github.com/facebook）)
+- **主要语言:** Rust
+- **Stars:** 1187 ⭐
+- **Forks:** 38 🍴
+- **本周期新增 Stars:** 122 ⭐
+
+_要了解更多关于 **facebook / pyrefly** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/facebook/pyrefly)。_
+
+---
+
+## ed-donner / llm_engineering
+
+> 这是一个GitHub项目，提供了为期八周的学习路径，通过实践指导用户如何使用Python和Ollama等工具构建基于大型语言模型（LLM）的应用，并提供免费及付费API的选择。
+
+### 项目介绍
+
+该 GitHub 仓库 `ed-donner/llm_engineering` 是一个配套资源库，用于支持关于掌握 LLM（大型语言模型）工程的课程。项目旨在通过为期八周的学习路径，帮助用户掌握构建基于 LLM 的应用的技能，并强调通过实践来学习的重要性。
+
+主要功能和特性包括：
+
+- 提供课程配套的代码示例和项目文件，按周（Week 1-8）组织，项目之间相互关联和递进，最终目标是构建一个强大的自主智能体（Agentic AI）解决方案。
+- 包含详细的环境安装与配置指南，分别针对 Windows、macOS 和 Linux 系统，并提供 Markdown 和 PDF 两种格式。
+- 引导用户快速开始使用本地部署的开源 LLM 推理引擎 Ollama，进行初次实验，提供使用 `llama3.2` 等模型的示例。特别强调 `llama3.3` 模型由于过大使不适合家用电脑。
+- 提供使用付费 API 的指导，涵盖 OpenAI、Anthropic 和 Google Gemini 等主流模型提供商。明确指出使用 API 会产生费用，但课程设计力求将费用控制在最低水平（仅需几美元），并提供监控 API 使用量的方法。
+- 提供了完全免费的替代方案，指导用户将代码中调用付费 API 的部分替换为本地运行 Ollama 的方式，以便用户无需支付任何费用即可完成课程项目。
+- 从 Week 3 开始，引入 Google Colab 平台，用于运行需要 GPU 资源的实践项目，并提供了多个 Colab 笔记本的链接，涵盖 HuggingFace pipeline API、Tokenizer、模型使用以及构建特定产品（如会议纪要生成工具）等主题。
+
+技术栈/依赖：
+
+- 主要使用 Python 编程语言。
+- 依赖 Ollama 进行本地 LLM 推理。
+- 集成外部 LLM 服务，包括 OpenAI、Anthropic 和 Google Gemini（可选，可替换为 Ollama）。
+- 使用 Hugging Face 相关库进行模型和工具的使用。
+- 利用 Google Colab 提供 GPU 计算环境。
+- 仓库中包含 `environment.yml` 和 `requirements.txt` 文件，用于定义 Python 环境及其依赖包。
+
+安装与配置指南概述：
+
+用户需要根据自己的操作系统（PC/Mac/Linux）参照提供的 SETUP 文件，按照步骤安装 Ollama、配置 Python 环境以及设置必要的 API 密钥（如果选择使用付费 API）。对于不愿使用付费 API 的用户，提供了使用本地 Ollama 作为替代的详细方法。
+
+基本使用方法概述：
+
+用户通常需要克隆仓库，按照SETUP文件配置好环境后，进入每周对应的文件夹，打开 Jupyter Notebook（如 `.ipynb` 文件），按照课程内容和代码示例逐步学习并运行代码。 Colab 笔记本则可直接在浏览器中打开和执行。
+
+适用场景/目标用户：
+
+该项目主要面向希望学习和掌握大型语言模型应用开发的技术人员、开发者和对 LLM 工程感兴趣的学习者。通过完成项目，用户可以获得构建实际 LLM 解决方案的实践经验。
+
+项目状态与许可证：
+
+项目处于持续更新状态，包含多个周次的课程内容和代码。该仓库采用 MIT 许可证。
+
+### 项目统计与信息
+
+- **作者:** [ed-donner](https://github.com/ed-donner）)
+- **主要语言:** Jupyter Notebook
+- **Stars:** 1874 ⭐
+- **Forks:** 1758 🍴
+- **本周期新增 Stars:** 255 ⭐
+
+_要了解更多关于 **ed-donner / llm_engineering** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/ed-donner/llm_engineering)。_
