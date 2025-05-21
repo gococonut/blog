@@ -1,0 +1,848 @@
+---
+title: Github Daily Trending
+date: 2025-05-22
+cover: https://hub-image.moreve.net/files/images/github-trending/2025-05-22.png
+summary: '本期内容涵盖WSL在Windows上运行Linux工具、AI对冲基金概念验证、模型注册中心、系统设计面试准备、PowerToys实用工具、极简文本编辑器Kilo、企业级AI代理SDK Semantic Kernel、高性能零分配.NET LINQ库ZLinq、WSL2定制内核以及开源后端平台Appwrite和互联网操作系统Puter等热门技术项目。'
+headingSummaries:
+  - heading: 'microsoft / WSL'
+    summary: 'WSL是微软在Windows上运行Linux命令行工具和应用的强大工具，为开发者提供了一个高效集成的Linux环境，且高度互操作支持图形界面。'
+    tags: [开发工具, 开发运维, 操作系统]
+  - heading: 'virattt / ai-hedge-fund'
+    summary: '这是一个名为“AI对冲基金”的概念验证项目，通过模拟巴菲特等知名投资者和多种分析方法，利用AI进行模拟交易决策和回溯测试，适合研究或学习AI在金融领域的应用潜力。'
+    tags: [人工智能, 实验项目]
+  - heading: 'modelcontextprotocol / registry'
+    summary: '这个项目是一个社区驱动的Model Context Protocol (MCP) 服务器注册中心服务，旨在提供一个集中化的平台，方便发现、管理和获取各种MCP服务器的元数据和能力描述，目前处于早期开发阶段。'
+    tags: [应用, 开发工具, 开发运维]
+  - heading: 'donnemartin / system-design-primer'
+    summary: '该GitHub项目是一个名为"system-design-primer"的资源集合，旨在帮助工程师学习和准备系统设计面试，涵盖大规模可伸缩系统设计原则、常见面试问题、实际案例和学习资料。'
+    tags: [学习资源, 实验项目, 数据集]
+  - heading: 'microsoft / PowerToys'
+    summary: 'Microsoft PowerToys是一套Windows实用工具集，旨在通过窗口管理、快速启动、文件处理等功能，提升高级用户的操作效率和体验，项目开源且包含多种独立工具。'
+    tags: [应用, 开发工具, 实验项目]
+  - heading: 'antirez / kilo'
+    summary: 'Kilo是一个用少于1000行C语言实现的极简终端文本编辑器，功能包含基础编辑、语法高亮、搜索和文件操作，适合学习终端应用开发。'
+    tags: [开发工具, 实验项目, 学习资源]
+  - heading: 'microsoft / semantic-kernel'
+    summary: 'Semantic Kernel是一个模型无关的SDK，帮助开发者快速轻松地构建、编排和部署企业级AI代理和多代理系统，支持多种模型、插件和语言，提供企业级特性和流程框架。'
+    tags: [人工智能, 库, 开发工具]
+  - heading: 'Cysharp / ZLinq'
+    summary: 'ZLinq是一个高性能零分配的.NET LINQ库，通过ValueEnumerable和多项优化大幅提升性能，支持跨平台包括游戏引擎，并提供Source Generator实现无侵入替换。'
+    tags: [开发工具, 库, 框架]
+  - heading: 'microsoft / WSL2-Linux-Kernel'
+    summary: '这是用于WSL2的Linux内核源代码仓库，允许用户定制和编译内核，以优化WSL2环境并添加特定功能。'
+    tags: [开发工具, 开发运维, 实验项目]
+  - heading: 'usememos / memos'
+    summary: 'Memos是一款开源、轻量级且支持自托管的笔记及微博客工具，强调隐私优先和数据自主控制，提供简洁的纯文本和强大的Markdown书写体验。'
+    tags: [应用, 开发工具, 框架]
+  - heading: 'HeyPuter / puter'
+    summary: 'Puter是一款开源的互联网操作系统，兼具隐私优先的个人云、应用开发平台和远程桌面等功能，用户可自托管以集中管理和访问文件、应用和游戏，并为Web开发者构建和发布应用提供了平台，适合注重隐私、寻求替代云服务或参与开源学习的个人和团队。'
+    tags: [应用, 开发运维, 学习资源]
+  - heading: 'microsoft / vscode'
+    summary: 'VS Code是一款微软开发的免费强大开源代码编辑器，提供高效灵活的开发环境，支持多种语言和技术，并通过丰富的扩展性、集成调试和版本控制等功能提升开发效率，适用于各类开发者和项目。'
+    tags: [开发工具, 应用, 框架]
+  - heading: 'nektos / act'
+    summary: 'act是一个用Go语言编写的命令行工具，用于在本地测试和调试GitHub Actions工作流以提高开发效率。'
+    tags: [开发工具, 开发运维, 实验项目]
+  - heading: 'appwrite / appwrite'
+    summary: 'Appwrite 是一个开源后端平台，提供用户认证、数据库、文件存储、函数等多种服务，支持自托管和云部署，旨在简化开发者构建应用后端的过程。'
+    tags: [框架, 开发运维, 库]
+---
+
+## microsoft / WSL
+
+> WSL是微软在Windows上运行Linux命令行工具和应用的强大工具，为开发者提供了一个高效集成的Linux环境，且高度互操作支持图形界面。
+
+### 项目介绍
+
+Windows Subsystem for Linux (WSL) 是微软提供的一个强大工具，它允许用户在 Windows 操作系统上直接运行未经修改的 Linux 命令行工具、实用程序和应用程序，而无需传统虚拟机或双启动的开销。
+
+项目定位是为 Windows 用户提供一个集成、高效的 Linux 开发和命令行环境。它解决了用户在 Windows 环境下使用特定 Linux 工具链的需求，尤其对于开发者来说，极大地简化了跨平台开发的复杂性。
+
+主要功能和特性包括：
+
+- 在 Windows 上原生运行 Linux 命令行工具和应用程序。
+- 支持多种 Linux 发行版，用户可以选择安装自己偏好的版本。
+- 无需完整的虚拟化硬件层，性能接近原生 Linux。
+- 与 Windows 文件系统和应用程序的高度互操作性。
+- 支持在 WSL 中运行具有图形界面的 Linux 应用程序 (通过 WSLg 项目)。
+- 提供 Linux 内核的更新和管理 (通过 WSL2-Linux-Kernel 项目)。
+
+安装与配置通常非常简单，可以通过 Windows 命令行运行 `wsl --install` 命令进行快速安装。更详细的设置和环境配置信息可在官方文档中找到。
+
+项目的核心依赖包括 Windows 操作系统本身提供的 WSL 功能以及作为开源项目独立发布的 Linux 内核 (WSL2-Linux-Kernel) 和图形支持组件 (WSLg)。项目的代码语言主要包括 C++、C 和 C#。
+
+作为微软的开源项目，WSL 遵循 MIT 许可证。它积极欢迎社区的贡献，包括代码、文档和设计建议。
+
+WSL 的典型适用场景包括：
+
+- 需要在 Windows 上使用 Bash shell、GNU 工具和软件包的开发者。
+- 进行 Web 开发、DevOps、数据科学等依赖 Linux 环境的工作流程。
+- 希望在同一台机器上同时利用 Windows 和 Linux 生态工具的用户。
+
+目标用户主要是开发者、IT 专业人员以及任何需要在 Windows 上方便使用 Linux 工具和环境的用户。
+
+该项目处于持续开发和维护状态，通过 GitHub 进行版本发布和问题跟踪。项目相关文档（托管在 microsoftdocs/wsl 仓库）也对外开放，便于用户学习和使用。
+
+### 项目统计与信息
+
+- **作者:** [microsoft](https://github.com/microsoft）)
+- **主要语言:** C++
+- **Stars:** 25084 ⭐
+- **Forks:** 1163 🍴
+- **本周期新增 Stars:** 1857 ⭐
+
+_要了解更多关于 **microsoft / WSL** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/microsoft/WSL)。_
+
+---
+
+## virattt / ai-hedge-fund
+
+> 这是一个名为“AI对冲基金”的概念验证项目，通过模拟巴菲特等知名投资者和多种分析方法，利用AI进行模拟交易决策和回溯测试，适合研究或学习AI在金融领域的应用潜力。
+
+### 项目介绍
+
+该项目名为 "AI Hedge Fund"，其核心是一个概念验证，旨在探索利用人工智能进行交易决策。项目目标是展示AI在金融领域，特别是对冲基金策略中的应用潜力。本项目仅用于教育和研究目的，不适合进行真实的交易或投资。
+
+项目采用多智能体协同工作模式，每个智能体模拟一位著名的投资者或一种分析方法，共同为最终的交易决策提供输入。主要智能体包括：
+
+- 模拟知名投资者的智能体： Aswath Damodaran (估值), Ben Graham (价值投资), Bill Ackman (激进投资), Cathie Wood (成长投资), Charlie Munger (价值/质量), Michael Burry (逆向投资), Peter Lynch (PEG/日常业务), Phil Fisher (成长/深度调研), Stanley Druckenmiller (宏观/非对称机会), Warren Buffett (价值/质量)。
+- 基于分析方法的智能体： 估值智能体、情绪智能体、基本面智能体、技术分析智能体。
+
+此外，系统还包含风险管理器和投资组合管理器，分别负责计算风险指标、设置仓位限制以及做出最终交易决策并生成订单（模拟）。
+
+项目的主要功能包括：
+
+- 模拟基于多种AI智能体分析的市场交易决策。
+- 对模拟的交易策略进行回溯测试（Backtesting），评估其在历史数据上的表现。
+- 支持指定时间段进行决策模拟和回溯测试。
+- 提供详细的智能体推理过程（可选）。
+
+技术栈和依赖方面，该项目主要使用 Python 和 TypeScript。它支持多种大型语言模型（LLMs），包括 OpenAI (如 gpt-4o, gpt-4o-mini)、Groq (如 deepseek, llama3) 以及本地运行的 Ollama 模型。获取金融数据则依赖 Financial Datasets API。对于 AAPL, GOOGL, MSFT, NVDA, TSLA 这几只股票的数据是免费的，其他股票需要 Financial Datasets API Key。
+
+安装与配置方面，项目提供了两种主要方式：使用 Poetry 进行依赖管理，以及使用 Docker 进行容器化部署。用户需要克隆仓库，根据选择的方式（Poetry 或 Docker）安装依赖，并配置 `.env` 文件，填入所需的 API Keys。
+
+基本使用方法方面，用户可以通过命令行运行主程序 `src/main.py` 模拟交易决策，或运行 `src/backtester.py` 进行回溯测试。通过 `--ticker` 参数指定关注的股票代码，可以使用逗号分隔多个股票。还可以通过 `--start-date` 和 `--end-date` 参数指定时间范围，或通过 `--ollama` 参数使用本地 LLMs，或通过 `--show-reasoning` 查看智能体的推理过程。
+
+适用场景和目标用户：本项目主要面向对人工智能在金融交易领域的应用感兴趣的开发者、研究人员和量化交易初学者。它适合用于学习、研究和实验不同投资策略和AI模型的组合，但不应被用于真实的金融投资。由于其开源性质（MIT许可证），开发者可以自由地学习、修改和贡献代码。
+
+项目整体仍在探索阶段，重点在于AI驱动交易决策的潜力展示与概念验证。
+
+### 项目统计与信息
+
+- **作者:** [virattt](https://github.com/virattt）)
+- **主要语言:** Python
+- **Stars:** 31933 ⭐
+- **Forks:** 5480 🍴
+- **本周期新增 Stars:** 1219 ⭐
+
+_要了解更多关于 **virattt / ai-hedge-fund** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/virattt/ai-hedge-fund)。_
+
+---
+
+## modelcontextprotocol / registry
+
+> 这个项目是一个社区驱动的Model Context Protocol (MCP) 服务器注册中心服务，旨在提供一个集中化的平台，方便发现、管理和获取各种MCP服务器的元数据和能力描述，目前处于早期开发阶段。
+
+### 项目介绍
+
+本项目是一个社区驱动的 Model Context Protocol (MCP) 服务器注册中心服务。它的核心目标是为各种 MCP 实现提供一个中心化的存储库，以便于发现、管理和获取这些服务器的元数据、配置信息和能力描述。项目目前处于早期开发阶段。
+
+主要功能和特性包括：
+
+- 提供一套 RESTful API 来管理 MCP 注册中心的条目，支持列表、获取、创建、更新和删除操作。
+- 包含一个健康检查端点，用于服务监控。
+- 支持多种环境配置方式。
+- 实现优雅停机处理。
+- 支持使用 MongoDB 或内存数据库作为后端存储。
+- 提供全面的 API 文档，可通过 Swagger/OpenAPI UI 访问。
+- 支持对注册中心条目列表的分页查询。
+
+技术栈和依赖：
+
+- 核心开发语言为 Go (要求 1.18 或更高版本)。
+- 后端数据库支持 MongoDB。
+- 使用 Docker 构建和部署环境（推荐用于开发）。
+
+安装与配置概述：
+
+- 推荐使用 Docker Compose 快速搭建环境，它会自动启动 MCP Registry 服务和 MongoDB，并导入初始数据。只需执行 `docker build -t registry .` 和 `docker compose up` 命令即可。
+- 如果选择不使用 Docker，需要本地安装 Go 和 MongoDB。通过 `go build ./cmd/registry` 构建可执行文件后运行。
+- 可通过环境变量配置服务，包括应用版本、MongoDB 连接信息、GitHub OAuth 配置、日志级别、种子文件导入设置以及服务器监听地址等。
+
+基本使用方法概述：
+
+- 通过暴露的 RESTful API 端点进行交互。
+- 提供 `/v0/health` 端点检查服务状态。
+- `/v0/servers` 端点用于列出所有 MCP 服务器注册条目，支持分页参数 `limit` 和 `cursor`。
+- `/v0/servers/{id}` 端点用于获取特定 ID 的服务器详细信息。
+- `/v0/publish` 端点用于发布新的 MCP 服务器条目，需要通过 Bearer token 进行身份验证，请求体为一个 JSON 对象，包含服务器的描述、名称、包类型、包信息（包括注册表名称、包名、版本、参数和环境变量）、仓库信息和版本详细信息。
+- `/v0/ping` 端点返回简单的环境配置信息。
+- 可访问 `/v0/swagger/index.html` 获得交互式的 API 文档和测试界面。
+- 项目提供 `scripts/test_endpoints.sh` 脚本用于测试 API 端点。
+
+适用场景和目标用户：
+
+- 该项目主要面向需要发现和管理各种 MCP 服务器的开发者或服务。
+- 通过提供一个统一的注册机制，方便用户查找适合特定需求的 MCP 服务器实现，例如用于与 Redis 或其他服务交互的 MCP 服务器。
+
+项目状态与许可证：
+
+- 项目目前处于早期开发阶段。
+- 项目采用 MIT 许可证。
+
+### 项目统计与信息
+
+- **作者:** [modelcontextprotocol](https://github.com/modelcontextprotocol）)
+- **主要语言:** Go
+- **Stars:** 460 ⭐
+- **Forks:** 35 🍴
+- **本周期新增 Stars:** 39 ⭐
+
+_要了解更多关于 **modelcontextprotocol / registry** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/modelcontextprotocol/registry)。_
+
+---
+
+## donnemartin / system-design-primer
+
+> 该GitHub项目是一个名为"system-design-primer"的资源集合，旨在帮助工程师学习和准备系统设计面试，涵盖大规模可伸缩系统设计原则、常见面试问题、实际案例和学习资料。
+
+### 项目介绍
+
+该 GitHub 项目名为 "system-design-primer"，其核心定位是一个学习和准备系统设计面试的资源集合。项目旨在帮助工程师学习如何设计大规模可伸缩系统，并为技术面试中的系统设计环节做准备。
+
+项目的主要功能和特性包括：
+
+- 提供大规模系统设计原则的结构化资源集合。
+- 分享学习如何构建可伸缩系统的知识和最佳实践。
+- 包含系统设计、面向对象设计等常见面试问题的案例讨论、代码示例和图表解决方案。
+- 提供 Anki 记忆卡片，利用间隔重复记忆法帮助用户记忆关键系统设计概念。
+- 探讨性能与可伸缩性、延迟与吞吐量、可用性与一致性（包括 CAP 定理）等核心概念。
+- 详细介绍数据库扩展技术，如主从/主主复制、联邦、分片、反范式化和 SQL 调优。
+- 分析缓存策略（客户端、CDN、Web 服务器、数据库、应用层）及更新方式（Cache-aside, Write-through, Write-behind, Refresh-ahead）。
+- 阐述异步处理机制，包括消息队列、任务队列和背压。
+- 解释常见的通信协议（TCP, UDP, HTTP）以及 RPC 与 REST 架构风格的对比。
+- 讨论安全基础知识，如加密、输入净化和最小权限原则。
+- 提供“封底计算”（back-of-the-envelope calculations）所需的常用参考数字，如 2 的幂次方表和程序员应知的延迟时间。
+- 收录了许多真实世界系统架构案例（如 Google 的 MapReduce, Bigtable, GFS，Facebook 的 Cassandra, TAO 等）和知名公司（如亚马逊、Facebook、Google、Netflix、Twitter）的工程博客链接，供用户学习实际系统的设计经验。
+- 支持社区贡献，鼓励用户帮助修正错误、改进现有章节或增加新内容。
+
+该项目主要的技术栈和依赖体现在其讨论的系统组件和技术概念上，涵盖但不限于：关系型数据库（RDBMS, 如 MySQL, PostgreSQL）、NoSQL 数据库（如 Key-value Stores, Document Stores, Wide Column Stores, Graph Databases, 包括 Memcached, Redis, MongoDB, Cassandra, HBase）、负载均衡器（如 HAProxy, NGINX）、反向代理、消息队列（如 Redis, RabbitMQ, Amazon SQS）、任务队列（如 Celery）、通信协议（TCP, UDP, HTTP）和架构风格（RPC, REST）。项目本身的代码部分主要用于生成 EPUB 文件和包含示例代码，使用了 Python 和 Shell 脚本。
+
+安装与配置通常只涉及克隆 GitHub 仓库和可能需要某些工具（如 Anki）导入提供的卡片文件。基本使用方法是阅读项目文档，按照学习路线图进行学习，并尝试解答提供的系统设计问题。
+
+该项目适用于各种经验水平的软件工程师、架构师或希望提升系统设计能力的开发者。特别适合那些正在准备技术面试，尤其是涉及系统设计环节的求职者。它提供了一个系统的学习框架，覆盖了分布式系统设计中的核心挑战和常用解决方案，并辅以实际案例，帮助读者理论结合实践。
+
+项目的许可证为 Creative Commons Attribution 4.0 International License (CC BY 4.0)。项目状态活跃，持续接收社区的贡献和更新。
+
+### 项目统计与信息
+
+- **作者:** [donnemartin](https://github.com/donnemartin）)
+- **主要语言:** Python
+- **Stars:** 300244 ⭐
+- **Forks:** 49803 🍴
+- **本周期新增 Stars:** 215 ⭐
+
+_要了解更多关于 **donnemartin / system-design-primer** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/donnemartin/system-design-primer)。_
+
+---
+
+## microsoft / PowerToys
+
+> Microsoft PowerToys是一套Windows实用工具集，旨在通过窗口管理、快速启动、文件处理等功能，提升高级用户的操作效率和体验，项目开源且包含多种独立工具。
+
+### 项目介绍
+
+Microsoft PowerToys 是一个为 Windows 高级用户设计的实用工具集，旨在提高工作效率并优化 Windows 使用体验。它集成了多种功能，帮助用户更灵活地管理窗口布局、快捷启动应用、批量重命名文件等。该项目在 MIT 许可证下开源，代码主要使用 C# 和 C++ 编写。
+
+PowerToys 包含了一系列独立的实用工具，主要功能和特性包括：
+
+- **高级粘贴 (Advanced Paste)**：提供更强大的粘贴选项，例如粘贴为纯文本或对内容进行处理。
+- **保持窗口置顶 (Always on Top)**：允许用户将选定的窗口始终保持在其他窗口之上。
+- **保持电脑唤醒 (PowerToys Awake)**：防止电脑进入睡眠状态，无需调整电源设置。
+- **颜色选择器 (Color Picker)**：一个系统级的颜色选取工具，可以方便地从屏幕上的任何位置获取颜色信息并支持多种颜色格式，包括新增的 Oklab 和 Oklch 格式。
+- **命令未找到 (Command Not Found)**：在 PowerShell 中输入未知命令时，提供 winget 工具包搜索并提示安装相关应用的扩展。
+- **命令面板 (Command Palette)**：PowerToys Run 的下一代，是一个可扩展的启动器，通过快捷键唤醒，可以快速搜索并启动应用、文件、系统命令、winget 包，甚至包含基本的计算器功能等，支持自定义扩展。
+- **剪裁并锁定 (Crop And Lock)**：允许用户将应用的窗口剪裁并锁定到屏幕的特定区域。
+- **环境变量 (Environment Variables)**：提供一个用户界面来轻松管理 Windows 环境变量。
+- **窗口布局 (FancyZones)**：一个窗口管理器工具，能够创建复杂的窗口布局，并快速将窗口吸附到预定义的区域。
+- **文件资源管理器插件 (File Explorer Add-ons)**：为文件资源管理器增加额外的预览和操作功能。
+- **文件占用检查 (File Locksmith)**：一个 shell 扩展，可以查看哪些进程正在使用选定的文件或文件夹。
+- **Hosts 文件编辑器 (Hosts File Editor)**：提供一个用户友好的编辑工具来修改 hosts 文件。
+- **图片缩放器 (Image Resizer)**：一个 Windows Shell 扩展，用于快速调整图片大小。
+- **键盘管理器 (Keyboard Manager)**：允许用户重新映射键盘按键或创建自定义快捷键。
+- **鼠标实用工具集 (Mouse utilities)**：包含多种鼠标相关的便捷功能。
+- **无边界鼠标 (Mouse Without Borders)**：允许用户在多台电脑之间共享鼠标和键盘。
+- **新建+ (New+)**：提供一个上下文菜单项，用于快速创建特定类型的新文件。
+- **粘贴为纯文本 (Paste as Plain Text)**：通过快捷键将剪贴板内容粘贴为纯文本。
+- **文件快速预览 (Peek)**：通过简单的快捷键快速预览各种文件类型。
+- **批量重命名 (PowerRename)**：一个 Windows Shell 扩展，用于使用搜索和替换或正则表达式进行批量文件重命名。已增强了时间和日期格式化功能。
+- **PowerToys Run**：一个快速启动器，通过快捷键唤醒，用户可以搜索应用程序、文件和在线内容等。现在时间日期插件支持自定义格式。
+- **快速重音符号 (Quick Accent)**：在输入时方便地输入带重音符号的字符。
+- **注册表编辑器预览 (Registry Preview)**：提供一个图形化界面来导入、编辑和预览注册表文件（.reg）。已支持直接粘贴注册表键值。
+- **屏幕尺 (Screen Ruler)**：测量屏幕上像素距离的工具。
+- **快捷键指南 (Shortcut Guide)**：按住 Windows 键即可显示当前窗口的快捷键列表。
+- **文本提取器 (Text Extractor)**：从屏幕上任何位置的图像中提取文本。
+- **工作区 (Workspaces)**：用于组织和管理多个应用程序窗口。
+- **ZoomIt**：一个屏幕缩放和标注工具，源自 Sysinternals 工具集，现在集成到 PowerToys 中。
+
+安装方式多样，推荐通过 GitHub Releases 页面下载可执行安装文件（EXE），也可通过 Microsoft Store 或 WinGet 包管理器进行安装。项目欢迎社区贡献，无论是代码、文档、设计还是 bug 报告。
+
+PowerToys 的典型适用场景包括：需要大量进行窗口管理的用户（如多任务处理者）、需要频繁进行批量文件操作的用户、开发者或IT专业人员（Hosts 文件编辑器、环境变量等）、以及任何希望通过额外的定制工具来提高 Windows 使用效率的普通或高级用户。
+
+项目的最新版本专注于性能提升、bug 修复以及新功能的加入，特别是对命令面板的持续改进。计划中的未来版本将继续完善核心功能、提升用户界面和自动化测试覆盖率。项目使用 MIT 许可证，保证了其自由使用、分发和修改。
+
+### 项目统计与信息
+
+- **作者:** [microsoft](https://github.com/microsoft）)
+- **主要语言:** C#
+- **Stars:** 119041 ⭐
+- **Forks:** 7039 🍴
+- **本周期新增 Stars:** 107 ⭐
+
+_要了解更多关于 **microsoft / PowerToys** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/microsoft/PowerToys)。_
+
+---
+
+## antirez / kilo
+
+> Kilo是一个用少于1000行C语言实现的极简终端文本编辑器，功能包含基础编辑、语法高亮、搜索和文件操作，适合学习终端应用开发。
+
+### 项目介绍
+
+Kilo 是一个简洁的文本编辑器项目，其核心亮点在于使用了少于 1000 行的 C 语言代码实现。项目旨在提供一个极简但功能完备的文本编辑体验。
+
+主要功能特性包括：
+
+- 基本的文本编辑能力。
+- 语法高亮。
+- 文本搜索功能（支持查找字符串，按 ESC 键退出搜索，并可以使用方向键在搜索结果间导航）。
+- 保存文件。
+- 退出编辑器。
+
+该编辑器不依赖于任何外部库，甚至包括 curses 库。它通过使用标准的 VT100（或兼容终端）转义序列来实现终端界面的交互。
+
+技术栈：
+
+- 主要使用 C 语言编写。
+- 利用 VT100（或兼容终端）转义序列进行终端交互。
+
+安装与使用指南概述：
+
+项目提供了 `Makefile` 文件，通常可以通过在项目根目录下运行 `make` 命令来编译生成可执行文件。使用时，在终端中运行 `kilo <文件名>` 命令即可打开指定文件进行编辑或新建文件。
+
+典型的键盘操作：
+
+- CTRL-S：保存当前文件。
+- CTRL-Q：退出编辑器。
+- CTRL-F：启动搜索功能。
+
+适用场景与目标用户：
+
+Kilo 非常适合对文本编辑器实现原理感兴趣的开发者作为学习和研究的起点，或者作为开发更高级的终端命令行界面应用的基础。它展示了如何在不依赖复杂库的情况下构建一个功能性的文本编辑器。由于代码量小巧，也便于理解和修改。
+
+项目状态与许可证：
+
+项目目前处于 alpha 阶段。根据项目文件，Kilo 遵循 BSD 2-Clause 许可证发布。
+
+### 项目统计与信息
+
+- **作者:** [antirez](https://github.com/antirez）)
+- **主要语言:** C
+- **Stars:** 8091 ⭐
+- **Forks:** 874 🍴
+- **本周期新增 Stars:** 90 ⭐
+
+_要了解更多关于 **antirez / kilo** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/antirez/kilo)。_
+
+---
+
+## microsoft / semantic-kernel
+
+> Semantic Kernel是一个模型无关的SDK，帮助开发者快速轻松地构建、编排和部署企业级AI代理和多代理系统，支持多种模型、插件和语言，提供企业级特性和流程框架。
+
+### 项目介绍
+
+Semantic Kernel 是一个模型无关的 SDK，旨在帮助开发者快速、轻松地构建、编排和部署企业级 AI 代理和多代理系统。它提供了一套工具，无论是简单的聊天机器人还是复杂的多代理工作流程，都能以企业级的可靠性和灵活性进行开发。
+
+核心特点包括：
+
+- **模型灵活性**：支持连接到多种大型语言模型（LLM），内置对 OpenAI、Azure OpenAI、Hugging Face、NVIDIA 等的支持。
+- **代理框架**：允许构建模块化的 AI 代理，代理可以访问工具/插件、记忆和规划能力。
+- **多代理系统**：支持编排复杂的、由多个专业代理协作完成的工作流程。
+- **插件生态系统**：可以通过本地代码函数、提示模板、OpenAPI 规范或 Model Context Protocol (MCP) 进行扩展。
+- **向量数据库支持**：可与 Azure AI Search、Elasticsearch、Chroma 等向量数据库无缝集成。
+- **多模态支持**：能够处理文本、图像和音频输入。
+- **本地部署**：支持使用 Ollama、LMStudio 或 ONNX 在本地运行。
+- **流程框架**：提供结构化的工作流程方法，用于对复杂的业务流程进行建模。
+- **企业就绪**：设计考虑了可观测性、安全性和稳定的 API。
+
+项目支持多种编程语言，包括 Python (.NET 也有一部分代码，但 Java 代码已迁移到独立仓库)。
+
+要开始使用 Semantic Kernel，需要先设置 AI 服务相关的环境变量（如 Azure OpenAI 或 OpenAI 的 API 密钥）。
+
+- 对于 Python，通过 `pip install semantic-kernel` 进行安装。
+- 对于 .NET，通过 `dotnet add package Microsoft.SemanticKernel` 和 `dotnet add package Microsoft.SemanticKernel.Agents.core` 添加包。
+- Java 版本有独立的构建指南。
+
+基础使用方法方面，用户可以初始化一个 `ChatCompletionAgent` 并为其设置指令，然后调用其 `get_response` 方法获取对用户消息的回复。以下是一个 Python 示例：
+
+```python
+import asyncio
+from semantic_kernel.agents import ChatCompletionAgent
+from semantic_kernel.connectors.ai.open_ai import AzureChatCompletion
+
+async def main():
+    agent = ChatCompletionAgent(
+        service=AzureChatCompletion(),
+        name="SK-Assistant",
+        instructions="You are a helpful assistant.",
+    )
+    response = await agent.get_response(messages="Write a haiku about Semantic Kernel.")
+    print(response.content)
+
+asyncio.run(main())
+```
+
+项目还展示了如何为代理添加自定义插件（工具），使其能够执行特定任务，例如获取菜单信息或查询价格。这通过定义带有 `kernel_function` 装饰器（Python）或 `KernelFunction` 属性（.NET）的方法来实现。并且支持结构化输出，例如将响应格式化为特定的数据模型。
+
+更高级的应用包括构建多代理系统，其中不同的代理负责处理特定类型的请求，并通过像“TriageAgent”这样的代理进行协调和路由。这使得可以构建处理复杂、多步骤任务的协作式 AI 应用。
+
+典型的适用场景和目标用户是希望在其应用程序中集成大型语言模型能力并构建智能代理系统的开发者。项目提供的功能使其适用于各种需要结合 LLM 智能与外部工具、记忆和业务逻辑的场景，例如客服机器人、自动化工作流程、智能助手等。
+
+项目的许可证为 MIT License，允许广泛的使用、修改和分发。
+
+获取更多信息和帮助，开发者可以查阅官方文档、示例代码、API 参考，参与 GitHub Discussions 或加入 Discord 社区寻求支持。项目欢迎社区贡献，鼓励在提交新功能之前先通过 Issue 进行讨论。
+
+### 项目统计与信息
+
+- **作者:** [microsoft](https://github.com/microsoft）)
+- **主要语言:** C#
+- **Stars:** 24637 ⭐
+- **Forks:** 3850 🍴
+- **本周期新增 Stars:** 70 ⭐
+
+_要了解更多关于 **microsoft / semantic-kernel** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/microsoft/semantic-kernel)。_
+
+---
+
+## Cysharp / ZLinq
+
+> ZLinq是一个高性能零分配的.NET LINQ库，通过ValueEnumerable和多项优化大幅提升性能，支持跨平台包括游戏引擎，并提供Source Generator实现无侵入替换。
+
+### 项目介绍
+
+ZLinq 是一个针对 .NET 平台、Unity 和 Godot 的零分配 LINQ 实现库。它旨在提供高性能的 LINQ 操作，通过使用基于 struct 的 `ValueEnumerable` 来避免方法链中产生的额外内存分配，解决了标准 LINQ 在性能敏感场景下的痛点。
+
+主要功能和特性：
+
+- 零内存分配：通过基于 struct 的 `ValueEnumerable` 实现方法链的零额外分配。
+- 高性能：相比标准 LINQ 具有更高的基础性能，并在多种基准测试模式下表现出色，部分场景性能提升显著。
+- 跨平台支持：兼容 .NET Framework 4.8 (netstandard2.0, 2.1), net8, net9 以及 Unity 和 Godot。
+- LINQ to Span：利用 .NET 9 / C# 13 的 `allows ref struct` 特性，完整支持对 `Span<T>` 的 LINQ 操作。
+- LINQ to Tree：扩展了对树状结构的 LINQ 查询能力，内置支持文件系统 (FileSystemInfo)、JSON (JsonNode) 和 Unity/Godot 的节点结构 (GameObject/Transform, Node/Node2D)。提供了 `Ancestors`, `Children`, `Descendants`, `BeforeSelf`, `AfterSelf` 等轴操作。
+- LINQ to SIMD：在 .NET 8 及以上平台，自动或手动应用 SIMD 指令集，加速 Range, Repeat, Sum, Average, Max, Min, Contains, SequenceEqual 等操作，并提供 `VectorizedUpdate` 和 `AsVectorizable` 进行自定义 SIMD 操作。
+- 丰富的辅助方法：提供了 `AsValueEnumerable()` 用于将现有集合转换为 ZLinq 兼容类型，`ValueEnumerable.Range()`, `Repeat()`, `Empty()` 高效生成序列，扩展的 `Average()` 和 `Sum()`（支持 `INumber<T>`），针对 SIMD 优化的 `SumUnchecked()`，避免 ToArray/ToList 分配的 `CopyTo()`，以及使用 ArrayPool 减少临时分配的 `ToArrayPool()`。
+- Drop-in Replacement (Source Generator)：通过安装 `ZLinq.DropInGenerator` NuGet 包，并进行简单的配置，可以自动替换项目中的标准 LINQ 调用为 ZLinq 实现，无需手动修改每个 LINQ 调用。
+- 高兼容性：实现了对 .NET 10 LINQ 的 99% 兼容性，并成功通过了 dotnet/runtime 中的 9000 多个 System.Linq.Tests 测试。
+- 额外的运算符和优化：包含了 System.Linq 中新增的运算符如 `Shuffle`, `RightJoin`, `LeftJoin`，并在低版本 .NET 平台可用。对 `AggregateBy`, `CountBy` 移除了 `notnull` 约束以提高一致性。
+
+技术栈/依赖：
+
+- .NET (netstandard2.0, 2.1, net8, net9)
+- C# (利用 C# 13 的 `allows ref struct` 特性)
+- System.Numerics.Vectors (用于 SIMD 操作)
+- System.Text.Json (用于 LINQ to JSON)
+- Unity 引擎 (通过 ZLinq.Unity 包)
+- Godot 引擎 (通过 ZLinq.Godot 包)
+- C# Source Generators (用于 Drop-in Replacement 功能)
+- System.Collections.Immutable (用于 `ToArrayPool()` 返回类型)
+
+安装与配置：
+
+通常通过 NuGet 包管理器 (`dotnet add package ZLinq`) 安装核心库。针对特定场景（Unity, Godot, FileSystem, Json），需要安装对应的扩展包。零分配替换功能 (`ZLinq.DropInGenerator`) 需要额外安装并配置 Assembly Attribute。
+
+基本使用方法：
+
+在现有集合对象（如数组 `T[]`, `List<T>`, `Span<T>` 等）上调用 `.AsValueEnumerable()` 扩展方法，即可开始使用 ZLinq 提供的零分配 LINQ 方法链。结合 Source Generator 后可省略 `.AsValueEnumerable()` 调用。
+
+适用场景/目标用户：
+
+- 对性能和内存分配有严格要求的 .NET 应用程序开发，特别是游戏开发 (Unity, Godot) 和高性能服务。
+- 需要处理 Span、树状结构（文件系统、JSON）并希望利用 LINQ 简化代码逻辑的开发者。
+- 寻求在较低版本 .NET 平台上使用较新版本 LINQ 功能的开发者。
+
+项目状态与许可证：
+
+项目处于活跃开发中，已发布多个版本。使用 MIT 许可证。
+
+### 项目统计与信息
+
+- **作者:** [Cysharp](https://github.com/Cysharp）)
+- **主要语言:** C#
+- **Stars:** 3271 ⭐
+- **Forks:** 162 🍴
+- **本周期新增 Stars:** 199 ⭐
+
+_要了解更多关于 **Cysharp / ZLinq** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/Cysharp/ZLinq)。_
+
+---
+
+## microsoft / WSL2-Linux-Kernel
+
+> 这是用于WSL2的Linux内核源代码仓库，允许用户定制和编译内核，以优化WSL2环境并添加特定功能。
+
+### 项目介绍
+
+本项目是 Windows Subsystem for Linux 2 (WSL2) 中使用的 Linux 内核的源代码仓库。它提供了用于构建和配置 WSL2 环境下 Linux 内核所需的文件和指令。通过这个项目，用户和开发者可以访问、修改以及编译定制化的 WSL2 内核。
+
+核心定位：
+本项目旨在为在 Windows 环境下运行的 WSL2 提供基础的 Linux 内核。
+
+主要功能和特性：
+
+- 提供特定于 WSL2 环境的 Linux 内核源代码。
+- 包含针对 WSL2 进行优化的配置选项 (`Microsoft/config-wsl`)。
+- 允许用户按照提供的说明自行编译内核及其模块。
+- 支持生成包含编译后内核模块的 VHDX 镜像文件，以便 WSL2 环境使用。
+
+技术栈/依赖：
+
+- 主要编程语言：C
+- 构建工具链：build-essential, flex, bison, dwarves, libssl-dev, libelf-dev, cpio
+- 镜像工具：qemu-utils
+- 文件系统工具：mkfs.ext4, losetup (用于手动构建VHDX)
+- Shell 脚本 (bash) 用于自动化构建过程。
+
+安装与配置指南概述：
+
+1.  安装所需的构建依赖包（例如，在 Ubuntu 上使用 apt 命令）。
+2.  （可选）通过 `make menuconfig` 使用特定的 WSL 配置 (`Microsoft/config-wsl`) 修改内核选项。
+3.  使用 `make` 命令编译内核，并安装模块到指定目录。
+
+基本使用方法概述：
+
+- 编译完成后，可以使用脚本 (`./Microsoft/scripts/gen_modules_vhdx.sh`) 或手动步骤将编译好的模块打包成 `modules.vhdx` 文件。
+- 生成的定制内核可以通过修改 Windows 中的 `.wslconfig` 文件来配置 WSL2 环境使用。
+
+代码示例/命令示例：
+
+- 安装依赖：`sudo apt install build-essential flex bison dwarves libssl-dev libelf-dev cpio qemu-utils`
+- 配置内核（可选）：`make menuconfig KCONFIG_CONFIG=Microsoft/config-wsl`
+- 编译内核及模块：`make KCONFIG_CONFIG=Microsoft/config-wsl && make INSTALL_MOD_PATH="$PWD/modules" modules_install`
+- 生成模块VHDX：`sudo ./Microsoft/scripts/gen_modules_vhdx.sh "$PWD/modules" $(make -s kernelrelease) modules.vhdx`
+
+适用场景/目标用户：
+
+- 主要面向希望深入了解或定制 WSL2 Linux 环境的开发者、系统管理员和高级用户。
+- 需要在 WSL2 中启用或测试特定硬件支持或内核功能的用户。
+- 对 Windows 和 Linux 集成技术感兴趣的开发者。
+
+项目状态与许可证：
+
+- 项目处于持续开发和维护中， régulièrement 基于上游 Linux 内核进行更新，并包含Microsoft针对WSL2的特定更改。
+- 遵循特定的许可证，具体请参考项目中的 `COPYING` 和 `LICENSES` 文件。
+
+报告问题或提交功能请求需通过 WSL GitHub 主项目页面进行，此内核仓库本身不接受直接的问题报告。如果问题确定属于上游 Linux 内核，则建议遵循上游的报告流程。
+
+### 项目统计与信息
+
+- **作者:** [microsoft](https://github.com/microsoft）)
+- **主要语言:** C
+- **Stars:** 9162 ⭐
+- **Forks:** 1200 🍴
+- **本周期新增 Stars:** 179 ⭐
+
+_要了解更多关于 **microsoft / WSL2-Linux-Kernel** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/microsoft/WSL2-Linux-Kernel)。_
+
+---
+
+## usememos / memos
+
+> Memos是一款开源、轻量级且支持自托管的笔记及微博客工具，强调隐私优先和数据自主控制，提供简洁的纯文本和强大的Markdown书写体验。
+
+### 项目介绍
+
+Memos 是一个开源、轻量级的笔记记录解决方案，旨在提供一种简单无痛的方式来创建和管理有意义的笔记。“你的笔记，你做主。” 项目强调轻松的纯文本书写体验，同时支持强大的 Markdown 语法以增强格式和便捷分享。
+
+Memos 的核心定位是一个自托管的笔记工具，这意味着用户能够完全掌控自己的数据。所有运行时数据都安全地存储在用户本地数据库中，从而实现隐私优先。该项目具有轻量级但强大的特点，后端使用 Go 语言构建，前端则采用 React.js，这种技术栈结合了简洁架构和高性能。
+
+主要功能和特性包括：
+
+- **隐私优先与数据控制**：用户数据存储在本地数据库，完全归用户所有和控制。
+- **快速创建与编辑**：支持纯文本书写，提供流畅的记录体验。
+- **强大的 Markdown 支持**：内置对 Markdown 语法的支持，方便进行格式化和内容组织。
+- **轻量高效**：基于 Go 和 React.js 构建，应用架构紧凑，性能良好。
+- **高度可定制**：用户可以自由定制服务器名称、图标、描述、主题以及执行脚本，个性化使用体验。
+- **完全开源与免费**：项目代码在 GitHub 上公开，使用者可以免费获取和使用所有功能，无隐藏费用或订阅。
+
+在技术栈方面，Memos 主要使用 Go 语言进行后端开发，前端则采用 React.js。数据存储方面使用了 SQLite 数据库。项目的部署非常便捷，尤其推荐使用 Docker 容器化部署方式，用户可以通过简单的 Docker 命令快速启动 Memos 实例。例如：
+
+```shell
+docker run -d --name memos -p 5230:5230 -v ~/.memos/:/var/opt/memos neosmemo/memos:stable
+```
+
+这个命令会在 Unix/Linux 系统上启动一个 Memos 容器，并将本地的 `~/.memos/` 目录映射到容器内的数据目录 `/var/opt/memos`。
+
+Memos 适用于需要一个简单、私密且可控的个人笔记或微博客平台的用户。它可以作为个人知识库、日记本或碎片化思绪的记录工具。其自托管特性对于注重数据隐私的用户尤其有吸引力。
+
+项目目前处于积极开发阶段，遵循 MIT 许可证。除了核心的 Memos 项目，usememos 团队还维护着其他相关项目，如开源自托管书签平台 Slash 和 Memos 专用的 Go 语言 Markdown 解析器 Gomark。
+
+### 项目统计与信息
+
+- **作者:** [usememos](https://github.com/usememos）)
+- **主要语言:** Go
+- **Stars:** 40539 ⭐
+- **Forks:** 2883 🍴
+- **本周期新增 Stars:** 504 ⭐
+
+_要了解更多关于 **usememos / memos** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/usememos/memos)。_
+
+---
+
+## HeyPuter / puter
+
+> Puter是一款开源的互联网操作系统，兼具隐私优先的个人云、应用开发平台和远程桌面等功能，用户可自托管以集中管理和访问文件、应用和游戏，并为Web开发者构建和发布应用提供了平台，适合注重隐私、寻求替代云服务或参与开源学习的个人和团队。
+
+### 项目介绍
+
+Puter 是一个先进的、开源的互联网操作系统，设计目标是功能丰富、速度极快且高度可扩展。它提供了一个隐私优先的个人云解决方案，允许用户将所有文件、应用程序和游戏集中存储在一个安全的位置，并随时随地访问。
+
+该项目可以作为以下用途：
+
+- 一个隐私优先的个人云，用于集中管理和访问个人数据。
+- 一个用于构建和发布网站、Web 应用和游戏的平台。
+- Dropbox、Google Drive、OneDrive 等云存储服务的替代品，提供全新的界面和强大的功能。
+- 用于服务器和工作站的远程桌面环境。
+- 一个友好的开源项目和社区，供学习 Web 开发、云计算、分布式系统等技术。
+
+关键功能和特性：
+
+- 作为“互联网操作系统”运行，提供类似桌面环境的用户体验。
+- 支持在云端存储和管理文件、应用和游戏。
+- 提供构建和发布 Web 应用的能力。
+- 可自托管，提供用户对数据的完全控制权。
+- 具有高度可扩展性，支持通过扩展和模块增加功能。
+
+技术栈和依赖：
+
+- 主要使用 JavaScript 进行开发，也包含少量的 CSS、HTML、Shell、Dockerfile 和 C++ 代码。
+- 推荐使用 Node.js 16+ 版本（最好是 23+）。
+- 依赖 npm 进行包管理。
+
+安装与配置指南概述：
+
+项目支持多种部署方式，包括：
+
+- 本地开发：通过 `git clone`, `npm install`, `npm start` 即可启动一个本地实例。
+- Docker：提供 Docker 命令，可以通过 Docker 容器快速部署。
+- Docker Compose：提供 `docker-compose.yml` 文件，支持使用 Docker Compose 在 Linux/macOS 和 Windows 环境中进行部署。
+- 自托管：提供详细的自托管文档说明如何进行配置和部署。
+
+基本使用方法概述：
+
+安装启动后，可以通过浏览器访问 Puter 提供的 Web 界面进行交互，管理文件、运行应用程序等。开发者可以通过其提供的平台构建和部署自己的应用。
+
+适用场景和目标用户：
+
+- 需要一个集中管理和访问个人数据的用户，尤其注重隐私。
+- 希望搭建自己的云存储服务，替代第三方商业产品。
+- Web 开发者，希望有一个平台来构建、发布和运行 Web 应用和游戏。
+- 需要远程访问服务器或工作站作为桌面环境的用户。
+- 对 Web 开发、云计算等技术感兴趣，希望参与开源项目学习的个人或团队。
+
+项目状态与许可证：
+
+项目活跃开发中，遵循 AGPL-3.0 许可证，这意味着任何人都可以自由使用、修改和分发项目代码，但如果修改后的项目作为服务提供给他人访问，则必须公开其源代码。项目提供了多语言支持。
+
+### 项目统计与信息
+
+- **作者:** [HeyPuter](https://github.com/HeyPuter）)
+- **主要语言:** JavaScript
+- **Stars:** 31769 ⭐
+- **Forks:** 2362 🍴
+- **本周期新增 Stars:** 479 ⭐
+
+_要了解更多关于 **HeyPuter / puter** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/HeyPuter/puter)。_
+
+---
+
+## microsoft / vscode
+
+> VS Code是一款微软开发的免费强大开源代码编辑器，提供高效灵活的开发环境，支持多种语言和技术，并通过丰富的扩展性、集成调试和版本控制等功能提升开发效率，适用于各类开发者和项目。
+
+### 项目介绍
+
+Visual Studio Code（简称 VS Code）是一个微软开发的免费开源代码编辑器，是 `Code - OSS` 这个开源仓库的发行版，其中包含了微软特定的定制和产品许可。它旨在提供一个结合了代码编辑器简洁性和开发者核心编辑-构建-调试所需功能的集成环境。
+
+项目概述：
+
+- **核心定位：** 一个跨平台的轻量级但功能强大的源代码编辑器。
+- **解决问题：** 为开发者提供一个高效、灵活且可扩展的开发环境，支持多种编程语言和技术栈，简化编码、调试和版本控制等日常开发任务。
+
+主要功能和特性：
+
+- **全面的代码编辑支持：** 提供语法高亮、智能代码补全（IntelliSense）、代码片段、emmet 支持等功能，提升编码效率。
+- **便捷的代码导航和理解：** 支持“转到定义”、“查找所有引用”、“大纲视图”等，帮助开发者快速理解和浏览代码结构。
+- **轻量级调试功能：** 内置强大的调试工具，支持多种语言的调试，可以设置断点、检查变量、单步执行等。
+- **丰富的扩展性模型：** 拥有庞大的扩展市场，开发者可以安装各种扩展来增加对新语言、框架的支持，或集成其他工具和服务（如 Git、Docker 等）。
+- **集成版本控制：** 原生支持 Git，提供可视化界面进行代码提交、分支管理、冲突解决等操作。
+- **内置终端：** 集成命令行终端，方便在编辑器内执行命令。
+- **跨平台：** 支持 Windows、macOS 和 Linux 操作系统。
+- **月度更新：** 持续发布新功能和 bug 修复，保证软件的活跃度和功能先进性。
+
+技术栈/依赖：
+
+- 主要使用 TypeScript、CSS 和 JavaScript 开发，利用 Electron 框架构建跨平台桌面应用。
+
+安装与配置指南概述：
+
+- 可从 Visual Studio Code 官方网站下载适用于不同操作系统的安装包。
+- 提供了 Insiders 构建版本，供希望获取每日最新更新的用户使用。
+- 支持 Dev Containers / GitHub Codespaces 开发容器，方便在隔离且预配置的环境中进行开发，推荐具有至少 4 核 / 6GB RAM (建议 8GB) 的配置以进行完整构建。
+
+基本使用方法概述：
+
+- 通过下载和安装对应平台的安装包即可开始使用。
+- 可以通过安装各种扩展来定制功能和支持更多语言。
+- 通过内置的命令面板、侧边栏和编辑器区域进行交互。
+
+适用场景/目标用户：
+
+- 适用于各种规模的软件开发项目。
+- 面向广大的开发者群体，无论其使用哪种编程语言或技术栈。
+- 尤其适合需要一个快速启动、功能完善且高度可定制的代码编辑器的用户。
+
+项目状态与许可证：
+
+- 项目处于积极开发状态，有清晰的路线图、月度迭代计划和 Endgame 计划。
+- `Code - OSS` 仓库的代码遵循 MIT 许可证。Visual Studio Code 产品本身发布在传统的微软产品许可下。
+
+VS Code 提供了一个开放的社区参与模式，鼓励开发者通过提交 bug 和功能请求、审查代码变更、改进文档以及直接贡献代码等方式参与项目建设。项目的核心组件和扩展也托管在独立的 GitHub 仓库中。
+
+### 项目统计与信息
+
+- **作者:** [microsoft](https://github.com/microsoft）)
+- **主要语言:** TypeScript
+- **Stars:** 171878 ⭐
+- **Forks:** 32482 🍴
+- **本周期新增 Stars:** 251 ⭐
+
+_要了解更多关于 **microsoft / vscode** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/microsoft/vscode)。_
+
+---
+
+## nektos / act
+
+> act是一个用Go语言编写的命令行工具，用于在本地测试和调试GitHub Actions工作流以提高开发效率。
+
+### 项目介绍
+
+act 是一个命令行工具，允许您在本地运行 GitHub Actions 工作流。它的主要目的是帮助开发者快速测试和调试其 GitHub Actions 配置，而无需每次修改都提交并推送到 GitHub 仓库。
+
+该项目解决的核心问题是 GitHub Actions 工作流的开发效率。通过在本地模拟 GitHub Actions 的运行环境，开发者可以立即获得反馈，显著缩短了测试周期，尤其对于嵌入式的 GitHub Actions 或复杂的 workflow 文件修改非常有益。此外，act 还可以作为本地任务运行器使用，将定义在 `.github/workflows/` 文件中的任务替代传统的 `Makefile`。
+
+主要功能和特性包括：
+
+- 在本地执行 `.github/workflows/` 文件中定义的 GitHub Actions。
+- 模拟 GitHub Actions 的环境变量和文件系统配置，以尽可能接近真实的 GitHub 运行环境。
+- 利用 Docker API 拉取或构建 workflow 中所需的镜像，并在容器中运行每个 action。
+- 支持根据工作流文件中的依赖关系确定执行顺序。
+- 提供 VS Code 插件 "GitHub Local Actions"，方便在编辑器中集成使用。
+- 支持在本地构建和安装，方便贡献和使用最新版本。
+
+act 的工作原理是解析工作流文件，识别需要执行的 actions。然后，它会使用 Docker API 管理容器，准备相应的镜像，并依据定义的依赖关系按顺序在容器中运行各个 action。在此过程中，act 会设置与 GitHub 运行环境一致的环境变量和文件系统结构。
+
+技术栈和依赖：
+
+- 项目主要使用 Go 语言编写（Go 1.20+ 版本）。
+- 严重依赖 Docker API 来管理和执行容器化的 actions。
+- 使用 Markdown 文档说明项目信息和使用指南。
+
+安装与配置指南概述：
+
+通常需要安装 Go 工具链（1.20 或更高版本）。可以通过克隆仓库后执行 `make install` 从源码构建并安装。
+
+基本使用方法概述：
+
+在包含 `.github/workflows/` 目录的仓库根目录中，运行 `act` 命令行工具即可。工具会自动识别并尝试执行 workflow 文件。可以通过命令行参数指定不同的选项，例如只运行特定的 job。
+
+例如，要运行默认的 workflow，只需在项目根目录执行：
+
+```bash
+act
+```
+
+要运行指定的 job（例如名为 `build` 的 job）：
+
+```bash
+act build
+```
+
+适用场景与目标用户：
+
+act 主要面向使用 GitHub Actions 进行 CI/CD 或自动化任务的开发者、DevOps 工程师。它特别适用于以下场景：
+
+- 频繁修改和调试 GitHub Actions 工作流文件。
+- 希望在没有网络连接或不消耗 GitHub Actions 分钟数的情况下测试工作流。
+- 需要将 GitHub Actions 定义的任务作为本地自动化脚本执行。
+
+项目状态与许可证：
+
+act 是一个活跃维护的开源项目，根据 MIT 许可证发布。
+
+独特的优势或创新点：
+
+act 的独特价值在于其能够高度还原 GitHub Actions 的本地运行环境，极大地提高了工作流的开发和调试效率，填补了 GitHub Actions 在本地测试方面的空白。与 VS Code 插件的结合 further 提升了开发便利性。
+
+### 项目统计与信息
+
+- **作者:** [nektos](https://github.com/nektos）)
+- **主要语言:** Go
+- **Stars:** 62674 ⭐
+- **Forks:** 1629 🍴
+- **本周期新增 Stars:** 275 ⭐
+
+_要了解更多关于 **nektos / act** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/nektos/act)。_
+
+---
+
+## appwrite / appwrite
+
+> Appwrite 是一个开源后端平台，提供用户认证、数据库、文件存储、函数等多种服务，支持自托管和云部署，旨在简化开发者构建应用后端的过程。
+
+### 项目介绍
+
+Appwrite 是一个专为 Web、移动和 Flutter 应用开发的开源后端平台，旨在成为 Vercel 的替代方案。它将构建现代后端 API 所需的复杂性和重复性工作抽象化，帮助开发者更快速地构建安全的应用。
+
+Appwrite 采用 Docker 微服务打包，支持开发者在本地或任何容器编排工具（如 Kubernetes, Docker Swarm, Rancher）中进行自托管部署。同时，Appwrite 也提供了云服务版本，方便开发者快速上手。
+
+其核心功能和服务包括：
+
+- Accounts/Users/Teams：提供完整的用户认证、会话管理、设备跟踪、多种登录方式支持，并支持用户和团队管理、权限控制。
+- Databases：用于存储和查询结构化数据，支持文档的读写、更新、删除以及使用高级过滤器进行列表查询。
+- Storage：安全加密的文件存储和管理服务，支持文件上传、下载、预览和图像操作，文件会经过病毒扫描。
+- Functions：允许开发者在安全隔离的环境中执行自定义后端代码，可以响应 Appwrite 系统事件或通过 CRON 定时触发。
+- Messaging：支持通过推送通知、电子邮件和短信与用户进行沟通。
+- Realtime：提供实时事件订阅功能，可以监听用户、存储、函数、数据库等各种 Appwrite 服务的变化。
+- Locale：帮助开发者获取用户位置信息并管理基于区域设置的数据。
+- Avatars：提供用户头像、国家旗帜、浏览器图标、信用卡符号等图像资源，并支持生成二维码。
+
+Appwrite 采用微服务架构，旨在实现易于扩展和职责分离。它支持 REST, WebSocket 和 GraphQL 等多种 API 交互方式。其 API 层通过内存缓存和将繁重任务委托给后台工作进程来确保高性能，并通过消息队列控制计算能力和成本。
+
+Appwrite 为 Web, 移动 (React Native, Flutter, Apple, Android), 和服务器端 (NodeJS, PHP, Dart, Deno, Ruby, Python, Kotlin, Swift, .NET) 提供了多种语言的 SDK，同时也支持社区维护的 SDK（如 Appcelerator Titanium, Godot Engine）。
+
+开发者可以通过 Appwrite 文档获取更多 API 参考和开发教程。
+
+安装部署方面，Appwrite 主要通过 Docker 容器进行部署，提供了 Unix 和 Windows (CMD, PowerShell) 下的安装脚本示例。对于生产环境和自定义配置，可以通过修改环境变量或使用公共的 docker-compose.yml 和 .env 文件进行配置。Appwrite 还提供了一键部署选项，支持 DigitalOcean, Gitpod, Akamai Compute (Linode), AWS Marketplace 等云平台。
+
+项目采用 BSD 3-Clause License 开源，对于安全问题，建议通过邮件方式报告。项目社区活跃，开发者可以通过博客、社交媒体和 Discord 社区获取支持和参与讨论。
+
+### 项目统计与信息
+
+- **作者:** [appwrite](https://github.com/appwrite）)
+- **主要语言:** TypeScript
+- **Stars:** 49491 ⭐
+- **Forks:** 4359 🍴
+- **本周期新增 Stars:** 423 ⭐
+
+_要了解更多关于 **appwrite / appwrite** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/appwrite/appwrite)。_
