@@ -1,0 +1,708 @@
+---
+title: Github Daily Trending
+date: 2025-05-23
+cover: https://hub-image.moreve.net/files/images/github-trending/2025-05-23.png
+summary: '本期内容涵盖AI驱动软件开发代理OpenHands、开源后端服务平台Appwrite、教授AI智能体开发的learn-agentic-ai项目、Windows Subsystem for Linux (WSL)、开源API开发环境Bruno、个人云互联网操作系统Puter、轻量级开源笔记应用Memos、Model Context Protocol注册中心以及基于多智能体的AI对冲基金模拟项目，还介绍了微软开源代码编辑器Code - OSS和Hugging Face的JavaScript生态库collection。'
+headingSummaries:
+  - heading: 'All-Hands-AI / OpenHands'
+    summary: 'OpenHands是一个AI驱动的软件开发代理平台，旨在自动化软件开发流程，通过AI代理像人类开发者一样执行代码修改、运行命令等任务，从而提高开发效率。'
+    tags: [人工智能, 开发工具, 应用]
+  - heading: 'appwrite / appwrite'
+    summary: 'Appwrite 是一个开源的自托管后端服务平台，提供用户认证、数据库、文件存储、云函数等多种功能，帮助开发者快速构建各种应用而无需编写重复性后端代码。'
+    tags: [开发工具, 开发运维, 应用]
+  - heading: 'panaversity / learn-agentic-ai'
+    summary: '该 GitHub 项目 `learn-agentic-ai` 教授使用 Dapr Agentic Cloud Ascent (DACA) 设计模式和云原生技术开发能处理千万级并发的智能体AI应用，包含基础开发、云原生部署和分布式智能体三门课程，强调利用 OpenAI Agents SDK 和 Dapr 构建可扩展的多智能体系统。'
+    tags: [人工智能, 学习资源, 开发工具]
+  - heading: 'microsoft / WSL'
+    summary: 'WSL是微软推出的工具，让用户在Windows中直接运行Linux应用和命令行工具，省去虚拟机开销，方便开发者整合Windows和Linux环境。'
+    tags: [开发工具, 开发运维, 应用]
+  - heading: 'usebruno / bruno'
+    summary: 'Bruno是一个开源、离线API开发环境，将API数据存储在本地文件系统中方便通过Git进行版本控制和团队协作，是Postman和Insomnia的轻量级替代方案。'
+    tags: [开发工具, 开发运维, 应用]
+  - heading: 'HeyPuter / puter'
+    summary: 'Puter是一个免费开源的个人云互联网操作系统项目，提供强大的云存储、应用开发和远程桌面功能，支持多种部署方式且技术栈基于JavaScript。'
+    tags: [应用, 开发运维, 学习资源]
+  - heading: 'usememos / memos'
+    summary: 'Memos是一款开源、轻量级、支持自托管的笔记应用，主打“无痛”记录和用户对数据的完全控制，采用Go和React构建，支持Markdown和Docker部署。'
+    tags: [应用, 开发运维, 学习资源]
+  - heading: 'modelcontextprotocol / registry'
+    summary: '该项目是Model Context Protocol (MCP) Registry，一个社区驱动的中心化注册服务，用Go语言开发，提供RESTful API来存储、发现和管理MCP服务器条目，解决MCP服务器分散难以发现的问题。'
+    tags: [应用, 开发运维, 开发工具]
+  - heading: 'ZJU-LLMs / Foundations-of-LLMs'
+    summary: '这份名为“大模型基础”的教材系统性地介绍了大语言模型的基础概念、架构、Prompt工程、微调、模型编辑和检索增强生成等前沿技术，旨在为LLM学习者提供一个易读、严谨且持续更新的学习资源。'
+    tags: [人工智能, 学习资源]
+  - heading: 'virattt / ai-hedge-fund'
+    summary: '这份内容介绍了一个名为“AI Hedge Fund”的项目，旨在利用多智能体AI模拟对冲基金进行量化交易研究，项目包含多种投资风格和专业分析智能体，支持多种LLM并提供安装和运行示例，仅用于教育研究。'
+    tags: [人工智能, 实验项目, 应用]
+  - heading: 'microsoft / vscode'
+    summary: '这段内容介绍了 Visual Studio Code 的开源项目 Code - OSS，其源代码基于 MIT 许可证，VS Code 商业版在此基础上增加了微软定制内容，并提供了丰富的开发功能、贡献方式、社区交流渠道以及开发容器配置等信息。'
+    tags: [开发工具, 框架, 开发运维]
+  - heading: 'huggingface / huggingface.js'
+    summary: 'huggingface.js 是 Hugging Face 官方提供的一系列 JavaScript/TypeScript 库，旨在帮助开发者在 JS 环境中方便地调用 Hugging Face Hub 上的模型进行推理和管理 Hub 资源。'
+    tags: [人工智能, 开发工具, 库]
+---
+
+## All-Hands-AI / OpenHands
+
+> OpenHands是一个AI驱动的软件开发代理平台，旨在自动化软件开发流程，通过AI代理像人类开发者一样执行代码修改、运行命令等任务，从而提高开发效率。
+
+### 项目介绍
+
+OpenHands（原名 OpenDevin）是一个由 AI 驱动的软件开发代理平台，其核心目标是减少人工编码工作，提高开发效率，实现“Code Less, Make More”。该项目旨在让 AI 代理像人类开发者一样执行软件开发任务，包括修改代码、运行命令、浏览网页、调用 API，甚至从 Stack Overflow 等网站获取信息。
+
+项目的主要功能和特性包括：
+
+- 软件开发自动化： 代理能够理解并执行复杂的开发任务，覆盖从代码修改到测试和部署的多个环节。
+- 多模态交互能力： 支持通过命令行接口（CLI）进行交互，同时也提供友好的图形用户界面（UI）。
+- 对接多种 AI 模型： 支持与多种大型语言模型（LLMs）提供商集成，例如 Anthropic 的 Claude (特别是 Sonnet 模型推荐) 以及其他多种选项，允许用户根据需求选择和配置。
+- 多种运行环境支持： 可以在本地使用 Docker 容器运行，提供标准安装和增强安全性（Hardened）的安装方式，同时也提供 OpenHands Cloud 云服务平台作为更便捷的入门方式。
+- 文件系统集成： 支持将 OpenHands 连接到本地文件系统，方便代理直接操作项目代码。
+- 无头模式和 GitHub Action 集成： 提供无头（headless）模式用于脚本自动化，以及通过 GitHub Action 在 Issues 上触发代理工作。
+- 社区驱动： 作为一个开源项目，OpenHands 鼓励社区参与和贡献，提供了 Slack 和 Discord 等社区交流渠道。
+
+技术栈/依赖：
+
+- 主要使用 Python 和 TypeScript 进行开发。
+- 支持多种 LLM 提供商，可通过配置选择不同模型。
+- 利用 Docker 作为主要的本地运行环境。
+
+安装与配置概述：
+
+通过 Docker 是本地运行 OpenHands 的推荐方式。用户需要拉取指定的 Docker 镜像，并通过运行 Docker 命令启动容器。启动时需要配置环境变量，例如指定沙盒运行时的容器镜像、日志记录选项、文件卷映射以及端口映射。连接 OpenHands Cloud 则是更简便的方式。
+
+基本使用方法概述：
+
+启动应用后，用户通常需要选择一个 LLM 提供商并提供相应的 API 密钥。通过 Web UI 或 CLI 界面输入开发任务或问题，AI 代理会在独立的沙盒环境中执行操作并返回结果。
+
+适用场景与目标用户：
+
+OpenHands 主要面向需要提高软件开发效率的技术人员和开发者。它适用于处理各种开发任务，特别是那些需要代码修改、调试或信息查找的场景。需要注意的是，当前版本主要设计用于单用户在本地工作站上运行，不适合多租户环境部署。
+
+项目状态与许可证：
+
+项目积极维护，不断更新和发布新版本。遵循 MIT 许可证。
+
+独特的优势：
+
+OpenHands 的独特之处在于其“通用主义代理”（Generalist Agents）的定位，使 AI 代理具备了类似人类开发者的广泛能力。通过在安全的沙盒环境中运行，它能够直接与代码库、命令行和互联网交互，执行实际的开发操作，而不仅仅是生成代码片段。
+
+### 项目统计与信息
+
+- **作者:** [All-Hands-AI](https://github.com/All-Hands-AI）)
+- **主要语言:** Python
+- **Stars:** 55139 ⭐
+- **Forks:** 6201 🍴
+- **本周期新增 Stars:** 352 ⭐
+
+_要了解更多关于 **All-Hands-AI / OpenHands** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/All-Hands-AI/OpenHands)。_
+
+---
+
+## appwrite / appwrite
+
+> Appwrite 是一个开源的自托管后端服务平台，提供用户认证、数据库、文件存储、云函数等多种功能，帮助开发者快速构建各种应用而无需编写重复性后端代码。
+
+### 项目介绍
+
+Appwrite 是一个端到端的后端平台，专为开发 Web、移动和 Flutter 应用以及原生或后端应用而设计。它以一系列 Docker 微服务的形式打包，抽象了从头构建现代后端 API 所需的复杂性和重复性工作，帮助开发者更快地构建安全应用。
+
+项目核心定位是提供一个开源的后端服务替代方案，特别是对标像 Vercel 这样的平台，但更加强调自托管和灵活的微服务架构。
+
+主要功能和特性包括：
+
+- **账户管理 (Account / Users)**：处理用户认证、多种登录方式、会话管理、设备信息和安全日志。同时，通过 Server SDK 提供对所有项目用户进行管理和列表操作的功能。
+- **团队协作 (Teams)**：管理用户分组，进行成员管理、邀请和角色分配。
+- **数据库 (Databases)**：管理数据库、集合和文档。支持文档的读、写、更新、删除操作，以及使用高级过滤器进行文档列表查询。
+- **存储 (Storage)**：管理文件存储，支持文件的读取、创建、删除和预览。提供图像处理能力，所有文件经过 ClamAV 扫描并安全加密存储。
+- **云函数 (Functions)**：在安全隔离的环境中执行自定义代码，可由 Appwrite 系统事件触发或通过 CRON 定时任务触发。
+- **消息传递 (Messaging)**：通过 Appwrite Messaging 实现推送通知、电子邮件和短信发送，与用户进行通信。
+- **实时同步 (Realtime)**：监听 Appwrite 各服务（如用户、存储、函数、数据库等）的实时事件。
+- **本地化 (Locale)**：追踪用户位置并管理基于本地化的应用数据。
+- **头像服务 (Avatars)**：管理用户头像、国家旗帜、浏览器图标和信用卡符号，并能从链接或纯文本生成二维码。
+
+技术栈/依赖：Appwrite 采用了微服务架构，以 Docker 容器化环境运行。支持多种 API 接口，如 REST, WebSocket 和 GraphQL。后端核心部分可能使用了 PHP 和 TypeScript (根据 GitHub 语言统计)，并利用了消息队列和后台工作进程处理繁重任务。
+
+安装与配置概述：Appwrite 设计为运行在容器化环境中，最简便的自托管方式是通过 Docker 命令行运行安装脚本。提供了适用于 Unix 和 Windows (CMD, PowerShell) 的 Docker Run 命令示例。也支持升级现有安装。
+
+基本使用方法概述：启动 Appwrite 服务后，主要通过访问 Web 控制台 (`http://localhost/`) 进行管理和配置。开发者在其应用代码中集成 Appwrite 提供的 SDK，通过 SDK 调用后端服务 API 来实现各项功能。
+
+代码示例/命令示例：文档中提供了 Docker 安装命令示例，如 Unix 下的 `docker run -it --rm --volume /var/run/docker.sock:/var/run/docker.sock --volume "$(pwd)"/appwrite:/usr/src/code/appwrite:rw --entrypoint="install" appwrite/appwrite:1.7.2`。
+
+适用场景/目标用户：Appwrite 适用于开发各种类型的应用，包括 Web 应用 (如使用 Next.js, React, Vue.js, Angular 等前端框架)、移动和原生应用 (如使用 React Native, Flutter, Apple, Android)、以及后端应用 (支持 Node.js, Python, .NET, Dart, Ruby, PHP, Kotlin, Swift 等多种后端语言)。目标用户是需要快速搭建应用后台但希望拥有更多控制权和可自托管选项的开发者和团队。它旨在减少开发者编写重复性后端代码的时间。
+
+项目状态与许可证：项目正在积极开发中，不断发布更新。许可证为 BSD 3-Clause License，是一个开源项目。
+
+Appwrite 通过 Appwrite Cloud 提供托管服务（目前处于公共测试阶段），同时也大力支持自托管模式，并提供 DigitalOcean, Gitpod, Akamai Compute 和 AWS Marketplace 等一键部署选项。项目拥有一个庞大且活跃的社区。
+
+### 项目统计与信息
+
+- **作者:** [appwrite](https://github.com/appwrite）)
+- **主要语言:** TypeScript
+- **Stars:** 49770 ⭐
+- **Forks:** 4378 🍴
+- **本周期新增 Stars:** 265 ⭐
+
+_要了解更多关于 **appwrite / appwrite** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/appwrite/appwrite)。_
+
+---
+
+## panaversity / learn-agentic-ai
+
+> 该 GitHub 项目 `learn-agentic-ai` 教授使用 Dapr Agentic Cloud Ascent (DACA) 设计模式和云原生技术开发能处理千万级并发的智能体AI应用，包含基础开发、云原生部署和分布式智能体三门课程，强调利用 OpenAI Agents SDK 和 Dapr 构建可扩展的多智能体系统。
+
+### 项目介绍
+
+这是一个名为 `learn-agentic-ai` 的GitHub项目，旨在教授如何使用 Dapr Agentic Cloud Ascent (DACA) 设计模式和面向智能体的云原生技术开发智能体AI应用。该项目是 Panaversity 认证智能体与机器人AI工程师项目的一部分，涵盖 AI-201、AI-202 和 AI-301 三门课程的内容。
+
+项目的核心目标是解决如何设计能够处理千万级并发 AI 智能体而不出现故障的关键挑战，尤其强调在训练阶段使用有限的财政资源实现这一目标。项目持两个关键假设：一是 Dapr 及其相关组件（Actors, Workflows, Agents）将成为构建下一代多智能体系统的核心技术；二是 OpenAI Agents SDK 将是初学者入门智能体 AI 开发的首选框架。项目通过引用 ChatGPT、Gemini 和 Grok 的观点，支持这些假设的可行性。
+
+项目提出 Dapr Agentic Cloud Ascent (DACA) 设计模式，用于开发和部署“行星级”规模的多智能体系统。DACA 的核心理念是结合 OpenAI Agents SDK 进行核心智能体逻辑开发，使用 Model Context Protocol (MCP) 规范工具的使用，通过 Agent2Agent (A2A) 协议实现智能体间的无缝通信，并以 Dapr 的分布式能力作为底层支撑。该模式遵循“AI First”和“Cloud First”原则，推广使用无状态、容器化的应用部署方式，适用于 Azure Container Apps (Serverless Containers) 或 Kubernetes，旨在实现从本地开发到大规模生产的平滑扩展，并探讨如何利用免费层云服务和自托管 LLM 进行成本优化。DACA 强调模块化、上下文感知和标准化通信，描绘了一个“Agentia World”，其中不同的 AI 智能体可以智能地协作。
+
+DACA 设计模式提供了构建复杂、云原生智能体AI应用的强大、灵活和经济高效的框架，适用于智能体AI开发者和 AgentOps 专业人员。项目认为 OpenAI Agents SDK 因其低抽象级别、易用性、高控制度和简洁性，是大多数智能体开发场景的主要框架。虽然 LangGraph 提供更高的控制力，但其复杂性限制了普遍适用性； CrewAI 和 AutoGen 具有中等抽象和协作特性；Google ADK 侧重于 Google Cloud 集成和多智能体层级；而 Dapr Agents 则提供企业级功能，如状态管理、事件驱动工作流、丰富的连接器和内置弹性。
+
+该项目组织了以下核心 DACA 智能体 AI 课程内容：
+
+- AI-201：智能体 AI 和 DACA AI-First 开发基础 (14周) - 涵盖智能体与 DACA 理论、OpenAI Agents SDK、智能体设计模式、内存管理 (LangMem & mem0)、Postgres/Redis 使用、FastAPI 基础、容器化 (Rancher Desktop) 和 Hugging Face Docker Spaces。需要完成 AI-101 作为先决条件。
+- AI-202：DACA Cloud-First 智能体 AI 开发 (14周) - 涵盖带本地 Kubernetes ของ Rancher Desktop、Advanced FastAPI 与 Kubernetes、Dapr (工作流、状态、发布/订阅、Secrets)、Cockroachdb 和 RabbitMQ 托管服务、Model Context Protocol 和 Serverless Containers 部署 (ACA)。需要完成 AI-201 作为先决条件。
+- AI-301：DACA 行星级分布式 AI 智能体 (14周) - 涵盖 CKAD 认证准备、A2A 协议、语音智能体、Dapr Agents/Google ADK、自托管 LLM 和 LLM 微调。需要完成 AI-201 和 AI-202 作为先决条件。
+
+课程评价方式包括随堂测试和黑客马拉松，主要围绕 Python编程、OpenAI Agents SDK、AI协议与设计模式、容器化、Kubernetes 和 Dapr 等核心技术栈进行。
+
+项目的技术栈涵盖 Docker, Kubernetes, Redis, Kafka, RabbitMQ, MCP, OpenAI, PostgreSQL, Serverless Containers, A2A, Dapr, Dapr Pub/Sub, Dapr Service Invocation, OpenAI API, Dapr Sidecar, Rancher Desktop, Dapr Workflow, LangMem 和 Agentic AI 等。项目遵循 MIT 许可证。
+
+### 项目统计与信息
+
+- **作者:** [panaversity](https://github.com/panaversity）)
+- **主要语言:** Jupyter Notebook
+- **Stars:** 2412 ⭐
+- **Forks:** 566 🍴
+- **本周期新增 Stars:** 55 ⭐
+
+_要了解更多关于 **panaversity / learn-agentic-ai** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/panaversity/learn-agentic-ai)。_
+
+---
+
+## microsoft / WSL
+
+> WSL是微软推出的工具，让用户在Windows中直接运行Linux应用和命令行工具，省去虚拟机开销，方便开发者整合Windows和Linux环境。
+
+### 项目介绍
+
+Windows Subsystem for Linux (WSL) 是微软提供的一个强大的工具，它允许用户直接在 Windows 系统上运行未经修改的 Linux 命令行工具、应用程序和实用程序，而无需传统虚拟机或双系统带来的额外开销。
+
+项目的核心定位是弥合 Windows 和 Linux 环境之间的差距，为开发者提供一个集成的工作流程，可以直接在 Windows 中利用 Linux 的丰富生态系统和命令行工具。
+
+主要功能和特性包括：
+
+- 直接在 Windows 中执行 Linux 命令。
+- 支持运行各种 Linux 发行版，如 Ubuntu, Debian, Fedora,openSUSE 等。
+- 无缝访问 Windows 文件系统，可以在 WSL 环境中操作 Windows 文件。
+- 允许从 Linux 应用调用 Windows 应用。
+- 支持 Linux GUI 应用（通过相关的 WSLg 项目实现）。
+- 提供比传统虚拟机更轻量级的体验，启动速度更快，资源占用更少。
+
+技术栈和依赖方面，WSL 本身是一个复杂的系统，涉及 Windows 内核集成和 Linux 内核（WSL2-Linux-Kernel是其中一部分）。其开发涉及多种编程语言，如 C++, C, C#, CMake, Python 和 PowerShell。它并不依赖特定的AI模型提供商。
+
+安装与配置通常非常简单，在 Windows 命令行中运行 `wsl --install` 命令即可完成基本安装。详细的安装、设置最佳实践和环境配置可以在官方文档中找到。
+
+基本使用方法主要是在安装后打开一个 Linux 发行版终端，然后像在标准 Linux 环境中一样执行各种命令。例如，可以运行常见的 shell 命令、安装软件包（如使用 apt、yum 等）、编译代码、运行脚本等。
+
+一个典型的使用示例：
+在 Windows 命令行中运行 WSL：
+
+```powershell
+wsl
+```
+
+进入 Linux 环境后，可以使用 apt 安装软件包：
+
+```bash
+sudo apt update
+sudo apt install <package-name>
+```
+
+然后即可在 Linux 环境中使用安装的工具。
+
+WSL 主要适用于需要同时使用 Windows 和 Linux 环境的开发者、系统管理员以及需要 Linux 命令行工具进行开发、测试或系统管理的任何用户。它特别适合进行 Web 开发、DevOps、数据科学等领域的工作。
+
+项目目前处于活跃开发状态，采用 MIT 许可证。微软鼓励社区贡献，提供了详细的贡献指南和开发者文档，解释如何从源代码构建 WSL 并了解其架构。项目重视数据隐私，收集基础诊断数据，用户可以根据文档选择关闭遥测功能。Windows Subsystem for Linux 的官方主页是 wsl.dev。
+
+### 项目统计与信息
+
+- **作者:** [microsoft](https://github.com/microsoft）)
+- **主要语言:** C++
+- **Stars:** 26609 ⭐
+- **Forks:** 1231 🍴
+- **本周期新增 Stars:** 2492 ⭐
+
+_要了解更多关于 **microsoft / WSL** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/microsoft/WSL)。_
+
+---
+
+## usebruno / bruno
+
+> Bruno是一个开源、离线API开发环境，将API数据存储在本地文件系统中方便通过Git进行版本控制和团队协作，是Postman和Insomnia的轻量级替代方案。
+
+### 项目介绍
+
+Bruno 是一个开源的 API 开发环境 (IDE)，旨在成为 Postman 和 Insomnia 等工具的轻量级替代品，专注于 API 的探索和测试。
+
+Bruno 的核心特点是其数据存储方式和协作模式。它将 API Collection 直接存储在文件系统的文件夹中，使用一种名为 Bru 的纯文本标记语言来描述 API 请求信息。这种基于文件的存储方式使得用户可以方便地使用 Git 或任何其他版本控制系统来管理和协作 API Collection，极大地简化了团队协作中的版本控制和变更追踪问题。
+
+该项目强调数据隐私，是离线使用的，并且没有添加云端同步功能的计划，确保用户数据保留在本地设备上。
+
+主要功能和特性包括：
+
+- 跨平台运行：支持 Mac, Windows 和 Linux 等多种操作系统。
+- 通过 Git 进行协作：利用其基于文件的存储特性，无缝集成 Git 等版本控制系统，方便团队协作。
+- 使用 Bru 标记语言：通过纯文本格式定义 API 请求，易于阅读和版本控制。
+- 关注 API 探索和测试：提供 API 请求构建、发送、接收和查看响应等核心功能。
+
+技术栈和依赖方面，项目主要使用 JavaScript 和 TypeScript 进行开发。
+
+安装方面，Bruno 提供了多种安装方式，包括直接从官网下载二进制文件，或者通过主流的包管理器进行安装，例如 Homebrew (Mac), Chocolatey (Windows), Scoop (Windows), winget (Windows), Snap (Linux), Flatpak (Linux) 和 Apt (Linux)。
+
+基本使用方法通常涉及在 IDE 中创建和配置 API 请求，然后发送请求并分析响应。由于其基于文件的存储，用户可以直接在文件系统中组织和管理 API Collection。
+
+代码示例方面，项目的关键部分在于其 Bru 标记语言以及处理 API 请求和响应的内部逻辑。具体的 API 请求定义会存储在 .bru 文件中。
+
+典型的适用场景包括：
+
+- 需要进行 API 开发、测试和文档化的开发者。
+- 希望使用版本控制系统（如 Git）管理 API Collection 的团队。
+- 对数据隐私有较高要求，偏好离线使用的用户。
+- 寻求 Postman/Insomnia 替代方案的用户。
+
+项目状态为积极开发中，使用了 MIT 许可证。
+
+### 项目统计与信息
+
+- **作者:** [usebruno](https://github.com/usebruno）)
+- **主要语言:** JavaScript
+- **Stars:** 34052 ⭐
+- **Forks:** 1616 🍴
+- **本周期新增 Stars:** 121 ⭐
+
+_要了解更多关于 **usebruno / bruno** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/usebruno/bruno)。_
+
+---
+
+## HeyPuter / puter
+
+> Puter是一个免费开源的个人云互联网操作系统项目，提供强大的云存储、应用开发和远程桌面功能，支持多种部署方式且技术栈基于JavaScript。
+
+### 项目介绍
+
+Puter 是一个先进的、免费开源且支持自托管的互联网操作系统项目，旨在打造一个功能豐富、速度極快且高度可擴展的雲端計算平台。其核心定位是作為一個個人雲平台，讓使用者能將所有文件、應用程式和遊戲集中儲存在一個安全的地方，並隨時隨地透過網路存取。
+
+Puter 可以應用於多種場景：
+
+- 作為個人隱私優先的雲端儲存服務，類似 Dropbox、Google Drive 但提供全新的介面和強大功能。
+- 作為一個開發和發佈網站、網路應用程式和遊戲的平台。
+- 提供遠端桌面環境，可用於伺服器和工作站管理。
+- 為學習網頁開發、雲端計算、分散式系統等提供一個友善的開源專案和社區。
+
+該項目技術棧主要基於 JavaScript，也包含少量 CSS、HTML、Shell、Dockerfile 和 C++。
+
+對於希望自行搭建 Puter 的使用者，提供了多種部署方式：
+
+- 本地開發模式：克隆倉庫、運行 `npm install` 安裝依賴，然後使用 `npm start` 即可在本地啟動 Puter。
+- Docker 部署：提供 Docker 命令，使用 `docker run` 即可從 ghcr.io 拉取官方鏡像並運行。
+- Docker Compose 部署：提供 Linux/macOS 和 Windows 環境下的 `docker-compose.yml` 配置及對應的啟動命令，方便一鍵部署。
+- 詳細的自托管指南在官方文檔中提供。
+
+系統運行需要滿足以下最低要求：
+
+- 操作系統：Linux, macOS, Windows
+- 記憶體：至少 2GB (推薦 4GB)
+- 硬碟空間：1GB 可用空間
+- Node.js 版本：16+ (推薦 23+)
+- npm 版本：最新穩定版
+
+Puter 項目採用 AGPL-3.0 許可協議。它提供包含多種語言的 README 翻譯，以便於全球用戶了解項目。項目狀態活躍，並建立了多種社區支持渠道，包括 Discord、X (Twitter)、Reddit、Mastodon，同時提供郵箱用於安全問題報告和一般諮詢。
+
+### 项目统计与信息
+
+- **作者:** [HeyPuter](https://github.com/HeyPuter）)
+- **主要语言:** JavaScript
+- **Stars:** 32184 ⭐
+- **Forks:** 2385 🍴
+- **本周期新增 Stars:** 499 ⭐
+
+_要了解更多关于 **HeyPuter / puter** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/HeyPuter/puter)。_
+
+---
+
+## usememos / memos
+
+> Memos是一款开源、轻量级、支持自托管的笔记应用，主打“无痛”记录和用户对数据的完全控制，采用Go和React构建，支持Markdown和Docker部署。
+
+### 项目介绍
+
+项目名称：Memos
+
+核心定位：Memos 是一款开源、轻量级的笔记解决方案，主打“无痛”记录有意义的笔记，强调用户对数据的完全控制权。它是一款自托管应用，支持多平台访问。
+
+项目简介：Memos 提供一种简便的方式来创建和管理个人笔记。它采用纯文本记录方式，同时支持强大的 Markdown 语法，方便用户快速格式化和分享内容。其核心优势在于其开源、自托管的特性，确保用户数据的隐私性和自主性。
+
+主要功能和特性：
+
+- 隐私优先：所有运行时数据存储在用户本地数据库中，数据完全由用户掌控。
+- 快速创建：支持纯文本方式快速记录和保存内容。
+- Markdown 支持：原生支持 Markdown 语法，提供丰富的格式化选项。
+- 轻量且强大：基于 Go 和 React.js 构建，架构简洁，性能高效。
+- 高度可定制：允许用户自定义服务器名称、图标、描述、主题和执行脚本，个性化使用体验。
+- 完全开源：所有代码均在 GitHub 上公开，透明且鼓励社区协作。
+- 免费使用：所有功能均可免费使用，无隐藏费用或订阅模式。
+
+技术栈/依赖：
+
+- 后端：Go 语言
+- 前端：React.js
+- 数据库：主要提及本地数据库存储，结合项目上下文和话题标签（sqlite），推测可能默认或支持使用 SQLite。
+- 部署：提供 Docker 部署方式，易于快速安装。
+
+安装与配置指南概述：
+
+主要推荐使用 Docker 进行部署，例如通过简单的 `docker run` 命令即可快速启动服务。用户需要指定一个本地目录用于数据存储。对于不同操作系统（如 Windows），提供了详细的文档链接供参考。项目还在积极开发中，可能会遇到 bug 或破坏性性变更。
+
+基本使用方法概述：
+
+核心使用方式为用户通过其提供的界面进行笔记的创建、编辑和管理。结合其轻量级、快速创建和 Markdown 支持的特性，其主要交互模式是基于网页的文本输入和排版。
+
+代码示例/命令示例：
+
+Docker 部署命令：
+
+```shell
+docker run -d --name memos -p 5230:5230 -v ~/.memos/:/var/opt/memos neosmemo/memos:stable
+```
+
+该命令演示了如何使用 Docker 以后台模式运行 Memos，并映射端口和挂载数据卷。
+
+适用场景/目标用户：
+
+- 希望拥有数据完全控制权的个人用户。
+- 需要一个轻量、易于部署和使用的笔记工具的用户。
+- 偏好使用 Markdown 语法记录和组织笔记的用户。
+- 开发者或技术人员，希望参与开源项目或进行自托管部署。
+- 适用于个人知识管理、日常随笔记录、微博客等场景。
+
+项目状态与许可证：
+
+项目处于积极开发阶段。采用 MIT 许可证。
+
+独特的优势：
+
+- 开源、自托管强调数据隐私和自主性。
+- 轻量级架构结合高性能。
+- 无痛记录体验与强大的 Markdown 支持相结合。
+
+### 项目统计与信息
+
+- **作者:** [usememos](https://github.com/usememos）)
+- **主要语言:** Go
+- **Stars:** 40870 ⭐
+- **Forks:** 2891 🍴
+- **本周期新增 Stars:** 382 ⭐
+
+_要了解更多关于 **usememos / memos** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/usememos/memos)。_
+
+---
+
+## modelcontextprotocol / registry
+
+> 该项目是Model Context Protocol (MCP) Registry，一个社区驱动的中心化注册服务，用Go语言开发，提供RESTful API来存储、发现和管理MCP服务器条目，解决MCP服务器分散难以发现的问题。
+
+### 项目介绍
+
+本项目 Model Context Protocol (MCP) Registry 是一个社区驱动的注册服务，用于集中存储、发现和管理 MCP 服务器条目。它旨在为各种 MCP 实现及其相关的元数据、配置和功能提供一个统一的访问点。项目目前处于早期开发阶段。
+
+核心特性包括：
+
+- 提供 RESTful API，支持 MCP 注册条目的列出、获取、创建、更新和删除等管理操作。
+- 包含用于服务监控的健康检查接口。
+- 支持多种环境配置方式。
+- 具备优雅的服务关闭处理能力。
+- 后端数据库支持 MongoDB 和内存数据库。
+- 提供全面的 API 文档，可通过 Swagger/OpenAPI 访问。
+- 支持注册条目列表的分页功能。
+
+技术栈与依赖：
+
+- 项目主要使用 Go 语言开发。
+- 依赖 MongoDB 作为数据库。
+- 推荐使用 Docker 进行本地开发和部署。
+- 使用 Docker Compose 简化服务运行和依赖管理。
+- 通过环境变量进行服务配置。
+- 支持 GitHub OAuth 进行发布时的认证。
+
+安装与运行概述：
+
+- **先决条件**：需要 Go 1.18 或更高版本、MongoDB，可选要求 Docker。
+- **使用 Docker Compose 运行**：这是推荐的方式。通过 `docker build` 构建镜像，然后使用 `docker compose up` 启动服务和 MongoDB。服务默认暴露在 8080 端口。
+- **本地运行**：如果不想使用 Docker，可以直接使用 `go build ./cmd/registry` 构建二进制文件，然后运行。需要确保本地已运行 MongoDB。
+
+主要 API 端点概述（`v0` 版本）：
+
+- `/health` (GET): 返回服务健康状态。
+- `/servers` (GET): 列出 MCP 注册服务器条目，支持分页（`limit`, `cursor` 参数）。
+- `/servers/{id}` (GET): 根据 ID 获取特定 MCP 服务器的详细信息。
+- `/publish` (POST): 发布新的 MCP 服务器条目，需要通过 Bearer Token 进行认证，请求体为 JSON 格式包含服务器信息。
+- `/ping` (GET): 返回服务的环境配置信息。
+
+典型的适用场景和目标用户：
+
+该项目主要面向 MCP 生态系统的开发者和用户。开发者可以将自己的 MCP 服务器实现注册到该服务，使其更容易被发现和使用。用户或客户端应用程序可以通过该注册服务查找和获取所需的 MCP 服务器信息，进而与之交互。它解决的核心问题是 MCP 服务器的分散性和发现难问题，提供了一个中心化的目录服务。
+
+项目遵循 MIT 许可证。贡献者可参考 CONTRIBUTING 文档参与项目。
+
+### 项目统计与信息
+
+- **作者:** [modelcontextprotocol](https://github.com/modelcontextprotocol）)
+- **主要语言:** Go
+- **Stars:** 725 ⭐
+- **Forks:** 48 🍴
+- **本周期新增 Stars:** 306 ⭐
+
+_要了解更多关于 **modelcontextprotocol / registry** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/modelcontextprotocol/registry)。_
+
+---
+
+## ZJU-LLMs / Foundations-of-LLMs
+
+> 这份名为“大模型基础”的教材系统性地介绍了大语言模型的基础概念、架构、Prompt工程、微调、模型编辑和检索增强生成等前沿技术，旨在为LLM学习者提供一个易读、严谨且持续更新的学习资源。
+
+### 项目介绍
+
+该项目名为“大模型基础”，旨在为对大语言模型（LLMs）感兴趣的读者提供系统性的基础知识和前沿技术介绍。项目目标是打造一本易读、严谨、有深度的大模型教材，并根据社区反馈和专家建议进行月度更新。为了跟踪最新技术进展，书中每章都配有相关的经典论文列表。
+
+本书第一版覆盖了六个主要章节，每个章节的内容组织和关键点如下：
+
+- **第 1 章：语言模型基础**
+  - 介绍基于统计方法、基于 RNN 和基于 Transformer 的语言模型。
+  - 涵盖语言模型的采样方法和评测方法。
+- **第 2 章：大语言模型架构**
+  - 探讨大数据与大模型如何共同催生新智能。
+  - 概览大语言模型的不同架构，包括 Encoder-only、Encoder-Decoder 和 Decoder-only 架构。
+  - 简要提及非 Transformer 架构。
+- **第 3 章：Prompt 工程**
+  - 提供 Prompt 工程的简介。
+  - 详细解释上下文学习和思维链等关键技术。
+  - 分享 Prompt 技巧和相关应用案例。
+- **第 4 章：参数高效微调**
+  - 介绍参数高效微调（PEFT）的概念。
+  - 涵盖参数附加方法、参数选择方法和低秩适配（LoRA）等技术。
+  - 提供实践与应用指南。
+- **第 5 章：模型编辑**
+  - 引入模型编辑的概念。
+  - 介绍经典的模型编辑方法，包括附加参数法（如 T-Patcher）和定位编辑法（如 ROME）。
+  - 探讨模型编辑的应用场景。
+- **第 6 章：检索增强生成**
+  - 解释检索增强生成（RAG）的基本概念。
+  - 介绍 RAG 的架构。
+  - 涵盖知识检索和生成增强的关键环节。
+  - 提供实践与应用示例。
+
+该教材通过将每章内容与一种动物背景相结合的方式，以增强易读性。当前提供完整的 PDF 版本以及按章节划分的 PDF 文件，同时维护一个不断更新的相关论文列表文件夹。
+
+项目作者团队欢迎开源社区和读者的建议，鼓励通过提交 issue 的方式进行交流，共同完善教材内容。读者可以通过邮件 xuwenyi@zju.edu.cn 或扫描提供的微信二维码进行联系。
+
+项目的目标用户主要是对大语言模型技术感兴趣的学者、学生和工程师，为他们提供一个系统学习 LLM 基础理论和前沿技术的资源。
+
+根据项目页面信息，本项目采用 MIT 许可证。
+
+### 项目统计与信息
+
+- **作者:** [ZJU-LLMs](https://github.com/ZJU-LLMs）)
+- **主要语言:**
+- **Stars:** 10469 ⭐
+- **Forks:** 909 🍴
+- **本周期新增 Stars:** 110 ⭐
+
+_要了解更多关于 **ZJU-LLMs / Foundations-of-LLMs** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/ZJU-LLMs/Foundations-of-LLMs)。_
+
+---
+
+## virattt / ai-hedge-fund
+
+> 这份内容介绍了一个名为“AI Hedge Fund”的项目，旨在利用多智能体AI模拟对冲基金进行量化交易研究，项目包含多种投资风格和专业分析智能体，支持多种LLM并提供安装和运行示例，仅用于教育研究。
+
+### 项目介绍
+
+本项目名为“AI Hedge Fund”，是一个旨在探索利用人工智能进行量化交易决策的概念验证（Proof of Concept）项目。其核心目标是构建一个由多个AI智能体协同工作的系统，模拟对冲基金的运作模式，以AI驱动的方式生成交易信号和管理投资组合。该项目仅用于教育和研究目的，不适用于实际交易或投资，不提供任何投资建议或保证，使用者需自行承担风险。
+
+系统的主要功能和特性体现在其采用的多智能体架构：
+
+- 模拟了多种著名投资风格的智能体，例如：
+  - Aswath Damodaran Agent：侧重估值分析。
+  - Ben Graham Agent：专注于价值投资和安全边际。
+  - Bill Ackman Agent：模拟激进投资者策略。
+  - Cathie Wood Agent：关注创新和颠覆性增长。
+  - Charlie Munger Agent：寻找优质企业并以合理价格买入。
+  - Michael Burry Agent：反向投资，寻找被低估资产。
+  - Peter Lynch Agent：发掘日常生活中的“十倍股”。
+  - Phil Fisher Agent：深度基本面研究，采用“渔夫钓鱼”方法。
+  - Stanley Druckenmiller Agent：宏观策略，寻找非对称机会。
+  - Warren Buffett Agent：寻找优质企业并以合理价格买入（与Charlie Munger类似）。
+- 拥有专业分析智能体：
+  - Valuation Agent：计算股票内在价值并产生交易信号。
+  - Sentiment Agent：分析市场情绪。
+  - Fundamentals Agent：分析基本面数据。
+  - Technicals Agent：分析技术指标。
+- 包含决策与管理智能体：
+  - Risk Manager：计算风险指标并设定头寸限制。
+  - Portfolio Manager：做出最终交易决策并生成订单（模拟）。
+
+该项目支持多种大型语言模型（LLMs）提供商，包括 OpenAI (如 gpt-4o, gpt-4o-mini)、Groq (如 deepseek, llama3)、Anthropic 和 DeepSeek。此外，项目还支持使用本地部署的 Ollama 模型。金融数据方面，AAPL, GOOGL, MSFT, NVDA, TSLA 五支股票的免费数据无需API密钥，查询其他股票数据则需要 Financial Datasets API 密钥。
+
+项目的安装与配置支持 Poetry 和 Docker 两种方式。使用 Poetry 需要安装 Python 环境并配置相应依赖，通过 `poetry install` 命令完成。使用 Docker 则需要安装 Docker，然后通过构建 Docker 镜像来运行。两种方式都需要复制 `.env.example` 文件并填写相应的 API 密钥（包括至少一个LLM提供商的API密钥以及 Financial Datasets API 密钥，如需查询上述五支股票以外的数据）。
+
+基本使用方法包括运行对冲基金模拟器和运行回测器。通过命令行指定股票代码，即可运行相应的模拟或回测。例如，使用 Poetry 运行对冲基金模拟器：`poetry run python src/main.py --ticker AAPL,MSFT,NVDA`。使用 Docker 运行则为 `./run.sh --ticker AAPL,MSFT,NVDA main` (Linux/Mac) 或 `run.bat --ticker AAPL,MSFT,NVDA main` (Windows)。通过 `--ollama` 标志可以使用本地 LLM，通过 `--show-reasoning` 标志可以打印智能体的思考过程。回测器用法类似，只需将 `main` 替换为 `backtest`。可以通过 `--start-date` 和 `--end-date` 参数指定模拟或回测的时间区间。
+
+项目代码结构清晰，智能体、工具（如API交互）以及主程序和回测程序分别组织在不同的目录下。
+
+该项目适用于对AI在金融领域的应用感兴趣的开发者、量化研究人员以及学生，用于学习和探索多智能体系统在投资决策中的潜力。项目遵循 MIT 开源许可证。
+
+### 项目统计与信息
+
+- **作者:** [virattt](https://github.com/virattt）)
+- **主要语言:** Python
+- **Stars:** 32289 ⭐
+- **Forks:** 5542 🍴
+- **本周期新增 Stars:** 442 ⭐
+
+_要了解更多关于 **virattt / ai-hedge-fund** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/virattt/ai-hedge-fund)。_
+
+---
+
+## microsoft / vscode
+
+> 这段内容介绍了 Visual Studio Code 的开源项目 Code - OSS，其源代码基于 MIT 许可证，VS Code 商业版在此基础上增加了微软定制内容，并提供了丰富的开发功能、贡献方式、社区交流渠道以及开发容器配置等信息。
+
+### 项目介绍
+
+Visual Studio Code ("Code - OSS") 项目是微软与社区共同开发 Visual Studio Code 产品的代码仓库。它不仅包含源代码和问题跟踪，还公开了项目的路线图、月度迭代计划和最终目标计划。该项目的源代码遵循标准的 MIT 许可证。
+
+Visual Studio Code 是基于 "Code - OSS" 代码仓库的一个发行版本，其中包含了微软特定的定制内容，并遵循微软传统的产品许可协议。它将代码编辑器的简洁性与开发者在核心编辑-构建-调试周期所需的功能相结合。
+
+Visual Studio Code 提供全面的代码编辑、导航和理解支持，以及轻量级的调试功能、丰富的扩展模型以及与现有工具的轻量级集成。项目每月更新，不断推出新功能和错误修复。用户可以在 Visual Studio Code 的官方网站下载适用于 Windows, macOS 和 Linux 的稳定版本，也可以安装 Insiders 版本以获取每日最新构建。
+
+贡献该项目的方式多样，包括：
+
+- 提交 bug 和功能请求，并协助验证已修复或实现的问题。
+- 审查源代码更改（Pull Requests）。
+- 审查文档并提交修改，包括错别字修正或新增/更新内容。
+
+对于希望直接参与代码贡献的开发者，项目提供了详细的“如何贡献”文档，涵盖了从源代码构建运行、开发工作流程（调试与测试）、编码准则到提交 Pull Request 以及如何寻找可贡献的问题等方面的指引。项目同时也欢迎参与翻译贡献。
+
+寻求帮助和提供反馈的渠道包括：
+
+- 在 Stack Overflow 上提问。
+- 提出新的功能需求并在社区中对其进行投票。
+- 提交问题报告。
+- 在 GitHub Discussions 或 Slack 上与扩展开发者社区交流。
+- 关注 Twitter 上的 @code 账号并分享您的想法。
+  更多社区交流渠道的详细信息可在项目的 Wiki 页面找到。
+
+项目相关的核心组件和扩展许多都独立存放在各自的 GitHub 仓库中，例如 Node 调试适配器和 Mono 调试适配器。详尽列表可以在 Wiki 的相关项目页面查看。
+
+VS Code 内置了一系列位于 `extensions` 文件夹中的扩展，包含了多种语言的语法高亮和代码片段。提供丰富语言支持（例如代码补全、跳转到定义）的扩展通常以 `language-features` 为后缀。
+
+该仓库包含了 Visual Studio Code Dev Containers / GitHub Codespaces 的开发容器配置。用户可以使用 VS Code 的 Dev Containers 扩展将仓库克隆到容器卷中，或通过 GitHub Codespaces 扩展创建新的 Codespace 环境。建议开发容器至少配置 4 核 CPU 和 6 GB 内存（推荐 8 GB）以支持完整的构建。详细信息请参考 `.devcontainer` 文件夹下的 README 文档。
+
+该项目遵循微软开源行为准则，鼓励所有贡献者遵守。项目源代码采用 MIT 许可证。
+
+### 项目统计与信息
+
+- **作者:** [microsoft](https://github.com/microsoft）)
+- **主要语言:** TypeScript
+- **Stars:** 172175 ⭐
+- **Forks:** 32531 🍴
+- **本周期新增 Stars:** 311 ⭐
+
+_要了解更多关于 **microsoft / vscode** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/microsoft/vscode)。_
+
+---
+
+## huggingface / huggingface.js
+
+> huggingface.js 是 Hugging Face 官方提供的一系列 JavaScript/TypeScript 库，旨在帮助开发者在 JS 环境中方便地调用 Hugging Face Hub 上的模型进行推理和管理 Hub 资源。
+
+### 项目介绍
+
+huggingface.js 是 Hugging Face 官方提供的一系列 JavaScript/TypeScript 库的集合，旨在方便开发者在现代 JavaScript 环境（浏览器、Node.js >= 18、Bun、Deno）中与 Hugging Face Hub API 进行交互，从而更便捷地利用 Hugging Face 上的海量机器学习模型和数据集。
+
+其核心定位是为 JavaScript 生态提供一套与 Hugging Face 生态无缝对接的工具集，无需复杂的配置或额外的运行时。项目采用现代语言特性，减少了对 polyfill 和额外依赖的需求。
+
+主要功能和特性：
+
+- **@huggingface/inference**: 用于调用 Hugging Face Hub 上托管的（无服务器）Inference Providers，或连接到用户自建的 Inference Endpoints，来执行各种机器学习任务。支持调用超过十万个机器学习模型，并兼容多种第三方推理服务提供商，如 Sambanova, Fal-AI, Replicate, Cohere 等。支持文本生成、对话完成（包括流式输出）、文生图、图生文等多种任务类型。
+- **@huggingface/hub**: 提供了与 huggingface.co 仓库交互的能力，包括创建或删除模型/数据集/Space 仓库，以及在仓库中上传、下载和删除文件等操作。可方便地用于自动化管理 Hub 上的资源。
+- **@huggingface/mcp-client**: 实现了一个 Model Context Protocol (MCP) 客户端，并在此基础上构建了一个小型 Agent 库。用于与遵循 MCP 协议的工具集进行交互，例如集成了 Playwright 的 MCP 服务器，使得 Agent 可以执行更复杂的网页操作等任务。
+- **@huggingface/gguf**: 一个用于解析远程托管 GGUF 文件的工具，方便在 JavaScript 环境中处理 GGUF 格式的模型文件。
+- **@huggingface/dduf**: 类似地，这是一个针对 DDUF (DDUF Diffusers Unified Format) 格式的解析包。
+- **@huggingface/tasks**: 包含了 Hugging Face Hub 主要原语（如 Pipeline 任务、模型库等）的定义文件和规范真理，有助于开发者理解和使用 Hub 上的各种资源。
+- **@huggingface/jinja**: 一个最小化的 Jinja 模板引擎 JavaScript 实现，主要用于机器学习领域的 Chat 模板处理。
+- **@huggingface/space-header**: 可以在 Hugging Face Space 外部使用 Space 的 `mini_header` 组件。
+- **@huggingface/ollama-utils**: 提供了一些用于保持与 Ollama 兼容性的实用工具，方便在 Hugging Face Hub 上使用 Ollama 相关的模型。
+
+技术栈/依赖：
+
+- 核心语言：TypeScript
+- 运行时支持：现代浏览器、Node.js >= 18、Bun、Deno
+- 依赖管理：pnpm
+
+安装与配置：
+
+项目采用 Monorepo 结构，可以通过 npm 分别安装所需的子库，如 `@huggingface/inference`、`@huggingface/hub`、`@huggingface/mcp-client`。也可通过 CDN 或静态托管方式，利用 ES Modules 导入使用。Deno 环境也提供了相应的导入方式。使用时通常需要一个 Hugging Face API 访问令牌（HF_TOKEN），可在账户设置中获取。
+
+基本使用方法示例：
+
+使用 `@huggingface/inference` 调用模型执行推理任务：
+
+```ts
+import { InferenceClient } from '@huggingface/inference'
+const client = new InferenceClient('YOUR_HF_TOKEN')
+const out = await client.chatCompletion({
+  model: 'meta-llama/Llama-3.1-8B-Instruct',
+  messages: [{ role: 'user', content: 'Hello!' }],
+})
+console.log(out.choices[0].message.content)
+```
+
+使用 `@huggingface/hub` 创建仓库和上传文件：
+
+```ts
+import { createRepo, uploadFile } from '@huggingface/hub'
+await createRepo({
+  repo: 'my-user/my-new-repo',
+  accessToken: 'YOUR_HF_TOKEN',
+})
+await uploadFile({
+  repo: 'my-user/my-new-repo',
+  accessToken: 'YOUR_HF_TOKEN',
+  file: {
+    path: 'my_file.txt',
+    content: new Blob(['Hello Hugging Face!']),
+  },
+})
+```
+
+适用场景/目标用户：
+
+该项目主要面向希望在 JavaScript 环境（如前端 Web 应用、Node.js 后端服务、Electron 应用、Deno/Bun 应用等）集成 Hugging Face 模型推理能力或进行 Hut Hub 资源管理的开发者。适用于构建基于 AI 的 Web 应用、自动化 Hugging Face Hub 工作流、在边缘设备或浏览器中运行小型模型（通过其他相关库如 Transformers.js 等结合使用）等场景。
+
+项目状态与许可证：
+
+项目积极维护中，持续添加新功能和改进。代码库采用 MIT 许可证，允许自由使用、修改和分发。
+
+### 项目统计与信息
+
+- **作者:** [huggingface](https://github.com/huggingface）)
+- **主要语言:** TypeScript
+- **Stars:** 1822 ⭐
+- **Forks:** 389 🍴
+- **本周期新增 Stars:** 67 ⭐
+
+_要了解更多关于 **huggingface / huggingface.js** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/huggingface/huggingface.js)。_
