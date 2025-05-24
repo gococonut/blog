@@ -1,0 +1,636 @@
+---
+title: Github Daily Trending
+date: 2025-05-25
+cover: https://hub-image.moreve.net/files/images/github-trending/2025-05-25.png
+summary: '本期内容涵盖用于AI数据查询的MindsDB，微软的量化投资AI平台Qlib，Claude终端编码工具Claude Code，AI软件开发代理OpenHands，现代开源AI聊天框LobeChat，本地AI代理AgenticSeek，API测试工具Bruno，智能多线程下载器Ghost-Downloader-3以及Hugging Face的JavaScript库集合huggingface.js。'
+headingSummaries:
+  - heading: 'mindsdb / mindsdb'
+    summary: 'MindsDB是一个AI查询引擎平台，它能连接和统一分散在各处的数据源，让你用SQL或通过AI代理直接向它们提问和交互。'
+    tags: [AI/ML, Data Tools, Developer Tools]
+  - heading: 'microsoft / qlib'
+    summary: 'Qlib是一个由人工智能AI驱动的量化投资平台，提供从数据处理到交易执行的完整工具链和多种先进AI模型，旨在赋能量化研究并应对市场挑战。'
+    tags: [AI/ML, Data Tools, Libraries & SDKs]
+  - heading: 'anthropics / claude-code'
+    summary: 'Claude Code是一款面向开发者的终端编码工具，它能理解整个代码库、处理各项开发任务（如编辑、测试、Git操作），并提供代码问答和用户反馈收集功能，旨在提升编码效率且保护数据隐私。'
+    tags: [AI/ML, Developer Tools, CLI & Utilities]
+  - heading: 'All-Hands-AI / OpenHands'
+    summary: 'OpenHands是一个AI软件开发代理平台旨在让开发者少写代码多做事情，能够修改代码、执行命令、浏览网页等自动化多种开发任务，支持多种LLM和部署方式以提高开发效率。'
+    tags: [AI/ML, Developer Tools, DevOps & Cloud]
+  - heading: 'lobehub / lobe-chat'
+    summary: 'LobeChat 是一个开源的现代化 AI 聊天框架，集成了多种AI模型、支持知识库、多模态和复杂对话功能，提供便捷部署的私人AI应用解决方案。'
+    tags: [AI/ML, Web Development, Developer Tools]
+  - heading: 'Fosowl / agenticSeek'
+    summary: 'AgenticSeek是一个开源的本地自主AI代理项目，让你能在个人设备上运行一个私有的智能助手，具备网页浏览、编程和复杂任务处理能力，不依赖昂贵API。'
+    tags: [AI/ML, Developer Tools, CLI & Utilities]
+  - heading: 'usebruno / bruno'
+    summary: 'Bruno是一款开源API测试与协作工具，通过将API集合存储在本地文件系统和纯文本格式实现Git友好协作和数据隐私保护。'
+    tags: [Developer Tools, CLI & Utilities, Productivity]
+  - heading: 'XiaoYouChR / Ghost-Downloader-3'
+    summary: 'Ghost-Downloader-3是一款基于Python的跨平台多线程下载器，具备AI智能加速和流畅UI，旨在成为下一代智能下载工具并计划支持磁力链接和插件系统。'
+    tags: [AI/ML, Developer Tools, CLI & Utilities]
+  - heading: 'freeCodeCamp / freeCodeCamp'
+    summary: 'freeCodeCamp是一个通过免费课程和认证帮助成人进入技术行业的开源慈善项目，提供从前端到机器学习等广泛领域的实践学习资源。'
+    tags: [Learning & Education, Web Development, AI/ML]
+  - heading: 'disposable-email-domains / disposable-email-domains'
+    summary: '这份项目提供了一份持续更新的一次性电子邮件域名屏蔽列表及允许列表，并提供了多种语言的使用示例，帮助开发者防止用户使用临时邮箱进行注册或滥用服务。'
+    tags: [Security, Developer Tools, Libraries & SDKs]
+  - heading: 'huggingface / huggingface.js'
+    summary: 'Huggingface.js 是 Hugging Face 官方发布的 JavaScript 库集合，方便开发者通过 JavaScript/TypeScript 调用 Hugging Face 的模型推理和 Hub 功能，支持浏览器和 Node.js 等多种环境。'
+    tags: [AI/ML, Developer Tools, Libraries & SDKs]
+---
+
+## mindsdb / mindsdb
+
+> MindsDB是一个AI查询引擎平台，它能连接和统一分散在各处的数据源，让你用SQL或通过AI代理直接向它们提问和交互。
+
+### 项目介绍
+
+MindsDB 是一个 AI 查询引擎平台，致力于构建能够回答跨大规模联合数据的 AI 应用。它作为一个统一的 MCP (Model Context Protocol) 服务器，解决如何在分散的数据库、数据仓库和 SaaS 应用中高效、准确地获取信息并进行智能交互的问题。
+
+该项目的核心哲学围绕“连接、统一、响应”三个关键能力：
+
+- **连接您的数据：** MindsDB 提供了连接数百个企业级数据源的能力。通过这些集成，MindsDB 可以访问数据无论其存储在哪里，为后续的操作奠定基础。
+- **统一您的数据：** 连接后，可以使用完整的 SQL 方言来查询这些数据源，就像它们位于一个单独的数据库中一样。MindsDB 的联合查询引擎能够翻译 SQL 查询并在相应的连接数据源上执行。为了处理异构数据，MindsDB SQL 支持创建虚拟表（`VIEWS`、`KNOWLEDGE BASES`、`ML MODELS`）来统一数据视图、索引非结构化数据以及应用 AI/ML 转换。数据统一过程可以通过 `JOBS` 自动化，用于计划同步和转换任务。
+- **从您的数据中获取响应：** MindsDB 支持与数据进行对话。这主要通过两种方式实现：`AGENTS`，可以配置专门用于回答关于已连接和统一数据的AI代理；以及 `MCP`（Model Context Protocol），允许通过该协议与 MindsDB 进行无缝交互。
+
+主要功能和特性包括：
+
+- 作为一个 AI 查询引擎，允许使用 SQL 语法与各种数据源集成并进行智能交互。
+- 支持连接到大量不同的数据源（数据库、数据仓库、SaaS 应用等）。
+- 提供联合查询能力，可以使用 SQL 查询跨越不同来源的数据。
+- 支持创建虚拟表 (`VIEWS`, `KNOWLEDGE BASES`, `ML MODELS`) 来统一和处理数据。
+- 能够配置和使用内置的 `AGENTS` 来回答基于数据的查询。
+- 内置 MCP 服务器，支持 MCP 协议进行交互。
+- 提供自动化数据统一和处理 (`JOBS`) 的能力。
+
+项目底层技术栈主要基于 Python，支持 Python 3.10.x 和 3.11.x 版本。安装和部署支持多种方式，包括推荐的 Docker Desktop、独立的 Docker 容器以及 PyPI 包安装，后者为贡献者提供了便利。
+
+MindsDB 适用于需要从分散数据源中提取智能洞察、构建基于数据的问答系统或 AI 应用的场景。目标用户主要是开发者、数据科学家以及希望通过统一接口访问和处理跨域数据的企业用户。
+
+MindsDB 是一个开源项目，采用许可证明。项目鼓励社区贡献。
+
+例如，用户可以通过 SQL 语句连接数据源，创建 AI 模型来预测数据，或者创建代理来回答关于特定主题的问题，而无需将所有数据迁移到一个地方。
+
+总体而言，MindsDB 提供了一个强大且灵活的平台，简化了构建能够理解和响应来自各种复杂数据环境的 AI 应用的过程。
+
+### 项目统计与信息
+
+- **作者:** [mindsdb](https://github.com/mindsdb）)
+- **主要语言:** Python
+- **Stars:** 29352 ⭐
+- **Forks:** 5072 🍴
+- **本周期新增 Stars:** 426 ⭐
+
+_要了解更多关于 **mindsdb / mindsdb** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/mindsdb/mindsdb)。_
+
+---
+
+## microsoft / qlib
+
+> Qlib是一个由人工智能AI驱动的量化投资平台，提供从数据处理到交易执行的完整工具链和多种先进AI模型，旨在赋能量化研究并应对市场挑战。
+
+### 项目介绍
+
+Qlib 是一个人工智能驱动的量化投资平台，旨在利用人工智能技术在量化投资领域从想法探索到产品落地实现潜力、赋能研究并创造价值。Qlib 支持多种机器学习建模范式，包括监督学习、市场动态建模和强化学习。
+
+项目核心定位是为量化投资提供一个全面的、AI驱动的平台，覆盖数据处理、模型训练、回测、投资组合优化和订单执行等整个机器学习管道以及量化投资链条的关键环节。它致力于解决量化投资中的重要挑战，并不断整合最新的AI量化研究成果。
+
+主要功能和特性包括：
+
+- 支持多种机器学习建模范式，如监督学习、市场动态建模和强化学习。
+- 提供从数据处理到回测的完整机器学习管道。
+- 覆盖alpha挖掘、风险建模、投资组合优化和订单执行等量化投资环节。
+- 包含多种先进的量化模型（模型动物园），如GBDT（基于LightGBM, XGBoost, Catboost）、MLP、LSTM、GRU、ALSTM、GATs、SFM、TFT、TabNet、DoubleEnsemble、TCTS、Transformer、Localformer、TRA、TCN、ADARNN、ADD、IGMTF、HIST、KRNN、Sandwich等。
+- 提供应对市场动态（非平稳性）的解决方案，例如滚动再训练和DDG-DA。
+- 集成强化学习框架，用于建模连续投资决策和优化交易策略，特别是在订单执行场景（如TWAP、PPO、OPDS）。
+- 提供了量化数据集（数据集动物园），目前包含Alpha360和Alpha158等中/美市场数据集，也支持用户准备自己的数据。
+- 提供自动化量化研究工作流工具 `qrun`，通过配置文件即可运行完整流程。
+- 支持通过编写代码构建定制化的量化研究工作流，提供了模块化的接口。
+- 提供数据服务器，支持 Offline 和 Online 模式，旨在提高数据访问性能。Online 模式的数据可在客户端之间共享缓存。
+- 提供数据检查脚本，用于验证数据的健康状况。
+- 提供 Docker 镜像，方便快速部署和运行。
+- 集成了最近推出的 RD-Agent，这是一个基于 LLM 的自主演化代理框架，用于自动化因子挖掘和模型优化。
+
+技术栈/依赖：
+
+- 主要使用 Python 语言开发。
+- 依赖如 NumPy, Cython, Pandas, LightGBM, PyTorch/TensorFlow 等科学计算和机器学习库。
+- 可能依赖特定AI模型提供商（如提及的LLM相关功能）。
+- 数据部分提供了基于 Yahoo Finance 的爬虫脚本以及社区贡献的数据源。
+
+安装与配置指南概述：
+
+- 建议使用 Conda 环境管理 Python 版本（支持 3.8 - 3.12）。
+- 可通过 pip 安装或者从源代码安装。
+- 需要安装必要的依赖，如 numpy 和 cython。
+- 数据准备是重要步骤，提供了下载和更新脚本。官方数据集暂时禁用，推荐社区贡献的数据源。
+
+基本使用方法概述：
+
+- 最简单的方式是使用 `qrun` 工具，通过 YAML 配置文件运行完整的量化研究流程。
+- 也可以通过 Python 代码调用 Qlib 的模块化接口，构建定制化的工作流。
+- 提供了丰富的示例代码和 Jupyter Notebook 教程。
+
+代码示例/命令示例：
+
+- 使用 pip 安装: `pip install pyqlib`
+- 从源代码安装: `git clone https://github.com/microsoft/qlib.git && cd qlib && pip install .`
+- 下载历史数据: `python -m qlib.run.get_data qlib_data --target_dir ~/.qlib/qlib_data/cn_data --region cn`
+- 使用 qrun 运行工作流: `qrun examples/benchmarks/LightGBM/workflow_config_lightgbm_Alpha158.yaml`
+
+适用场景/目标用户：
+
+- 面向量化投资领域的研究人员、数据科学家、AI工程师和开发者。
+- 适用于从量化策略构思、模型开发、回测验证到最终执行的整个流程。
+- 特别适合需要应用机器学习和人工智能技术改进量化投资策略的场景。
+
+项目状态与许可证：
+
+- 项目处于积极持续开发中。
+- 采用 MIT 许可证。
+- 社区活跃，鼓励贡献。
+
+独特的优势或创新点：
+
+- 强调AI导向，集成大量先进的AI模型和研究成果。
+- 提供端到端的量化投资平台能力，而非仅仅是模型库。
+- 针对量化投资的独特挑战（如市场非平稳性）提供了专门的解决方案。
+- 数据服务器设计注重性能优化，以支持数据驱动的研究。
+- 新增的 RD-Agent 功能，利用LLM实现量化研究流程的自动化。
+
+### 项目统计与信息
+
+- **作者:** [microsoft](https://github.com/microsoft）)
+- **主要语言:** Python
+- **Stars:** 20516 ⭐
+- **Forks:** 3308 🍴
+- **本周期新增 Stars:** 426 ⭐
+
+_要了解更多关于 **microsoft / qlib** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/microsoft/qlib)。_
+
+---
+
+## anthropics / claude-code
+
+> Claude Code是一款面向开发者的终端编码工具，它能理解整个代码库、处理各项开发任务（如编辑、测试、Git操作），并提供代码问答和用户反馈收集功能，旨在提升编码效率且保护数据隐私。
+
+### 项目介绍
+
+Claude Code 是一个基于代理（agentic）的编码工具，它存在于开发者的终端环境中，能够理解整个代码库结构，并通过自然语言指令帮助开发者更快速地完成编码工作。它旨在通过自动化常规任务、解释复杂代码和处理 Git 工作流程来提升开发效率。
+
+该工具的核心能力包括：
+
+- 编辑文件并在整个代码库中修改 Bug。
+- 回答关于代码架构和逻辑的问题。
+- 执行并修复测试、代码检查（lint）以及其他命令行任务。
+- 搜索 Git 历史记录、解决合并冲突，并创建 Commit 和 Pull Request。
+
+Claude Code 基于 Node.js 和 Node Package Manager (npm)。安装过程相对简单，通过 npm 全局安装后，在项目目录下运行 `claude` 命令即可启动。首次使用需要完成与 Claude Max 或 Anthropic Console 账户的 OAuth 认证流程。为确保系统安全，建议作为非特权用户进行安装。
+
+该项目在 Beta 测试期间欢迎用户的反馈。用户可以通过 `/bug` 命令直接在工具内报告问题，或通过 GitHub Issues 提交。
+
+关于数据收集、使用和保留，Claude Code 会收集包括使用数据（如代码的接受或拒绝）、相关的会话数据以及通过 `/bug` 命令提交的用户反馈。Anthropic 表示会使用这些反馈来改进产品和服务，但**不会使用 Claude Code 的用户反馈来训练生成模型**。敏感的用户反馈记录仅保留 30 天。数据隐私方面采取了多种保护措施，包括限制敏感信息的保留期限、限制对用户会话数据的访问以及明确不将反馈用于模型训练的政策。
+
+更多详细信息可以在官方文档中找到。项目目前处于通用可用（General Availability）状态，遵循特定的许可证协议。
+
+### 项目统计与信息
+
+- **作者:** [anthropics](https://github.com/anthropics）)
+- **主要语言:** Shell
+- **Stars:** 9652 ⭐
+- **Forks:** 538 🍴
+- **本周期新增 Stars:** 401 ⭐
+
+_要了解更多关于 **anthropics / claude-code** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/anthropics/claude-code)。_
+
+---
+
+## All-Hands-AI / OpenHands
+
+> OpenHands是一个AI软件开发代理平台旨在让开发者少写代码多做事情，能够修改代码、执行命令、浏览网页等自动化多种开发任务，支持多种LLM和部署方式以提高开发效率。
+
+### 项目介绍
+
+OpenHands（原名 OpenDevin）是一个基于 AI 的软件开发代理平台，其核心目标是“少写代码，多做事情”（Code Less, Make More）。该平台旨在赋予 AI 代理执行人类开发者所能完成的各项任务的能力，包括修改代码、运行命令、浏览网页、调用 API，甚至从 Stack Overflow 等资源中提取代码片段。
+
+OpenHands 的关键功能和特性包括：
+
+- 代码修改与管理：代理能够理解并修改现有代码库。
+- 命令执行：具备在沙箱环境中安全地执行各种命令行操作的能力。
+- 网络浏览与信息检索：能够访问和解析网页内容，以便获取必要的信息。
+- API 调用：可以与各种 API 交互，扩展其功能范围。
+- 支持多种 LLM 提供商： 用户可以选择不同的 LLM 模型作为后端，如 Anthropic 的 Claude Sonnet 4 (推荐)、OpenAI 的模型或其他兼容的 LLM。
+- 灵活的运行方式：
+  - 通过 OpenHands Cloud（提供免费积分）。
+  - 在本地使用 Docker 运行。
+  - 支持连接本地文件系统进行操作。
+  - 提供无头模式 (headless mode) 和命令行界面 (CLI) 模式，方便集成和自动化。
+  - 可以通过 GitHub Action 对标记的 Issues 进行自动处理。
+- 安全沙箱环境：为了安全起见，所有命令执行都在隔离的沙箱环境中进行。
+
+技术栈和依赖方面，项目主要使用 Python 和 TypeScript 进行开发，并且依赖于 Docker 容器化技术来构建和运行沙箱环境。它支持多种大型语言模型 (LLM)，包括但不限于 Anthropic 的 Claude 系列。项目的构建和依赖管理使用了 Poetry。
+
+安装与配置方面，最便捷的方式是使用 OpenHands Cloud 服务。对于本地部署，项目提供了详细的 Docker 安装指南。用户需要安装 Docker，并拉取 OpenHands 相关的 Docker 镜像。运行 Docker 容器时，需要配置环境变量，特别是指定 Sandbox 运行时容器镜像、是否记录所有事件，并挂载宿主机的 Docker socket 和状态目录，同时映射端口以便访问 Web 界面。初次运行时，需要在 Web 界面中配置 LLM 提供商及 API 密钥。项目特别提示，在公共网络上部署需要额外的安全加固措施。
+
+基本使用方法包括通过其 Web 界面、命令行界面或无头模式与代理进行交互，向其提出软件开发相关的任务需求。例如：
+
+```shell
+docker run -it --rm --pull=always \
+    -e SANDBOX_RUNTIME_CONTAINER_IMAGE=docker.all-hands.dev/all-hands-ai/runtime:0.39-nikolaik \
+    -e LOG_ALL_EVENTS=true \
+    -v /var/run/docker.sock:/var/run/docker.sock \
+    -v ~/.openhands-state:/.openhands-state \
+    -p 3000:3000 \
+    --add-host host.docker.internal:host-gateway \
+    --name openhands-app \
+    docker.all-hands.dev/all-hands-ai/openhands:0.39
+```
+
+上述命令展示了使用 Docker 在本地运行 OpenHands 的典型方式，通过访问 `http://localhost:3000/` 进行交互。
+
+适用场景主要是在软件开发的各个环节中，需要自动化代码修改、bug 修复、功能实现、环境配置、文档生成等任务。目标用户群体是开发者和技术团队，旨在提高开发效率，减少重复性工作。
+
+项目目前处于积极开发状态，通过 GitHub Issues 和社区渠道（Slack, Discord）进行沟通和协作。项目的代码遵循 MIT 许可证。
+
+总而言之，OpenHands 是一个开源的、基于 AI 代理的软件开发效率工具，致力于自动化开发任务。它支持多种领先的 LLM 模型，提供灵活的部署和使用方式，并通过社区驱动的方式不断演进，旨在成为开发者提高效率的重要助手。
+
+### 项目统计与信息
+
+- **作者:** [All-Hands-AI](https://github.com/All-Hands-AI）)
+- **主要语言:** Python
+- **Stars:** 55862 ⭐
+- **Forks:** 6263 🍴
+- **本周期新增 Stars:** 326 ⭐
+
+_要了解更多关于 **All-Hands-AI / OpenHands** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/All-Hands-AI/OpenHands)。_
+
+---
+
+## lobehub / lobe-chat
+
+> LobeChat 是一个开源的现代化 AI 聊天框架，集成了多种AI模型、支持知识库、多模态和复杂对话功能，提供便捷部署的私人AI应用解决方案。
+
+### 项目介绍
+
+LobeChat 是一个开源的、设计现代化的 AI 聊天框架，旨在为用户和开发者提供功能丰富、易于使用的 AIAgent 交互平台。该项目支持连接多种不同的 AI 服务提供商，同时具备知识库、多模态能力、插件系统等特性，并提供一键免费部署私人 AI 应用（如 ChatGPT / Claude / DeepSeek）的能力。
+
+项目的核心功能和特性包括：
+
+- **思维链 (Chain of Thought)**：可视化 AI 的逐步推理过程，增强透明度和理解。
+- **分支对话 (Branching Conversations)**：支持从任意消息创建新的对话分支，保留上下文，可选择延续或独立模式。
+- **Artifacts 支持**：集成 Claude Artifacts，支持实时生成和可视化 SVG、HTML 等多种内容格式。
+- **文件上传 / 知识库**：允许用户上传文档、图片、音视频等文件，创建知识库，并可在对话中利用这些信息进行更丰富的交互。
+- **多模型服务提供商支持**：广泛集成包括 OpenAI (GPT 系列)、Claude 3 系列、Gemini、Ollama、DeepSeek、Qwen、Bedrock、Google、PPIO、HuggingFace、OpenRouter、Cloudflare Workers AI、GitHub Models、Novita、Together AI、Fireworks AI、Groq、Perplexity、Mistral、Ai21Labs、Upstage、xAI、Wenxin、Hunyuan、ZhiPu、SiliconCloud、01.AI、Spark、SenseNova、Stepfun、Moonshot、Baichuan、Minimax、InternLM、Higress、Gitee AI、Taichu、360 AI、Search1API、InfiniAI、Qiniu 等在内的 40 多种 AI 模型提供商。
+- **本地大型语言模型 (LLM) 支持**：通过集成 Ollama，支持用户使用本地模型。
+- **模型视觉识别**：支持如 GPT-4-vision 等具备图像识别能力的模型，允许上传图片并基于图像内容进行智能对话。
+- **TTS & STT 语音对话**：支持文本转语音 (TTS) 和语音转文本 (STT) 技术，提供多种高质量语音选项（如 OpenAI Audio, Microsoft Edge Speech），实现自然的语音交互体验。
+- **文生图生成**：集成 DALL-E 3, MidJourney, Pollinations 等工具，允许在对话中直接调用图像生成功能。
+- **插件系统 (Function Calling)**：基于 Function Calling 机制，通过插件扩展 AI 助手的实时信息获取和处理能力，支持网页搜索、文档检索、图像生成、与其他平台交互等多种功能。
+- **Agent 市场 (GPTs)**：提供一个社区驱动的代理市场，汇集了各种不同用途的预设 Agent，并提供自动国际化功能。
+- **支持本地 / 远程数据库**：支持将数据存储在本地浏览器 (基于 CRDT 实现多设备同步) 或服务器端 (支持 PostgreSQL)。
+- **多用户管理**：支持 `next-auth` 和 `Clerk` 两种用户认证和管理方案，满足不同安全和管理需求。
+- **渐进式 Web 应用 (PWA)**：提供接近原生应用的桌面和移动体验，支持离线使用和更快的加载速度。
+- **移动设备适配**：针对移动设备进行了优化设计，提供流畅的交互体验。
+- **自定义主题**：提供浅色、深色主题以及多种颜色定制选项，支持与系统主题同步，并可选择对话气泡或文档模式。
+
+LobeChat 追求卓越的性能表现，通过 Lighthouse 报告显示在桌面和移动端均有高分。
+
+该项目支持多种部署方式：
+
+- **一键部署**：通过 Vercel, Zeabur, Sealos 或阿里云，结合 GitHub 账户登录和配置 API Key/Access Code (可选)，即可快速部署。
+- **Docker 部署**：提供 Docker 镜像，支持在私有设备上便捷地部署和启动服务。需要创建存储文件夹并运行 `docker compose up -d` 命令。
+
+项目提供了丰富的环境变量配置选项，用于设置 API Key、代理地址、模型列表、访问密码等。
+
+在生态系统方面，LobeChat 发布了多个相关的 NPM 包和仓库，例如 `@lobehub/ui` (AIGC Web UI 组件库)、`@lobehub/icons` (AI 模型图标库)、`@lobehub/tts` (TTS/STT Hooks 库)、`@lobehub/lint` (代码规范配置)。插件生态则由 `lobe-chat-plugins`, `chat-plugin-template`, `@lobehub/chat-plugin-sdk`, `@lobehub/chat-plugins-gateway` 等组件构成。
+
+项目鼓励社区贡献，可以通过 GitHub Issues 和 Projects 参与到代码开发和产品设计的讨论中。主要维护者是 @arvinxx 和 @canisminor1990。
+
+该项目获得 Apache 2.0 许可证授权，并欢迎用户通过 Open Collective 进行赞助以支持项目发展。LobeHub 还推出了 Lobe SD Theme、Lobe Midjourney WebUI、Lobe i18n、Lobe Commit 等其他产品。
+
+### 项目统计与信息
+
+- **作者:** [lobehub](https://github.com/lobehub）)
+- **主要语言:** TypeScript
+- **Stars:** 61147 ⭐
+- **Forks:** 12835 🍴
+- **本周期新增 Stars:** 41 ⭐
+
+_要了解更多关于 **lobehub / lobe-chat** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/lobehub/lobe-chat)。_
+
+---
+
+## Fosowl / agenticSeek
+
+> AgenticSeek是一个开源的本地自主AI代理项目，让你能在个人设备上运行一个私有的智能助手，具备网页浏览、编程和复杂任务处理能力，不依赖昂贵API。
+
+### 项目介绍
+
+AgenticSeek 是一个致力于提供完全本地化、注重隐私的自主 AI 代理项目。其核心目标是作为 Manus AI 等 API 依赖型解决方案的替代品，让用户能够在自己的硬件上运行一个能够思考、浏览网页、编写代码并规划复杂任务的 AI 助手，从而避免高昂的 API 费用并确保数据完全私有。
+
+项目的主要特点和功能包括：
+
+- **完全本地化与隐私保护**：所有计算、数据存储和交互都在用户本地设备上进行，不依赖于任何云服务或第三方 API（除非用户选择使用）。这确保了用户数据的完全隐私。
+- **智能网页浏览**：能够自主访问互联网，执行搜索、阅读页面内容、提取信息甚至填写网页表单，无需人工干预。
+- **自主编程助手**：可以根据用户的指令编写、调试和运行多种编程语言（如 Python, C, Go, Java 等）的代码。
+- **智能代理选择**：根据用户提出的任务，AgenticSeek 能够自动选择最合适的 AI 代理来执行。
+- **复杂任务规划与执行**：可以将大型、复杂的任务分解为更小的步骤，并协调不同的 AI 代理来逐步完成。
+- **语音交互支持**：支持通过语音与 AI 进行交流，提供文本转语音和语音转文本功能，使交互更加便捷和未来感。
+
+AgenticSeek 主要面向希望拥有一个强大、自主且完全私有的 AI 助理的技术人员和开发者。它适用于需要进行网络研究、数据提取、自动化编程、或执行需要规划和多步骤操作的任务等场景。
+
+技术栈和依赖方面，项目主要使用 Python 编写，并依赖于 Docker 和 Docker Compose 用于服务编排（如 SearxNG 搜索引擎和 Redis），以及 Selenium 驱动浏览器实现网页交互。对于 AI 模型，项目强调使用本地模型，支持 Ollama、LM Studio 等本地 LLM 运行环境，以及通过自定义服务器运行远程 LLM。同时也提供对 OpenAI、DeepSeek API、Hugging Face、TogetherAI、Google Gemini 等外部 API 的支持作为可选方案。项目推荐使用 Deepseek R1 系列模型进行本地推理。
+
+安装与配置涉及克隆代码库、创建 Python 虚拟环境、安装依赖，并根据需求配置 `config.ini` 文件，指定使用的 LLM 提供商（本地或API）、模型、服务器地址、是否启用语音功能、工作目录等。运行前需要确保已安装 Chrome 浏览器、ChromeDriver、Docker 和 Python 3.10+。
+
+基本的启动和使用方法分 CLI 模式和 Web UI 模式。用户可以通过运行 `cli.py` 或 `api.py` 启动程序和界面，然后输入自然语言的任务指令给 AI。项目仍在积极开发中，并欢迎社区贡献。
+
+AgenticSeek 遵循 GPL-3.0 开源许可，用户可以自由使用、修改和分发。
+
+### 项目统计与信息
+
+- **作者:** [Fosowl](https://github.com/Fosowl）)
+- **主要语言:** Python
+- **Stars:** 3682 ⭐
+- **Forks:** 380 🍴
+- **本周期新增 Stars:** 422 ⭐
+
+_要了解更多关于 **Fosowl / agenticSeek** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/Fosowl/agenticSeek)。_
+
+---
+
+## usebruno / bruno
+
+> Bruno是一款开源API测试与协作工具，通过将API集合存储在本地文件系统和纯文本格式实现Git友好协作和数据隐私保护。
+
+### 项目介绍
+
+Bruno 是一个创新性的开源 API 客户端集成开发环境（IDE），旨在替代 Postman 和 Insomnia 等工具，用于探索和测试 API。
+
+Bruno 的核心特点在于其数据存储方式：它将 API 集合直接存储在您文件系统中的文件夹里。项目使用一种名为 "Bru" 的纯文本标记语言来记录 API 请求的详细信息。这种基于文件的存储方式使得使用 Git 或任何其他版本控制系统来协作管理 API 集合变得非常便利。
+
+该项目强调离线使用，承诺永远不会添加云同步功能，以确保用户的数据隐私完全保留在本地设备上。
+
+主要功能和特性：
+
+- 跨平台支持：可在 Mac、Windows 和 Linux 等多种操作系统上运行。
+- Git 协作兼容：由于数据以纯文本文件形式存储，可以轻松地通过 Git（或其他版本控制系统）进行团队协作、版本控制和分支管理。
+- 支持多种安装方式：提供可执行文件直接下载，也支持 Homebrew, Chocolatey, Scoop, Snap, Flatpak, Apt 等包管理器安装。
+
+技术栈/依赖：
+
+项目主要采用 JavaScript 和 TypeScript 进行开发。
+
+安装与配置：
+
+安装过程通常包括从官方网站下载二进制文件或通过各平台的包管理器执行简单的安装命令。例如，在 Mac 上可以使用 `brew install bruno`，在 Windows 上使用 `choco install bruno` 或 `scoop install bruno`，或 `winget install Bruno.Bruno`，在 Linux 上使用 `snap install bruno`，`flatpak install com.usebruno.Bruno` 或通过 Apt 仓库安装。具体的详细步骤可在官方文档和 `publishing.md` 文件中找到。
+
+基本使用方法：
+
+用户可以创建 API 集合，并使用 Bru 标记语言定义不同的 API 请求（如 GET, POST 等），包括请求头、请求体、参数等信息。这些定义被存储在本地文件中，并通过 IDE 界面进行管理和执行。
+
+适用场景/目标用户：
+
+Bruno 主要面向需要频繁探索、测试和协作管理 API 的开发者和团队。其版本控制友好的特性尤其适合团队开发流程，方便 API 定义的历史追溯和变更管理。注重数据隐私的用户也会倾向于选择这款离线工具。
+
+项目状态与许可证：
+
+项目处于积极开发中，不断有新的版本发布。截至最新信息，其核心版本采用 MIT 许可证。
+
+独特的优势：
+
+相对于传统的 API 客户端，Bruno 的文件系统存储方式是一个显著优势，它将 API 集合变成了可版本控制的资产，极大地简化了团队间的协作和环境切换，同时保证了用户数据的本地性和私密性。
+
+### 项目统计与信息
+
+- **作者:** [usebruno](https://github.com/usebruno）)
+- **主要语言:** JavaScript
+- **Stars:** 34346 ⭐
+- **Forks:** 1628 🍴
+- **本周期新增 Stars:** 76 ⭐
+
+_要了解更多关于 **usebruno / bruno** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/usebruno/bruno)。_
+
+---
+
+## XiaoYouChR / Ghost-Downloader-3
+
+> Ghost-Downloader-3是一款基于Python的跨平台多线程下载器，具备AI智能加速和流畅UI，旨在成为下一代智能下载工具并计划支持磁力链接和插件系统。
+
+### 项目介绍
+
+Ghost-Downloader-3是一个使用 Python 构建的、具有 Fluent Design 风格的跨平台多线程下载器。它旨在成为下一代下载工具，整合了人工智能（AI）辅助功能。项目最初是出于个人兴趣开发，并旨在帮助 Bilibili 的创作者整合资源。
+
+该项目的主要特点包括：
+
+- 跨平台支持：可在 Linux (glibc 2.35+)、Windows (7 SP1+) 和 macOS (11.0+) 上运行，支持 x86_64 和 arm64 架构。
+- 多线程下载：利用多线程提高下载速度和效率。
+- AI 智能加速：具备 AI 智能加速功能，提升下载性能。
+- 智能分块：类似 IDM (Internet Download Manager) 的智能文件分块下载，且无需额外的文件合并步骤。
+- Fluent Design 用户界面：提供美观流畅的用户体验。
+- 浏览器扩展：支持 Chrome 和 Firefox 浏览器扩展，方便嗅探和发送下载任务。
+- 国际化支持：已添加了包括简体中文、繁体中文和文言文在内的多语言翻译。
+- 全局设置：提供全局下载限速等设置选项。
+- 任务管理：支持更详细的下载信息显示和计划任务功能。
+
+项目的技术栈主要基于 Python，核心依赖库可能包括：
+
+- 用户界面：PySide6 (Qt 的官方 Python 绑定) 或 PyQt。
+- 异步 I/O：Aiofiles 用于文件操作。
+- 网络请求：可能使用 Httpx 或其他类似库进行多用途 HTTP 请求。
+- 日志记录：Loguru。
+- 其他：Darkdetect 用于检测系统深色模式，pyqt5-concurrent 用于基于 QThreadPool 的任务并发处理。
+- 项目打包可能使用 Nuitka 将 Python 代码编译为可执行文件。
+
+项目的未来路线图规划了以下重要功能：
+
+- 升级到基于事件的 MVVM 架构。
+- 增强任务编辑功能，支持将多个客户端绑定到同一任务。
+- 实现磁力链接和 BT 下载（考虑使用 libtorrent）。
+- 构建强大的插件系统。
+- 增强浏览器扩展 기능。
+
+项目的许可证是 GPL v3.0。目前项目仍处于早期阶段，存在一些已知问题，并且由于主开发者需要备考，项目更新暂时处于暂停状态。
+
+Ghost-Downloader-3 适用于需要高效、功能丰富且拥有现代用户界面的跨平台下载工具的技术用户和开发者。特别是关注多线程、智能下载策略和潜在 AI 应用的用户。
+
+### 项目统计与信息
+
+- **作者:** [XiaoYouChR](https://github.com/XiaoYouChR）)
+- **主要语言:** Python
+- **Stars:** 1775 ⭐
+- **Forks:** 84 🍴
+- **本周期新增 Stars:** 280 ⭐
+
+_要了解更多关于 **XiaoYouChR / Ghost-Downloader-3** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/XiaoYouChR/Ghost-Downloader-3)。_
+
+---
+
+## freeCodeCamp / freeCodeCamp
+
+> freeCodeCamp是一个通过免费课程和认证帮助成人进入技术行业的开源慈善项目，提供从前端到机器学习等广泛领域的实践学习资源。
+
+### 项目介绍
+
+freeCodeCamp 是一个由捐赠者支持的 501(c)(3) 慈善组织运营的开源项目，其核心目标是提供免费的编程和计算机科学的学习资源及课程，帮助成人成功转型进入技术领域。该项目已成功帮助数万名学习者获得他们的第一份开发者工作。
+
+freeCodeCamp 提供了完全免费且自定进度的全栈 Web 开发和机器学习课程。其学习平台包含数千个交互式编程挑战，旨在帮助学习者提升技能。
+
+核心功能和特性：
+
+- 提供多种免费的开发者认证，涵盖 Web 开发、数据科学、信息安全、机器学习等多个领域。
+- 每个认证都包含多个必需的 Web 应用项目和数百个额外的编码挑战，项目带有敏捷用户故事和自动化测试。
+
+主要提供的认证包括：
+
+- 响应式 Web 设计
+- JavaScript 算法和数据结构
+- 前端开发库 (涵盖 Bootstrap, jQuery, Sass, React, Redux)
+- 数据可视化 (使用 D3, JSON APIs, Ajax)
+- 关系型数据库 (涵盖 Bash, SQL, Git)
+- 后端开发和 APIs (使用 Npm, Node, Express, MongoDB, Mongoose)
+- 质量保障 (使用 Chai, Node, Express)
+- Python 科学计算
+- Python 数据分析 (使用 NumPy)
+- 信息安全 (使用 HelmetJS, Python)
+- Python 机器学习 (使用 TensorFlow)
+- Python 大学代数
+- 遗留的全栈开发等认证 (结合多个核心认证完成)
+- 与 Microsoft 合作的新认证：Foundational C# with Microsoft.
+
+项目技术栈/依赖语言主要包括：
+
+- TypeScript (69.0%)
+- JavaScript (25.6%)
+- CSS (5.1%)
+- 其他包括 Dockerfile, EJS, HTML 等。
+
+主要面向对象：
+
+- 寻求免费编程教育和转型进入技术领域的成年人。
+- 对全栈 Web 开发、数据科学、机器学习等领域感兴趣的学习者。
+- 希望通过实践项目和自动化测试来巩固和提升编程技能的人。
+
+此外，freeCodeCamp 社区还提供丰富的辅助资源：
+
+- 活跃的论坛，提供编程帮助和项目反馈。
+- YouTube 频道，包含各种技术领域的免费课程视频。
+- 技术出版物，发布大量编程教程、数学及计算机科学文章。
+- Discord 服务器，供学习者交流和讨论。
+
+项目鼓励贡献，欢迎志愿者参与到其开源代码库和课程的建设中。项目的软件代码遵循 BSD-3-Clause 许可证，课程内容版权归 freeCodeCamp.org 所有。该项目代码运行在 freeCodeCamp.org 网站上，长期维护并持续更新。
+
+### 项目统计与信息
+
+- **作者:** [freeCodeCamp](https://github.com/freeCodeCamp）)
+- **主要语言:** TypeScript
+- **Stars:** 418726 ⭐
+- **Forks:** 40201 🍴
+- **本周期新增 Stars:** 211 ⭐
+
+_要了解更多关于 **freeCodeCamp / freeCodeCamp** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/freeCodeCamp/freeCodeCamp)。_
+
+---
+
+## disposable-email-domains / disposable-email-domains
+
+> 这份项目提供了一份持续更新的一次性电子邮件域名屏蔽列表及允许列表，并提供了多种语言的使用示例，帮助开发者防止用户使用临时邮箱进行注册或滥用服务。
+
+### 项目介绍
+
+该项目提供了一份关于一次性（或临时）电子邮件域名的列表。这些域名常被用于创建虚假用户账户，进行垃圾邮件发送或滥用服务。虽然列表中的域名可能并非始终为“一次性”，但经过基本检查，可以认为它们曾被用作临时用途。
+
+该项目的核心是一个名为 `disposable_email_blocklist.conf` 的文件，其中包含了被认为是一次性邮件的域名列表。此外，还有一个 `allowlist.conf` 文件，用于收集那些常被误识别为一次性但实际并非如此的域名。
+
+主要功能和特性：
+
+- 提供一份持续更新的一次性电子邮件域名屏蔽列表。
+- 包含一份误判域名的允许列表，以提高准确性。
+- 提供了多种编程语言（包括 Python, PHP, Go, Ruby on Rails, Node.js, C#, Bash, Java, Swift）的使用示例，方便开发者集成到自己的应用程序中进行验证。
+- 提供自动化脚本 (`maintain.sh`) 辅助维护列表，包括格式化、去重和移除允许列表中的域名。
+- PyPI 仓库（如 PyPI）等服务已使用此列表来阻止使用已知的一次性域名注册账户。
+
+技术栈/依赖：
+
+- 项目主要包含纯文本的域名列表文件 (.conf)。
+- 提供了 Python 和 Shell 脚本 (`maintain.sh`, `verify.py`) 用于列表的维护和验证。
+- 各种语言的使用示例展示了如何在不同技术环境中读取和应用该列表。
+
+安装与配置指南概述：
+
+- 核心的“安装”是下载或克隆整个仓库，获取 `disposable_email_blocklist.conf` 和 `allowlist.conf` 文件。
+- 根据需要集成的编程语言，将列表文件放置在应用程序可访问的位置。
+
+基本使用方法概述：
+
+- 读取 `disposable_email_blocklist.conf` 文件，将域名加载到一个数据结构中（如集合或数组）。
+- 对于用户输入的电子邮件地址，提取其域名部分（通常是 `@` 符号后的部分）。
+- 检查提取的域名是否存在于屏蔽列表中。
+- （可选）在检查屏蔽列表之前，可以先检查允许列表，如果域名在允许列表中，则无需进行屏蔽检查。
+
+适用场景/目标用户：
+
+- 网站或应用程序开发者，需要防止用户使用一次性邮箱注册或滥用服务。
+- 需要进行电子邮件地址验证或筛选的系统。
+- 用于减少通过临时邮箱进行的垃圾注册、虚假账户创建或欺诈行为。
+
+项目状态与许可证：
+
+- 项目处于积极维护状态，通过 Pull Request 接收新的域名补充或移除请求。
+- 列表内容遵循 CC0 许可证，允许自由复制、修改、分发和使用，包括商业用途，无需获得许可。
+
+该项目为开发者提供了一个简单且有效的资源，以抵御基于一次性电子邮件域名的滥用行为，通过提供多语言的使用示例，方便不同技术栈的用户快速集成和应用。
+
+### 项目统计与信息
+
+- **作者:** [disposable-email-domains](https://github.com/disposable-email-domains）)
+- **主要语言:** Python
+- **Stars:** 3896 ⭐
+- **Forks:** 645 🍴
+- **本周期新增 Stars:** 24 ⭐
+
+_要了解更多关于 **disposable-email-domains / disposable-email-domains** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/disposable-email-domains/disposable-email-domains)。_
+
+---
+
+## huggingface / huggingface.js
+
+> Huggingface.js 是 Hugging Face 官方发布的 JavaScript 库集合，方便开发者通过 JavaScript/TypeScript 调用 Hugging Face 的模型推理和 Hub 功能，支持浏览器和 Node.js 等多种环境。
+
+### 项目介绍
+
+huggingface.js 是 Hugging Face 官方提供的 JavaScript 库集合，旨在方便开发者通过 JavaScript/TypeScript 与 Hugging Face Hub API 进行交互。这个项目提供了一系列模块，覆盖了模型推理、Hub 内容管理、协议客户端等多种功能，特别适合需要在现代 Web 浏览器（支持 ES Modules）或 Node.js 18+、Bun、Deno 等环境中使用 Hugging Face 资源的开发者。
+
+主要由以下几个独立的库组成：
+
+- **@huggingface/inference**: 用于调用 Hugging Face 支持的各种推理提供商（Serverless 或 Inference Endpoints 专用服务）上的机器学习模型进行推理。支持超过 100,000 个模型，并能通过第三方提供商如 Sambanova, Fal.ai, Replicate, Cohere 等进行推理调用。
+- **@huggingface/hub**: 提供了与 huggingface.co 交互的能力，包括创建或删除仓库（Repository），以及提交（Commit）和下载文件。
+- **@huggingface/mcp-client**: 实现了 Model Context Protocol (MCP) 客户端，并在此基础上提供了一个精简的代理（Agent）库，用于更灵活地与支持 MCP 的服务进行交互，构建更复杂的应用。
+- **@huggingface/gguf**: 一个 GGUF 文件格式解析器，可以直接处理远程托管的 GGUF 文件。
+- **@huggingface/dduf**: 类似地，用于解析 DDUF (DDUF Diffusers Unified Format) 文件格式。
+- **@huggingface/tasks**: 包含了 Hugging Face Hub 主要原语（如管道任务、模型库等）的定义文件和事实来源。
+- **@huggingface/jinja**: 一个极简的 Jinja 模板引擎的 JavaScript 实现，主要用于处理机器学习领域的聊天模板。
+- **@huggingface/space-header**: 允许在 Hugging Face Space 外部使用 Space 的迷你头部组件。
+- **@huggingface/ollama-utils**: 提供与 Ollama 兼容性相关的实用工具。
+
+项目使用 TypeScript 编写，并包含了类型定义，支持从 NPM 安装或通过 CDN 直接在浏览器中使用 ES Modules 导入。目前库仍处于持续发展中，欢迎社区贡献。
+
+安装方式灵活，可以通过 NPM 安装每个独立的包，也可以通过 CDN 或在 Deno 环境中直接导入。
+
+核心使用示例如下：
+
+- 使用 `@huggingface/inference` 进行聊天补全、文本生成、文本到图像等任务，支持指定模型、消息、最大 token 数，甚至可以通过 `provider` 参数选择第三方推理服务，或通过 `endpoint` 调用自定义推理 Endpoint。支持以 Blob 或 URL 形式传递多模态输入。
+- 使用 `@huggingface/hub` 创建仓库、上传文件、删除文件等操作，需要提供 Hugging Face 访问令牌。
+- 使用 `@huggingface/mcp-client` 创建 Agent 实例，加载工具并运行查询，例如查询 Hugging Face 上最热门的模型。
+
+项目采用 MIT 许可证。主要技术栈包括 TypeScript 和 JavaScript，并在 CI/CD 中使用了 Shell 和 Python 脚本。
+
+### 项目统计与信息
+
+- **作者:** [huggingface](https://github.com/huggingface）)
+- **主要语言:** TypeScript
+- **Stars:** 2017 ⭐
+- **Forks:** 401 🍴
+- **本周期新增 Stars:** 10 ⭐
+
+_要了解更多关于 **huggingface / huggingface.js** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/huggingface/huggingface.js)。_
