@@ -1,0 +1,816 @@
+---
+title: Github Daily Trending
+date: 2025-05-26
+cover: https://hub-image.moreve.net/files/images/github-trending/2025-05-26.png
+summary: '本期内容涵盖本地AI代理AgenticSeek、AI查询引擎MindsDB、量化投资平台Qlib、Telegram智能搜索Telegram Search、系统编程语言Zig、Node-based视觉AI工具ComfyUI、LLM微调框架LLaMA Factory、Claude终端编码助手Claude Code、开发者路线图Developer Roadmap、开源Windows兼容系统ReactOS以及媒体服务器Jellyfin等项目。'
+headingSummaries:
+  - heading: 'Fosowl / agenticSeek'
+    summary: 'AgenticSeek 是一个本地化AI代理，强调隐私，能在本地进行思考、浏览和编程，旨在替代云端AI服务。'
+    tags: [AI/ML, Developer Tools, CLI & Utilities]
+  - heading: 'mindsdb / mindsdb'
+    summary: 'MindsDB是一个将数据与AI模型连接起来的平台，允许用户通过SQL语言查询分布式数据源并利用AI能力，解决数据孤岛和复杂集成问题。'
+    tags: [AI/ML, Data Tools, Web Development]
+  - heading: 'microsoft / qlib'
+    summary: '这份内容主要介绍了 Qlib，一个利用人工智能赋能量化投资的 Python 平台，涵盖从数据处理到策略执行的完整流程，并提供了丰富的功能、模型库和工具。'
+    tags: [AI/ML, Data Tools, Developer Tools]
+  - heading: 'groupultra / telegram-search'
+    summary: 'Telegram Search是一款为解决Telegram历史记录难搜问题开发的客户端，通过备份和AI向量搜索实现比原生更智能精准的聊天记录查询，支持多种AI模型提供商和易于部署使用。'
+    tags: [CLI & Utilities, AI/ML, Data Tools]
+  - heading: 'ziglang / zig'
+    summary: 'Zig是一种通用系统编程语言及工具链，旨在提供高性能、内存安全且易于控制底层硬件的替代C语言的现代化选择，并支持强大的交叉编译和与C语言互操作性。'
+    tags: [Developer Tools, Libraries & SDKs, CLI & Utilities]
+  - heading: 'comfyanonymous / ComfyUI'
+    summary: 'ComfyUI是基于节点/流程图的强大视觉AI工具，主要用于Stable Diffusion及多种扩散模型的图形化工作流程设计和执行，支持多种模型、技术和平台。'
+    tags: [AI/ML, Developer Tools]
+  - heading: 'hiyouga / LLaMA-Factory'
+    summary: '这是一个开源项目 LLaMA Factory，提供了一个统一的框架，支持高效微调100多种大型语言模型和视觉语言模型，并提供了简洁的命令行和可视化界面。'
+    tags: [AI/ML, Developer Tools, CLI & Utilities]
+  - heading: 'anthropics / claude-code'
+    summary: 'Claude Code是一款基于Anthropic Claude大模型的终端内智能编码工具，能通过自然语言帮你写代码、修bug、理解代码和处理Git工作流，提高开发效率。'
+    tags: [AI/ML, Developer Tools, CLI & Utilities]
+  - heading: 'shadps4-emu / shadPS4'
+    summary: '一篇关于早期阶段的PS4模拟器shadPS4的介绍，该模拟器支持Windows、Linux和macOS，基于C++和Vulkan开发，已能运行部分游戏，并面向技术爱好者和开发者。'
+    tags: [Libraries & SDKs, Developer Tools, Learning & Education]
+  - heading: 'lobehub / lobe-chat'
+    summary: 'Lobe Chat 是一个开源、高性能且现代设计的 AI 对话框架，支持多种大模型和丰富功能，可灵活部署满足个人和团队需求。'
+    tags: [AI/ML, Developer Tools, Libraries & SDKs]
+  - heading: 'microsoft / typescript-go'
+    summary: '这个项目是微软正在开发的用 Go 语言原生实现 TypeScript 编译器的预备仓库， aiming at higher performance and efficiency than the Node.js version, and is currently in active development with basic compiler and language service functionalities implemented.'
+    tags: [Developer Tools, Web Development, Productivity]
+  - heading: 'anthropics / courses'
+    summary: '这是Anthropic提供的一系列教育课程，旨在通过课程和Jupyter Notebooks教导技术人员如何使用其大型语言模型Claude进行API调用、Prompt工程和工具使用等开发任务。'
+    tags: [Learning & Education, AI/ML]
+  - heading: 'jellyfin / jellyfin'
+    summary: 'Jellyfin 是一个完全开源、免费的媒体服务器系统，帮助用户自由管理、串流自己的影音和图片内容，无需付费或受限制。'
+    tags: [Libraries & SDKs, Web Development, Developer Tools]
+  - heading: 'kamranahmedse / developer-roadmap'
+    summary: 'Developer Roadmap是一个社区驱动项目，为开发者提供交互式路线图和资源，帮助他们系统学习和规划职业发展。'
+    tags: [Learning & Education, Web Development, Developer Tools]
+  - heading: 'reactos / reactos'
+    summary: 'ReactOS是一个开源免费的操作系统项目，旨在实现与Microsoft Windows的高度兼容性，其内核采用Windows NT架构设计。'
+    tags: [Developer Tools, Libraries & SDKs, DevOps & Cloud]
+---
+
+## Fosowl / agenticSeek
+
+> AgenticSeek 是一个本地化AI代理，强调隐私，能在本地进行思考、浏览和编程，旨在替代云端AI服务。
+
+### 项目介绍
+
+AgenticSeek 是一个完全本地化、注重隐私的人工智能代理项目。它旨在成为如 Manus AI 等商业服务的替代品，但强调所有操作都在用户本地设备上完成，无需依赖外部API或支付昂贵的月费，用户仅需承担运行硬件所需的电力成本。项目的核心理念是提供一个自主行动的AI助手，能够在本地环境中进行思考、浏览网页和编写代码，从而确保用户数据完全私密。
+
+该项目的主要功能和特性包括：
+
+- **完全本地化与隐私保护：** 所有计算和数据处理都在用户的计算机上执行，不涉及云服务，有效保护用户的数据隐私。
+- **智能网页浏览：** 代理能够自主地浏览互联网，执行搜索、阅读信息、提取内容甚至填写网页表单等操作。
+- **自主编程助手：** 它具备编写、调试和运行多种编程语言（如 Python, C, Go, Java 等）代码的能力，无需人工干预。
+- **智能代理选择：** 根据用户的任务需求，系统能够自动选择并调用最合适的内部代理模块来执行任务。
+- **计划与执行复杂任务：** 能够将大型复杂任务分解为多个子步骤，并协调不同的AI代理按步骤完成工作，例如旅行计划或项目开发。
+- **语音交互：** 支持文本转语音和语音转文本功能，用户可以通过语音与AI助手进行自然交流。
+
+在技术栈和依赖方面，AgenticSeek 主要基于 Python 开发，并依赖 Docker 和 Chrome/Chromedriver 用于网页浏览功能。其核心特色在于对本地大型语言模型（LLM）的支持，例如通过 ollama 或 lm-studio 在本地运行模型。项目也提供了与多种API提供商集成的选项，包括 OpenAI、Deepseek API、Hugging Face、Together AI 和 Google Gemini，但推荐本地优先以保障隐私。对本地运行时，项目建议使用具备足够显存（如12GB VRAM或更高）的GPU来运行如 Deepseek R1 等推理能力较强的模型。
+
+安装与配置方面，项目提供了适用于 Linux/MacOS 和 Windows 的自动化安装脚本，主要步骤包括克隆代码仓库、创建并激活 Python 虚拟环境、安装必要的依赖库（包含 Chromedriver 和 PortAudio）。配置主要通过 `config.ini` 文件进行，用户可以设置本地/远程模式、选择LLM提供商和模型、配置代理名称、开启/关闭会话保存、语音输入/输出等功能，并指定AI的工作目录。
+
+使用上，启动 Docker 服务后，用户可以通过命令行界面（CLI）或基于 Web 的图形用户界面（GUI）与 AgenticSeek 交互。在CLI模式下，还可以配置语音输入，通过唤醒词（代理名称）激活AI。项目提供了多种任务示例，涵盖了编程、信息收集、文件操作等场景。项目仍处于积极开发阶段，“工作正在进行中 (Work in Progress)”，并欢迎社区贡献。
+
+AgenticSeek 适用于希望在本地环境中利用AI自动化处理文档、编程、信息检索等任务的开发者、研究人员或对数据隐私有较高要求的用户。它特别适合那些拥有一定本地计算资源，并希望摆脱商业API限制和成本的用户。项目采用 GPL-3.0 许可证。
+
+### 项目统计与信息
+
+- **作者:** [Fosowl](https://github.com/Fosowl）)
+- **主要语言:** Python
+- **Stars:** 4662 ⭐
+- **Forks:** 452 🍴
+- **本周期新增 Stars:** 603 ⭐
+
+_要了解更多关于 **Fosowl / agenticSeek** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/Fosowl/agenticSeek)。_
+
+---
+
+## mindsdb / mindsdb
+
+> MindsDB是一个将数据与AI模型连接起来的平台，允许用户通过SQL语言查询分布式数据源并利用AI能力，解决数据孤岛和复杂集成问题。
+
+### 项目介绍
+
+MindsDB 是一个AI查询引擎平台，旨在帮助用户，包括AI、Agent和应用程序，从大规模的分布式数据源中获取准确答案。它充当数据和AI模型之间的智能层，使得可以通过熟悉的SQL语言来与数据进行交互并集成AI功能。该项目的核心理念是“连接、统一、响应”。
+
+核心功能和特性包括：
+
+- **连接数据源**: MindsDB 支持连接到数百个企业级数据源，包括各种数据库、数据仓库和SaaS应用。这使得它可以直接访问数据所在的位置，无需进行传统的数据ETL（Extract, Transform, Load）过程。
+- **统一数据**: 连接后的数据可以通过SQL查询被视为一个整体。MindsDB 提供SQL方言，能够将查询翻译并在不同的数据源上执行。为了更好地组织和准备异构数据，MindsDB 支持创建虚拟表：
+  - **VIEWS**: 简化跨源数据访问，创建统一视图。
+  - **KNOWLEDGE BASES**: 索引和组织非结构化数据，提高检索效率。
+  - **ML MODELS**: 对数据应用AI/ML转换，进行预测、分析等操作。
+  - **JOBS**: 自动化数据的同步和转换任务，实现实时处理。
+- **响应数据**: 用户可以通过MindsDB 与数据进行“对话”：
+  - **AGENTS**: 配置内置的Agent，专门用于回答基于连接和统一后数据的问题。
+  - **MCP (Model Context Protocol)**: 通过MCP协议连接到MindsDB，实现无缝交互。内置的MCP服务器是MindsDB 的一个关键组成部分，尤其适用于构建能够回答跨大规模联邦数据的AI应用。
+
+技术栈与依赖方面，MindsDB 主要使用 Python 语言开发。它支持与多种AI模型提供商集成（虽然输入中未详细列出具体是哪些大型语言模型，但其定位和Agent、MCP等功能表明其支持与各类AI模型协同工作）。项目的安装方式多样，支持通过 Docker Desktop、标准 Docker 镜像，以及使用 PyPI 进行安装，后一种方式常用于贡献者进行开发。
+
+基本使用方法围绕其SQL接口展开，允许用户通过标准的SQL命令来连接数据、创建模型（例如预测模型或问答模型）、创建知识库以及执行查询以获取AI驱动的洞察或答案。例如，可以使用 `CREATE DATABASE` 连接数据源，使用 `CREATE MODEL` 创建模型，然后使用 `SELECT` 语句结合模型进行预测或问答。
+
+MindsDB 适用于需要从分散的、大规模数据中快速获取由AI驱动的洞察的场景。目标用户包括数据科学家、开发者以及需要将AI能力集成到现有数据基础设施的应用。通过提供一个统一的查询层，它解决了传统数据处理和AI应用开发中面临的数据孤岛和复杂集成问题。
+
+项目采用特定的开源许可证（具体许可证文件名为 LICENSE），是一个活跃开发的开源项目，鼓励社区贡献，并提供了详细的贡献指南和支持渠道（Slack社区、GitHub Discussions、Stack Overflow）。
+
+### 项目统计与信息
+
+- **作者:** [mindsdb](https://github.com/mindsdb）)
+- **主要语言:** Python
+- **Stars:** 29688 ⭐
+- **Forks:** 5092 🍴
+- **本周期新增 Stars:** 415 ⭐
+
+_要了解更多关于 **mindsdb / mindsdb** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/mindsdb/mindsdb)。_
+
+---
+
+## microsoft / qlib
+
+> 这份内容主要介绍了 Qlib，一个利用人工智能赋能量化投资的 Python 平台，涵盖从数据处理到策略执行的完整流程，并提供了丰富的功能、模型库和工具。
+
+### 项目介绍
+
+Qlib 是一个面向人工智能的量化投资平台，致力于利用人工智能技术在量化投资领域发挥潜力、赋能研究并创造价值，涵盖从想法探索到实际生产的整个流程。该平台支持多样化的机器学习建模范式，包括监督学习、市场动态建模和强化学习。
+
+项目核心目标是为量化研究提供一个强大基础设施，包含完整的数据处理、模型训练、回测等机器学习流程，并覆盖量化投资的完整链条：Alpha 挖掘、风险建模、组合优化和订单执行。平台设计为松耦合的模块，每个组件都可单独使用。
+
+Qlib 的主要功能和特性包括：
+
+- **数据管理与处理**：支持多种金融市场数据（例如 A 股、美股）及不同频率（日频、高频 1 分钟）数据的获取、清洗、存储和管理。提供高效的数据服务器，支持离线和在线模式，显著提高数据加载性能。支持 Point-in-Time 数据库，Arctic 后端以及 Orderbook 数据示例。
+- **丰富的模型库**：集成了多种最先进的定量研究模型，包括但不限于 LightGBM, XGBoost, Catboost, MLP, LSTM, GRU, ALSTM, GATs, SFM, TFT, TabNet, DoubleEnsemble, TCTS, Transformer, Localformer, TRA, TCN, ADARNN, ADD, IGMTF, HIST, KRNN, Sandwich 等，覆盖多种机器学习方法。
+- **自动化工作流**：提供 `qrun` 工具，支持通过配置文件自动化运行完整的量化研究工作流，包括数据集构建、模型训练、回测和评估，并生成图形化报告。
+- **灵活的定制开发**：提供模块化的接口，允许研究人员通过编写代码构建自定义的量化研究工作流，支持灵活的模型训练、回测和分析。
+- **市场动态适应**：提供解决金融市场非平稳性问题的方案，例如滚动再训练（Rolling Retraining）和 DDG-DA，帮助模型适应不断变化的市场环境。
+- **强化学习框架**：支持强化学习范式，特别是应用于订单执行场景，帮助投资者通过与环境互动学习优化交易策略。提供了 TWAP, PPO, OPDS 等算法实现。
+- **嵌套决策框架**：支持多层级或不同粒度的交易策略和执行器嵌套优化和运行，例如高频交易示例。
+- **在线服务**：支持将训练好的模型部署为在线服务，实现低成本的实时预测。
+- **报告与分析**：提供全面的分析报告，包括预测信号分析（如 IC 曲线、收益分布）和投资组合回测分析。
+- **数据集动物园**：构建并集成了 Alpha360 和 Alpha158 等数据集，并提供了构建自定义数据集的教程。
+- **R&D-Agent**：推出基于 LLM 的自主演进代理，用于自动化量化投资研发中的因子挖掘和模型优化。提供因子挖掘（从数据和报告）、模型优化等场景的演示。
+
+项目主要技术栈包括 Python 以及 PyTorch, Tensorflow 等深度学习框架，并且依赖如 LightGBM 的高性能库。数据存储使用了高效的定制化格式。
+
+在安装方面，推荐使用 Conda 管理 Python 环境，支持 Python 3.8 至 3.12。可以通过 pip 直接安装稳定版 `pyqlib`，或从源代码安装最新开发版本。数据准备方面，提供了脚本从公开数据源（如 Yahoo Finance）获取和更新日频及分钟级数据，并提供了社区贡献的数据源。
+
+典型适用场景包括量化研究的全流程，从数据探索、因子挖掘、模型构建、策略回测到实盘执行和在线服务。主要目标用户为量化研究人员、数据科学家和开发者。
+
+该项目采用 MIT 许可证。目前处于活跃开发状态，不断有新功能发布和优化。可以通过 Issues 和 Gitter 等渠道与项目团队交流或贡献代码。
+
+### 项目统计与信息
+
+- **作者:** [microsoft](https://github.com/microsoft）)
+- **主要语言:** Python
+- **Stars:** 21239 ⭐
+- **Forks:** 3380 🍴
+- **本周期新增 Stars:** 615 ⭐
+
+_要了解更多关于 **microsoft / qlib** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/microsoft/qlib)。_
+
+---
+
+## groupultra / telegram-search
+
+> Telegram Search是一款为解决Telegram历史记录难搜问题开发的客户端，通过备份和AI向量搜索实现比原生更智能精准的聊天记录查询，支持多种AI模型提供商和易于部署使用。
+
+### 项目介绍
+
+Telegram Search是一个功能强大的Telegram聊天记录搜索客户端，致力于解决用户难以高效查找历史消息的问题。它通过集成聊天记录备份功能和先进的向量搜索技术，提供了比Telegram原生搜索更为智能和精准的检索能力。
+
+该项目的主要特点和功能包括：
+
+- 聊天记录备份：能够备份用户的Telegram聊天记录，为后续的搜索和分析提供数据基础。
+- 向量搜索与语义匹配：利用语义向量技术（基于OpenAI等模型），项目不再仅仅依赖关键词匹配，而是能够理解搜索查询和聊天内容的语义，从而实现更精准和智能的匹配，即使是含义相近而非词语完全相同的查询也能找到相关结果。
+- 支持多种AI模型提供商：项目支持集成来自不同提供商的AI模型，包括Gemini, OpenAI, Azure OpenAI, Ollama, Grok等，增强了其灵活性和可扩展性。
+- 用户友好的界面：提供Web前端界面，方便用户进行配置、备份和搜索操作。
+- 易于部署：提供了详细的安装和配置指南，包括使用Docker Compose启动数据库等，并且支持Electron打包，方便用户在桌面环境使用。
+
+技术栈和依赖方面：
+
+- 项目基于TypeScript开发。
+- 前端界面使用Vue构建。
+- 数据库方面使用了Drizzle进行数据库迁移和管理，支持配置使用Postgres等数据库。项目提供了docker-compose文件方便数据库环境的搭建。
+- 利用AI模型进行文本embedding，支持多种主流AI模型提供商。
+- 使用了pnpm进行包管理。
+
+安装和配置概述：
+
+安装通常涉及克隆仓库、安装依赖、复制并修改配置文件、启动数据库容器、同步数据库表结构，最后分别启动后端服务和前端界面。项目提供了详细的命令行示例。
+
+基本使用方法方面，用户启动服务后可以通过浏览器访问Web界面（默认为http://localhost:3333）进行操作，包括登录Telegram账号（需获取API key）、备份聊天记录以及进行智能搜索。
+
+该项目主要面向需要频繁查找和管理大量Telegram聊天记录的个人用户或小型团队。通过提供强大的搜索功能，特别是语义搜索能力，极大地提升了在海量历史消息中找到所需信息的效率和准确性。
+
+项目目前处于快速迭代阶段，开发者建议用户定期备份数据以应对潜在的数据库不兼容问题。该项目遵循MIT许可证开源。
+
+### 项目统计与信息
+
+- **作者:** [groupultra](https://github.com/groupultra）)
+- **主要语言:** TypeScript
+- **Stars:** 1429 ⭐
+- **Forks:** 98 🍴
+- **本周期新增 Stars:** 102 ⭐
+
+_要了解更多关于 **groupultra / telegram-search** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/groupultra/telegram-search)。_
+
+---
+
+## ziglang / zig
+
+> Zig是一种通用系统编程语言及工具链，旨在提供高性能、内存安全且易于控制底层硬件的替代C语言的现代化选择，并支持强大的交叉编译和与C语言互操作性。
+
+### 项目介绍
+
+Zig 是为了构建健壮、优化且可重用软件而设计的通用编程语言及工具链。它旨在提供一种现代化的系统编程语言，兼具高性能和安全性，同时提供对底层硬件的细粒度控制。
+
+项目主要功能及特性包括：
+
+- **高效的系统编程语言：** Zig 提供了一种可替代 C 语言的现代选择，专注于性能、安全性和可维护性。
+- **强大的工具链：** 集成了编译器、构建系统和包管理器，无需依赖外部工具即可完成开发工作流。
+- **交叉编译支持：** 优秀的交叉编译能力是 Zig 的核心特性之一，允许轻松构建面向不同架构和操作系统的程序。
+- **C 语言互操作性：** 可以无缝调用 C 代码，并且其工具链可以直接编译 C、C++、Objective-C 和 Objective-C++ 源文件（完全功能的编译器需要 LLVM 支持）。
+- **内存安全控制：** Zig 提供了明确的内存管理机制和强大的编译时检查，帮助开发者编写内存安全的代码，同时避免了垃圾回收带来的开销。
+- **零成本抽象：** 语言设计避免了隐藏的控制流和内存分配，让代码行为更易于预测和理解。
+- **编译时特性：** 利用强大的编译时计算能力（Comptime），可以在编译阶段执行复杂的逻辑和生成代码，例如类型反射、代码生成和数据序列化等。
+
+技术栈上，Zig 主要使用 Zig 语言自身进行开发，并依赖于 LLVM、Clang 和 LLD 作为其主要的后端工具链（需要 LLVM >= 20.x 版本）。项目也包含少量 C、C++ 和 Python 代码。其构建系统基于 CMake（需要 CMake >= 3.15）。
+
+安装与配置方面，用户可以通过下载预构建的二进制文件、使用包管理器或者从源码构建来获取 Zig。Zig 的安装非常简单，只需将可执行文件及其 `lib/` 目录解压到任何位置即可立即使用，无需全局安装。从源码构建的标准流程是使用 CMake，对于不需要 LLVM 特性的场景，也可以仅用 C 编译器进行自举构建。
+
+基本使用通常是通过 `zig` 命令行工具执行编译、运行、格式化、测试等操作。例如，可以使用 `zig build` 命令来构建项目。
+
+Zig 主要面向需要高性能、对底层控制要求高的系统级软件开发者，以及希望摆脱传统 C/C++ 开发中的痛点（如宏、隐藏行为和复杂的构建系统）的开发者。典型的适用场景包括操作系统、嵌入式系统、高性能计算、游戏开发以及作为其他语言的后端或生成器。
+
+项目当前处于积极开发阶段，许可证为 MIT。可以通过捐赠、提交 bug 报告、贡献代码或使用 Zig 开发个人项目来参与贡献。社区是去中心化的，有各种社交平台供用户交流。
+
+### 项目统计与信息
+
+- **作者:** [ziglang](https://github.com/ziglang）)
+- **主要语言:** Zig
+- **Stars:** 39142 ⭐
+- **Forks:** 2843 🍴
+- **本周期新增 Stars:** 51 ⭐
+
+_要了解更多关于 **ziglang / zig** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/ziglang/zig)。_
+
+---
+
+## comfyanonymous / ComfyUI
+
+> ComfyUI是基于节点/流程图的强大视觉AI工具，主要用于Stable Diffusion及多种扩散模型的图形化工作流程设计和执行，支持多种模型、技术和平台。
+
+### 项目介绍
+
+ComfyUI 是一个功能强大且高度模块化的视觉 AI 引擎和应用，专注于扩散模型的图形化用户界面 (GUI)、API 和后端。它通过一个基于节点/流程图的界面，使用户无需编写代码即可设计和执行复杂的 Stable Diffusion 工作流程。该项目支持 Windows, Linux 和 macOS 平台。
+
+ComfyUI 提供以下主要功能和特性：
+
+- 基于节点的图形界面：用户可以通过连接不同的节点来构建复杂的生成流程，直观地控制每个步骤。
+- 广泛的模型支持：支持多种图像、视频和音频扩散模型，包括 SD1.x, SD2.x, SDXL, SDXL Turbo, Stable Cascade, SD3/3.5, Pixart Alpha/Sigma, AuraFlow, HunyuanDiT, Flux, Lumina Image 2.0, HiDream, Stable Video Diffusion, Mochi, LTX-Video, Hunyuan Video, Nvidia Cosmos, Wan 2.1, Stable Audio, ACE Step 等。
+- 3D 模型支持：支持 Hunyuan3D 2.0 等 3D 模型。
+- 异步队列系统：有效管理生成任务。
+- 多种优化：仅执行工作流程中发生变化的部分，实现智能内存管理，即使在低 VRAM GPU (最低 1GB) 上也能运行。
+- 支持多种模型格式：ckpt, safetensors, diffusers 模型/检查点，以及独立的 VAE 和 CLIP 模型。
+- 支持多种高级技术：Embeddings/Textual Inversion, Loras (regular, locon, loha), Hypernetworks, Area Composition, Inpainting, ControlNet and T2I-Adapter, Upscale Models (ESRGAN, SwinIR 等), unCLIP Models, GLIGEN, Model Merging, LCM models and Loras。
+- 工作流程的可保存与加载：可以从生成的 PNG, WebP 和 FLAC 文件中加载完整工作流程（包括种子信息），也可以将工作流程保存/加载为 Json 文件。
+- 快速启动。
+- 完全离线工作。
+- 灵活的模型路径配置：可通过配置文件自定义模型搜索路径。
+- 支持高质量预览：通过配置 TAESD 模型实现。
+
+技术栈和依赖方面，ComfyUI 主要使用 Python 语言，并依赖 PyTorch 深度学习框架。它支持多种 GPU 平台（NVIDIA, AMD, Intel, Apple Silicon, Ascend, Cambricon MLUs）以及 DirectML。
+
+安装与配置方式多样，提供包括 Windows 便携版（最易上手）、Jupyter Notebook 运行方式（适用于云服务如 Colab, Kaggle 等）以及手动安装（支持所有平台和 GPU 类型）。便携版只需下载解压即可运行，模型文件需放置在指定目录。手动安装需要 Python 环境，通过 pip 安装 requirements.txt 中列出的依赖，并且根据 GPU 类型可能需要安装特定的 PyTorch 版本（如支持 ROCm, DirectML, XPU, NPU, MLU 的版本）。配置文件 `extra_model_paths.yaml` 用于共享模型库。另外提供了 `comfy-cli` 工具简化安装和启动。
+
+基本使用方法是通过图形界面拖拽和连接节点来构建生成流程，用户可以设置参数，然后将工作流加入队列执行。支持通过快捷键进行常用操作，如队列管理、工作流的保存加载、节点编辑等。动态提示词功能允许使用 {} 进行通配符替换。
+
+对于前端开发和问题报告，ComfyUI 现在将前端代码托管在独立的 ComfyUI Frontend 仓库，并建议用户在该仓库提交与前端相关的 Issue 和 Feature Request。用户可以通过命令行参数选择使用不同版本的前端。
+
+总体而言，ComfyUI 面向需要精细控制扩散模型生成流程的技术用户和艺术家，其模块化设计提供了极大的灵活性和实验空间，支持各种先进的模型和技术，并通过图形界面降低了操作门槛。该项目遵循 GPL-3.0 许可证。
+
+### 项目统计与信息
+
+- **作者:** [comfyanonymous](https://github.com/comfyanonymous）)
+- **主要语言:** Python
+- **Stars:** 77844 ⭐
+- **Forks:** 8557 🍴
+- **本周期新增 Stars:** 75 ⭐
+
+_要了解更多关于 **comfyanonymous / ComfyUI** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/comfyanonymous/ComfyUI)。_
+
+---
+
+## hiyouga / LLaMA-Factory
+
+> 这是一个开源项目 LLaMA Factory，提供了一个统一的框架，支持高效微调100多种大型语言模型和视觉语言模型，并提供了简洁的命令行和可视化界面。
+
+### 项目介绍
+
+LLaMA Factory 是一个ACL 2024会议发表的开源项目，旨在提供一个统一、高效的框架，用于对超过100种大型语言模型 (LLMs) 和视觉语言模型 (VLMs) 进行微调。它提供零代码命令行界面 (CLI) 和可视化 Web UI (LLaMA Board)，极大地简化了模型微调过程。
+
+项目核心功能与特性：
+
+- **广泛的模型支持：** 涵盖从 LLaMA、Mistral、Qwen 到 ChatGLM、Phi 等超过 100 种热门 LLM 和 VLM 系列模型，并持续快速支持最新的前沿模型（如Llama 4, Qwen3, InternVL3等）。
+- **整合多种训练方法：** 支持预训练、监督微调 (SFT)、奖励模型 (RM)、PPO、DPO、KTO、ORPO、SimPO 等多种训练方法，满足不同场景下的模型调整需求。
+- **高效资源利用：** 支持 16-bit 全量微调、参数冻结微调 (Freeze-tuning)、LoRA 以及通过 AQLM/AWQ/GPTQ/LLM.int8/HQQ/EETQ 支持的 2/3/4/5/6/8-bit QLoRA 量化微调。
+- **集成先进算法：** 支持 GaLore, BAdam, APOLLO, Adam-mini, Muon, DoRA, LongLoRA, LLaMA Pro 的 Block Expansion, Mixture-of-Depths, LoRA+, LoftQ, PiSSA 等多种优化器和高效微调算法。
+- **实用优化技巧：** 整合 FlashAttention-2, Unsloth, Liger Kernel, RoPE scaling, NEFTune, rsLoRA 等技术，提升训练速度和显存效率。
+- **支持多种任务：** 可用于多轮对话、工具使用、图像理解、视觉定位、视频识别、音频理解等广泛任务的微调。
+- **丰富的实验监控：** 支持 LLaMA Board, TensorBoard, Wandb, MLflow, SwanLab 等多种监控工具，便于追踪训练过程和结果。
+- **提供快速推理：** 提供 OpenAI 风格的 API、Gradio UI 和 CLI 接口，并支持 vLLM 或 SGLang 作为后端加速推理。
+
+技术栈和依赖：
+
+- 主要基于 Python，依赖 PyTorch, transformers, datasets, accelerate, peft, trl 等库。
+- 支持 CUDA、Ascend NPU 和 AMD ROCm 等多种硬件平台。
+- 量化功能依赖 bitsandbytes 等库。
+
+安装与配置概述：
+
+- 克隆项目仓库，安装必要的 Python 依赖，可以使用 `pip install -e ".[torch,metrics]"` 安装核心依赖，并根据需要安装额外的依赖项（如 for bitsandbytes, deepspeed, vllm 等）。
+- 对于 Ascend NPU 或 Windows 用户，需要额外安装特定版本的 PyTorch 和 bitsandbytes 等库，并进行相应的环境变量配置。
+- 数据准备需要遵循特定的格式，项目提供了多种预处理好的数据集，也支持用户自定义数据集，可以通过 Hugging Face, ModelScope 或 Modelers Hub 下载。
+
+基本使用方法概述：
+
+- 项目提供命令行工具 `llamafactory-cli`，可用于训练、推理和模型合并。
+- 通过 YAML 配置文件指定模型、数据集、训练参数等。
+- `llamafactory-cli webui` 命令可以启动基于 Gradio 的图形界面 LLaMA Board，实现可视化操作。
+- 支持构建 Docker 镜像以隔离环境和简化部署。
+- 可以部署兼容 OpenAI API 的推理服务，并可选择 vLLM 或 SGLang 进行加速。
+
+代码示例/命令示例：
+
+- 训练 LoRA 微调 Llama3-8B 模型：
+  `llamafactory-cli train examples/train_lora/llama3_lora_sft.yaml`
+- 使用 LoRA 微调后的 Llama3-8B 模型进行推理：
+  `llamafactory-cli chat examples/inference/llama3_lora_sft.yaml`
+- 合并 LoRA 适配器到 Llama3-8B 模型：
+  `llamafactory-cli export examples/merge_lora/llama3_lora_sft.yaml`
+- 启动 Web UI：
+  `llamafactory-cli webui`
+
+适用场景/目标用户：
+
+- 适用于需要对大型语言模型进行高效微调的研究人员和开发者。
+- 尤其适合资源有限但希望探索和应用不同微调技术和最新模型的场景。
+- 可用于构建特定领域或特定任务的定制化 LLM 应用，如对话机器人、代码生成、多模态理解等。
+
+项目状态与许可证：
+
+- 项目活跃开发中，由 Hiyouga 维护，并获得了来自亚马逊、NVIDIA、阿里云等多家机构的支持和应用。
+- 项目采用 Apache-2.0 许可证，但使用特定模型权重时需遵循各模型原有的许可证。
+
+### 项目统计与信息
+
+- **作者:** [hiyouga](https://github.com/hiyouga）)
+- **主要语言:** Python
+- **Stars:** 50290 ⭐
+- **Forks:** 6106 🍴
+- **本周期新增 Stars:** 470 ⭐
+
+_要了解更多关于 **hiyouga / LLaMA-Factory** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/hiyouga/LLaMA-Factory)。_
+
+---
+
+## anthropics / claude-code
+
+> Claude Code是一款基于Anthropic Claude大模型的终端内智能编码工具，能通过自然语言帮你写代码、修bug、理解代码和处理Git工作流，提高开发效率。
+
+### 项目介绍
+
+Claude Code 是一个终端内的智能编码工具，它能够理解你的代码库，并通过自然语言命令帮助你更快速地完成编码工作，具体功能包括执行日常任务、解释复杂代码以及处理 Git 工作流程。
+
+项目核心定位是提供一个终端环境下的 AI 协作者，深度集成到开发者的工作流程中。
+
+其主要功能和特性包括：
+
+- **代码编辑与 bug 修复**：能够在你的整个代码库中修改文件并修复错误。
+- **代码理解**：回答关于代码架构和逻辑的问题。
+- **命令执行与问题解决**：执行并修复测试、Lint 以及其他命令。
+- **Git 工作流管理**：搜索 Git 历史、解决合并冲突、创建提交和拉取请求。
+
+该工具基于 Node.js 和 Node Package Manager (`npm`) 构建。要使用 Claude Code，需要通过 OAuth 流程连接到 Claude Max 或 Anthropic Console 账户，表明其底层依赖于 Anthropic 的 Claude 大语言模型。
+
+安装与配置概述：
+
+1.  安装 Node.js 和 npm，并建议为用户配置 NPM 前缀以避免权限问题。
+2.  使用 npm 全局安装 `@anthropic-ai/claude-code` 包。
+3.  在你的项目目录中运行 `claude` 命令，完成一次性 OAuth 认证。
+
+基本使用方法概述：
+在终端的项目目录中启动 Claude Code，然后通过自然语言命令与其交互，让它执行编码、解释代码、处理 Git 等任务。
+
+代码示例/命令示例：
+安装命令：
+
+```shell
+npm install -g @anthropic-ai/claude-code
+```
+
+该工具收集反馈信息，包括使用数据（如代码接受或拒绝）、相关的对话数据以及通过 `/bug` 命令提交的用户反馈。这些反馈数据可能用于改进产品和服务，但不会用于训练生成模型。用户反馈记录通常保留 30 天。
+
+适用场景和目标用户：
+主要面向软件开发者，旨在提高编码效率，自动化重复性任务，帮助开发者更好地理解和管理代码库及版本控制。特别适合需要在终端环境中进行高效编码和 Git 操作的开发者。
+
+项目状态：已发布 1.0.0 版本，进入通用可用状态。许可证信息可查阅 `LICENSE.md` 文件。
+
+### 项目统计与信息
+
+- **作者:** [anthropics](https://github.com/anthropics）)
+- **主要语言:** Shell
+- **Stars:** 9903 ⭐
+- **Forks:** 554 🍴
+- **本周期新增 Stars:** 326 ⭐
+
+_要了解更多关于 **anthropics / claude-code** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/anthropics/claude-code)。_
+
+---
+
+## shadps4-emu / shadPS4
+
+> 一篇关于早期阶段的PS4模拟器shadPS4的介绍，该模拟器支持Windows、Linux和macOS，基于C++和Vulkan开发，已能运行部分游戏，并面向技术爱好者和开发者。
+
+### 项目介绍
+
+shadPS4 是一个用 C++ 编写的处于早期开发阶段的 PlayStation 4 模拟器，旨在支持 Windows、Linux 和 macOS 平台。该项目以娱乐为初衷，并承诺定期进行小的更新。尽管尚处于初期，但它已展现出运行部分复杂游戏（如 Bloodborne, Dark Souls Remastered, Red Dead Redemption）的能力。
+
+项目核心定位是为用户提供一个在 PC 上体验 PlayStation 4 游戏的可能性，尤其面向对模拟器开发感兴趣的技术人员和爱好者。项目代码基于 GPL-2.0 许可证开源。
+
+主要功能和特性：
+
+- 支持跨 Windows、Linux 和 macOS 三大主流桌面操作系统。
+- 采用 C++ 编程语言进行开发，利用 Vulkan 进行图形渲染（根据技术栈信息推测）。
+- 支持加载和使用从合法拥有的 PS4 主机中引导出的部分固件模块，这些模块对于正常运行游戏是必需的，但项目不提供获取这些文件的具体方法。
+- 提供了基本的输入映射功能，支持键盘、鼠标以及 Xbox 和 DualShock 控制器，并允许用户进行自定义按键绑定（支持最多三个按键绑定、鼠标按钮、鼠标移动映射到摇杆输入等），自定义绑定按游戏而非全局保存。
+- 内置了调试工具，如 FPS 计算器、视频调试信息显示，并支持触发 RenderDoc 捕获以进行图形调试。
+- 提供 Quickstart 文档帮助用户快速入门，以及专门的 Debugging 文档指导用户进行测试、调试和报告问题。
+- 维护一个独立的兼容性列表 (shadPS4 Game Compatibility) 来追踪不同游戏在模拟器上的运行状况。
+
+技术栈/依赖：
+
+- 主要使用 C++ 语言编写，部分使用 C。
+- 利用 Vulkan 图形 API。
+- 支持 imGui 作为用户界面库（根据 topics 信息推测）。
+- 依赖 SDL3 库（根据 topics 信息推测）。
+- 使用 CMake 进行项目构建管理。
+
+安装与配置指南概述：
+项目建议普通用户直接下载 Releases 或 Actions 中提供的预构建版本，无需自行编译。对于希望自行构建的用户，项目提供了详细的 Windows、Linux 和 macOS 平台构建指南文档。运行模拟器需要用户提供从自己的 PS4 主机中提取的特定固件模块文件，并将其放置到指定的目录。
+
+基本使用方法概述：
+用户启动模拟器后，需要配置固件文件路径。模拟器支持通过读取游戏文件来运行。输入方面，默认支持主流手柄和键盘鼠标映射，用户可在设置菜单中自定义输入绑定。提供的快捷键包括显示 FPS、视频调试信息、全屏切换和 RenderDoc 捕获。
+
+适用场景/目标用户：
+项目主要面向对 PS4 模拟感兴趣的开发者、技术爱好者和拥有合法 PS4 游戏备份的用户。目标是逐步实现更多 PS4 游戏的模拟运行。
+
+项目状态与许可证：
+shadPS4 处于早期开发阶段，功能尚不完善，可能会遇到错误和问题。项目遵循 GPL-2.0 许可证。
+
+独特的优势或创新点：
+项目积极与其他模拟器开发团队交流合作，吸取经验，例如参考了 yuzu 的 Hades 编译器设计，并受益于 Panda3DS 和 fpPS4 团队在逆向工程和架构理解方面的帮助。项目致力于在有限资源下 steady-paced 地推进开发。
+
+### 项目统计与信息
+
+- **作者:** [shadps4-emu](https://github.com/shadps4-emu）)
+- **主要语言:** C++
+- **Stars:** 22449 ⭐
+- **Forks:** 1391 🍴
+- **本周期新增 Stars:** 62 ⭐
+
+_要了解更多关于 **shadps4-emu / shadPS4** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/shadps4-emu/shadPS4)。_
+
+---
+
+## lobehub / lobe-chat
+
+> Lobe Chat 是一个开源、高性能且现代设计的 AI 对话框架，支持多种大模型和丰富功能，可灵活部署满足个人和团队需求。
+
+### 项目介绍
+
+以下是 Lobe Chat 项目的详细中文摘要：
+
+Lobe Chat 是一个开源的、具有现代设计风格的 AI 对话框架，旨在提供一个高性能、可扩展的聊天机器人应用。它不依赖于单一 AI 提供商，支持多种主流大语言模型，并通过丰富的功能和灵活的部署方式满足个人和团队的各种需求。
+
+核心功能与特性：
+
+- **思维链可视化 (Chain of Thought)**：独特的功能，将 AI 的推理过程一步步可视化展示，提高了 AI 决策的透明度和可理解性。
+- **分支对话 (Branching Conversations)**：支持从任意消息创建新的对话分支，允许用户探索不同的思路，提供更灵活的对话体验，包括延续模式和独立模式。
+- **Artifacts 支持**：集成 Claude Artifacts 功能，支持实时生成和展示 SVG 图形、HTML 页面等多种内容格式，增强了人机交互的创造性。
+- **文件上传 / 知识库**：支持上传文档、图片、音频、视频等多种类型文件，并可构建知识库。对话中可利用这些文件和知识库进行RAG（Retrieval-Augmented Generation），丰富对话内容。
+- **多模型服务提供商支持**：支持广泛的 AI 模型提供商，包括 OpenAI、Claude 3、Gemini、Ollama、DeepSeek、Qwen、Bedrock、Google、PPIO、HuggingFace Inference API、OpenRouter、Cloudflare Workers AI、GitHub Models、Novita、Together AI、Fireworks AI、Groq、Perplexity、Mistral、AI21Labs、Upstage、xAI、Wenxin、Hunyuan、ZhiPu、SiliconCloud、01.AI、Spark、SenseNova、Stepfun、Moonshot、Baichuan、Minimax、InternLM、Higress、Gitee AI、Taichu、360 AI、Search1API、InfiniAI、Qiniu 等，提供了极大的灵活性。
+- **本地大语言模型 (LLM) 支持**：基于 Ollama 实现对本地模型的支持，用户可以使用自有或第三方的本地模型。
+- **模型视觉识别**：支持 OpenAI 的 `gpt-4-vision` 等多模态模型，允许用户上传图片，AI 可识别图片内容并基于此进行智能对话。
+- **TTS & STT 语音对话**：支持文本转语音 (TTS) 和语音转文本 (STT) 技术，提供自然流畅的语音交互体验，支持多种高质量声音选项。
+- **文本到图像生成**：集成 DALL-E 3, MidJourney, Pollinations 等图像生成工具，可在对话中直接调用 AI 进行图像创作。
+- **插件系统 (Function Calling)**：提供一个可扩展的插件生态系统，通过 Function Calling 能力增强助手功能，例如进行实时网页搜索、文档搜索、生成图像或与第三方服务交互。目前已有超过 40 个插件。
+- **Agent Market (GPTs)**：Agent 市集汇聚了社区贡献的各种预设代理（Agent），这些 Agent 经过精心设计，适用于工作、学习等多种场景。用户可以轻松提交自己创建的 Agent，并享受自动国际化翻译功能。目前已有超过 480 个 Agent。
+- **本地 / 远程数据库支持**：支持本地数据库（使用 CRDT 实现多设备同步，实验性功能）和服务器端数据库（如 PostgreSQL），确保数据存储的灵活性和用户隐私。
+- **多用户管理**：支持多种用户身份验证和管理方案，包括 `next-auth` 和 `Clerk`，提供用户注册、登录、会话管理、社交登录以及更高级的用户管理功能。
+- **渐进式 Web 应用 (PWA)**：采用 PWA 技术，提供接近原生应用的体验，支持在桌面和移动设备上安装和使用。
+- **移动设备适配**：针对移动设备进行了优化设计，提供流畅直观的移动端交互体验。
+- **自定义主题**：提供灵活多样的个性化主题模式，包括明亮/黑暗模式切换以及颜色定制选项，以满足用户个性化需求。
+
+底层技术与性能：
+
+- 采用现代 UI 设计，界面美观，交互流畅。
+- 支持 Markdown 渲染，包括代码高亮、LaTex 公式、Mermaid 流程图等。
+- 项目性能优秀，Lighthouse 报告显示在桌面和移动端都达到高评分。
+- 使用 Next.js、TypeScript 等技术栈。
+
+部署方式：
+
+- **一键部署**：支持通过 Vercel、Zeabur、Sealos 或阿里云进行一键免费部署，无需复杂的配置。
+- **Docker 部署**：提供 Docker 镜像，方便在私有设备上部署服务。
+
+项目生态：
+
+Lobe Chat 是 LobeHub 生态系统的一部分，该生态系统还包含其他 AIGC 相关的开源项目，如 Lobe UI（UI 组件库）、Lobe Icons（AI 模型图标库）、Lobe TTS（高品质文本转语音库）、Lobe Lint（Lint 配置）等。
+
+许可证：
+
+项目采用 Apache 2.0 许可证。
+
+目标用户：
+
+项目主要面向技术人员、开发者以及对 AI 对话应用有需求并希望进行私有化部署的用户。它适用于需要自定义 AI 助手、集成了多种 AI 模型和高级功能的场景。
+
+### 项目统计与信息
+
+- **作者:** [lobehub](https://github.com/lobehub）)
+- **主要语言:** TypeScript
+- **Stars:** 61348 ⭐
+- **Forks:** 12846 🍴
+- **本周期新增 Stars:** 227 ⭐
+
+_要了解更多关于 **lobehub / lobe-chat** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/lobehub/lobe-chat)。_
+
+---
+
+## microsoft / typescript-go
+
+> 这个项目是微软正在开发的用 Go 语言原生实现 TypeScript 编译器的预备仓库， aiming at higher performance and efficiency than the Node.js version, and is currently in active development with basic compiler and language service functionalities implemented.
+
+### 项目介绍
+
+这是一个用于 TypeScript 原生端口开发的预备存储库，名为 `typescript-go`。其核心目标是将 TypeScript 编译器用 Go 语言进行原生实现，以提升性能和效率。
+
+当前项目处于开发阶段，旨在实现 TypeScript 编译器的原生版本。
+
+主要功能及特性（截至目前）：
+
+- 程序创建：能够像 TypeScript `tsc` 一样创建程序，文件和模块解析与 TS5.8 相同，但并非所有解析模式都已支持。
+- 解析/扫描：能准确地解析 TypeScript 代码，语法错误与 TS5.8 完全一致。
+- 命令行和 `tsconfig.json` 解析：大部分功能已实现，入口点目前略有不同。
+- 类型解析：能够解析类型，与 TS5.8 类型相同。
+- 类型检查：能够执行类型检查，错误、位置和消息与 TS5.8 相同，错误中的类型打印格式可能有所不同（正在改进）。
+- JSX 支持：已实现。
+- Emit (JS 输出)：正在开发中，对 `target: esnext` 的支持良好，其他目标可能存在不足。
+- Watch 模式：原型阶段，可以监视文件并重建，但没有增量重新检查功能。
+- 语言服务 (LSP)：原型阶段，功能最小（提供错误提示、悬停信息、跳转到定义），更多功能即将加入。
+
+仍在开发或尚未 ready 的功能包括：
+
+- JavaScript 特定的类型推断和 JSDoc 支持。
+- 声明文件（`.d.ts`）生成。
+- 构建模式/项目引用。
+- 增量构建。
+- API 支持。
+
+技术栈/依赖：
+
+- 主要使用 Go 语言实现。
+- 需要 Go 1.24 或更高版本。
+- 需要 Rust 1.85 或更高版本。
+- 需要安装 Node.js 和 npm。
+- 使用 `hereby` 进行任务管理。
+- 项目包含一个 Git 子模块，指向被移植的主 TypeScript 仓库的特定 commit。
+
+安装与配置概述：
+
+需要安装 Go、Rust、Node.js/npm 和 `hereby` 工具。通过 `git clone --recurse-submodules` 或 `git submodule update --init --recursive` 克隆包含 submodules 的仓库。使用 `npm ci` 安装 Node.js 依赖。
+
+基本使用方法概述：
+
+- 核心任务管理工具是 `hereby`，类似于 TypeScript 仓库中的任务运行方式，例如 `hereby build` (构建), `hereby test` (运行测试), `hereby lint` (代码检查), `hereby format` (代码格式化), `hereby generate` (生成 Go 代码)。
+- 也可以直接使用标准的 Go 工具链 (`go build`, `go test ./...`)。
+- 构建完成后，通过 `built/local/tsgo` 运行编译器，其行为大部分与 `tsc` 相似。
+- 提供 VS Code 预览扩展，通过设置 `"typescript.experimental.useTsgo": true` 启用 LSP 原型功能。可以直接在仓库 workspace 中通过 VS Code 调试扩展。
+
+代码示例/命令示例：
+
+```shell
+npm install @typescript/native-preview
+npx tsgo # Equivalent to using tsc.
+```
+
+```json
+{
+  "typescript.experimental.useTsgo": true
+}
+```
+
+```shell
+git clone --recurse-submodules https://github.com/microsoft/typescript-go.git
+git submodule update --init --recursive # 如果已经克隆但未包含 submodule
+hereby build
+hereby test
+npx tsgo your_file.ts # 运行编译器
+```
+
+适用场景/目标用户：
+
+主要面向希望在性能敏感环境中使用 TypeScript 编译器或对 TypeScript 编译器底层实现感兴趣的开发者。最终目标是提供一个高性能的原生实现。
+
+项目状态与许可证：
+
+- 项目处于开发阶段，是 TypeScript 原生端口的预备仓库。
+- 长期计划是将此仓库内容合并到主 `microsoft/TypeScript` 仓库中。
+- 项目使用 Apache-2.0 许可证。
+
+独特的优势或创新点：
+
+通过 Go 语言实现 TypeScript 编译器，旨在获得比基于 Node.js 的实现更好的性能和更低的资源消耗。提供 VS Code 预览扩展，允许开发者提前体验基于原生实现的语言服务。
+
+### 项目统计与信息
+
+- **作者:** [microsoft](https://github.com/microsoft）)
+- **主要语言:** Go
+- **Stars:** 20048 ⭐
+- **Forks:** 618 🍴
+- **本周期新增 Stars:** 73 ⭐
+
+_要了解更多关于 **microsoft / typescript-go** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/microsoft/typescript-go)。_
+
+---
+
+## anthropics / courses
+
+> 这是Anthropic提供的一系列教育课程，旨在通过课程和Jupyter Notebooks教导技术人员如何使用其大型语言模型Claude进行API调用、Prompt工程和工具使用等开发任务。
+
+### 项目介绍
+
+本项目是 Anthropic 提供的教育课程集合，旨在教授用户如何使用 Anthropic 的大型语言模型 Claude。项目通过一系列结构化的课程，循序渐进地引导学习者掌握从基础API调用到高级Prompt工程和工具使用的各类技能。
+
+项目目前包含以下核心课程：
+
+- Anthropic API 基础：涵盖使用 Claude SDK 的基础知识，包括如何获取API密钥、配置模型参数、处理多模态Prompt、实现流式响应等。
+- Prompt 工程交互式教程：提供一个全面的步骤指南，教授关键的Prompt设计技巧。
+- 实际Prompt应用：学习如何在复杂的、真实世界的场景中结合运用各种Prompt工程技术。此课程也提供了针对特定平台的版本，例如 Google Vertex AI。
+- Prompt评估：教授如何编写用于衡量Prompt质量的生产级评估方法。
+- 工具使用：详细讲解如何在与 Claude 交互的工作流程中成功实现工具调用功能。
+
+课程材料通常倾向于使用成本较低的 Claude 3 Haiku 模型，以降低学习者的API使用成本，但用户可以根据需要选择其他Claude模型。
+
+本项目的主要技术栈涉及使用 Jupyter Notebook 进行教学内容的展示和互动，以及 Python 编程语言用于通过 Anthropic SDK 与 Claude 模型进行交互。
+
+项目的目标用户是希望学习和掌握如何有效使用 Anthropic Claude 模型进行各种开发任务和应用构建的技术人员和开发者。项目为他们提供了系统的理论知识和实践指导。
+
+项目采用许可证，并且处于积极的开发和维护状态。
+
+### 项目统计与信息
+
+- **作者:** [anthropics](https://github.com/anthropics）)
+- **主要语言:** Jupyter Notebook
+- **Stars:** 11780 ⭐
+- **Forks:** 1060 🍴
+- **本周期新增 Stars:** 71 ⭐
+
+_要了解更多关于 **anthropics / courses** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/anthropics/courses)。_
+
+---
+
+## jellyfin / jellyfin
+
+> Jellyfin 是一个完全开源、免费的媒体服务器系统，帮助用户自由管理、串流自己的影音和图片内容，无需付费或受限制。
+
+### 项目介绍
+
+Jellyfin 是一个自由软件多媒体系统，旨在帮助用户管理和串流其数字媒体内容。作为一个非营利的社区项目，Jellyfin 为用户提供了一个自主掌控媒体库的替代方案，与 Emby 和 Plex 等私有软件不同，它没有任何高级许可、付费功能或隐藏议程。项目从 Emby 的 3.5.2 版本分支而来，并移植到 .NET Core 框架，以实现全面的跨平台支持。
+
+主要功能和特性方面，Jellyfin 允许用户将电影、电视节目、音乐、照片等媒体文件组织起来，并通过各种客户端应用程序在不同设备上进行播放。它提供了一个服务器后端和一个API，用于处理媒体的编解码、转码、元数据抓取和内容分发。项目持续集成新的功能，例如支持动态 HDR 元数据处理、改进的命名规则及媒体文件识别，并包含完整的系统备份功能等。
+
+Jellyfin 主要使用 C# 和 .NET 编程框架进行开发。它的服务器后端处理媒体的管理和串流逻辑，并提供开放的API供各种客户端应用交互。项目依赖于 ffmpeg 进行媒体转码等操作，并支持诸如 SQLite 等数据库。开发者可以通过命令行或支持 .NET 6 开发的 IDE（如 Visual Studio、Visual Studio Code）进行开发环境搭建和服务器运行。
+
+项目的安装和配置涉及下载 Jellyfin 服务器，可能还需要单独安装 web 客户端文件或将其集成到服务器中。开发者可以从源代码构建，也可以从已发布的版本获取安装包。基本使用方法通常是通过 web 浏览器访问服务器地址进行初始设置和管理，或使用各种 Jellyfin 客户端应用连接服务器进行媒体播放。
+
+Jellyfin 适用于希望完全掌控自己媒体库、避免付费订阅和数据隐私问题的技术爱好者、家庭用户以及寻求开源媒体解决方案的组织。它解决了用户在私有媒体服务器中可能遇到的许可限制、功能锁定以及对外部服务依赖的问题。
+
+项目采用 GPL-2.0 许可证，确保其自由软件的性质。其开发活跃，并通过 GitHub Issues、讨论区、功能请求平台和翻译平台与社区互动，鼓励用户报告问题、提出建议并参与贡献。项目的README中提供了详细的文档链接，包括安装指南、快速入门指南、贡献者指南以及社区交流渠道。
+
+总而言之，Jellyfin 是一个强大、灵活且完全开源的媒体服务器解决方案，它为用户提供了高度自由度，使其能够轻松管理和享受其数字媒体收藏，并通过不断发展的社区支持和功能增强来满足用户的需求。
+
+### 项目统计与信息
+
+- **作者:** [jellyfin](https://github.com/jellyfin）)
+- **主要语言:** C#
+- **Stars:** 39855 ⭐
+- **Forks:** 3553 🍴
+- **本周期新增 Stars:** 25 ⭐
+
+_要了解更多关于 **jellyfin / jellyfin** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/jellyfin/jellyfin)。_
+
+---
+
+## kamranahmedse / developer-roadmap
+
+> Developer Roadmap是一个社区驱动项目，为开发者提供交互式路线图和资源，帮助他们系统学习和规划职业发展。
+
+### 项目介绍
+
+Developer Roadmap 是一个社区驱动的项目，致力于为开发者提供一系列交互式路线图、指南和教育资源，帮助他们在职业生涯中成长。该项目的核心目标是清晰地规划不同技术领域的学习路径，降低学习门槛。
+
+项目主要功能和特性包括：
+
+- 提供多领域的开发路线图：涵盖前端、后端、DevOps、全栈、Git和GitHub、API设计、计算机科学基础、数据结构与算法、AI/数据科学家、AI工程师、AWS、Cloudflare、Linux、Terraform、数据分析师、MLOps、产品经理、工程经理、QA、Python、软件架构师、游戏开发、软件设计与架构、JavaScript、TypeScript、C++、React、React Native、Vue、Angular、Node.js、PHP、GraphQL、Android、iOS、Flutter、Go、Rust、Java、Spring Boot、设计系统、PostgreSQL、SQL、Redis、区块链、ASP.NET Core、系统设计、Kubernetes、网络安全、MongoDB、UX设计、Docker、Prompt Engineering、技术写作、DevRel工程师、AI Red Teaming、AI Agents 等众多技术方向的详细学习路径。
+- 交互式体验：路线图设计为可交互式，用户可以点击节点查看更多相关主题的信息。
+- 最佳实践指南：提供如后端性能、前端性能、代码评审、API安全、AWS等领域的最佳实践。
+- 知识问答：包含JavaScript、Node.js、React、后端、前端等领域的问答，帮助用户测试和提升知识水平。
+- 社区驱动：项目内容由社区共同维护和贡献。
+
+该项目主要面向希望系统学习某个技术领域知识、规划职业发展路径的开发者和技术人员。它通过可视化的路线图形式，为学习者提供了一个清晰的学习框架。
+
+项目的技术栈主要基于现代Web技术，包括 Astro 和 TypeScript 等，并使用了 Tailwind CSS 进行样式设计。
+
+安装与配置指南概述：克隆仓库，安装依赖后运行即可在本地启动应用进行开发。
+
+基本使用方法概述：用户可以直接访问 roadmap.sh 网站，浏览各种路线图并进行交互式学习。贡献者可以通过克隆仓库并按照贡献文档进行修改和提交。
+
+项目采用开源许可协议（具体许可信息可在 license 文件中查看），由大量社区贡献者共同维护。
+
+### 项目统计与信息
+
+- **作者:** [kamranahmedse](https://github.com/kamranahmedse）)
+- **主要语言:** TypeScript
+- **Stars:** 323046 ⭐
+- **Forks:** 41673 🍴
+- **本周期新增 Stars:** 203 ⭐
+
+_要了解更多关于 **kamranahmedse / developer-roadmap** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/kamranahmedse/developer-roadmap)。_
+
+---
+
+## reactos / reactos
+
+> ReactOS是一个开源免费的操作系统项目，旨在实现与Microsoft Windows的高度兼容性，其内核采用Windows NT架构设计。
+
+### 项目介绍
+
+ReactOS 是一个开源项目，致力于开发一个高质量、免费的操作系统，该系统与 Microsoft Windows NT 系列操作系统（包括 NT4、2000、XP、2003、Vista、7）的应用和驱动程序兼容。尽管目前开发重点是与 Windows Server 2003 的兼容性，但该项目也持续关注未来 Windows NT 版本的兼容性。ReactOS 不基于 Linux 内核，也不依赖 Wine。它的目标是为希望拥有一个行为与 Windows 完全一致的替代操作系统的用户提供解决方案。
+
+主要功能和特性：
+
+- 提供一个免费、与 Windows 应用程序和驱动兼容的操作系统。
+- 内核采用 Windows NT 架构设计。
+- 用户模式部分部分基于 Wine 项目，并与 Wine 团队保持合作。
+- 支持多种文件系统，默认安装支持 FAT16 和 FAT32，实验性支持 BtrFS。
+
+技术栈/依赖：
+
+- 主要使用 C 语言进行开发，也包含 C++、Python、汇编和 CMake.
+- 使用 CMake 构建系统。
+- 需要 ReactOS Build Environment (RosBE) 或 Microsoft Visual C++ (MSVC) 2019+ 版本进行构建。
+
+安装与配置概述：
+
+- ReactOS 0.4.10 及更高版本可安装在 FAT16 或 FAT32 分区上，活动（可引导）分区也需为 FAT16 或 FAT32。
+- 可以将 ReactOS 安装到指定分区，安装程序支持格式化分区。
+- 0.4.10 版本开始实验性支持使用 BtrFS 文件系统安装。
+- 安装通常通过下载可引导 CD 镜像，烧录后从 CD 启动并按照说明进行。每日构建版本也可从指定页面下载。
+
+基本使用方法概述：
+
+- 构建系统需要先运行配置脚本（`configure.cmd` 或 `configure.sh`），然后使用 `ninja` 构建指定模块或全部模块。
+- 生成可引导 CD 镜像的命令是 `ninja bootcd`。
+
+适用场景/目标用户：
+
+- 面向希望使用一个与 Windows 兼容且开源免费的操作系统的用户。
+- 目标用户可能包括开发者、技术爱好者或寻求 Windows 替代方案的用户。
+- 由于目前为 Alpha 质量，可能不稳定，不建议在包含敏感数据的生产环境使用，推荐在虚拟机或非关键数据计算机上测试。
+
+项目状态与许可证：
+
+- ReactOS 目前处于 Alpha 开发阶段，稳定性有待提高，可能存在数据损坏风险。
+- 项目代码主要遵循 GNU GPL 2.0 许可证，部分库遵循 LGPL-2.1 许可证。
+- 对贡献者的要求是未接触过任何微软 Windows 专有源代码，以避免潜在的版权问题。
+- 项目接受代码贡献和资金捐助来支持开发和服务器维护。
+
+独特的优势或创新点：
+
+- 从头开始构建一个与 Windows 二进制级别兼容的操作系统，而非基于 Linux 或其他现有内核。
+- 与 Wine 项目的协同合作。
+- 提供 Gitpod 支持，方便开发者快速进入云端开发环境。
+
+### 项目统计与信息
+
+- **作者:** [reactos](https://github.com/reactos）)
+- **主要语言:** C
+- **Stars:** 15636 ⭐
+- **Forks:** 1851 🍴
+- **本周期新增 Stars:** 8 ⭐
+
+_要了解更多关于 **reactos / reactos** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/reactos/reactos)。_
