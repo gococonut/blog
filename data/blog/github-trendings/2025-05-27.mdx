@@ -1,0 +1,829 @@
+---
+title: Github Daily Trending
+date: 2025-05-27
+cover: https://hub-image.moreve.net/files/images/github-trending/2025-05-27.png
+summary: '本期精选项目包括：本地运行的自主AI代理AgenticSeek，强大的Telegram聊天记录搜索工具telegram-search，微软的AI量化投资平台Qlib，全面的LLM自学课程llm-course，开源媒体系统Jellyfin，全球免费IPTV频道资源库iptv，开发者学习路线图developer-roadmap，Rust编写的开源支付切换平台Hyperswitch，用Rust重写的跨平台命令行工具集uutils-coreutils，Neovim的Treesitter插件nvim-treesitter，以及用于快速构建和部署AI工作流的可视化工具Langflow。'
+headingSummaries:
+  - heading: 'Fosowl / agenticSeek'
+    summary: 'AgenticSeek是一个完全本地运行的自主AI代理项目，提供无需依赖外部API的Manus AI替代方案，具有隐私保护、智能网页浏览、代码助手、语音交互等功能。'
+    tags: [AI/ML, Developer Tools, Productivity]
+  - heading: 'groupultra / telegram-search'
+    summary: '这是一个强大的Telegram聊天记录搜索工具，结合全文和AI矢量搜索，帮你快速准确找到想要的信息。'
+    tags: [AI/ML, Developer Tools, Web Development]
+  - heading: 'microsoft / qlib'
+    summary: 'Qlib是一个面向AI的量化投资平台，旨在利用AI技术赋能量化投资的全流程，支持多样化的机器学习建模，并提供完整的数据、模型、回测、交易决策等模块化解决方案，帮助用户快速构建和运行量化策略。'
+    tags: [AI/ML, Data Tools, Web Development]
+  - heading: 'mlabonne / llm-course'
+    summary: '这份资源是一个全面性的LLM课程，涵盖了从基础知识到高级主题，包括LLM科学家和工程师所需的核心概念、技术和实践应用。'
+    tags: [AI/ML, Learning & Education, Web Development]
+  - heading: 'jellyfin / jellyfin'
+    summary: 'Jellyfin是一个免费开源的媒体系统，允许用户自主管理和串流电影、音乐等媒体库到各种设备，是Emby和Plex的可替代方案，强调用户自由和隐私。'
+    tags: [Web Development, Libraries & SDKs]
+  - heading: 'iptv-org / iptv'
+    summary: 'IPTV项目是一个汇集全球免费公开网络电视频道的开源资源库，提供多种分类的M3U播放列表和EPG，用户可轻松用视频播放器观看。'
+    tags: [Web Development, Libraries & SDKs, CLI & Utilities]
+  - heading: 'kamranahmedse / developer-roadmap'
+    summary: 'developer-roadmap是一个开源项目，提供可视化的开发者学习路线图、技术指南和问答集，帮助开发者规划和提升职业技能。'
+    tags: [Learning & Education, Web Development, Developer Tools]
+  - heading: 'lobehub / lobe-chat'
+    summary: 'Lobe Chat是一个开源AI对话框架，功能丰富，支持多种AI模型和部署方式，特别强调私有化部署和为“超级个体”提供高度定制化的AI应用平台。'
+    tags: [AI/ML, Web Development, Productivity]
+  - heading: 'XiaoYouChR / Ghost-Downloader-3'
+    summary: 'Ghost-Downloader-3 是一个基于 Python 的跨平台、AI 增强的多线程下载器，模仿 IDM 分块下载，提供智能加速、计划任务等功能，并计划支持 BT 下载和插件系统。'
+    tags: [AI/ML, Developer Tools, CLI & Utilities]
+  - heading: 'mindsdb / mindsdb'
+    summary: 'MindsDB是一个开源AI查询引擎，通过将AI能力集成到数据层，允许用户用SQL连接、统一和查询分散在不同数据源的数据。它可以方便用户、AI代理和应用快速从异构大规模数据源获取信息和洞察。'
+    tags: [AI/ML, Data Tools, Developer Tools]
+  - heading: 'ossu / computer-science'
+    summary: '这份内容大致介绍了一个名为ossu/computer-science的GitHub项目，它提供了一个使用免费在线资源构建的、相当于大学本科学位的计算机科学自学完整课程体系。'
+    tags: [Learning & Education, Web Development, AI/ML]
+  - heading: 'juspay / hyperswitch'
+    summary: 'Hyperswitch 是一个开源支付切换平台，用 Rust 构建，帮助企业通过统一 API 快速、灵活地集成和管理多种支付服务，优化支付流程、提升成功率并降低成本。'
+    tags: [Developer Tools, Libraries & SDKs, Web Development]
+  - heading: 'uutils / coreutils'
+    summary: 'uutils coreutils是一个用Rust重写的多平台命令行工具集，旨在替代GNU coreutils解决跨平台脚本兼容性问题，并努力在多种系统上正常运行。'
+    tags: [Developer Tools, CLI & Utilities, Libraries & SDKs]
+  - heading: 'nvim-treesitter / nvim-treesitter'
+    summary: 'nvim-treesitter 是 Neovim 的 Treesitter 插件，通过基于语法树的解析，提供更精准的代码高亮、缩进、折叠等功能，并支持多种语言和灵活配置。'
+    tags: [Developer Tools]
+  - heading: 'langflow-ai / langflow'
+    summary: 'Langflow是一个强大的可视化工具，用于快速构建、测试和部署AI智能体及工作流程，支持主流LLMs和向量数据库，能将流程转换为API方便集成。'
+    tags: [AI/ML, Developer Tools]
+---
+
+## Fosowl / agenticSeek
+
+> AgenticSeek是一个完全本地运行的自主AI代理项目，提供无需依赖外部API的Manus AI替代方案，具有隐私保护、智能网页浏览、代码助手、语音交互等功能。
+
+### 项目介绍
+
+AgenticSeek 是一个完全本地化运行的自主 AI 代理项目，旨在于提供一个无需依赖外部 API 或支付高昂月费的 Manus AI 替代方案。其核心理念是让用户仅需负担电力成本，即可拥有一个能够思考、浏览网页和编写代码的自主代理，确保所有数据和操作都在本地设备上进行，从而保障用户的隐私。
+
+项目的主要功能和特性包括：
+
+- 完全本地化和隐私保护：所有操作（包括大型语言模型运行、语音到文本、文本到语音）都在用户本地设备上进行，不依赖云服务，保证数据隐私。
+- 智能网页浏览：代理能够自主访问互联网，执行搜索、阅读、信息提取和填写网页表单等任务，实现自动化网络交互。
+- 自治代码助手：支持生成、调试和运行多种编程语言（如 Python, C, Go, Java）的代码，无需人工干预。
+- 智能代理选择：能够根据用户提出的任务，自动选择最合适的内部代理来执行。
+- 复杂任务规划与执行：可以将大型任务拆分成多个步骤，并利用不同的 AI 代理协作完成，例如旅行规划或项目执行。
+- 语音交互能力：提供清晰、快速的语音合成和语音识别功能（目前语音识别主要支持英文），用户可以通过语音与代理进行交互。
+- 支持多种语言：可以配置支持多种语言，以便 LLM 路由系统能正常工作。
+
+AgenticSeek 支持多种技术栈和模型提供商：
+
+- 本地 LLM 提供商：支持 Ollama, LM-studio 等，允许用户在本地运行大型语言模型。
+- 远程 LLM 提供商（可选，但偏离本地化核心理念）：支持 OpenAI, Deepseek API, Huggingface, TogetherAI, Google Gemini 等 API。推荐使用具备良好推理和工具使用能力的模型，项目推荐使用 Deepseek R1 模型系列。
+- 核心技术：项目主要使用 Python 开发，结合 Selenium 或 undetected-selenium 进行网页交互，并依赖 Docker Compose 管理 SearxNG (本地搜索引擎) 和 Redis 服务。语音识别主要依赖于本地模型。
+- 操作系统：支持 Linux/MacOS 和 Windows。
+- 依赖：需要安装 Chrome 浏览器及其兼容的 ChromeDriver、Docker Engine 和 Python 3.10 或更高版本。
+
+安装与配置概述：
+
+安装步骤通常包括克隆项目仓库、设置虚拟环境、安装 Python 依赖，并根据操作系统运行安装脚本。核心步骤涉及配置 `config.ini` 文件，指定是本地运行（`is_local = True`）还是使用远程 API（`is_local = False`），选择 LLM Provider (如 `ollama`, `lm-studio`, `server` 或 API provider)，指定模型名称，以及配置服务器地址、代理名称、是否恢复/保存会话、是否启用语音输入/输出等。本地运行大型模型需要满足相应的硬件要求，特别是 GPU 显存。
+
+基本使用方法概述：
+
+在完成安装和服务启动后（命令行运行 `cli.py` 或启动 `api.py` 访问 Web 界面），用户可以通过文本或语音（如果启用并配置）向代理提出任务。代理会根据任务需求自动选择并执行。例如，用户可以要求代理进行网页搜索、编写代码、处理文件等。为了提高任务执行的准确性，建议给代理明确的任务指示，特别是在需要进行网络搜索或特定操作时。
+
+适用场景和目标用户：
+
+AgenticSeek 主要面向那些希望拥有自主、智能代理但又注重数据隐私和成本控制的技术爱好者、开发者以及任何希望在本地设备上运行 AI 助手的用户。它可以用于自动化研究、代码生成、文件管理、信息检索等多种场景。
+
+项目状态和许可证：
+
+项目目前处于积极开发阶段（_Work in Progress_），并欢迎贡献者。项目代码遵循 GPL-3.0 许可证。
+
+### 项目统计与信息
+
+- **作者:** [Fosowl](https://github.com/Fosowl）)
+- **主要语言:** Python
+- **Stars:** 6908 ⭐
+- **Forks:** 610 🍴
+- **本周期新增 Stars:** 2048 ⭐
+
+_要了解更多关于 **Fosowl / agenticSeek** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/Fosowl/agenticSeek)。_
+
+---
+
+## groupultra / telegram-search
+
+> 这是一个强大的Telegram聊天记录搜索工具，结合全文和AI矢量搜索，帮你快速准确找到想要的信息。
+
+### 项目介绍
+
+这是一个功能强大的 Telegram 聊天记录搜索客户端，它解决了用户在大量 Telegram 消息中难以快速、准确查找特定信息的问题。项目核心能力在于支持高级搜索功能，包括传统的关键词搜索以及基于人工智能的向量搜索和语义匹配。
+
+项目能够实现的关键功能和特性包括：
+
+- **聊天记录备份：** 提供备份 Telegram 聊天记录的能力，将数据存储在本地或其他指定位置，便于管理和检索。
+- **全文搜索：** 支持对备份的聊天记录进行快速、全面的关键词搜索，用户可以轻松找到包含特定词语或短语的消息。
+- **向量搜索与语义匹配：** 集成基于 OpenAI 的语义向量技术，使得搜索不仅仅局限于关键词匹配，更能理解查询语句和聊天内容的深层含义，实现更智能、更精准的语义搜索。这意味着即使使用与原文不同的措辞，也能找到相关的聊天记录。
+- **友好的用户界面：** 提供一个 Web 界面 (`http://localhost:3333`)，方便用户进行配置、备份操作和执行搜索。
+- **支持多种 AI 模型提供商：** 虽然主要提及了 OpenAI，但项目的架构考虑了对不同 AI 模型提供商的支持，如 Gemini, Azure OpenAI, Ollama, Grok 等，增强了项目的灵活性和可扩展性。
+- **定期备份提醒/建议：** 由于项目尚处于快速迭代阶段，文档中提示建议用户定期备份数据，这间接说明项目提供了数据导出或备份的机制。
+
+项目的技术栈涉及多种技术：
+
+- **编程语言：** 主要使用 TypeScript，前端部分使用 Vue 构建用户界面，后端服务也由 TypeScript 实现。
+- **数据库：** 使用 PostgreSQL (支持 pglite) 作为数据存储，用于存放备份的聊天记录和向量信息。
+- **容器化：** 提供 Docker Compose 配置，方便用户快速部署和启动数据库等依赖服务。
+- **构建工具：** 使用 pnpm 进行依赖管理和脚本执行。
+- **AI 相关：** 利用 OpenAI 或其他兼容的服务进行文本向量化和语义搜索。
+
+安装与配置方面，需要先克隆 GitHub 仓库，然后使用 `pnpm` 安装依赖。核心配置通过复制 `config.example.yaml` 文件到 `config.yaml` 并进行修改来完成。项目依赖 Docker 启动 PostgreSQL 容器，并通过 `pnpm run db:migrate` 同步数据库结构。
+
+基本使用方法概述：安装配置完成后，通过运行 `pnpm run dev:server` 启动后端服务，运行 `pnpm run dev:frontend` 启动前端界面，然后访问指定的本地地址即可开始使用。初次使用可能需要连接 Telegram 账号并进行聊天记录备份。
+
+这是一个面向技术用户、开发者或对 Telegram 聊天记录管理有高级需求的群体而设计的工具。典型的适用场景包括：
+
+- 个人用户需要在一个包含大量消息的群组或聊天记录中快速找到某个特定讨论、信息或文件。
+- 需要对 Telegram 聊天记录进行结构化备份并能够进行复杂检索的用户。
+- 希望利用语义搜索的优势，通过自然语言描述来查找相关消息，而不是仅仅依赖精确关键词。
+
+项目目前处于活跃开发阶段（截至 v1.0.0-beta.6 版本），采用 MIT 许可证。项目的独特优势在于结合了传统的全文搜索和先进的向量搜索能力，显著提升了 Telegram 聊天记录的检索效率和智能化水平。项目的迭代速度较快，开发团队鼓励社区贡献。
+
+### 项目统计与信息
+
+- **作者:** [groupultra](https://github.com/groupultra）)
+- **主要语言:** TypeScript
+- **Stars:** 1675 ⭐
+- **Forks:** 116 🍴
+- **本周期新增 Stars:** 369 ⭐
+
+_要了解更多关于 **groupultra / telegram-search** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/groupultra/telegram-search)。_
+
+---
+
+## microsoft / qlib
+
+> Qlib是一个面向AI的量化投资平台，旨在利用AI技术赋能量化投资的全流程，支持多样化的机器学习建模，并提供完整的数据、模型、回测、交易决策等模块化解决方案，帮助用户快速构建和运行量化策略。
+
+### 项目介绍
+
+Qlib 是一个面向人工智能（AI）的量化投资平台，旨在利用 AI 技术在量化投资中从思想探索到产品实现的整个流程中发挥潜力、赋能研究并创造价值。它支持多样化的机器学习建模范式，包括监督学习、市场动态建模和强化学习。
+
+该平台提供了一个完整的机器学习流程，涵盖数据处理、模型训练、回测等环节，并覆盖了量化投资的整个链条：寻找 Alpha、风险建模、投资组合优化和订单执行。越来越多的最先进的量化研究成果和论文正通过 Qlib 发布，共同解决量化投资中的关键挑战，例如：利用监督学习从丰富异构的金融数据中挖掘复杂的市场非线性模式；使用自适应概念漂移技术对金融市场的动态性进行建模；以及利用强化学习对连续投资决策进行建模并协助投资者优化其交易策略。
+
+Qlib 的高层框架设计模块化，各组件松耦合，可独立使用。其核心组件包括：强大的数据层支持多种数据格式和存储方式（如本地离线模式和在线数据服务）；为监督学习和强化学习等多种学习范式设计的学习框架，支持市场动态建模等不同层级的模式；生成交易决策并执行的交易策略模块；以及支持多层级策略/执行器嵌套优优化和联合运行。平台最终提供全面的分析报告，并支持低成本的在线模型部署。
+
+项目提供快速开始指南，包括如何方便地安装 Qlib 和准备数据。数据方面，虽官方数据集暂时关闭，但社区贡献了替代数据源。平台支持通过 Pip 安装或从源码安装，并提供了 Docker 镜像以简化环境配置。
+
+Qlib 支持自动化量化研究工作流，通过 `qrun` 工具和配置文件即可完成数据集构建、模型训练、回测和评估，并生成图形化报告进行分析，如预测信号分析（累计收益、收益分布、IC、自相关）和投资组合回测分析。同时，平台也提供模块化的接口，允许用户通过编写代码构建定制化的量化研究工作流。
+
+在解决量化研究中的关键挑战方面，Qlib 提供了一系列解决方案：
+
+- **预测：发现有价值的信号/模式**：Qlib 集成了大量基于前沿研究的量化模型（Quant Model Zoo），包括但不限于：基于 LightGBM、XGBoost、Catboost 的 GBDT 模型，基于 PyTorch 的 MLP、LSTM、GRU、ALSTM、GATs、SFM、TabNet、DoubleEnsemble、TCTS、Transformer、Localformer、TRA、TCN、ADARNN、ADD、IGMTF、HIST、KRNN、Sandwich 模型，以及基于 TensorFlow 的 TFT 模型。用户可通过 `qrun` 或 Python 脚本运行这些模型，甚至批量运行多个模型进行比较。
+- **适应市场动态**：针对金融市场的动态性，Qlib 提供了解决方案，如滚动再训练（Rolling Retraining）和 DDG-DA 模型，帮助模型/策略适应市场变化，提高性能。
+- **强化学习：建模连续决策**：Qlib 支持强化学习，特别适用于订单执行等需要连续决策的场景。项目提供了 TWAP、PPO、OPDS 等方法用于订单执行场景的策略优化。
+
+Qlib 还提供了一个量化数据集动物园（Quant Dataset Zoo），包含 Alpha360 和 Alpha158 等数据集，并提供了构建自定义数据集的教程。
+
+Qlib 的数据服务器性能优越，通过高效的数据存储和处理，相比其他通用数据库解决方案，在数据集构建任务上展现出显著的速度优势，特别是在启用表达式缓存和数据集缓存后。
+
+关于项目状态和贡献，Qlib 是一个活跃的开源项目，欢迎社区的贡献和建议，提供了详细的代码标准和开发指南，并列出了一些好的入门问题。
+
+该项目采用 MIT 许可证。
+
+### 项目统计与信息
+
+- **作者:** [microsoft](https://github.com/microsoft）)
+- **主要语言:** Python
+- **Stars:** 22048 ⭐
+- **Forks:** 3471 🍴
+- **本周期新增 Stars:** 961 ⭐
+
+_要了解更多关于 **microsoft / qlib** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/microsoft/qlib)。_
+
+---
+
+## mlabonne / llm-course
+
+> 这份资源是一个全面性的LLM课程，涵盖了从基础知识到高级主题，包括LLM科学家和工程师所需的核心概念、技术和实践应用。
+
+### 项目介绍
+
+这是一个关于大型语言模型（LLMs）的全面课程资源，旨在帮助学习者理解、构建和部署LLMs。该课程提供了详细的学习路线图和配套的 Colab Notebooks，方便实践操作。
+
+课程内容分为三个主要部分：
+
+LLM 基础知识（可选）：
+
+- 涵盖机器学习所需的基础数学知识，包括线性代数、微积分、概率与统计。
+- 介绍机器学习中常用的 Python 基础及数据科学库（NumPy, Pandas, Matplotlib, Seaborn）和机器学习库（Scikit-learn）。
+- 讲解神经网络的基础架构、训练优化、过拟合问题及多层感知机（MLP）的实现。
+- 探讨自然语言处理（NLP）的关键概念，如文本预处理、特征提取（BoW, TF-IDF）、词嵌入（Word2Vec, GloVe, FastText）以及循环神经网络（RNNs, LSTMs, GRUs）。
+
+LLM 科学家：
+
+- 深入解析 LLM 架构，特别是 Transformer 模型（encoder-decoder 到 decoder-only）、Tokenization、注意力机制和文本生成采样技术。
+- 讨论模型预训练的流程和技术，包括大规模数据集准备、分布式训练、训练优化和监控。
+- 关注模型后训练数据集的构建，包括数据存储格式、Chat Templates、合成数据生成、数据增强和质量过滤。
+- 详细讲解监督微调（SFT），包括全参数微调和参数高效微调（LoRA, QLoRA），以及相关的训练参数和分布式训练方法。
+- 介绍偏好对齐（Preference Alignment），侧重 Direct Preference Optimization (DPO)、Grouped-Query Attention (GRPO) 和 Proximal Policy Optimization (PPO) 等算法。
+- 阐述 LLM 评估的方法和挑战，包括自动化基准测试、人工评估和基于模型的评估。
+- 解释模型量化技术，如 8-bit、4-bit 量化，以及 GGUF, GPTQ, AWQ, SmoothQuant 等格式和工具。
+- 探讨 LLM 领域的新趋势，例如模型合并 (Mergekit)、多模态模型、模型可解释性（Sparse Autoencoders, Abliteration）和测试时计算扩展。
+
+LLM 工程师：
+
+- 指导如何在不同环境中运行 LLMs，包括通过 API 调用（OpenAI, Google, Hugging Face 等）、本地部署（LM Studio, Ollama）以及使用 Prompt Engineering 和输出结构化技术。
+- 介绍构建向量存储的方法，作为 RAG 管线的第一步，包括文档加载、文本分割、Embedding 模型和向量数据库。
+- 详细解释检索增强生成（RAG）的原理和实践，包括 Orchestrators (LangChain, LlamaIndex)、Retrieveres、内存管理和评估方法。
+- 探索高级 RAG 技术，如查询构建（Text-to-SQL）、利用工具增强（Agent）、后处理技术（Re-ranking）和 Program LLMs (DSPy)。
+- 深入理解 Agent 的概念和框架（LangGraph, LlamaIndex, CrewAI, AutoGen），帮助构建自主执行任务的 LLM 应用。
+- 讲解推理优化技术，旨在提高 LLM 推理速度和效率，如 Flash Attention, Key-value cache, Speculative Decoding。
+- 涵盖 LLMs 的部署，从本地应用和 Demo 部署（Gradio, Streamlit）到服务器部署（TGI, vLLM）和边缘设备部署（MLC LLM）。
+- 讨论 LLM 的安全性问题，识别 Prompt Hacking、后门等攻击向量，并介绍红队测试、Langfuse 等防御措施。
+
+该项目旨在为希望进入 LLM 领域的开发者和研究人员提供结构化的学习路径和实用的代码示例。课程内容持续更新，并建议通过购买作者撰写的《LLM Engineer's Handbook》或使用配套的 LLM 助手进行互动学习。项目遵循 Apache-2.0 许可证。
+
+### 项目统计与信息
+
+- **作者:** [mlabonne](https://github.com/mlabonne）)
+- **主要语言:** Jupyter Notebook
+- **Stars:** 52919 ⭐
+- **Forks:** 5633 🍴
+- **本周期新增 Stars:** 180 ⭐
+
+_要了解更多关于 **mlabonne / llm-course** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/mlabonne/llm-course)。_
+
+---
+
+## jellyfin / jellyfin
+
+> Jellyfin是一个免费开源的媒体系统，允许用户自主管理和串流电影、音乐等媒体库到各种设备，是Emby和Plex的可替代方案，强调用户自由和隐私。
+
+### 项目介绍
+
+Jellyfin 是一个自由软件媒体系统，旨在提供用户自主管理和串流其媒体内容的能力。它是一个开源的替代方案，可以替代专有的 Emby 和 Plex 媒体服务器。Jellyfin 项目源自 Emby 的 3.5.2 版本，并已移植到 .NET Core 框架，以实现全面的跨平台支持。
+
+Jellyfin 的核心目标是建立一个没有附加条件、无需付费许可或高级功能、没有隐藏议程的媒体系统。该项目由一个团队共同协作开发，欢迎任何有兴趣加入的用户和开发者。
+
+项目的主要功能和特性包括：
+
+- 提供一个媒体服务器后端和 API，用于管理和组织用户的数字媒体库（电影、电视剧、音乐、照片等）。
+- 支持将媒体内容串流到各种终端用户设备，通过多种客户端应用实现跨平台访问。
+- 具备媒体文件扫描、元数据抓取（如电影信息、海报、演员信息等）、文件整理等功能。
+- 支持用户账户管理，可以创建不同权限的用户。
+- 后端服务器基于 .NET Core 框架构建，具备良好的跨平台兼容性。
+
+技术栈和依赖：
+
+- 主要使用 C# 编程语言进行开发。
+- 基于 .NET Core 框架。
+- 依赖 ffmpeg 进行媒体处理和转码。
+- 项目仓库包含 Jellyfin 服务器后端代码，前端 Web 客户端代码位于另一个独立的仓库中。
+
+安装与配置概述：
+
+- 用户可以通过下载预构建的版本安装 Jellyfin 服务器，支持多种操作系统。
+- 也可以通过构建源代码的方式进行安装。
+- 需要安装 .NET 9.0 SDK 作为先决条件。
+- 开发者进行本地开发时，需要克隆仓库，并获取 Web 客户端文件（可以通过下载预构建版本、从源代码构建或从已有安装复制）。
+- 可以通过命令行或支持 .NET 开发的 IDE（如 Visual Studio, Visual Studio Code）运行服务器。
+- 可以配置服务器独立托管 Web 客户端，这对于前端开发者进行快速迭代很有用。
+
+基本使用方法概述：
+
+- 服务器启动后，可以通过 Web 浏览器访问默认地址（通常是 `http://localhost:8096`）进行首次设置和管理。
+- API 文档可通过 `http://localhost:8096/api-docs/swagger/index.html` 访问。
+- 单元测试可以通过 `dotnet test` 命令、Visual Studio Test Explorer 或 Visual Studio Code 的 CodeLens 功能运行。
+
+适用场景和目标用户：
+
+- 适用于希望建立个人媒体中心，自主管理和串流其媒体文件到家庭网络中各种设备的用户。
+- 目标用户是希望拥有完全控制权、偏好自由开源软件、并且可能对 Emby 或 Plex 的收费模式或专有特性不满意的个人用户或小型社区。
+- 开发者可以基于其开源代码进行二次开发或贡献。
+
+项目状态与许可证：
+
+- Jellyfin 是一个活跃开发的开源项目。
+- 项目遵循 GPL-2.0 开源许可证。
+- 欢迎社区成员通过提交问题、贡献代码、参与讨论和特性请求等方式参与项目。
+
+独特的优势：
+
+- 完全免费和开源，没有高级付费功能限制。
+- 社区驱动，注重用户的自由和隐私。
+- 跨平台支持良好。
+
+### 项目统计与信息
+
+- **作者:** [jellyfin](https://github.com/jellyfin）)
+- **主要语言:** C#
+- **Stars:** 40019 ⭐
+- **Forks:** 3562 🍴
+- **本周期新增 Stars:** 173 ⭐
+
+_要了解更多关于 **jellyfin / jellyfin** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/jellyfin/jellyfin)。_
+
+---
+
+## iptv-org / iptv
+
+> IPTV项目是一个汇集全球免费公开网络电视频道的开源资源库，提供多种分类的M3U播放列表和EPG，用户可轻松用视频播放器观看。
+
+### 项目介绍
+
+本项目名为 IPTV，是一个收集全球公开可用网络电视 (IPTV) 频道的开源项目。它致力于提供一个汇集了各种免费在线电视频道的资源库，方便用户通过支持直播流的任何视频播放器进行观看。
+
+项目的核心功能和特性包括：
+
+- **公开频道集合：** 汇集了全球各地大量公开可用的 IPTV 频道链接。
+- **多种播放列表分类：** 提供多种方式组织频道列表，包括：
+  - 主播放列表：包含仓库中所有已知的频道。
+  - 按分类分组的播放列表：根据内容类型（如动画、汽车、商业、经典、喜剧、烹饪、文化、纪录片、教育、娱乐、家庭、综合、少儿、立法、生活方式、电影、音乐、新闻、户外、放松、宗教、科学、系列剧、购物、体育、旅游、天气）进行分类。
+  - 按语言分组的播放列表：根据频道广播语言进行分类，支持多种语言。
+  - 按国家/地区分组的播放列表：根据频道所属国家或地区进行分类，涵盖全球大多数国家，甚至细分到部分国家/地区的省或州。
+  - 按区域分组的播放列表：根据地理区域进行分类（如非洲、美洲、阿拉伯世界、亚洲、亚太、巴尔干、欧盟等）。
+- **M3U 格式支持：** 提供的所有播放列表均为标准的 M3U 格式，广泛兼容各种支持 IPTV 的播放器应用。
+- **电子节目指南 (EPG)：** 与 iptv-org/epg 项目联动，提供大部分频道的电子节目指南信息。
+- **频道数据库：** 所有频道数据来源于 iptv-org/database 仓库，用户可在该仓库报告数据问题。
+- **API 访问：** 提供 API 供开发者访问频道数据，相关文档位于 iptv-org/api 仓库。
+- **周边资源集合：** 在 iptv-org/awesome-iptv 仓库中收集了其他有用的 IPTV 相关资源链接。
+
+项目的使用方法非常简单，用户只需将提供的任一播放列表链接复制到支持直播流的视频播放器中即可。
+
+本项目不存储任何视频文件，仅收集用户提交的指向公开可用视频流 URL 的链接。项目维护者声明对链接指向的内容没有控制权，移除链接并不能从互联网上移除内容本身。本项目采用 Unlicense 许可证。
+
+项目的目标用户是希望免费观看全球各地公开电视频道内容的普通用户及相关开发者。通过提供分类清晰、持续更新的播放列表，项目旨在简化用户查找和观看 IPTV 频道的流程。
+
+项目的技术栈主要包括 TypeScript 和 JavaScript。截至抓取信息时，该项目在 GitHub 上拥有超过 94.1k Stars 和 3.6k Forks，表现出较高的社区关注度和活跃度。
+
+### 项目统计与信息
+
+- **作者:** [iptv-org](https://github.com/iptv-org）)
+- **主要语言:** TypeScript
+- **Stars:** 94103 ⭐
+- **Forks:** 3555 🍴
+- **本周期新增 Stars:** 44 ⭐
+
+_要了解更多关于 **iptv-org / iptv** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/iptv-org/iptv)。_
+
+---
+
+## kamranahmedse / developer-roadmap
+
+> developer-roadmap是一个开源项目，提供可视化的开发者学习路线图、技术指南和问答集，帮助开发者规划和提升职业技能。
+
+### 项目介绍
+
+`developer-roadmap` 项目是一系列交互式的开发者路线图、指南和其他教育内容，旨在帮助开发者规划和提升职业技能。其核心价值在于提供结构化的学习路径，涵盖软件开发领域的各个方向。
+
+该项目提供广泛的路线图，覆盖多种技术栈和角色，主要功能包括：
+
+- 提供针对前端、后端、DevOps、全栈等多个主流开发方向的详细学习路线图。
+- 包含特定技术和框架的路线图，例如 Git 和 GitHub、API 设计、数据结构与算法、AI/数据科学家、AWS、Linux、Kubernetes 等。
+- 提供特定编程语言和框架的路线图，如 Python、JavaScript、TypeScript、C++、React、Vue、Angular、Node.js、Java、Go、Rust 等。
+- 不仅覆盖开发技术，还包含产品经理、工程经理、QA、技术文档工程师等相关角色的路线图。
+- 提供软件架构、系统设计、网络安全等通用但重要的技术领域路线图。
+- 具有互动性，用户可以点击路线图中的节点以获取更多关于该主题的信息。
+- 提供一系列编程或技术相关的最佳实践指南，如后端/前端性能、代码评审、API 安全、AWS 最佳实践等。
+- 提供针对特定技术栈（如 JavaScript, Node.js, React 等）和通用领域（前端, 后端）的问答集，帮助用户测试和巩固知识。
+
+此项目主要面向希望规划学习路径、提升技术技能或了解不同技术领域的开发者、技术人员以及与技术相关的职业人士。它通过可视化的路线图和配套资源，为用户的职业发展提供明确的指导。
+
+在技术栈方面，项目本身是一个网站应用，使用了 TypeScript 和 Astro 等技术构建。路线图和相关内容以结构化数据的形式存储，并在前端进行渲染展示。项目的开发和贡献流程通过 GitHub 进行管理。
+
+对于开发者来说，如果想参与贡献，可以克隆项目仓库，安装依赖后运行本地开发环境。项目欢迎社区成员通过提交内容更新、新增路线图、建议修改或参与讨论等方式进行贡献。
+
+该项目基于开源许可证发布，具体细节可在项目仓库中查阅。其目标用户广泛，包括初学者、希望转型或进阶的资深开发者。
+
+### 项目统计与信息
+
+- **作者:** [kamranahmedse](https://github.com/kamranahmedse）)
+- **主要语言:** TypeScript
+- **Stars:** 323530 ⭐
+- **Forks:** 41728 🍴
+- **本周期新增 Stars:** 640 ⭐
+
+_要了解更多关于 **kamranahmedse / developer-roadmap** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/kamranahmedse/developer-roadmap)。_
+
+---
+
+## lobehub / lobe-chat
+
+> Lobe Chat是一个开源AI对话框架，功能丰富，支持多种AI模型和部署方式，特别强调私有化部署和为“超级个体”提供高度定制化的AI应用平台。
+
+### 项目介绍
+
+Lobe Chat 是一个开源、现代设计的 AI 对话框架，旨在为用户提供一个功能丰富的、可私有化部署的 AI 对话平台。它支持多种 AI 模型提供商，具备知识库、多模态交互（插件/Artifacts）、思考链可视化、以及便捷的部署和用户管理等特性。
+
+核心定位：
+
+一个面向“超级个体”（Super Individual）的开源、高性能 AI 聊天框架，提供美观、现代的用户界面，支持用户轻松部署和定制自己的 AI 对话应用。
+
+主要功能和特性：
+
+- 支持 Chain of Thought (CoT) 思考链可视化：将 AI 的推理过程一步步展示，提高透明度和可理解性。
+- 支持 Branching Conversations 分支对话：从任意消息创建新的对话分支，保留上下文同时探索不同思路，提供延续和独立两种模式。
+- 支持 Artifacts: 集成 Artifacts 功能，支持实时生成和可视化 SVG、HTML 等多种格式内容。
+- 支持 File Upload / Knowledge Base 文件上传/知识库：允许上传文档、图片、音频、视频等多种文件，创建和管理知识库，并在对话中使用文件和知识库进行更丰富的交互。
+- 支持 Multi-Model Service Provider 多模型提供商：广泛支持包括 OpenAI、Ollama、Anthropic、Bedrock、Google、DeepSeek、PPIO、HuggingFace、OpenRouter、Cloudflare Workers AI 等在内的 40 多家 AI 模型服务提供商，提供多样化的模型选择。
+- 支持 Local Large Language Model (LLM) 本地大语言模型：基于 Ollama 支持使用本地模型。
+- 支持 Model Visual Recognition 模型视觉识别：通过 `gpt-4-vision` 等模型支持图片上传，AI 可识别图片内容并进行智能对话。
+- 支持 TTS & STT Voice Conversation 语音对话：支持文本转语音 (TTS) 和语音转文本 (STT) 技术，提供多种高质量声音选择。
+- 支持 Text to Image Generation 文本到图像生成：通过插件调用 DALL-E 3、MidJourney、Pollinations 等工具，在对话中直接生成图像。
+- Plugin System (Function Calling) 插件系统 (函数调用)：提供可扩展的插件生态系统，通过函数调用获取实时信息（如网页搜索）、生成内容，并与第三方服务交互。目前已有 40 多个可用插件。
+- Agent Market (GPTs) 智能体市场：提供一个发现和分享智能体的社区平台，支持用户提交自己开发的智能体，并具备自动国际化翻译功能。目前已有 480 多个智能体。
+- Support Local / Remote Database 支持本地/远程数据库：支持本地 CRDT 数据库（多设备同步实验性）和远程 PostgreSQL 数据库，满足不同数据管理需求。
+- Support Multi-User Management 支持多用户管理：集成 `next-auth` 和 `Clerk` 两种方案，提供灵活的用户认证和管理功能，包括 OAuth、邮件登录、凭据登录、MFA、用户资料管理等。
+- Progressive Web App (PWA)：支持 PWA 技术，提供接近原生应用的无缝跨设备体验，界面美观，适配移动设备。
+- Custom Themes 自定义主题：提供 Light 和 Dark 模式，支持丰富的颜色定制选项，并可智能识别系统颜色模式自动切换，提供气泡模式和文档模式两种对话场景。
+
+其他基本特性：
+
+- Quick Deployment 快速部署：通过 Vercel、Zeabur、Sealos、阿里云或 Docker Image 一键部署，过程便捷快速。
+- Custom Domain 自定义域名：支持绑定自定义域名访问。
+- Privacy Protection 隐私保护：默认情况下数据存储在用户浏览器本地。
+- Exquisite UI Design 精美 UI 设计：界面优雅，交互流畅，支持完整的 Markdown 渲染（包括代码高亮、Latex 公式、Mermaid 流程图等）。
+- Smooth Conversation Experience 流畅对话体验：提供流畅的响应。
+
+技术栈/依赖：
+
+- 核心开发语言：TypeScript
+- 应用框架：Next.js (推测)
+- UI 库：@lobehub/ui, @lobehub/icons, @lobehub/tts, @lobehub/lint 等 LobHub 生态系统组件
+- AI 模型提供商：OpenAI, Claude (Anthropic, Bedrock), Gemini (Google), Ollama, DeepSeek, Qwen (PPIO), Groq, Perplexity, Mistral, Ai21Labs, Upstage, xAI, Wenxin, Hunyuan, ZhiPu, SiliconCloud, 01.AI, Spark, SenseNova, Stepfun, Moonshot, Baichuan, Minimax, InternLM, Higress, Gitee AI, Taichu, 360 AI, Search1API, InfiniAI, Qiniu 等。
+- 数据库：本地 CRDT / 远程 PostgreSQL
+- ORM：Drizzle ORM (用于服务器端数据库)
+- 认证：next-auth / Clerk (可选)
+- 部署：Vercel, Zeabur, Sealos, Alibaba Cloud, Docker
+- 函数调用/插件能力：基于大型语言模型的函数调用功能。
+
+安装与配置指南概述：
+
+可以通过 Vercel/Zeabur/Sealos/阿里云一键部署，或使用 Docker Compose 进行本地私有化部署。一键部署需提供 OpenAI API Key ( 필수 ) 和 Access Code (推荐) 等环境变量。Docker 部署需要先创建目录并运行初始化脚本，然后启动 Docker Compose 服务。
+
+基本使用方法概述：
+
+部署后，用户可在 Web 界面或 PWA 应用中直接与 AI 进行对话，配置 API Key、选择模型、上传文件、管理知识库、安装插件、切换智能体等。
+
+适用场景/目标用户：
+
+适用于需要私有化部署、对数据隐私有较高要求、希望集成多种 AI 模型能力、需要知识库和插件扩展功能、以及偏爱现代设计和流畅交互的开发者和普通用户。特别是针对希望构建和定制自己 AI 应用的“超级个体”。
+
+项目状态与许可证：
+
+项目处于积极开发状态，持续迭代中。使用 Apache 2.0 许可。
+
+### 项目统计与信息
+
+- **作者:** [lobehub](https://github.com/lobehub）)
+- **主要语言:** TypeScript
+- **Stars:** 61557 ⭐
+- **Forks:** 12872 🍴
+- **本周期新增 Stars:** 300 ⭐
+
+_要了解更多关于 **lobehub / lobe-chat** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/lobehub/lobe-chat)。_
+
+---
+
+## XiaoYouChR / Ghost-Downloader-3
+
+> Ghost-Downloader-3 是一个基于 Python 的跨平台、AI 增强的多线程下载器，模仿 IDM 分块下载，提供智能加速、计划任务等功能，并计划支持 BT 下载和插件系统。
+
+### 项目介绍
+
+Ghost-Downloader-3 是一个基于 Python 构建的跨平台、采用 Fluent 设计风格、具有 AI 增强功能的多线程下载器。项目起源于个人兴趣，并最初旨在协助一位 Bilibili 上传者进行资源整合。
+
+该下载工具的核心功能和特性包括：
+
+- IDM（Internet Download Manager）风格的智能分块下载，无需文件合并，提高了下载效率。
+- AI 驱动的智能加速功能，提升下载性能。
+- 支持全局设置，方便用户自定义下载行为。
+- 提供更详细的下载信息展示，方便用户监控下载进度。
+- 支持计划任务，可以安排下载任务在指定时间执行。
+- 优化了浏览器扩展功能，方便从浏览器中捕获下载链接（提供 Chrome 和 Firefox 扩展）。
+- 支持全局速度限制，可以控制总体的下载带宽占用。
+- 进行了内存优化，包括升级 Qt 版本、实现 HTTP 客户端复用以及将部分多线程操作替换为协程。
+- 未来计划中的功能包括：全新的基于事件的 MVVM 架构、增强的任务编辑能力（如支持单个任务绑定多个客户端）、Magnet/BT 下载支持（考虑使用 libtorrent 实现）、强大且灵活的插件系统以及更强大的浏览器扩展功能。
+
+Ghost-Downloader-3 使用 Python 语言开发，并依赖于多种库，例如用于 GUI 界面的 PySide6（基于 Qt）、Fluent Design 风格的 PyQt-Fluent-Widgets、用于 HTTP 请求的 Httpx、用于异步文件操作的 Aiofiles、用于日志记录的 Loguru 等。项目兼容多种操作系统和架构，包括支持 `glibc 2.35+` 的 Linux (`x86_64`/`arm64`)、支持 `Windows 7 SP1+` 的 Windows (`x86_64`/`arm64`) 以及支持 `macOS 11.0+` 的 macOS (`x86_64`/`arm64`)。对于 Arch Linux 用户，社区提供了 `ghost-downloader-bin` 和 `ghost-downloader-git` 软件包。
+
+项目的安装与配置通常涉及 Python 环境的准备和相关依赖库的安装。具体使用方法通常是通过图形界面添加下载任务，并利用其智能分块和 AI 加速功能进行文件下载。
+
+Ghost-Downloader-3 主要面向需要高效、稳定下载工具的用户，尤其适合对下载速度和多任务处理有较高要求的场景。其 Fluent 设计风格也为用户提供了良好的视觉体验。
+
+目前，项目处于积极开发阶段，但由于开发者正在准备高考，更新暂时暂停。项目采用 GPL v3.0 开源许可证。
+
+项目的独特之处在于其结合了 IDM 式的智能分块下载与 AI 驱动的加速技术，并计划构建强大的插件系统，以充分发挥 Python 的优势，使其具备高度的可扩展性。
+
+### 项目统计与信息
+
+- **作者:** [XiaoYouChR](https://github.com/XiaoYouChR）)
+- **主要语言:** Python
+- **Stars:** 2351 ⭐
+- **Forks:** 104 🍴
+- **本周期新增 Stars:** 195 ⭐
+
+_要了解更多关于 **XiaoYouChR / Ghost-Downloader-3** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/XiaoYouChR/Ghost-Downloader-3)。_
+
+---
+
+## mindsdb / mindsdb
+
+> MindsDB是一个开源AI查询引擎，通过将AI能力集成到数据层，允许用户用SQL连接、统一和查询分散在不同数据源的数据。它可以方便用户、AI代理和应用快速从异构大规模数据源获取信息和洞察。
+
+### 项目介绍
+
+MindsDB 是一个开源的 AI 查询引擎和平台，旨在帮助用户、AI 代理和应用程序从大规模、分散的数据源中获取高度准确的答案。它通过将 AI 能力集成到数据层，允许用户使用熟悉的 SQL 语言与数据进行交互，解决数据分散、难以统一查询的问题。
+
+项目核心理念围绕“连接 (Connect)、统一 (Unify)、响应 (Respond)”三个关键能力构建：
+
+- **连接数据：** MindsDB 支持连接数百种企业级数据源，包括各种数据库、数据仓库和 SaaS 应用。这意味着 MindsDB 可以在数据所在的地方直接访问数据，无需进行复杂的数据迁移或 ETL 过程。
+- **统一数据：** 连接后，MindsDB 提供一个完整的 SQL 语言接口，可以将不同来源的数据视为一个统一的数据库进行查询。它的联邦查询引擎负责转换 SQL 查询并在相应的连接数据源上执行。为了更好地处理和统一异构数据，MindsDB SQL 提供了多种虚拟表类型：
+  - **VIEWS：** 创建跨源的统一数据视图，简化数据访问。
+  - **KNOWLEDGE BASES (知识库)：** 索引和组织非结构化数据，以便高效检索，支持对文本等非结构化数据的问答。项目最新进展中提及支持通过 JSON 数据类型列构建知识库。
+  - **ML MODELS (机器学习模型)：** 应用 AI/ML 转换来从数据中获取洞察。通过模型，可以将预测、生成等 AI 能力融入数据查询流程。
+  - 此外，可以使用 **JOBS** 功能自动化数据的同步和转换任务。
+- **从数据响应：** MindsDB 提供了多种与统一数据交互并获取答案的方式：
+  - **AGENTS (代理)：** 配置内置的代理，专门用于回答关于已连接和统一数据的问题。
+  - **MCP (Model Context Protocol)：** 通过 MCP 协议连接到 MindsDB，实现无缝的交互。
+
+项目主要技术栈基于 Python 开发，同时也包含 Dockerfile、HCL、HTML、Makefile、Mako 等文件类型。它支持 Python 3.10 及以上版本。
+
+安装和配置方面，MindsDB 提供了多种部署方式，包括：
+
+- 使用 Docker Desktop（推荐的最快上手方式）。
+- 使用 Docker（提供更多自定义灵活性）。
+- 使用 PyPI 安装（适合开发者贡献）。
+
+MindsDB 的目标用户广泛，包括需要从多个、大型数据源提取信息并希望利用 AI 能力进行问答、预测或分析的数据科学家、工程师、开发者以及业务分析师。它特别适用于数据分散在不同系统（数据库、数据仓库、各种 SaaS 应用）的场景。
+
+项目遵循开源许可协议，代码托管在 GitHub 上，并欢迎社区贡献。社区支持可以通过 Slack、GitHub Discussions 或 Stack Overflow 获取。
+
+总的来说，MindsDB 提供了一个强大的平台，通过将 AI 能力（特别是大型语言模型和代理）与数据集成，使得跨异构、大规模数据源进行自然语言问答和复杂分析成为可能，极大地简化了数据访问和 AI 应用的构建流程。它是连接数据世界与 AI 能力的查询引擎。
+
+### 项目统计与信息
+
+- **作者:** [mindsdb](https://github.com/mindsdb）)
+- **主要语言:** Python
+- **Stars:** 30125 ⭐
+- **Forks:** 5121 🍴
+- **本周期新增 Stars:** 496 ⭐
+
+_要了解更多关于 **mindsdb / mindsdb** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/mindsdb/mindsdb)。_
+
+---
+
+## ossu / computer-science
+
+> 这份内容大致介绍了一个名为ossu/computer-science的GitHub项目，它提供了一个使用免费在线资源构建的、相当于大学本科学位的计算机科学自学完整课程体系。
+
+### 项目介绍
+
+该 GitHub 项目名为 "ossu/computer-science"，是一个旨在提供免费、自学型计算机科学完整教育路径的项目。它不是简单的职业培训或技能提升资源，而是针对希望获得一个良好、全面的计算机科学基础概念教育的人们而设计，同时也面向那些具备自律、毅力和良好学习习惯，能够借助一个全球学习者社区的支持进行自学的人。
+
+该课程体系是根据计算机科学专业本科学位要求设计的，但不包含通识教育（非计算机科学）课程，假定使用者已在计算机科学之外的领域接受过教育。课程资源精选自世界顶尖学府，如哈佛、普林斯顿、麻省理工等，并需满足以下标准：课程必须开放注册、定期运行（最好自定进度）、教学材料和教学原则质量高，并符合 CS 2013（计算机科学本科学位课程指南）的课程标准。当没有课程符合标准时，会补充推荐书籍。
+
+该课程体系分为几个主要部分：
+
+- **Intro CS (入门CS)**：旨在让学生尝试计算机科学，了解其是否适合自己。涵盖计算基础、命令式编程、基本数据结构和算法等。
+- **Core CS (核心CS)**：对应于计算机科学本科学位的前三年课程，涵盖所有专业学生必修的基础课程。这部分内容是必需的。
+  - 核心编程：包括函数式编程、测试设计、设计模式、单元测试、面向对象设计、类型系统、多种编程语言等。
+  - 核心数学：涵盖离散数学、数学证明、基础统计学、大O符号、离散概率等，微积分作为先修课程帮助建立数学基础。
+  - CS工具：涵盖终端和shell脚本、版本控制等提高编程效率的工具。
+  - 核心系统：包括布尔代数、门电路、内存、计算机体系结构、汇编语言、操作系统、网络协议等计算机系统基础知识。
+  - 核心理论：涵盖分治法、排序和搜索算法、图算法、数据结构、贪心算法、动态规划、NP完全问题等算法和理论基础。
+  - 核心安全：介绍网络安全基础、密码学、安全设计、防御性编程、威胁与攻击识别等。
+  - 核心应用：探讨敏捷方法、REST、软件规范、重构、关系数据库、机器学习、计算机图形学等应用方向。
+  - 核心伦理：讨论技术伦理、知识产权、隐私和社会自由等。
+- **Advanced CS (高级CS)**：对应于计算机科学本科学位的最后一年，提供学生根据兴趣选择的选修课程。完成核心CS后，学生可根据兴趣选择相关领域的高级课程。
+  - 高级编程：涉及调试理论、并行计算、面向对象分析与设计、软件架构设计等。
+  - 高级系统：涵盖数字电路、计算机体系结构（更深入）、操作系统原理和实现等。
+  - 高级理论：包括形式语言、图灵机、可计算性、并发理论、计算几何、形式逻辑等。
+  - 高级信息安全：深入探讨Web安全、安全治理、数字取证、安全软件开发等。
+  - 高级数学：提供线性代数、数值方法、形式逻辑、概率论等进阶数学内容。
+- **Final Project (最终项目)**：鼓励学生应用所学知识解决实际问题或完成具有挑战性的项目，以此巩固和展示学习成果。也推荐了一些项目导向的专业课程作为项目指导。
+
+项目的持续时间预估约为两年，每周投入约20小时的学习时间。所有或大部分课程材料可免费获取，但部分课程可能会对评估（如作业、测试、项目）收费。Coursera和edX提供财务援助。学习者可以单独学习，也可以组成小组共同学习。核心CS课程推荐按顺序完成，高级CS课程则可根据兴趣选择。
+
+该项目提供一个活跃的社区支持，主要通过Discord服务器进行交流和讨论。项目遵循开源社会的行为准则（Code of Conduct）。学习者可以通过Fork该GitHub仓库，并在完成课程后进行标记，作为自己的学习进度追踪工具。
+
+该项目是一个完全基于免费在线资源的计算机科学教育路径，提供了从入门到高级的全面课程体系，旨在帮助自学者获得相当于大学本科学位的计算机科学知识和能力。项目核心价值在于其精心组织的课程内容和活跃的学习社区支持。项目的许可证是MIT许可证。
+
+### 项目统计与信息
+
+- **作者:** [ossu](https://github.com/ossu）)
+- **主要语言:** HTML
+- **Stars:** 181929 ⭐
+- **Forks:** 22979 🍴
+- **本周期新增 Stars:** 1299 ⭐
+
+_要了解更多关于 **ossu / computer-science** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/ossu/computer-science)。_
+
+---
+
+## juspay / hyperswitch
+
+> Hyperswitch 是一个开源支付切换平台，用 Rust 构建，帮助企业通过统一 API 快速、灵活地集成和管理多种支付服务，优化支付流程、提升成功率并降低成本。
+
+### 项目介绍
+
+Hyperswitch 是一个开源支付切换平台，使用 Rust 语言编写，旨在提供一个统一的 API 来集成和管理各种支付处理服务及相关功能，从而使支付过程更快速、可靠且经济高效。该项目由 Juspay 发起和维护，其愿景是成为“支付领域的 Linux”，推动和拥抱支付生态系统的多样性与创新。
+
+项目核心定位及目标：
+Hyperswitch 作为一个可组合、商业开源的支付平台，为数字企业提供了一个透明且模块化的支付基础设施，使其能够访问最优的支付网络。它旨在解决企业自建或管理支付堆栈时面临的普遍挑战，并加速其支付创新步伐。
+
+主要功能和特性：
+
+- **支付处理后端**: 支持包括授权、验证、取消、捕获等多种支付流程，并具备退款、拒付等后处理功能。可集成欺诈风险管理 (FRM) 和认证提供商。
+- **智能路由**: 提供高度灵活的支付路由策略，包括基于成功率、规则、交易量分配、回退处理以及基于错误代码的智能重试机制，以优化支付成功率和成本。
+- **SDK (前端)**: 提供 Web、Android 和 iOS 平台的 SDK，统一各种支付方式（如卡、钱包、BNPL、银行转账等）的用户体验，并支持不同支付服务提供商 (PSP) 的支付流程。可配合 Locker 使用已保存的支付方式。
+- **控制中心**: 提供无代码管理界面，用于配置路由规则、重试策略、3DS、FRM 和附加费用模块的调用条件。可以查看跨所有集成 PSP 的交易、退款、拒付操作，以及详细的交易日志和支付性能分析报告。
+
+技术栈/依赖：
+
+- 主要编程语言：Rust。
+- 数据库：PostgreSQL。
+- 缓存/消息队列：Redis。
+- 使用 Docker Compose/Podman 进行本地部署和管理。
+- 支持使用 AWS CDK、GCP 和 Azure Helm charts 在云端部署。
+
+安装与配置：
+
+- 本地安装推荐使用一键安装脚本，该脚本会自动检查依赖、配置并启动所需服务。用户可以选择标准、完整或独立应用服务等部署模式。
+- 云端部署支持 AWS（提供 CloudFormation 模板一键部署）、GCP 和 Azure（通过 Helm charts）。
+
+基本使用方法：
+
+- 安装并启动 Hyperswitch 服务后，通过 Control Center 添加和配置支付处理器 (PSP)。
+- 使用提供的 API 或前端 SDK 集成到商户应用中，根据业务需求配置路由规则和其他模块。
+- 可通过 Hosted Sandbox 环境快速体验产品功能，包括配置连接器、定义工作流和测试支付。
+
+适用场景/目标用户：
+
+- 面向需要集成和管理多个支付网关的数字企业和商户。
+- 适用于希望提升支付成功率、降低交易成本、优化支付流程和增强支付基础设施弹性的企业。
+- 面向希望拥有和定制自身支付堆栈，并受益于开源社区创新和支持的技术团队和开发者。
+
+项目状态与许可证：
+
+- 项目活跃开发中，不断发布新版本。
+- 采用 Apache 2.0 许可证开源。
+
+### 项目统计与信息
+
+- **作者:** [juspay](https://github.com/juspay）)
+- **主要语言:** Rust
+- **Stars:** 19862 ⭐
+- **Forks:** 3147 🍴
+- **本周期新增 Stars:** 220 ⭐
+
+_要了解更多关于 **juspay / hyperswitch** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/juspay/hyperswitch)。_
+
+---
+
+## uutils / coreutils
+
+> uutils coreutils是一个用Rust重写的多平台命令行工具集，旨在替代GNU coreutils解决跨平台脚本兼容性问题，并努力在多种系统上正常运行。
+
+### 项目介绍
+
+uutils coreutils 是一个跨平台的项目，旨在用 Rust 语言重写 GNU coreutils。其核心目标是提供一套可以在 Linux、macOS、Windows 等多种操作系统上使用的、功能上替代 GNU coreutils 的命令行工具集，从而解决脚本在不同平台间迁移的兼容性问题。
+
+该项目致力于成为 GNU utils 的直接替代品，并将与 GNU 版本行为上的差异视为需要修复的错误。它努力在尽可能多的平台上正常工作。
+
+uutils coreutils 主要使用 Rust 语言开发。目前，项目支持的最低 Rust 版本 (MSRV) 是 1.85.0。
+
+项目的构建和安装支持多种方式。可以使用 Cargo 工具直接构建和安装所有工具，也可以选择构建特定平台（如 macOS, windows, unix）的工具集，甚至仅构建和安装指定的功能（如 base32, cat, echo, rm 等）。此外，项目也支持使用 GNU Make 进行构建和安装，Make 安装方式还支持生成和安装 shell 自动补全脚本（支持 bash, fish, zsh；可生成 elvish, powershell 的补全）以及 manpage 文档。
+
+安装后，用户可以通过几种方式运行这些工具：默认情况下，工具会被构建成一个类似 BusyBox 的多功能二进制文件 'coreutils'；也可以选择将每个工具构建和安装为独立的二进制文件（前缀为 `uu_`，例如 `uu-echo`）。卸载也对应安装方式，可以使用 Cargo 或 Make 进行。
+
+项目提供了用户手册和开发者文档，方便用户查阅工具的使用方法和开发者理解项目结构。通过 GNU 测试套件来评估与 GNU coreutils 的兼容性是项目的一个重要环节，项目中提供了测试结果的演变图，并可在用户手册中查看到更详细的测试覆盖情况。
+
+贡献者可以通过查阅 CONTRIBING.md 文档了解贡献方式。项目采用 MIT 许可证。
+
+### 项目统计与信息
+
+- **作者:** [uutils](https://github.com/uutils）)
+- **主要语言:** Rust
+- **Stars:** 20504 ⭐
+- **Forks:** 1474 🍴
+- **本周期新增 Stars:** 67 ⭐
+
+_要了解更多关于 **uutils / coreutils** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/uutils/coreutils)。_
+
+---
+
+## nvim-treesitter / nvim-treesitter
+
+> nvim-treesitter 是 Neovim 的 Treesitter 插件，通过基于语法树的解析，提供更精准的代码高亮、缩进、折叠等功能，并支持多种语言和灵活配置。
+
+### 项目介绍
+
+nvim-treesitter 是一个为 Neovim 提供 Treesitter 配置和抽象层的项目。其核心目标是为 Neovim 提供一个简单易用的 Tree-sitter 接口，并基于此实现基础功能，例如高亮。相比传统高亮，Treesitter 高亮能够更准确地理解代码结构，从而提供更精细和一致的高亮效果。Treesitter 支持是一个实验性功能，推荐使用 Neovim 的 Nightly 版本以获得最佳体验。
+
+项目主要基于以下三个相互关联的特性：
+
+- **语言解析器 (Language Parsers)**：Treesitter 为每种语言提供独立的解析器，用于构建代码的抽象语法树（AST）。项目自动化了安装和更新这些解析器的过程，支持通过 `:TSInstall <语言>` 命令安装已知语言的解析器，并通过 `:TSUpdate` 更新。
+- **查询 (Queries)**：查询是 nvim-treesitter 从 AST 中提取语法对象信息的方式，用于实现各种模块功能。查询文件位于 `queries/{language}/*` 目录下（如 `locals.scm`, `highlights.scm`, `textobjects.scm` 等）。用户可以自定义或覆盖查询文件。
+- **模块 (Modules)**：模块是基于查询实现具体功能的抽象层，例如高亮、缩进、代码折叠等。用户需要在 Neovim 的配置中明确激活所需的模块。
+
+主要功能和特性：
+
+- **一致的语法高亮**：基于 Treesitter 构建的 AST 提供比传统正则表达式更精确的高亮。支持通过 Lua API 自定义高亮组。
+- **增量选择**：根据语法树中的命名节点进行增量选择。提供快捷键用于扩展或缩小选区。
+- **基于树的缩进**：利用 Treesitter 的结构信息进行缩进（实验性功能）。
+- **基于树的代码折叠**：利用 Treesitter 的结构信息实现代码折叠，依赖 Neovim 内置功能 (`vim.treesitter.foldexpr()`)。
+- **广泛的语言支持**：通过集成社区维护的 Treesitter 解析器，支持包括 C, C++, Python, JavaScript, Lua, Rust, Go 等在内的多种流行编程语言，以及 Markdown, JSON, YaML 等标记/数据格式。支持通过 `:TSInstallInfo` 查看已安装和可安装的语言列表。
+- **灵活的配置**：通过 Lua 配置 (`require'nvim-treesitter.configs'.setup`) 控制安装的解析器、启用或禁用模块、以及进行更高级的设置。
+- **交互式命令**：提供 `:TSBufEnable`, `:TSBufDisable`, `:TSEnable`, `:TSDisable`, `:TSModuleInfo` 等命令，用于动态管理模块状态。
+- **自定义解析器和查询**：允许用户手动添加不在支持列表中的解析器，并自定义或覆盖语言特定的查询文件。
+- **实用工具**：提供一些 Lua 实用函数 (`nvim-treesitter.ts_utils`) 方便开发者基于 Treesitter 构建更多功能。
+- **状态栏指示器**：提供函数用于在状态栏显示当前光标位置的语法结构路径。
+
+技术栈与依赖：
+
+- **Neovim 0.10 或更高版本**：项目依赖 Neovim 自身提供的 Treesitter 接口。
+- **Tree-sitter**：底层的解析引擎。
+- **Lua**：主要的编程语言，用于配置和实现模块逻辑。
+- **C 编译器、libstdc++、tar、curl 或 git**：用于编译和安装解析器。
+
+安装与配置指南概述：
+
+1.  通过包管理器（如 lazy.nvim, packer.nvim 等）安装 `nvim-treesitter` 插件。推荐配置自动更新解析器（例如在 `lazy.nvim` 中设置 `build = ":TSUpdate"`)。
+2.  在 `init.lua` 中通过 `require'nvim-treesitter.configs'.setup` 函数进行配置，指定需要确保安装的语言列表 (`ensure_installed`) 并启用所需模块（如 `highlight = { enable = true }`）。
+3.  首次安装或更新后，运行 `:TSUpdate` 或 `:TSInstall <语言>` 安装必要的语言解析器。
+
+基本使用方法概述：
+
+安装并配置好后，打开相应语言的文件即可自动启用 Treesitter 高亮、缩进等功能（取决于配置启用的模块）。通过 `:TSBufEnable` 或 `:TSBufDisable` 可在当前缓冲区动态Toggle模块，`:TSEnable`/`:TSDisable` 则影响所有缓冲区或指定文件类型。
+
+适用场景/目标用户：
+
+该项目主要面向使用 Neovim 的开发者，尤其那些希望利用 Treesitter 提供的精确语法结构信息来增强编辑体验（如更准确的高亮、智能缩进和折叠）的用户。对于需要处理多种编程语言和大文件的用户尤其有益。
+
+项目状态：
+
+目前项目活跃开发中，但 `master` 分支已冻结，未来更新将主要在 `main` 分支进行。部分功能（如缩进）仍处于实验阶段。遵循 Apache-2.0 许可证。项目有一个庞大且活跃的贡献者社区。
+
+### 项目统计与信息
+
+- **作者:** [nvim-treesitter](https://github.com/nvim-treesitter）)
+- **主要语言:** Tree-sitter Query
+- **Stars:** 12004 ⭐
+- **Forks:** 979 🍴
+- **本周期新增 Stars:** 11 ⭐
+
+_要了解更多关于 **nvim-treesitter / nvim-treesitter** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/nvim-treesitter/nvim-treesitter)。_
+
+---
+
+## langflow-ai / langflow
+
+> Langflow是一个强大的可视化工具，用于快速构建、测试和部署AI智能体及工作流程，支持主流LLMs和向量数据库，能将流程转换为API方便集成。
+
+### 项目介绍
+
+Langflow是一个强大的工具，用于构建和部署AI驱动的智能体和工作流程。它为开发者提供了可视化的构建体验，并内置API服务器，能将每个智能体转换为API端点，方便集成到任何框架或技术栈构建的应用中。Langflow集成了丰富的功能，支持所有主流大型语言模型（LLMs）、向量数据库以及不断增长的AI工具库。
+
+核心功能和特性：
+
+- 可视化构建器：通过直观的界面快速启动和迭代项目。
+- 代码访问：开发者可以使用Python对任何组件进行微调。
+- 交互式游乐场：可立即测试和迭代流程，支持单步控制。
+- 多智能体编排：支持对多个智能体进行协调和对话管理及检索。
+- 部署为API或导出：可以将流程部署为API端点，或导出为JSON格式供Python应用使用。
+- 可观测性：与LangSmith、LangFuse等工具集成，提供可观测性。
+- 企业级支持：具备企业所需的安全性与可伸缩性。
+
+技术栈/依赖：
+
+- 支持 Python 3.10 至 3.13 版本。
+- 支持所有主流LLMs和向量数据库。
+- 持续扩展的AI工具库。
+
+安装与配置指南概述：
+
+- 推荐使用 `uv` 安装：`uv pip install langflow`。
+- 也支持使用 `pip` 安装：`pip install langflow`。
+- 支持通过 Docker 进行自托管部署，提供了相应的部署指南。
+- DataStax也提供了完全托管的环境。
+
+基本使用方法概述：
+
+项目侧重于通过可视化界面进行智能体和工作流程的构建。完成构建后，可以将流程部署为API或导出使用。
+
+适用场景/目标用户：
+
+该项目主要面向需要构建、测试和部署AI智能体和工作流程的开发者或技术人员。适用于快速原型开发、迭代以及将AI功能集成到现有应用中的场景。
+
+项目状态与许可证：
+
+项目当前（截至2025年5月19日）最新版本为1.4.2。
+
+项目遵循 MIT 许可证，开源免费。
+
+项目有活跃的社区支持，可以通过 Discord 频道参与讨论和获取帮助。
+
+### 项目统计与信息
+
+- **作者:** [langflow-ai](https://github.com/langflow-ai）)
+- **主要语言:** Python
+- **Stars:** 63994 ⭐
+- **Forks:** 6562 🍴
+- **本周期新增 Stars:** 643 ⭐
+
+_要了解更多关于 **langflow-ai / langflow** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/langflow-ai/langflow)。_
