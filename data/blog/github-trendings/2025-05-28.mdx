@@ -1,0 +1,954 @@
+---
+title: Github Daily Trending
+date: 2025-05-28
+cover: https://hub-image.moreve.net/files/images/github-trending/2025-05-28.png
+summary: '本期内容涵盖了本地化自主智能体项目AgenticSeek、开源计算机科学教育资源OSSU CS、微软AI量化投资平台Qlib、Python流处理框架Pathway、微软自动化AI研发智能体RD-Agent、开源AI聊天框架Lobe Chat、Go语言移植版TypeScript编译器typescript-go、AI查询引擎MindsDB、Telegram聊天记录搜索客户端Telegram Search、开源邮件协作服务器Stalwart、开源AI数字分身项目HeyGem、移动端数字人交互SDK Duix.mobile、Python时间序列机器学习库sktime和快速LLM推理库vLLM，以及工作流程自动化平台n8n。'
+headingSummaries:
+  - heading: 'Fosowl / agenticSeek'
+    summary: 'AgenticSeek 是一个开源项目，旨在创建一个完全本地化、保护隐私的自主智能体，它能在本地执行思考、网络浏览和代码编写等任务，无需外部 API。这个项目主要面向希望在本地运行智能体、重视数据隐私并避免高昂API费用的开发者和技术爱好者，适用于网络研究、代码辅助等场景。'
+    tags: [AI/ML, Developer Tools, CLI & Utilities]
+  - heading: 'ossu / computer-science'
+    summary: 'OSSU CS是一项免费、开源的计算机科学教育计划，利用在线资源提供本科水平的完整课程，涵盖入门、核心和高级CS知识，并鼓励实践项目，适合有志于自学CS的人。'
+    tags: [Learning & Education, Developer Tools]
+  - heading: 'microsoft / qlib'
+    summary: 'Qlib是一个面向AI的量化投资平台，提供从数据处理到模型训练回测的完整流程，支持多种机器学习范式和量化模型，并提供自动化研究工具和模块化接口，方便用户进行量化策略开发和验证。'
+    tags: [AI/ML, Data Tools, Developer Tools]
+  - heading: 'pathwaycom / pathway'
+    summary: 'Pathway是一个Python ETL框架，专为流处理、实时分析和LLM应用设计，它提供统一的批处理和流处理能力，以及高性能的Rust引擎支持。 该框架特别适用于构建实时数据流水线和基于最新数据的RAG应用。'
+    tags: [Data Tools, AI/ML, Developer Tools]
+  - heading: 'microsoft / RD-Agent'
+    summary: '微软开源的R&D-Agent是一个自动化数据驱动AI研发流程的智能体，通过自动化“研究”和“实施”环节，提升研发效率，尤其适用于金融、医疗等领域的数据挖掘和模型优化。该项目在机器学习工程基准测试中表现出色，并提供多种应用场景Demo。'
+    tags: [AI/ML, Developer Tools, Productivity]
+  - heading: 'lobehub / lobe-chat'
+    summary: 'Lobe Chat是一个开源AI聊天框架，支持多模型服务商、知识库、语音对话、文本生成图像等丰富功能，并提供快速部署和定制主题，方便用户和开发者构建私有化AI应用。'
+    tags: [AI/ML, Developer Tools, Web Development]
+  - heading: 'microsoft / typescript-go'
+    summary: 'typescript-go 是一个用 Go 语言移植 TypeScript 编译器的项目，旨在提升性能和利用 Go 语言优势，目前已实现大部分核心功能，并计划最终合并到官方 TypeScript 仓库。该项目处于早期开发阶段，目标用户是关注 TypeScript 编译器优化和 Go 语言集成的开发者。'
+    tags: [Developer Tools, Web Development, DevOps & Cloud]
+  - heading: 'mindsdb / mindsdb'
+    summary: 'MindsDB是一个AI查询引擎，通过连接和统一各种数据源，利用SQL接口和AI模型，支持用户以“对话”的方式进行智能数据查询和分析。'
+    tags: [AI/ML, Data Tools, Developer Tools]
+  - heading: 'groupultra / telegram-search'
+    summary: 'Telegram Search 是一个利用向量搜索和语义匹配技术，帮助活跃 Telegram 用户更智能、精准地检索聊天记录的客户端，尤其适用于需要按内容含义进行检索的场景。'
+    tags: [AI/ML, Developer Tools, CLI & Utilities]
+  - heading: 'stalwartlabs / stalwart'
+    summary: 'Stalwart是一个开源的、安全可扩展的邮件和协作服务器，用Rust编写，支持多种协议和存储后端，提供全面的功能和高度可配置性。它适用于需要强大而灵活的邮件解决方案的组织，并提供双重许可证选择。'
+    tags: [DevOps & Cloud, Security, Developer Tools]
+  - heading: 'duixcom / Duix.Heygem'
+    summary: 'HeyGem是一个Duix.com开发的免费开源AI数字分身项目，旨在通过AI技术降低数字人克隆和视频制作成本，让用户轻松创建自己的AI数字分身并制作视频，并提供本地部署和API服务方案。'
+    tags: [AI/ML, Developer Tools, Web Development]
+  - heading: 'duixcom / Duix.mobile'
+    summary: 'Duix.mobile 是一个开源项目，提供移动端 AI 驱动数字人实时交互的 SDK，支持在设备端构建高效、低延迟的数字人应用，并可集成第三方 LLM、ASR 和 TTS 技术。'
+    tags: [AI/ML, Libraries & SDKs, Developer Tools]
+  - heading: 'sktime / sktime'
+    summary: 'sktime是一个Python时间序列机器学习库，提供统一接口和丰富的算法，支持预测、分类、聚类等任务，并与其他库互操作；它适用于需求预测、时序数据分析和异常检测等场景，并促进了算法互操作性和模型可组合性。'
+    tags: [AI/ML, Libraries & SDKs, Data Tools]
+  - heading: 'vllm-project / vllm'
+    summary: 'vLLM是一个快速且易于使用的大型语言模型推理和服务库，它通过PagedAttention等技术实现高性能，并支持多种硬件平台和模型。该项目是社区驱动的，并通过OpenCollective接受捐赠，欢迎贡献和协作。'
+    tags: [AI/ML, Libraries & SDKs, Developer Tools]
+  - heading: 'n8n-io / n8n'
+    summary: 'n8n是一个强大的工作流程自动化平台，结合可视化和代码，内置AI能力，支持自托管和云端部署，并提供丰富集成和企业级功能。它适用于需要灵活定制、数据控制和AI集成的技术团队，助力自动化重复性任务和构建复杂数据流。'
+    tags: [Developer Tools, AI/ML, DevOps & Cloud]
+---
+
+## Fosowl / agenticSeek
+
+> AgenticSeek 是一个开源项目，旨在创建一个完全本地化、保护隐私的自主智能体，它能在本地执行思考、网络浏览和代码编写等任务，无需外部 API。这个项目主要面向希望在本地运行智能体、重视数据隐私并避免高昂API费用的开发者和技术爱好者，适用于网络研究、代码辅助等场景。
+
+### 项目介绍
+
+AgenticSeek 是一个名为 AgenticSeek 的开源项目，旨在提供 Manus AI 的一个完全本地化的替代方案。其核心目标是构建一个自主智能体，能在本地设备上执行思考、网络浏览和编写代码等任务，无需依赖任何外部 API 或昂贵的云服务，实现完全的数据隐私保护，仅需支付电费。
+
+项目核心功能包括：
+
+- 完全本地化与隐私保护：所有操作都在用户设备本地进行，不传输任何数据到云端，确保用户隐私。
+- 智能网络浏览：能够自主浏览互联网，进行搜索、信息读取、提取和填写表单，无需人工干预。
+- 自主编程助手：支持多种编程语言（Python, C, Go, Java 等），能编写、调试和运行代码。
+- 智能智能体选择：根据用户任务自动选择最合适的智能体来执行。
+- 复杂任务规划与执行：可以将复杂的任务分解为多个步骤，并协调不同智能体完成。
+- 语音交互能力：提供语音输入（Speech-to-Text）和语音输出（Text-to-Speech）功能，支持与智能体自然对话。
+
+项目支持多种本地和基于 API 的大型语言模型（LLM）提供商，包括 Ollama、LM Studio、llama.cpp server 等本地选项，以及 OpenAI、Deepseek API、HuggingFace、Together AI、Google Gemini 等 API 选项。项目明确推荐使用 Deepseek R1 等专注于推理和工具使用的模型，并提供了根据模型大小所需的 GPU 硬件建议，例如 14B 模型至少需要 12GB VRAM，32B 模型建议 24GB+ VRAM 以获得较好性能。
+
+安装过程涉及克隆仓库、创建并激活 Python 虚拟环境，并安装依赖。项目提供了 Linux/MacOS 和 Windows 下的自动安装脚本，以及手动安装指南，特别强调需要安装与 Chrome 浏览器版本匹配的 ChromeDriver。支持 Docker 部署部分核心服务（如 SearxNG、Redis、前端）。
+
+AgenticSeek 提供了命令行界面（CLI）和 Web 用户界面两种使用方式。用户可以通过文本或配置语音输入与智能体交互，用自然语言描述任务，例如搜索信息、编写代码、整理文件等。项目特别提醒用户在提问时应尽量明确具体，以便智能体路由系统能更准确地分配任务。
+
+对于计划在独立服务器上运行 LLM 的用户，AgenticSeek 也提供了相应的设置指南，通过自定义的 LLM 服务器实现 LLM 模型的远程托管和本地访问。
+
+配置方面，项目提供了详细的 `config.ini` 文件解释，用户可以配置智能体名称、是否启用语音功能、工作目录、偏好语言等，以及浏览器相关的设置（无头模式、隐身模式）。
+
+项目目前处于积极开发阶段，部分功能（如代码/Bash 的 Docker 化）仍在进行中。项目采用 GPL-3.0 许可证。README 中包含了常见的已知问题及其解决方案，特别是 Chromedriver 版本不匹配的问题处理方法。
+
+AgenticSeek 的目标用户是希望在本地环境中运行自主智能体、重视数据隐私并希望避免高昂 API 使用费用的开发者和技术爱好者。它适用于需要进行网络研究、代码辅助、任务自动化等多种场景。
+
+### 项目统计与信息
+
+- **作者:** [Fosowl](https://github.com/Fosowl）)
+- **主要语言:** Python
+- **Stars:** 9406 ⭐
+- **Forks:** 786 🍴
+- **本周期新增 Stars:** 2442 ⭐
+
+_要了解更多关于 **Fosowl / agenticSeek** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/Fosowl/agenticSeek)。_
+
+---
+
+## ossu / computer-science
+
+> OSSU CS是一项免费、开源的计算机科学教育计划，利用在线资源提供本科水平的完整课程，涵盖入门、核心和高级CS知识，并鼓励实践项目，适合有志于自学CS的人。
+
+### 项目介绍
+
+Open Source Society University (OSSU) 的计算机科学课程提供了利用在线资源进行免费、自学的完整计算机科学教育路径。该课程旨在为学习者提供扎实的计算机科学基础概念，而非仅仅职业培训。它遵循本科计算机科学专业的学位要求进行设计，剔除了一般性（非CS）通识教育课程，假定学习者已在其他领域接受过教育。
+
+课程选择标准严格，要求课程需为开放注册、定期开课（理想是自定进度）、教学质量高且符合CS 2013（计算机科学本科课程指南）标准。如无符合标准的课程，则辅以高质量的书籍。
+
+课程结构分为几个阶段：
+
+- 入门CS (Intro CS)：旨在帮助学生尝试计算机科学，了解是否适合自己。涵盖计算、命令式编程、基本数据结构与算法等。
+- 核心CS (Core CS)：相当于计算机科学本科的前三年课程，包含所有专业必修的基础课程。涵盖函数式编程、测试设计、面向对象设计、软件架构、离散数学、微积分、计算机工具（终端、Shell脚本、Git等）、计算机系统（硬件原理、操作系统、网络）、算法与数据结构、信息安全基础（网络安全、密码学、安全编码）、核心应用（数据库、机器学习、图形学、软件工程）、计算伦理等。核心CS课程除非确定已经掌握相关知识，否则全部必修。
+- 高级CS (Advanced CS)：相当于本科高年级课程，提供多样化的选修方向。学生可根据兴趣选择，无需修完所有高级课程。涵盖高级编程（并行计算、编译器、函数式编程、调试、测试）、高级系统（数字电路、计算机体系结构）、高级理论（计算理论、计算几何、博弈论）、高级信息安全（网络安全、安全治理、数字取证、安全软件开发）、以及高级数学（线性代数、数值方法、形式逻辑、概率论）。
+- 最终项目 (Final Project)：学习实践环节，鼓励学生利用所学知识解决现实问题或改进现有工具。课程完成后将指导学生进行项目实践，也可选择项目类课程。
+
+课程总时长预估在约2年左右，每周投入约20小时。学习者可使用提供的电子表格工具估算完成时间，并通过完成课程更新进度。成本上，大部分或所有课程材料是免费的，部分课程提供的认证/评分服务可能收费，但许多平台提供经济援助。
+
+学习过程灵活，可以独自或组队学习，顺序可调整，但建议按顺序进行核心课程学习。可以并行学习多门课程，例如数学课程可与入门课程同时进行。
+
+社区支持方面，OSSU拥有活跃的Discord服务器，方便学习者交流互助。同时，学习者也可以通过GitHub Issues参与课程内容和建设的讨论。
+
+该课程内容遵循MIT许可发布，允许自由使用和分发。对有志于通过免费在线资源系统性学习计算机科学的人，OSSU CS提供了一条结构化、内容丰富的教育路径。项目的GitHub仓库同时提供了贡献指南、FAQ等辅助信息。
+
+### 项目统计与信息
+
+- **作者:** [ossu](https://github.com/ossu）)
+- **主要语言:** HTML
+- **Stars:** 183059 ⭐
+- **Forks:** 23043 🍴
+- **本周期新增 Stars:** 852 ⭐
+
+_要了解更多关于 **ossu / computer-science** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/ossu/computer-science)。_
+
+---
+
+## microsoft / qlib
+
+> Qlib是一个面向AI的量化投资平台，提供从数据处理到模型训练回测的完整流程，支持多种机器学习范式和量化模型，并提供自动化研究工具和模块化接口，方便用户进行量化策略开发和验证。
+
+### 项目介绍
+
+Qlib 是一个面向 AI 的量化投资平台，旨在通过人工智能技术在量化投资领域发挥潜力、赋能研究和创造价值，涵盖从想法探索到落地生产的全流程。该平台支持多种机器学习建模范式，包括监督学习、市场动态建模和强化学习。
+
+核心功能与特性：
+
+- 提供完整的机器学习pipeline，包括数据处理、模型训练和回测分析。
+- 覆盖量化投资全链条：Alpha挖掘、风险建模、投资组合优化和订单执行。
+- 支持多种机器学习建模范式，如监督学习、市场动态建模（概念漂移）和强化学习。
+- 提供多种量化数据集（如 Alpha360, Alpha158），且支持用户自定义数据。
+- 包含丰富的量化模型库（Model Zoo），集成了多种前沿和经典的机器学习模型，如 LightGBM, CatBoost, LSTM, GATs, Transformer, TCN, DDG-DA, PPO, OPDS 等。
+- 提供 автоматизированный 量化研究 workflow 工具 `qrun`，支持通过配置文件快速跑通完整流程。
+- 提供模块化的接口，允许用户通过代码灵活构建定制化的研究 workflow。
+- 支持报告分析，提供模型预测信号分析（如累积收益、IC、自相关）和投资组合回测分析等可视化报告。
+- 支持离线和在线数据服务模式，在线模式可部署为共享服务以提高数据检索性能并节省硬盘空间。
+- 持续开发新功能，包括基于大型语言模型（LLM）的自主进化代理 RD-Agent，用于自动化因子挖掘和模型优化。
+
+技术栈/依赖：
+
+- 主要使用 Python 语言开发。
+- 深度集成多种机器学习框架，如 LightGBM, XGBoost, CatBoost, PyTorch, Tensorflow（针对部分模型）。
+- 支持 Python 3.8 到 3.12 版本。
+- 建议使用 Conda 管理 Python 环境。
+- 数据主要基于公开来源，如 Yahoo Finance，也支持用户导入自有高质量数据。
+- 支持通过 Docker 镜像快速部署运行环境。
+
+安装与配置概述：
+
+- 可以通过 `pip` 命令直接安装稳定版本 `pyqlib`。
+- 也可以通过克隆源代码并运行 `pip install .` 安装最新开发版本，可能需要预先安装 numpy 和 cython 等依赖。
+- Mac M1 环境下可能需要安装 `libomp` 以支持 LightGBM 构建。
+- 数据准备通过运行 `qlib.run.get_data` 模块或 `scripts/get_data.py` 脚本获取公开数据集到指定本地目录。
+- 提供数据健康性检查脚本。
+- 支持数据每日自动更新（针对 Yahoo Finance 来源数据），通过 crontab 等定时任务工具配置。
+
+基本使用方法概述：
+
+- 使用 `qrun [workflow_config.yaml]` 命令执行自动化量化研究 workflow。
+- 通过编写 Python 脚本，调用 Qlib 提供的模块化接口构建自定义 workflow，例如加载数据、训练模型、进行回测和分析。
+- 运行 `examples/run_all_model.py` 脚本可以方便地运行和比较多个量化模型的效果。
+- 通过 `jupyter notebook` 运行示例代码，如 `examples/workflow_by_code.ipynb`，可以生成图形化报告进行分析。
+
+适用场景/目标用户：
+
+- 量化研究人员和开发者，希望利用 AI 技术进行量化投资策略开发和验证。
+- 需要一个端到端平台来处理金融数据、构建和评估机器学习模型、进行回测和分析的专业人士。
+- 对监督学习、市场动态建模、强化学习等范式在量化领域应用感兴趣的研究团队。
+
+许可证：
+
+- 项目采用 MIT 许可证。
+
+项目状态：
+
+- 项目处于活跃开发中，不断有新的功能和模型加入。发布了多个版本，最新的稳定版本可通过 pip 安装。最新动态和开发计划可在 GitHub 项目页面或文档中查看。
+
+### 项目统计与信息
+
+- **作者:** [microsoft](https://github.com/microsoft）)
+- **主要语言:** Python
+- **Stars:** 22596 ⭐
+- **Forks:** 3521 🍴
+- **本周期新增 Stars:** 666 ⭐
+
+_要了解更多关于 **microsoft / qlib** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/microsoft/qlib)。_
+
+---
+
+## pathwaycom / pathway
+
+> Pathway是一个Python ETL框架，专为流处理、实时分析和LLM应用设计，它提供统一的批处理和流处理能力，以及高性能的Rust引擎支持。 该框架特别适用于构建实时数据流水线和基于最新数据的RAG应用。
+
+### 项目介绍
+
+Pathway是一个使用 Python 编写的 ETL（抽取、转换、加载）框架，专为流处理、实时分析、大型语言模型（LLM）流水线和检索增强生成（RAG）应用设计。它提供了一个易于使用的 Python API，同时底层由一个高性能、可伸缩的 Rust 引擎驱动，支持增量计算。Pathway 代码具备通用性，可以在开发和生产环境中用于处理批处理和流式数据。
+
+主要功能和特性：
+
+- **统一的批处理与流处理：** 同一份 Pathway 代码可以无缝地处理静态批处理数据和实时流式数据，简化开发流程。
+- **丰富的连接器：** 内置多种连接器，支持 Kafka、GDrive、PostgreSQL、SharePoint 等数据源。通过 Airbyte 连接器，可连接超过 300 种不同的数据源。用户也可构建自定义 Python 连接器。
+- **有状态和无状态转换：** 支持 Join、窗口函数、排序等有状态转换，同时可以直接使用 Python 函数或第三方库进行数据处理。
+- **持久化：** 提供计算状态的持久化功能，支持在更新或崩溃后恢复流水线，确保数据不丢失。
+- **一致性保障：** Pathway 自动处理时间，确保计算结果的一致性。能够处理迟到或乱序的数据点，并在数据到来时更新结果。免费版本提供“至少一次”的一致性，企业版提供“精确一次”的一致性。
+- **高性能 Rust 引擎：** 基于 Differential Dataflow 的 Rust 引擎负责实际计算，突破 Python 的性能限制，支持多线程、多进程和分布式计算，可轻松通过 Docker 和 Kubernetes 部署。
+- **LLM 工具集：** 提供专门的 LLM 扩展包（xpack），包含 LLM 服务（如 Gemini, OpenAI, Azure OpenAI, Ollama, Grok 等）的封装、数据解析器、嵌入器、文本分割器，以及一个内存中的实时向量索引。支持与 LlamaIndex 和 LangChain 集成，方便快速构建和部署基于实时文档的 RAG 应用。
+
+技术栈：
+
+- 核心 API：Python
+- 处理引擎：Rust (基于 Differential Dataflow)
+- 支持的 LLM 模型/服务：Gemini, OpenAI, Azure OpenAI, Ollama, Grok (通过 LLM xpack 扩展)
+- 支持的数据源：Kafka, GDrive, PostgreSQL, SharePoint, 以及通过 Airbyte 的 300+ 数据源。
+
+安装与配置：
+
+- 要求 Python 3.10 或更高版本。
+- 使用 pip 安装：`pip install -U pathway`。
+- 支持 MacOS 和 Linux。其他系统建议在虚拟机上运行。
+
+基本使用：
+
+- 通过 Python API 定义数据源连接、数据转换逻辑。
+- 使用 `pw.run()` 命令启动计算流水线。
+- 提供一个监控仪表盘，显示消息流、系统延迟和日志信息。
+- 支持通过 `pathway spawn` 命令控制线程数运行。
+- 提供 Cookiecutter 模板帮助快速搭建项目。
+- 可以轻松打包成 Docker 镜像运行，支持单文件脚本直接运行。
+- 设计上易于在 Kubernetes 和云环境中部署，企业版提供分布式部署能力。
+
+代码示例概览：
+
+基础示例展示了如何连接到本地 CSV 文件目录，过滤掉负数，并实时计算正数值的总和，最终将结果写入 JSONLines 文件。通过简单的 Python 代码描述了数据流的转换过程。
+
+适用场景与目标用户：
+
+- 需要处理实时数据流的开发者和数据工程师。
+- 构建需要即时响应的事件处理、实时分析、告警系统。
+- 开发基于最新数据的 LLM 应用，特别是实时 RAG 系统。
+- 需要构建稳定、易于部署和扩展的数据处理流水线。
+- 希望在统一框架下处理批处理和流式数据的用户。
+
+项目状态与许可证：
+
+- 项目积极开发中，持续发布新版本 (最新为 v0.21.5)。
+- 采用 BSL 1.1 许可协议，允许无限非商业使用及大多数商业用途免费使用。核心代码在四年后会自动转为 Apache 2.0 协议。配套的库和连接器通常使用 MIT 许可。
+
+Pathway 的独特优势在于将易用的 Python 接口与高性能的 Rust 增量计算引擎结合，特别强调对实时数据和 LLM 应用的支持，提供一套端到端解决方案，简化了构建复杂实时数据流水线和 AI 应用的难度。
+
+### 项目统计与信息
+
+- **作者:** [pathwaycom](https://github.com/pathwaycom）)
+- **主要语言:** Python
+- **Stars:** 26142 ⭐
+- **Forks:** 574 🍴
+- **本周期新增 Stars:** 236 ⭐
+
+_要了解更多关于 **pathwaycom / pathway** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/pathwaycom/pathway)。_
+
+---
+
+## microsoft / RD-Agent
+
+> 微软开源的R&D-Agent是一个自动化数据驱动AI研发流程的智能体，通过自动化“研究”和“实施”环节，提升研发效率，尤其适用于金融、医疗等领域的数据挖掘和模型优化。该项目在机器学习工程基准测试中表现出色，并提供多种应用场景Demo。
+
+### 项目介绍
+
+R&D-Agent 是一个由微软开发的开源项目，旨在自动化数据驱动的研发（R&D）流程，特别是在 AI 领域，这些流程的核心聚焦于数据和模型。该项目致力于通过智能体驱动的方式，提升工业研发的效率和价值。
+
+项目核心功能和定位包括：
+
+- 自动化高价值的通用研发流程，特别是数据驱动的 AI 研发。
+- 引入“R”（研究新想法）和“D”（实施想法）两个关键组件的框架，实现研发过程的自动化迭代和演进。
+- 可作为多种专业领域的 AI 助手使用：
+  - 自动量化工厂：自动化因子和模型的迭代演进（基于 Qlib）。
+  - 数据挖掘智能体：迭代提出并实现数据和模型想法，从数据中获取知识。
+  - 研究副驾驶：自动阅读研究论文/财务报告，并实现模型结构或构建数据集。
+  - Kaggle 智能体：自动化模型调优和特征工程，在竞赛中提升表现。
+
+R&D-Agent 在机器学习工程任务基准测试 MLE-bench (使用 75 个 Kaggle 竞赛数据集) 上表现出色，目前是排名靠前的机器学习工程智能体。项目提供了不同配置（使用不同 LLM 组合）在 MLE-bench 上的详细运行结果。
+
+技术栈和依赖：
+
+- 主要使用 Python 语言开发。
+- 支持多种大型语言模型 (LLM) 提供商作为后端，包括通过 LiteLLM 集成的多种模型。
+- 需要配置支持 ChatCompletion、json_mode 和 embedding query 功能的 LLM API，例如 OpenAI API 或 Azure OpenAI API。
+- 部分功能和场景需要依赖 Docker 环境。
+- 在特定场景（如量化交易）中使用 Qlib 库。
+- Kaggle 场景需要配置 Kaggle API 凭证并可能需要安装 chromedriver。
+
+安装与配置概述：
+
+- 推荐使用 Conda 创建 Python 环境（支持 3.10 和 3.11）。
+- 可以通过 pip 直接从 PyPI 安装 `rdagent` 包。
+- 提供 `rdagent health_check` 命令检查 Docker 和端口占用情况。
+- 需要通过 `.env` 文件配置 LLM API 密钥、模型名称等信息，支持多种 API 类型（如 OpenAI、Azure OpenAI、LiteLLM）。部分场景可能需要额外配置敏感信息（如医疗数据集登录凭据、Kaggle API 路径）。
+
+基本使用方法概述：
+
+- 安装完成后，可以通过命令行接口运行不同的应用场景 Demo，例如 `rdagent fin_factor`、`rdagent med_model`、`rdagent kaggle --competition sf-crime` 等。
+- 提供 `rdagent ui` 命令启动一个 Web 界面（通常使用 19899 端口）来监控应用程序的运行日志和结果。
+
+代码示例/命令示例：
+
+- 安装命令： `pip install rdagent`
+- 健康检查： `rdagent health_check`
+- 配置示例 (`.env` 文件片段):
+
+```
+OPENAI_API_KEY=<replace_with_your_openai_api_key>
+CHAT_MODEL=gpt-4-turbo
+```
+
+- 运行金融因子演进 Demo： `rdagent fin_factor`
+- 监控 UI： `rdagent ui --port 19899 --log_dir log/`
+
+适用场景和目标用户：
+
+- 主要面向机器学习工程师、数据科学家、量化研究员以及任何需要自动化数据驱动研发流程的技术人员和开发者。
+- 适用于金融建模、医疗预测、通用数据科学任务（如 Kaggle 竞赛）等需要迭代优化模型和数据的场景。
+- 可作为自动化工具或辅助工具，提升研发效率和探索能力。
+
+项目状态与许可证：
+
+- 项目持续活跃开发中，并不断增加新的功能和场景。
+- 项目采用 MIT 许可证。
+
+独特的优势或创新点：
+
+- 率先提出并实现了“R”（研究想法）和“D”（实施验证）相结合的自动化研发框架，强调通过持续演进来提升能力。
+- 在多个领域（金融、医疗、通用数据科学）提供了具体且有价值的应用场景 Demo。
+- 在机器学习工程基准测试上取得了领先的成绩，证明了其实际效果。
+
+### 项目统计与信息
+
+- **作者:** [microsoft](https://github.com/microsoft）)
+- **主要语言:** Python
+- **Stars:** 4971 ⭐
+- **Forks:** 444 🍴
+- **本周期新增 Stars:** 184 ⭐
+
+_要了解更多关于 **microsoft / RD-Agent** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/microsoft/RD-Agent)。_
+
+---
+
+## lobehub / lobe-chat
+
+> Lobe Chat是一个开源AI聊天框架，支持多模型服务商、知识库、语音对话、文本生成图像等丰富功能，并提供快速部署和定制主题，方便用户和开发者构建私有化AI应用。
+
+### 项目介绍
+
+Lobe Chat 是一个开源、现代化设计的 AI 聊天框架，旨在为用户提供私有化部署和与多元化 AI 模型交互的便捷体验。它支持多种 AI 模型提供商，并集成了丰富的功能，是一个面向个人用户和开发者的强大工具。
+
+核心功能与特性：
+
+- **多模型服务提供商支持：** Lobe Chat 不仅支持 OpenAI (包括 GPT 系列，如 gpt-4-vision, gpt-4o-mini)，还广泛集成了 Anthropic (Claude 系列)、Google (Gemini 系列)、Ollama (支持本地部署大型语言模型)、DeepSeek、Qwen、Bedrock、PPIO、HuggingFace Inference API、OpenRouter、Cloudflare Workers AI 以及 GitHub Models 等超过 40 个 AI 模型提供商。用户可以灵活选择和配置不同的模型以满足多样化的需求。
+- **知识库与文件上传：** 支持用户上传文档、图片、音频、视频等多种类型文件，并构建知识库。用户可以在对话中利用这些文件和知识库进行问答和信息检索，增强交互的丰富性。
+- **Artifacts Support：** 集成 Claude Artifacts，支持在对话中实时生成和可视化 SVG 图形、HTML 页面以及不同格式的文档。
+- **思维链 (Chain of Thought)：** 提供可视化功能，展示 AI 推理和解决问题的逐步过程，提高透明度和理解度。
+- **分支对话：** 允许从任何消息创建新的对话分支，以延续或开始新的讨论，同时保留原始上下文，支持ต่อเนื่อง Mode 和 Standalone Mode。
+- **TTS & STT 语音对话：** 支持文本转语音 (TTS) 和语音转文本 (STT) 技术，通过 OpenAI Audio 和 Microsoft Edge Speech 等多种高质量语音选项，实现自然的语音交互体验。
+- **文本到图像生成：** 集成 DALL-E 3, MidJourney, Pollinations 等 AI 工具，支持在聊天中直接通过文本描述生成图像。
+- **插件系统 (Function Calling)：** 强大的插件生态系统，通过功能调用扩展 Lobe Chat 能力，例如进行网络搜索、文档搜索、图像生成等，并支持与第三方服务交互。提供插件开发指南和 SDK。
+- **Agent Market (GPTs)：** 开放的 Agent 市场，用户可以发现和分享预设的 AI 助手（Agent），平台支持 Agent 的自动化国际化翻译，便于全球用户使用。
+- **支持本地/远程数据库：** 提供本地数据库（利用 CRDT 实现多设备同步）和服务器端数据库（支持 PostgreSQL）选项，满足用户对数据控制和便捷性的不同需求。
+- **支持多用户管理：** 集成 `next-auth` 和 `Clerk`，提供灵活的用户认证和管理功能，包括 OAuth、邮箱登录、多因素认证等。
+- **渐进式 Web 应用 (PWA)：** 支持 PWA 技术，在桌面和移动设备上提供接近原生应用的流畅体验，优化UI设计并适应不同屏幕分辨率。
+- **定制主题：** 提供丰富的个性化主题设置，包括亮暗模式、颜色定制，并可根据系统颜色模式自动切换。
+
+部署与开发：
+
+- **快速部署：** 支持 Vercel, Zeabur, Sealos 或阿里云等平台的一键免费部署，或通过 Docker 镜像进行私有部署，过程简单快速。
+- **环境配置：** 可通过环境变量 `OPENAI_API_KEY`（必需）、`OPENAI_PROXY_URL`、`ACCESS_CODE`（推荐用于访问控制）等进行配置。
+
+技术栈与生态：
+
+- 项目主要使用 TypeScript 开发。
+- 生态项目包括为 AIGC 应用构建 UI 组件库的 `@lobehub/ui`，AI 模型图标库 `@lobehub/icons`，TTS/STT Hook 库 `@lobehub/tts` 等。
+
+Lobe Chat 提供了一个现代化、功能全面的 AI 聊天框架，强调开放、透明和易用性，为开发者和用户构建私有化、高度定制化的 AI 聊天应用提供了强大的基础。项目遵循 Apache 2.0 开源许可证。
+
+### 项目统计与信息
+
+- **作者:** [lobehub](https://github.com/lobehub）)
+- **主要语言:** TypeScript
+- **Stars:** 61770 ⭐
+- **Forks:** 12881 🍴
+- **本周期新增 Stars:** 218 ⭐
+
+_要了解更多关于 **lobehub / lobe-chat** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/lobehub/lobe-chat)。_
+
+---
+
+## microsoft / typescript-go
+
+> typescript-go 是一个用 Go 语言移植 TypeScript 编译器的项目，旨在提升性能和利用 Go 语言优势，目前已实现大部分核心功能，并计划最终合并到官方 TypeScript 仓库。该项目处于早期开发阶段，目标用户是关注 TypeScript 编译器优化和 Go 语言集成的开发者。
+
+### 项目介绍
+
+该项目名为 typescript-go，是 TypeScript 编译器的一个原生 Go 语言移植版本的开发暂存仓库。其核心目标是将 TypeScript 编译器移植到 Go 语言，以期望获得更好的性能和其他 Go 语言带来的优势。
+
+该项目的关键功能和特性包括：
+
+- 程序创建：支持与 TypeScript 5.8 相同的问件和模块解析（部分解析模式尚不支持）。
+- 解析/扫描：实现与 TypeScript 5.8 完全一致的语法错误捕捉。
+- 命令行及 tsconfig.json 解析：大部分功能已实现，入口点略有不同。
+- 类型解析与检查：能够解析并检查出与 TypeScript 5.8 相同的类型错误，错误位置和信息一致（类型打印的显示方式仍在改进中）。
+- JSX 支持：已实现。
+- Emit (JS 输出)：正在进行中，`target: esnext` 已得到良好支持，其他目标可能存在不足。
+- Watch 模式：已实现原型，可以监控文件并重建，但尚未实现增量重新检查。
+- 语言服务 (LSP)：已实现原型，提供基本功能如错误提示、悬停信息和跳转到定义等，更多功能即将推出。
+
+项目技术栈主要基于 Go 语言进行开发，同时使用了 Rust、Node.js 和 npm 进行构建和工具管理。项目的测试和代码生成依赖于对官方 TypeScript 仓库的 Git 子模块。构建工具使用了 hereby，但也支持标准的 Go 工具链（如 `go build`, `go test./...`）。
+
+安装与配置概述：项目需要 Go 1.24+、Rust 1.85+、Node.js (带 npm) 以及 hereby 工具。克隆仓库时需要包含子模块。
+
+基本使用方法概述：
+
+- 构建后，可以使用 `built/local/tsgo` 执行编译，用法类似于 `tsc` 命令。
+- 对于 LSP 原型，可以通过在 VS Code 仓库工作区中启动调试来体验。在 VS Code 设置中开启 `"typescript.experimental.useTsgo": true` 即可使用。
+
+该项目处于开发阶段，尚未达到 TypeScript 的全部功能。一些功能（如 JavaScript 特定推断、JS Doc、声明文件生成、构建模式、项目引用、增量构建、完整的 API）尚不成熟或未开始。
+
+此仓库的内容预计最终会合并到官方的 microsoft/TypeScript 仓库中。项目采用 Apache-2.0 许可证。目标用户主要是关注 TypeScript 编译器原生实现、性能改进或希望基于 Go 语言使用 TypeScript 核心功能的开发者和技术人员。
+
+### 项目统计与信息
+
+- **作者:** [microsoft](https://github.com/microsoft）)
+- **主要语言:** Go
+- **Stars:** 20285 ⭐
+- **Forks:** 625 🍴
+- **本周期新增 Stars:** 88 ⭐
+
+_要了解更多关于 **microsoft / typescript-go** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/microsoft/typescript-go)。_
+
+---
+
+## mindsdb / mindsdb
+
+> MindsDB是一个AI查询引擎，通过连接和统一各种数据源，利用SQL接口和AI模型，支持用户以“对话”的方式进行智能数据查询和分析。
+
+### 项目介绍
+
+MindsDB 是一个 AI 查询引擎平台，旨在于大规模联合数据源之上构建能够回答问题的 AI。它把自己定位为连接、统一并响应来自各种数据的 MCP (Model Context Protocol) 服务器。
+
+其核心理念围绕“连接、统一、响应”三个关键功能展开：
+
+连接数据:
+
+- MindsDB 可以连接到数百种企业级数据源，包括数据库、数据仓库以及各种 SaaS 应用。
+- 这些集成使得 MindsDB 能够访问数据所在的位置，为后续所有功能奠定基础。
+
+统一数据:
+
+- 一旦连接，这些分散的数据源可以通过一个完整的 SQL 方言进行查询，就像它们都在一个单一数据库中一样。
+- MindsDB 的联合查询引擎能够翻译 SQL 查询并在相应的连接数据源上执行。
+- 为了处理异构数据，MindsDB SQL 提供了虚拟表（视图、知识库、ML模型）来将分散的数据统一组织起来。
+  - 视图 (VIEWS)：通过跨不同数据源创建统一视图来简化数据访问，无需 ETL 过程。
+  - 知识库 (KNOWLEDGE BASES)：索引和组织非结构化数据以实现高效检索。
+  - ML 模型 (ML MODELS)：应用 AI/ML 转换从数据中获取洞察。
+- 数据统一过程也可以通过作业 (JOBS) 进行自动化调度，实现实时处理。
+
+响应数据:
+
+- MindsDB 支持与您的数据进行“对话”。
+  - 代理 (AGENTS)：配置内置的智能代理，专门用于回答关于您已连接和统一数据的问题。
+  - MCP：通过 MCP (Model Context Protocol) 连接到 MindsDB，实现无缝交互。
+
+技术栈/依赖和安装：
+
+- 项目主要使用 Python 语言开发。
+- 支持多种 AI 模型提供商以及 RAG (Retrieval Augmented Generation) 功能。
+- 安装方式多样，包括：
+  - 推荐使用 Docker Desktop，这是快速启动的简单方式。
+  - 使用 Docker，提供更多自定义灵活性。
+  - 通过 PyPI 安装，适用于希望参与贡献的用户。
+- 项目提供开发安装指南。
+
+使用方法：
+
+- 核心使用方式是通过 SQL 接口与连接的数据源以及 MindsDB 内置的 AI 功能进行交互。
+- 可以通过创建视图、知识库或 ML 模型来组织和处理数据，然后通过代理进行查询。
+
+适用场景与目标用户：
+
+- MindsDB 适用于需要从分散的、大规模数据源中提取信息并利用 AI 进行分析和问答的场景。
+- 目标用户群体包括开发者、数据科学家以及需要构建 AI 驱动的应用来理解和利用现有数据的企业和组织。
+
+项目状态与许可证：
+
+- 项目持续活跃开发，有频繁的更新和版本发布。
+- 项目采用特定的开源许可证（详情请参考 LICENSE 文件）。
+
+贡献与支持：
+
+- 项目鼓励社区贡献，提供了详细的贡献指南。
+- 通过 Slack 社区、GitHub Discussions 和 Stack Overflow 提供社区支持，同时也提供付费的商业支持选项。
+
+MindsDB 的独特之处在于其将强大的人工智能能力与传统的数据库查询方式相结合，通过 SQL 接口屏蔽了底层数据源的复杂性，使用户能够以熟悉的语言对非结构化甚至跨多个异构数据源的数据进行智能查询和分析。
+
+### 项目统计与信息
+
+- **作者:** [mindsdb](https://github.com/mindsdb）)
+- **主要语言:** Python
+- **Stars:** 30386 ⭐
+- **Forks:** 5144 🍴
+- **本周期新增 Stars:** 301 ⭐
+
+_要了解更多关于 **mindsdb / mindsdb** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/mindsdb/mindsdb)。_
+
+---
+
+## groupultra / telegram-search
+
+> Telegram Search 是一个利用向量搜索和语义匹配技术，帮助活跃 Telegram 用户更智能、精准地检索聊天记录的客户端，尤其适用于需要按内容含义进行检索的场景。
+
+### 项目介绍
+
+项目名称为 Telegram Search，是一个功能强大的 Telegram 聊天记录搜索客户端。项目的核心定位是提供一种更智能、更精准的方式来检索 Telegram 消息，尤其强调利用向量搜索和语义匹配能力。
+
+项目的主要功能和特性包括：
+
+- 聊天记录备份：能够备份用户的 Telegram 聊天记录。
+- 向量搜索：利用先进的向量搜索技术，实现基于消息内容的语义匹配搜索。
+- 语义匹配：基于 OpenAI 的语义向量技术进行消息内容分析和匹配，提供比传统关键词搜索更智能的结果。
+
+项目的技术栈及依赖环境：
+
+- 编程语言：主要使用 TypeScript 和 Vue。
+- AI 模型提供商：目前已知支持 OpenAI 的语义向量技术。
+- 数据库：使用 Docker Compose 启动数据库容器，并通过 `drizzle` 工具进行数据库结构同步。
+- 包管理工具：使用 pnpm。
+
+安装与配置指南概述：
+
+安装过程涉及克隆项目仓库、使用 pnpm 安装依赖、复制示例配置文件并进行修改、启动 Docker 容器运行数据库，以及同步数据库结构。
+
+基本使用方法概述：
+
+安装并配置完成后，需要分别启动后端服务和前端界面。启动成功后，通过访问特定的本地地址（默认为 `http://localhost:3333`）即可打开用户界面进行搜索操作。
+
+适用场景/目标用户：
+
+该项目主要面向活跃的 Telegram 用户，特别是那些需要频繁回顾和查找历史聊天记录的用户。通过强大的搜索功能，尤其适用于需要按内容含义进行检索的场景，如查找讨论过某个话题的信息、寻找特定语境下的对话等。目标用户是希望更高效管理和利用个人或群组 Telegram 聊天数据的技术人员或普通用户。
+
+项目状态与许可证：
+
+项目目前处于快速迭代阶段，可能会出现数据库不兼容的情况，建议用户定期备份数据。项目采用 MIT 许可证。
+
+该项目通过将 Telegram 聊天记录与现代 AI 驱动的向量搜索技术相结合，提供了一种有别于 Telegram 内置搜索的新颖且强大的检索方案，是其独特的优势所在。
+
+### 项目统计与信息
+
+- **作者:** [groupultra](https://github.com/groupultra）)
+- **主要语言:** TypeScript
+- **Stars:** 1922 ⭐
+- **Forks:** 131 🍴
+- **本周期新增 Stars:** 297 ⭐
+
+_要了解更多关于 **groupultra / telegram-search** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/groupultra/telegram-search)。_
+
+---
+
+## stalwartlabs / stalwart
+
+> Stalwart是一个开源的、安全可扩展的邮件和协作服务器，用Rust编写，支持多种协议和存储后端，提供全面的功能和高度可配置性。它适用于需要强大而灵活的邮件解决方案的组织，并提供双重许可证选择。
+
+### 项目介绍
+
+Stalwart 是一个一体化的开源邮件和协作服务器，旨在提供安全、可扩展且全面支持多种协议的服务，包括 IMAP、JMAP、SMTP、CalDAV、CardDAV 和 WebDAV。项目使用 Rust 编写，以其安全性、速度、健壮性和可伸缩性为目标。
+
+Stalwart 提供广泛的关键功能：
+
+- 完整的电子邮件服务器支持：
+
+  - JMAP：支持 JMAP for Mail、Sieve Scripts 的 JMAP 扩展，以及 WebSocket、Blob Management 和 Quotas 等扩展。
+  - IMAP：支持 IMAP4rev2 和 IMAP4rev1，以及 ManageSieve 服务器和众多扩展。
+  - POP3：支持 POP3、STLS 和 SASL 以及其他扩展。
+  - SMTP：内置 DMARC、DKIM、SPF 和 ARC 支持，实现消息认证；通过 DANE、MTA-STS 和 SMTP TLS 报告提供强大的传输安全性；具备精细化配置规则、Sieve 脚本、MTA Hooks 和 Milter 集成的入站限流和过滤；支持分布式虚拟队列、延迟投递、优先投递、配额、路由规则和限流；支持信封重写和消息修改。
+
+- 协作服务器功能：
+
+  - 使用 CalDAV 进行日历和日程管理。
+  - 使用 CardDAV 进行联系人管理。
+  - 使用 WebDAV 进行文件存储和共享。
+
+- 内置的垃圾邮件和网络钓鱼过滤器：
+
+  - 提供与流行的解决方案媲美的全面过滤规则集。
+  - 支持基于大型语言模型 (LLM) 的垃圾邮件过滤和消息分析。
+  - 具有自动训练能力和地址簿集成的统计式垃圾邮件分类器。
+  - 检查 IP 地址、域名和哈希的 DNS 阻止列表 (DNSBLs)。
+  - 支持使用 Pyzor 进行协作性基于摘要的垃圾邮件过滤。
+  - 提供针对同形异义 URL 攻击、发件人伪造及其他技术的网络钓鱼防护。
+  - 信任回复跟踪以识别并优先处理真实的电子邮件回复。
+  - 按 IP 地址、ASN、域名和电子邮件地址监控发件人信誉。
+  - 灰度列表 (Greylisting) 临时推迟未知发件人。
+  - 垃圾邮件陷阱 (Spam traps) 可设置诱饵电子邮件地址来捕获和分析垃圾邮件。
+
+- 灵活性：
+
+  - 支持 RocksDB、FoundationDB、PostgreSQL、mySQL、SQLite、S3 兼容存储、Azure、Redis 和 ElasticSearch 等可插拔存储后端。
+  - 提供 17 种语言的全文搜索。
+  - 支持所有已注册扩展的 Sieve 脚本语言。
+  - 支持电子邮件别名、邮件列表、子地址和捕捉所有地址 (catch-all addresses)。
+  - 通过 autoconfig 和 autodiscover 支持自动账户配置和发现。
+  - 支持多租户，实现域和租户隔离。
+  - 每用户和每租户的磁盘配额。
+
+- 安全和健壮：
+
+  - 使用 S/MIME 或 OpenPGP 进行静态数据加密。
+  - 通过 ACME 使用 TLS-ALPN-01、DNS-01 或 HTTP-01 质询进行自动 TLS 证书配置。
+  - 自动阻止攻击、滥用或扫描服务器漏洞的 IP 地址。
+  - 提供速率限制功能。
+  - 已通过安全审计。
+  - 使用 Rust 保证内存安全。
+
+- 可扩展和容错：
+
+  - 设计用于无缝处理从小型设置到数千个节点的大规模部署的增长。
+  - 构建时考虑了容错和高可用性，能够在硬件或软件故障后以最小的运营影响恢复。
+  - 支持点对点集群协调或使用 Kafka、Redpanda、NATS 或 Redis 进行协调。
+  - 支持 Kubernetes、Apache Mesos 和 Docker Swarm 进行自动化扩展和容器编排。
+  - 支持读副本、分片 blob 存储和内存数据存储以实现高性能和低延迟。
+
+- 认证和授权：
+
+  - 支持 OpenID Connect 认证。
+  - 支持带有授权码和设备授权流程的 OAuth 2.0 授权。
+  - 支持 LDAP、OIDC、SQL 或内置认证后端。
+  - 支持基于时间的一次性密码 (2FA-TOTP) 的双因素认证。
+  - 支持应用程序密码 (App Passwords)。
+  - 支持角色和权限。
+  - 支持访问控制列表 (ACLs)。
+
+- 可观察性：
+
+  - 支持使用 OpenTelemetry、journald、日志文件和控制台进行日志记录和追踪。
+  - 集成 OpenTelemetry 和 Prometheus 提供指标。
+  - 支持 Webhooks 用于事件驱动自动化。
+  - 支持通过电子邮件和 Webhook 通知发送警报。
+  - 提供实时追踪和指标。
+
+- 基于 Web 的管理界面：
+  - 提供带有实时统计数据和监控功能的仪表盘。
+  - 支持账户、域、组和邮件列表管理。
+  - 支持 SMTP 队列管理（消息和出站 DMARC、TLS 报告）。
+  - 提供接收到的 DMARC、TLS-RPT 和故障报告 (ARF) 的报告可视化界面。
+  - 可配置邮件服务器的各个方面。
+  - 提供带有搜索和过滤功能的日志查看器。
+  - 提供用于密码重置和静态加密密钥管理的自助服务门户。
+
+该项目适用于需要强大、安全且灵活的邮件和协作解决方案的组织和个人，无论是小型部署还是大规模的企业级应用。其多协议支持和丰富的特性使其成为一个全面的平台。
+
+安装指南概述： Stalwart 支持 Linux/MacOS, Windows 和 Docker 环境的安装，详细文档可在 stalw.art/docs 上找到。
+
+技术栈： 主要使用 Rust 语言开发。支持多种存储后端和认证方式。
+
+许可证： 项目采用双重许可，包括 AGPL-3.0 和 Stalwart Enterprise License v1 (SELv1)。AGPL-3.0 是自由软件许可证，SELv1 是为商业用途设计的专有许可证。
+
+### 项目统计与信息
+
+- **作者:** [stalwartlabs](https://github.com/stalwartlabs）)
+- **主要语言:** Rust
+- **Stars:** 8019 ⭐
+- **Forks:** 380 🍴
+- **本周期新增 Stars:** 183 ⭐
+
+_要了解更多关于 **stalwartlabs / stalwart** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/stalwartlabs/stalwart)。_
+
+---
+
+## duixcom / Duix.Heygem
+
+> HeyGem是一个Duix.com开发的免费开源AI数字分身项目，旨在通过AI技术降低数字人克隆和视频制作成本，让用户轻松创建自己的AI数字分身并制作视频，并提供本地部署和API服务方案。
+
+### 项目介绍
+
+HeyGem 是一个由 Duix.com 开发的免费开源 AI 数字分身项目，定位是 Heygen 的开源替代方案。该项目旨在通过 AI 技术大幅降低数字人克隆和视频制作的成本，使得个人和中小企业也能轻松创建自己的 AI 数字分身并进行视频创作。它基于七年前开发的一种利用真人视频数据训练数字人模型的技术，与传统高成本的3D数字人方法不同，它利用 AI 生成技术实现超逼真的数字人效果，并将成本从数十万美元降至约1000美元。项目核心理念是将这项改变性的技术普惠大众，通过开源其克隆技术和视频制作框架，让任何拥有计算机的用户都能免费创建 AI 数字分身并制作视频。
+
+核心功能与特性包括：
+
+- 精确的面部及声音克隆：利用先进 AI 算法高精度捕捉面部特征和声音特质，实现逼真的虚拟模型和声音克隆效果，支持多种声音参数设置。
+- 文本和语音驱动虚拟分身：通过自然语言处理将文本转化为自然流畅的语音，驱动虚拟分身；也支持直接语音输入，使分身根据语音语调展现相应动作和表情。
+- 高效视频合成：实现数字人视频图像与声音高度同步，确保自然流畅的唇形同步。
+- 多语言支持：脚本支持英语、日语、韩语、中文、法语、德语、阿拉伯语和西班牙语八种语言。
+
+HeyGem 的关键优势体现在：
+
+- 完全离线运行：无需互联网连接，保障用户隐私安全。
+- 用户友好：界面简洁直观，易于上手，即使无技术背景的用户也能快速掌握。
+- 多模型支持：支持导入和管理多个模型，方便用户根据需求选择。
+
+项目技术栈包括但不限于：
+
+- 声音克隆技术
+- 自动语音识别（ASR），基于 fun-asr
+- 文本转语音（TTS），基于 fish-speech-ziming
+- 计算机视觉技术
+
+项目提供了两种本地运行模式：Windows 和 Ubuntu 22.04。两种模式都基于 Docker 进行快速部署，需要满足一定的硬件和软件依赖，特别是需要支持 CUDA 的 NVIDIA 显卡。Windows 安装需要 Win 10 或更高版本，并需安装 WSL 和 Docker Desktop；Ubuntu 安装则需要 Docker 和 NVIDIA Container Toolkit。项目提供了详细的安装步骤和依赖说明，包括 Docker 镜像的拉取和服务的启动方式。
+
+HeyGem 也提供了开放 API，用于模型训练、音频合成和视频合成。用户可以通过调用相应的本地接口来实现这些功能，接口地址通常是 `http://127.0.0.1` 加上对应的端口号，例如模型训练接口、音频合成接口(`http://127.0.0.1:18180/v1/invoke`)和视频合成接口(`http://127.0.0.1:8383/easy/submit`)，并提供了请求参数和响应示例。项目方还提供了 HeyGem 开源本地部署和数字人/克隆语音 API 服务两种并行方案，前者适合技术用户进行深度定制和社区共建，后者适合快速商业集成和对企业级 SLA 有需求的用户。
+
+项目处于积极迭代中，近期更新包括对 NVIDIA 50 系列及兼容显卡的支持，以及 Ubuntu 版本的正式发布和一些已知问题的修复。项目提供了详细的自查步骤和问题反馈模板，便于用户提交问题并获取社区支持。虽然 HeyGem 主要实现数字人克隆和非实时视频合成，如果需要数字人进行实时互动，推荐访问官方网站 duix.com 体验。
+
+项目采用许可证，用户可以查看 LICENSE 文件了解具体条款。部分技术基于 fun-asr 和 fish-speech-ziming 等开源项目。
+
+项目的典型适用场景是需要低成本、高效率地创建个性化数字分身并制作视频的用户，例如教育工作者、内容创作者、法律专业人士、医疗从业者和企业家等，用于提升视频制作效率、打造个人品牌或进行商业宣传。目标用户主要是对数字人技术感兴趣的开发者和希望利用数字分身制作视频的个人及企业用户。
+
+项目的许可协议允许全球范围内的免费商业使用，但用户量超过10万或年营收超过1000万美元的企业可能需要签署商业许可协议。项目鼓励社区贡献和共同建设。
+
+### 项目统计与信息
+
+- **作者:** [duixcom](https://github.com/duixcom）)
+- **主要语言:** C
+- **Stars:** 9174 ⭐
+- **Forks:** 1514 🍴
+- **本周期新增 Stars:** 91 ⭐
+
+_要了解更多关于 **duixcom / Duix.Heygem** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/duixcom/Duix.Heygem)。_
+
+---
+
+## duixcom / Duix.mobile
+
+> Duix.mobile 是一个开源项目，提供移动端 AI 驱动数字人实时交互的 SDK，支持在设备端构建高效、低延迟的数字人应用，并可集成第三方 LLM、ASR 和 TTS 技术。
+
+### 项目介绍
+
+Duix.mobile 是一个专注于提供移动端 AI 驱动的数字人实时交互能力的开源项目。它提供一套用于 Android 和 iOS 平台的软件开发工具包（SDK），使开发者能够在移动设备上构建具有逼真表现和实时响应的数字人应用。
+
+该项目的核心定位是实现设备端的数字人交互，区别于依赖云端服务的传统方式。这带来了在移动端实现高效、低延迟的数字人体验的可能性。
+
+主要功能和特性包括：
+
+- 类人智能：模仿人类的面部表情、语气和同理心，提升交互的自然度。
+- 超快响应：实现 1.5 秒以内的实时互动，确保对话流畅无卡顿。
+- 部署高效：支持在移动设备、智能屏幕等低资源环境快速便捷部署。
+- 网络轻量化：大量计算在设备端进行，最小化网络依赖，适合金融、政府、法律服务等对网络要求严格的场景。
+- 广泛可定制：模块化和可扩展架构允许针对不同行业场景定制数字人和对话流程。
+
+技术栈和依赖方面，项目提供了针对 Android 和 iOS 的本地 Mobile SDK。虽然项目本身提供了基础能力，但它被设计为可以无缝集成开发者自有的或第三方的大语言模型（LLMs）、自动语音识别（ASR）和文本转语音（TTS）技术，以构建完整的数字人交互流程。项目代码主要使用 C++、C、Objective-C 等语言。
+
+安装与配置指南方面，项目针对 Android 和 iOS 平台提供了详细的开发者文档链接，指导开发者如何集成 SDK。
+
+基本使用方法方面，核心在于利用 SDK 提供的方法实现语音输入捕捉、将其发送给识别和语言模型处理（由开发者集成），接收处理结果，再通过 SDK 驱动数字人进行表情、口型和语音输出。项目提供了公开测试模型供下载和集成试验。
+
+适用场景涵盖广泛的移动端及终端设备应用，包括：智能客服、虚拟法律/医疗顾问、AI 移动助手等。目标用户主要是希望在移动应用或智能终端中集成数字人实时交互能力的开发者和企业。
+
+项目当前提供社区许可证。该项目处于活跃开发状态，并不断优化其在移动设备上的性能和功能。对于高级定制、企业级功能或 API 调用等需求，项目指引用户联系商业服务。
+
+### 项目统计与信息
+
+- **作者:** [duixcom](https://github.com/duixcom）)
+- **主要语言:** C++
+- **Stars:** 6318 ⭐
+- **Forks:** 935 🍴
+- **本周期新增 Stars:** 45 ⭐
+
+_要了解更多关于 **duixcom / Duix.mobile** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/duixcom/Duix.mobile)。_
+
+---
+
+## sktime / sktime
+
+> sktime是一个Python时间序列机器学习库，提供统一接口和丰富的算法，支持预测、分类、聚类等任务，并与其他库互操作；它适用于需求预测、时序数据分析和异常检测等场景，并促进了算法互操作性和模型可组合性。
+
+### 项目介绍
+
+sktime 是一个面向时间序列机器学习的统一框架，旨在提供一个在 Python 中进行时间序列分析的简便和互操作性强的库。它为多种时间序列学习任务提供统一接口，目前涵盖预测、时间序列分类、聚类、异常/变点检测等任务。该项目提供了丰富的专门用于时间序列的算法，以及与 scikit-learn 兼容的工具，用于构建、调优和验证时间序列模型。
+
+sktime 的核心功能和特性包括：
+
+- **统一接口**: 为不同的时间序列学习任务（如预测、分类、聚类等）提供一致的 API，简化了用户在不同任务之间切换和使用不同算法的体验。
+- **丰富的算法库**: 包含大量专门用于时间序列分析的算法。
+- **复合模型构建工具**: 提供管道 (pipelining)、集成 (ensembling)、调优 (tuning) 和降维 (reduction) 等工具，支持构建复杂的模型，并可以将为一种任务设计的算法应用于另一种任务。
+- **与其他库的互操作性**: 提供与常用 Python 库（如 scikit-learn, statsmodels, tsfresh, PyOD, fbprophet）的接口，使用户可以无缝集成和利用这些库的功能。
+- **模块化设计**: sktime 被组织成多个模块，分别对应不同的时间序列学习任务，如 `forecasting`, `classification`, `clustering`, `detection`, `transformations` 等，每个模块都有相应的教程和 API 参考。
+- **易于扩展**: 提供扩展模板，方便用户添加自定义算法，并使其与 sktime 的 API 兼容。
+
+技术栈和依赖方面，sktime 是一个基于 Python 的库，支持 Python 3.8, 3.9, 3.10, 3.11 和 3.12 版本。它可以通过 pip 或 conda 包管理器安装。安装时可以选择安装核心库或包含额外依赖的完整版本，也可以针对特定任务（如预测、分类）安装相应的依赖子集。该项目与 NumPy, pandas, scikit-learn 等科学计算库紧密集成。
+
+安装和配置方面，推荐通过 pip 或 conda 进行安装，例如 `pip install sktime` 或 `conda install -c conda-forge sktime`。项目文档提供了详细的安装指南和故障排除说明。
+
+基本使用方法通常遵循 scikit-learn 的模式，即先创建一个估计器（estimator）的实例，然后调用 `fit` 方法用训练数据训练模型，最后调用相应的任务方法（例如预测任务的 `predict`，分类任务的 `predict`）进行推理。
+
+例如，一个简单的预测任务可以使用如下代码：
+
+```python
+from sktime.datasets import load_airline
+from sktime.forecasting.base import ForecastingHorizon
+from sktime.forecasting.theta import ThetaForecaster
+from sktime.split import temporal_train_test_split
+from sktime.performance_metrics.forecasting import mean_absolute_percentage_error
+
+y = load_airline()
+y_train, y_test = temporal_train_test_split(y)
+fh = ForecastingHorizon(y_test.index, is_relative=False)
+forecaster = ThetaForecaster(sp=12)
+forecaster.fit(y_train)
+y_pred = forecaster.predict(fh)
+# 计算性能指标
+mean_absolute_percentage_error(y_test, y_pred)
+```
+
+时间序列分类的示例代码：
+
+```python
+from sktime.classification.interval_based import TimeSeriesForestClassifier
+from sktime.datasets import load_arrow_head
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
+
+X, y = load_arrow_head()
+X_train, X_test, y_train, y_test = train_test_split(X, y)
+classifier = TimeSeriesForestClassifier()
+classifier.fit(X_train, y_train)
+y_pred = classifier.predict(X_test)
+# 计算准确率
+accuracy_score(y_test, y_pred)
+```
+
+sktime 适用于需要进行时间序列数据建模和分析的各种场景，目标用户主要是数据科学家、机器学习工程师以及涉及时间序列数据研究的学术人员。典型的适用场景包括但不限于：
+
+- **需求预测**: 预测未来的销售额、库存水平、能源消耗等。
+- **时序数据分类**: 对心电图、传感器数据、股票走势等时间序列进行分类。
+- **异常检测**: 在时间序列数据中识别异常点或异常模式。
+- **变点检测**: 发现时间序列数据结构或属性发生显著变化的时刻。
+- **时序聚类**: 将相似的时间序列数据分组。
+
+该项目处于活跃开发状态，采用 BSD-3-Clause 许可证。其独特的优势在于为时间序列领域的多种任务提供了统一且灵活的框架，促进了算法之间的互操作性和模型的可组合性，同时也强调了社区驱动的开发和开放透明的治理模式。
+
+### 项目统计与信息
+
+- **作者:** [sktime](https://github.com/sktime）)
+- **主要语言:** Python
+- **Stars:** 8591 ⭐
+- **Forks:** 1572 🍴
+- **本周期新增 Stars:** 98 ⭐
+
+_要了解更多关于 **sktime / sktime** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/sktime/sktime)。_
+
+---
+
+## vllm-project / vllm
+
+> vLLM是一个快速且易于使用的大型语言模型推理和服务库，它通过PagedAttention等技术实现高性能，并支持多种硬件平台和模型。该项目是社区驱动的，并通过OpenCollective接受捐赠，欢迎贡献和协作。
+
+### 项目介绍
+
+vLLM 是一个针对大型语言模型（LLMs）推理和服务的快速且易于使用的库。该项目最初由加州大学伯克利分校的 Sky Computing Lab 开发，现已发展成为一个由学术界和工业界共同贡献的社区驱动项目。
+
+vLLM 的核心价值在于其高性能：
+
+- 提供了最先进的服务吞吐量。
+- 利用 PagedAttention 技术高效管理注意力的键（key）和值（value）内存。
+- 支持对到来的请求进行连续批处理。
+- 通过 CUDA/HIP 图实现快速的模型执行。
+- 支持多种量化技术，包括 GPTQ、AWQ、AutoRound、INT4、INT8 和 FP8。
+- 集成了 FlashAttention 和 FlashInfer 等技术，优化了 CUDA 内核。
+- 支持推测解码。
+- 支持分块预填充（Chunked prefill）。
+
+除了高性能，vLLM 也非常灵活且易于使用：
+
+- 与流行的 Hugging Face 模型无缝集成。
+- 提供高吞吐量服务，支持并行采样、束搜索等多种解码算法。
+- 支持张量并行和流水线并行，用于分布式推理。
+- 支持流式输出。
+- 提供与 OpenAI 兼容的 API 服务器。
+- 支持多种硬件平台，包括 NVIDIA GPU、AMD CPU 和 GPU、Intel CPU 和 GPU、PowerPC CPU、TPU 以及 AWS Neuron。
+- 支持前缀缓存（Prefix caching）。
+- 支持多 LoRA。
+
+vLLM 广泛支持 HuggingFace 上大多数流行的开源模型，包括但不限于：
+
+- 基于 Transformer 的 LLMs（如 Llama）。
+- 专家模型（Mixture-of-Expert LLMs），如 Mixtral、Deepseek-V2 和 V3。
+- 嵌入模型（如 E5-Mistral）。
+- 多模态 LLMs（如 LLaVA）。
+
+项目的安装可以通过 pip 或从源代码构建 wheel 包的方式进行。vLLM 欢迎社区贡献和协作，并在文档中提供了详细的贡献指南。
+
+vLLM 是一个社区项目，获得了包括 a16z、Dropbox、Sequoia Capital 等多家组织在内的现金捐赠支持，以及 AMD、Anyscale、AWS 等众多机构提供的计算资源支持，用于开发和测试。项目通过 OpenCollective 平台进行官方募资，用于支持项目的开发、维护和推广。
+
+如果您在研究中使用 vLLM，建议引用其相关的学术论文《Efficient Memory Management for Large Language Model Serving with PagedAttention》。项目提供了丰富的交流渠道，包括 GitHub Issues 和 Discussions 用于技术问题及特性请求，vLLM Forum 供用户交流，Slack 用于贡献协调和开发讨论，以及通过 GitHub Security Advisories 进行安全漏洞披露。
+
+vLLM 遵循 Apache-2.0 许可证开源。
+
+### 项目统计与信息
+
+- **作者:** [vllm-project](https://github.com/vllm-project）)
+- **主要语言:** Python
+- **Stars:** 48259 ⭐
+- **Forks:** 7631 🍴
+- **本周期新增 Stars:** 100 ⭐
+
+_要了解更多关于 **vllm-project / vllm** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/vllm-project/vllm)。_
+
+---
+
+## n8n-io / n8n
+
+> n8n是一个强大的工作流程自动化平台，结合可视化和代码，内置AI能力，支持自托管和云端部署，并提供丰富集成和企业级功能。它适用于需要灵活定制、数据控制和AI集成的技术团队，助力自动化重复性任务和构建复杂数据流。
+
+### 项目介绍
+
+n8n 是一个面向技术团队的工作流程自动化平台，它融合了可视化搭建的便捷性与自定义代码的灵活性。项目具备原生的 AI 能力，提供超过 400 种集成，并支持自行托管或云端部署。其核心特色在于提供强大的自动化构建能力，同时确保用户对数据和部署环境拥有完全控制权。
+
+主要功能与特性包括：
+
+- **代码与可视化结合**：用户可根据需求编写 JavaScript/Python 代码，添加 npm 包，或者使用直观的可视化界面来构建工作流程。
+- **AI 原生平台**：基于 LangChain 构建 AI Agent 工作流程，并允许使用自己的数据和模型。
+- **完全控制**：提供 fair-code 许可证，支持用户自行托管，或选择使用其云端服务。
+- **企业级特性**：包含高级权限管理、单点登录 (SSO) 以及气隙部署（air-gapped deployments）等适用于企业的增强功能。
+- **活跃的社区支持**：拥有超过 400 种集成和 900 多个即用型工作流程模板。
+
+技术栈与依赖方面，n8n 主要使用 TypeScript 进行开发，支持与多种 AI 模型提供商（如通过 LangChain 集成）以及超过 400 个不同的服务进行集成。
+
+安装与配置方面，用户可以通过 npm 的 npx 命令快速尝试 n8n，最低要求安装 Node.js。或者使用 Docker 进行部署，官方提供了 Docker 镜像和简单的命令示例，创建数据卷并运行容器即可启动服务。安装完成后，通过浏览器访问本地的 5678 端口即可进入编辑器。
+
+适用场景和目标用户主要包括需要自动化重复性任务、集成不同应用、构建复杂数据流以及利用 AI 能力的技术团队和开发者。无论是简单的应用联动，还是复杂的企业级流程自动化，n8n 都能提供支持。
+
+项目采用 fair-code 模式，基于 Sustainable Use License 和 n8n Enterprise License 发布，允许源代码可见和自行托管，并支持扩展开发。针对企业用户，还提供额外的许可和服务。
+
+总的来说，n8n 提供了一个强大且灵活的工作流程自动化解决方案，特别适合需要结合代码进行定制化开发，同时又希望利用可视化界面提高效率的技术团队，并且对数据主权和 AI 集成有需求的场景非常适用。
+
+### 项目统计与信息
+
+- **作者:** [n8n-io](https://github.com/n8n-io）)
+- **主要语言:** TypeScript
+- **Stars:** 99532 ⭐
+- **Forks:** 27683 🍴
+- **本周期新增 Stars:** 492 ⭐
+
+_要了解更多关于 **n8n-io / n8n** 的信息、查看完整的贡献者列表或参与项目，请访问其 [GitHub 仓库](https://github.com/n8n-io/n8n)。_
