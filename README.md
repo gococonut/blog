@@ -1,8 +1,7 @@
-# ByteBonfire.com - 字节篝火 🔥
+
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/git/external?repository-url=https://github.com/gococonut/blog)
 
-**ByteBonfire.com (字节篝火)** 是一个致力于扫除信息壁垒、助力开发者高效获取全球技术前沿的资讯聚合网站。
 
 本项目基于优秀的 [**tailwind-nextjs-starter-blog**](https://github.com/timlrx/tailwind-nextjs-starter-blog) (由 [timlrx](https://github.com/timlrx) 创建) 进行二次开发和定制。对原作者的卓越工作表示衷心感谢！
 
